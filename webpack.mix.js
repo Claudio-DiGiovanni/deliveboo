@@ -5,3 +5,5 @@ mix.js('resources/js/app.js', 'public/js')
     .options({
         processCssUrls: false,
     });
+
+    mix.copyDirectory( './node_modules/@fortawesome/fontawesome-free/webfonts/*', './dist/fonts/font-awesome' );

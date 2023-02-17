@@ -1879,7 +1879,7 @@ var render = function render() {
   }, [_c("ul", _vm._l(_vm.users, function (user) {
     return _c("li", {
       key: user.id
-    }, [_vm._v(_vm._s(user.name))]);
+    }, [_vm._v(_vm._s(user))]);
   }), 0)]);
 };
 var staticRenderFns = [];

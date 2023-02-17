@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <ul>
-            <li v-for="user in users" :key="user.id">{{ user }}</li>
+            <li v-for="user in users" :key="user.id">{{ user.name }}</li>
         </ul>
     </div>
 </template>
@@ -14,7 +14,7 @@ export default {
         }
     },
     created() {
-        axios.get('/api/users/index')
+        axios.get('/api/restaurants')
             .then(response => {
                 if (response.data.success) {
                     this.users = response.data.results;

@@ -1824,7 +1824,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
-    axios.get('/api/users/index').then(function (response) {
+    axios.get('/api/restaurants').then(function (response) {
       if (response.data.success) {
         _this.users = response.data.results;
       } else {
@@ -1879,7 +1879,7 @@ var render = function render() {
   }, [_c("ul", _vm._l(_vm.users, function (user) {
     return _c("li", {
       key: user.id
-    }, [_vm._v(_vm._s(user))]);
+    }, [_vm._v(_vm._s(user.name))]);
   }), 0)]);
 };
 var staticRenderFns = [];

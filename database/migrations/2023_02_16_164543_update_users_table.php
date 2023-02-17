@@ -15,7 +15,7 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('address', 100);
-            $table->unsignedInteger('PIVA')->unique();
+            $table->unsignedBigInteger('PIVA')->unique();
             $table->string('slug', 100);
             $table->string('image_logo', 200);
         });

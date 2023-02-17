@@ -15,7 +15,7 @@ class DishSeeder extends Seeder
     public function run(Faker $faker)
     {
         $users = User::all()->pluck('id');
-        for ($i=0; $i < 50; $i++) {
+        for ($i=0;$i < 50; $i++) {
             $name = $faker->words(5, true);
 
             $dish = Dish::create([
@@ -27,15 +27,6 @@ class DishSeeder extends Seeder
                 'slug' => User::getSlug($name),
                 'user_id' => $faker->randomElement($users),
             ]);
-            $objDish = new Dish;
-            $objDish->name        = $dish['name'];
-            $objDish->price     = $dish['price'];
-            $objDish->image = $dish['image'];
-            $objDish->visibility       = $dish['visibility'];
-            $objDish->description      = $dish['description'];
-            $objDish->slug        = $dish['slug'];
-            $objDish->user_id = $dish['user_id'];
-            $objDish->save();
         };
     }
 }

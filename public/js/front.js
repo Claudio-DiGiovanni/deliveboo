@@ -1816,7 +1816,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      users: null
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios.get('/api/users/index').then(function (response) {
+      if (response.data.success) {
+        _this.users = response.data.results;
+      } else {
+        _this.users = 'non va un cazzo';
+      }
+    });
+  }
+});
 
 /***/ }),
 
@@ -1835,13 +1851,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
+  return _c("div", [_c("h1", [_vm._v("Ciao")]), _vm._v(" "), _c("router-view")], 1);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("h1", [_vm._v("ciao")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -1862,13 +1874,15 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("ul", _vm._l(_vm.users, function (user) {
+    return _c("li", {
+      key: user.id
+    }, [_vm._v(_vm._s(user.name))]);
+  }), 0)]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("h1", [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos rem magnam voluptatum voluptatem fuga quos error, doloribus quam vel esse ut nam? Nulla itaque eius voluptate ea, quis obcaecati!")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

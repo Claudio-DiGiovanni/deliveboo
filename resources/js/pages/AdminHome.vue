@@ -1,12 +1,28 @@
 <template>
-  <div>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos rem magnam voluptatum voluptatem fuga quos error, doloribus quam vel esse ut nam? Nulla itaque eius voluptate ea, quis obcaecati!</h1>
-  </div>
+    <div class="container">
+        <ul>
+            <li v-for="user in users" :key="user.id">{{ user.name }}</li>
+        </ul>
+    </div>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            users: null,
+        }
+    },
+    created() {
+        axios.get('/api/users/index')
+            .then(response => {
+                if (response.data.success) {
+                    this.users = response.data.results;
+                } else {
+                    this.users = 'non va un cazzo';
+                }
+            })
+    }
 }
 </script>
 

@@ -20,6 +20,7 @@ class UserController extends Controller
             'success' => true,
             'results' => $users,
         ]);
+
     }
 
     /**

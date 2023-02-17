@@ -19,5 +19,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('{any?}', function () {
-    return view('admin.home');
-})->where("any", ".*")->name('admin.home');
+    return view('guest.home');
+})->where("any", ".*")->name('guest.home');

@@ -1,18 +1,13 @@
 <template>
   <div>
-    <AdminHome />
+    ciao
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import AdminHome from './components/AdminHome';
-
 export default {
     name:'App',
-    components:{
-        AdminHome,
-    }
 }
 </script>
 

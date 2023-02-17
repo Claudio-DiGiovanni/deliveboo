@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Admin\UserController@index')-> name('restaurants.index');
+Route::get('/', 'Api\UserController@index');

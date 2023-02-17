@@ -1,7 +1,6 @@
 <template>
   <div>
-    ciao
-    <router-view></router-view>
+    <h1>ciao</h1>
   </div>
 </template>
 

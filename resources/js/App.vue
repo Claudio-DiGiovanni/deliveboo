@@ -1,6 +1,7 @@
 <template>
   <div>
     <AdminHome />
+    <router-view></router-view>
   </div>
 </template>
 

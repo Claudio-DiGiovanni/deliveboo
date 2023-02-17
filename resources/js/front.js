@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path:'/restaurants',
+        path:'/',
         name:'restaurants',
 const router = new VueRouter({
     mode: 'history',

@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path:'/restaurants',
+        path:'/',
         name:'restaurants',
         component:AdminHome,
     }

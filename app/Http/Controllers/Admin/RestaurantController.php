@@ -29,8 +29,8 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */ public function index()
     {
-        $users = User::all()->pluck('id');
-        $dishes = Dish::where('user_id', $users)->get();
+        $user = Auth::user();
+        $dishes = Dish::where('user_id', $user->id)->get();
 
         return view('admin.dishes.index', [
             'dishes' => $dishes,
@@ -66,7 +66,7 @@ class RestaurantController extends Controller
         $dish->slug = $data['slug'];
         $dish->user_id = $user->id ;
         $dish->save();
-        $dish->user()->match($user->id);
+
         return redirect()->route('admin.dishes.index');
 
     }

@@ -66,7 +66,6 @@ class RestaurantController extends Controller
         $dish->slug = $data['slug'];
         $dish->user_id = $user->id ;
         $dish->save();
-
         return redirect()->route('admin.dishes.index');
     }
 

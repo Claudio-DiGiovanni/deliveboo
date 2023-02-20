@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Dish;
-use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RestaurantController extends Controller
 {
@@ -27,7 +28,12 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */ public function index()
     {
+<<<<<<< HEAD
         $dishes = Dish::all();
+=======
+        $users = User::all()->pluck('id');
+        $dishes = Dish::where('user_id', $users)->get();
+>>>>>>> 174a4fa13ce4d39f9bfed6bb0427d3fcd86eb090
 
         return view('admin.dishes.index', [
             'dishes' => $dishes,

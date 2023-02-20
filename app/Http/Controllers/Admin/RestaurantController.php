@@ -5,6 +5,7 @@ use App\Dish;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -42,7 +43,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dishes.create');
+
     }
 
     /**
@@ -53,7 +55,20 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $data = $request->all();
+        $dish = new Dish;
+        $dish->name = $data['name'];
+        $dish->price = $data['price'];
+        $dish->image = $data['image'];
+        $dish->description = $data['description'];
+        $dish->visibility = $data['visibility'];
+        $dish->slug = $data['slug'];
+        $dish->user_id = $user->id ;
+        $dish->save();
+        $dish->user()->match($user->id);
+        return redirect()->route('admin.dishes.index');
+
     }
 
     /**

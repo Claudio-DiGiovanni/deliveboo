@@ -9,7 +9,7 @@ class Dish extends Model
     public $timestamps = false;
 
     public function user() {
-        return $this->belongTo('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function orders() {

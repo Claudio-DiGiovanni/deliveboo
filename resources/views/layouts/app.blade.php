@@ -54,7 +54,7 @@
                                     {{ Auth::user()->name }}
 
                                 </a>
-                                <a href="{{route('admin.dishes.index')}}">piatti</a>
+
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -67,6 +67,23 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    piatti
+
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('admin.dishes.index') }}">
+                                      indice
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('admin.dishes.create') }}">
+                                        crea piatto
+                                      </a>
+
+                                </div>
+
                             </li>
                         @endguest
                     </ul>

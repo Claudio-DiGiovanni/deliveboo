@@ -7,7 +7,7 @@
             <li> {{$dish->name}}
                 <ul>
                     <li>{{$dish->price/100}} €</li>
-                    <li><img src="{{$dish->image}}" alt=""></li>
+                    {{-- <li><img src="{{$dish->image}}" alt=""></li> --}}
                 </ul>
             </li>
         @endforeach

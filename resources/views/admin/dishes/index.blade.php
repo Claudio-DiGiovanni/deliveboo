@@ -2,10 +2,15 @@
 @section('content')
 
     <h1>Lista piatti:</h1>
-    <ul>
+    <ol>
         @foreach ($dishes as $dish)
-            <li>{{ $dish->name }} - {{ $dish->description }} ({{ $dish->price }}€)</li>
+            <li> {{$dish->name}}
+                <ul>
+                    <li>{{$dish->price/100}} €</li>
+                    <li><img src="{{$dish->image}}" alt=""></li>
+                </ul>
+            </li>
         @endforeach
-    </ul>
+    </ol>
 
 @endsection

@@ -28,12 +28,8 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */ public function index()
     {
-<<<<<<< HEAD
-        $dishes = Dish::all();
-=======
         $users = User::all()->pluck('id');
         $dishes = Dish::where('user_id', $users)->get();
->>>>>>> 174a4fa13ce4d39f9bfed6bb0427d3fcd86eb090
 
         return view('admin.dishes.index', [
             'dishes' => $dishes,

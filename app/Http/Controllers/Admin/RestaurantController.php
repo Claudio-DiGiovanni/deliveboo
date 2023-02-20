@@ -27,7 +27,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */ public function index()
     {
-        $dishes = Dish::paginate(5);
+        $dishes = Dish::all();
 
         return view('admin.dishes.index', [
             'dishes' => $dishes,

@@ -75,9 +75,10 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dish $dish)
     {
-        //
+        return view('admin.dishes.show',compact('dish'));
+
     }
 
     /**

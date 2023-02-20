@@ -36,10 +36,7 @@ Route::get('/admin',function(){
     return view('admin.home');
     })->name('home');
 
- Route::get('{any?}', function () {
-     return view('guest.home');
- })->where("any", ".*")->name('guest.home');
 
-
-
-
+Route::get('{any?}', function () {
+    return view('guest.home');
+    })->where("any", ".*")->name('guest.home');

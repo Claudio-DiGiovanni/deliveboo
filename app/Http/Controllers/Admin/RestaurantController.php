@@ -68,7 +68,6 @@ class RestaurantController extends Controller
         $dish->save();
         $dish->user()->match($user->id);
         return redirect()->route('admin.dishes.index');
-
     }
 
     /**

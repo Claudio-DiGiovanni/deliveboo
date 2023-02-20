@@ -14,7 +14,7 @@ export default {
         }
     },
     created() {
-        axios.get('/api/restaurants')
+        axios.get('/api/')
             .then(response => {
                 if (response.data.success) {
                     this.users = response.data.results;

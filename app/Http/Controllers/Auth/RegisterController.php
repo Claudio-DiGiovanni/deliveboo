@@ -70,19 +70,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-            $user = new User;
-            $user->name         = $data['name'];
-            $user->email        = $data['email'];
-            $user->password     = Hash::make($data['password']);
-            $user->address      = $data['address'];
-            $user->PIVA         = $data['PIVA'];
-            $user->slug         = $data['slug'];
-            $user->image_logo   = $data['logo'];
-            $user->save();
-            return redirect()->route('admin.dishes.index');
-
-
-
-
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'address' => $data['address'],
+                'PIVA' => $data['PIVA'],
+                'slug' => $data['slug'],
+                'image_logo' => $data['logo'],
+            ]);
     }
 }

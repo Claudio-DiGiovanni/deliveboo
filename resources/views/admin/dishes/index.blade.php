@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-4">
                     <a href="{{ route('admin.dishes.show', ['dish' => $dish]) }}" class="btn btn-outline-info">Info</a>
-                    {{-- <a href="{{ route('admin.dishes.edit', ['dish' => $dish]) }}" class="btn btn-outline-success">Modifica</a> --}}
+                    <a href="{{ route('admin.dishes.edit', ['dish' => $dish]) }}" class="btn btn-outline-success">Modifica</a>
                     {{-- <a class="btn btn-outline-danger">Elimina</a> --}}
                 </div>
             </div>

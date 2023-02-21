@@ -87,9 +87,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+        return view('admin.dishes.edit', ['dish' => $dish]);
     }
 
     /**
@@ -99,9 +99,17 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dish $dish)
     {
-        //
+        $data = $request->all();
+        $dish->name = $data['name'];
+        $dish->price = $data['price'];
+        $dish->image = $data['image'];
+        $dish->description = $data['description'];
+        $dish->visibility = $data['visibility'];
+        $dish->slug = $data['slug'];
+        $dish->update();
+        return redirect()->route('admin.dishes.show', ['dish' => $dish]);
     }
 
     /**

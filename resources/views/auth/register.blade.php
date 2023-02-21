@@ -117,6 +117,16 @@
                             </div>
                         </div>
 
+                        <div class="mb-3 form-check d-flex row">
+                            @foreach ($types as $type)
+                                <div class="col-3">
+                                    <input value="{{$type->id}}" type="checkbox" class="form-check-input" id="types" name="types[]">
+                                    <label class="form-check-label" for="types">{{$type->name}}</label>
+                                </div>
+                            @endforeach
+
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 @section('content')
 <form action="{{route('admin.dishes.update', ['dish' => $dish])}}" method="POST">
     @method('PUT')

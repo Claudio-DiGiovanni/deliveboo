@@ -28,7 +28,10 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function () {
     Route::resource('dishes','RestaurantController');
+<<<<<<< HEAD
     Route::resource('orders', 'OrderController');
+=======
+>>>>>>> crud
 });
 
 

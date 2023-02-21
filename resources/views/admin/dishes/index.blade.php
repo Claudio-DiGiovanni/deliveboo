@@ -21,9 +21,16 @@
                         <button class="btn btn-outline-danger">Elimina</button>
                     </form>
 
+
                 </div>
+                
             </div>
         @endforeach
     </ol>
+    <ul>
+        @foreach (($user->types) as $type)
+            <li>{{$type->name}}</li>
+        @endforeach
+    </ul>
 
 @endsection

@@ -1,8 +1,9 @@
 <?php
 
+use App\Type;
 use App\User;
-use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -43,7 +44,8 @@ class UserSeeder extends Seeder
                 'image_logo' =>   'https://picsum.photos/id/'. rand(0, 1000) .'/500/400',
             ],
         ];
-
+        $types = Type::all('id')->all();
+       
         foreach ($restaurants as $restaurant) {
 
             $objUser = new User;
@@ -55,6 +57,7 @@ class UserSeeder extends Seeder
             $objUser->slug        = $restaurant['slug'];
             $objUser->image_logo  = $restaurant['image_logo'];
             $objUser->save();
+            $objUser->types()->attach($faker->randomElement($types));
         }
     }
 }

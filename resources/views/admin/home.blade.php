@@ -18,6 +18,11 @@
                 </div>
             </div> --}}
             <h1>Ciao capo, benvenuto nel tuo ristorante</h1>
+            {{-- <ul>
+                @foreach (($user->types) ?? "" as $type)
+                    <li>{{$type->name}}</li>
+                @endforeach
+            </ul> --}}
         </div>
     </div>
 </div>

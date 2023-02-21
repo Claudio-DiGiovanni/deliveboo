@@ -20,13 +20,7 @@
                         @csrf
                         <button class="btn btn-outline-danger">Elimina</button>
                     </form>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ee98fd3f04bdb319bcd323c663cf3f1212153c31
                 </div>
-                
             </div>
         @endforeach
     </ol>

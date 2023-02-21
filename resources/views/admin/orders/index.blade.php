@@ -9,7 +9,7 @@
         <li>{{$order->order_number}}</li>
         <li>costo totale {{($total_cost + $order->ship_cost)/100}} €</li>
 
-        <li>{{$order->addres}}</li>
+        <li>{{$order->address}}</li>
         <li>{{$order->customer_name}}</li>
         <li>{{$order->email}}</li>
     </ul>

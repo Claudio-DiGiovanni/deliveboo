@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $types = Type::all()->pluck('id');
         $restaurants = [
             [
                 'name'       =>  'McDonald',
@@ -44,8 +45,8 @@ class UserSeeder extends Seeder
                 'image_logo' =>   'https://picsum.photos/id/'. rand(0, 1000) .'/500/400',
             ],
         ];
-        $types = Type::all('id')->all();
-       
+
+
         foreach ($restaurants as $restaurant) {
 
             $objUser = new User;
@@ -57,7 +58,7 @@ class UserSeeder extends Seeder
             $objUser->slug        = $restaurant['slug'];
             $objUser->image_logo  = $restaurant['image_logo'];
             $objUser->save();
-            $objUser->types()->attach($faker->randomElement($types));
+            $objUser->types()->attach($faker->randomElements($types, 2));
         }
     }
 }

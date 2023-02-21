@@ -30,7 +30,8 @@ class TypeSeeder extends Seeder
             $objType = new Type;
             $objType->name = $type;
             $objType->save();
-
+            //$users = User::all();
+            //$users->types()->attach($faker->randomElements($users->id, 2));
             // $objType->users()->attach($faker->randomElements($restaurants, 2));
         }
     }

@@ -29,6 +29,7 @@
             </div>
         @endforeach
     </ol>
+    <h2>categorie:</h2>
     <ul>
         @foreach (($user->types) as $type)
             <li>{{$type->name}}</li>

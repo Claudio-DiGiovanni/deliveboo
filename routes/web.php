@@ -28,7 +28,7 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function () {
     Route::resource('dishes','RestaurantController');
-
+    Route::resource('orders', 'OrderController');
 });
 
 
@@ -40,3 +40,4 @@ Route::get('/admin',function(){
 Route::get('{any?}', function () {
     return view('guest.home');
     })->where("any", ".*")->name('guest.home');
+

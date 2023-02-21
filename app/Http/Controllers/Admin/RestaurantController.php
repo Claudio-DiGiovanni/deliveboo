@@ -34,6 +34,7 @@ class RestaurantController extends Controller
 
         return view('admin.dishes.index', [
             'dishes' => $dishes,
+            'user' => $user
         ]);
     }
     /**

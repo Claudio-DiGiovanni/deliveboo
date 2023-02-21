@@ -31,7 +31,7 @@ class TypeSeeder extends Seeder
             $objType->name = $type;
             $objType->save();
 
-            $objType->users()->attach($faker->randomElements($restaurants, rand(1, (count($restaurants) > 5) ? 5 : count($restaurants))));
+            // $objType->users()->attach($faker->randomElements($restaurants, 2));
         }
     }
 }

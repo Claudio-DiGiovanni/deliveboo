@@ -19,8 +19,16 @@
             </div> --}}
 
             <h1>Ciao capo, benvenuto nel tuo ristorante</h1>
+<<<<<<< HEAD
 
 
+=======
+            {{-- <ul>
+                @foreach (($user->types) ?? "" as $type)
+                    <li>{{$type->name}}</li>
+                @endforeach
+            </ul> --}}
+>>>>>>> ee98fd3f04bdb319bcd323c663cf3f1212153c31
         </div>
     </div>
 </div>

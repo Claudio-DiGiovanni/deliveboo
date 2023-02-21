@@ -26,10 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
+        $user = Auth::user();
 
         return view('admin.home',
-        ['types' => $types]
+        ['user' => $user]
     );
 
     }

@@ -14,21 +14,25 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $orders = Order::with('dishes')->get();
-        $total_cost = 0;
+{
+    $user = auth()->user();
+    $orders = Order::whereHas('dishes.user', function ($query) use ($user) {
+                        $query->where('id', $user->id);
+                    })->get();
+    $total_cost = 0;
 
-        foreach ($orders as $order) {
-            foreach ($order->dishes as $dish) {
-                $total_cost += $dish->price;
-            }
+    foreach ($orders as $order) {
+        foreach ($order->dishes as $dish) {
+            $total_cost += $dish->price;
         }
-
-        return view('admin.orders.index', [
-            'orders' => $orders,
-            'total_cost' => $total_cost,
-        ]);
     }
+
+    return view('admin.orders.index', [
+        'orders' => $orders,
+        'total_cost' => $total_cost,
+    ]);
+}
+
     /**
      * Show the form for creating a new resource.
      *

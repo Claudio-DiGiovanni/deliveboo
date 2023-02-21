@@ -56,13 +56,18 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+{
+    return Validator::make($data, [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:4', 'confirmed'],
+        'address' => ['required', 'string'],
+        'PIVA' => ['required', 'integer', 'unique:users'],
+        'slug' => ['required', 'string', 'max:255'],
+        'image_logo' => ['required', 'string'],
+        'types' => ['required'],
+    ]);
+}
 
 
     /**
@@ -72,19 +77,19 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-{
-    $user = User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password']),
-        'address' => $data['address'],
-        'PIVA' => $data['PIVA'],
-        'slug' => $data['slug'],
-        'image_logo' => $data['logo'],
-    ]);
+    {
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'address' => $data['address'],
+            'PIVA' => $data['PIVA'],
+            'slug' => $data['slug'],
+            'image_logo' => $data['image_logo'],
+        ]);
 
-    $user->types()->sync($data['types']);
+        $user->types()->sync($data['types']);
 
-    return $user;
-}
+        return $user;
+    }
 }

@@ -104,12 +104,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="logo" class="col-md-4 col-form-label text-md-right">{{ __('logo') }}</label>
+                            <label for="image_logo" class="col-md-4 col-form-label text-md-right">{{ __('image_logo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="logo" type="url" class="form-control @error('logo') is-invalid @enderror" name="logo" value="{{ old('logo') }}" required autocomplete="logo" autofocus>
+                                <input id="image_logo" type="url" class="form-control @error('image_logo') is-invalid @enderror" name="image_logo" value="{{ old('image_logo') }}" required autocomplete="image_logo" autofocus>
 
-                                @error('logo')
+                                @error('image_logo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -120,7 +120,7 @@
                         <div class="mb-3 form-check d-flex row">
                             @foreach ($types as $type)
                                 <div class="col-3">
-                                    <input value="{{$type->id}}" type="checkbox" class="form-check-input" id="types" name="types[]">
+                                    <input value="{{$type->id}}" type="checkbox" class="form-check-input" id="types{{$type->name}}" name="types[]">
                                     <label class="form-check-label" for="types">{{$type->name}}</label>
                                 </div>
                             @endforeach

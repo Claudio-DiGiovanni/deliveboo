@@ -1,7 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Lista piatti:</h1>
+<div class="container">
+    <div class="d-flex">
+        <h1>Lista piatti:</h1>
+        <img src="{{$user->image_logo}}" alt="logo" class="img-fluid w-25">
+    </div>
+
     <ol>
         @foreach ($dishes as $dish)
             <div class="row">
@@ -12,7 +17,7 @@
                 <div class="col-3">
                     <img class="w-25" src="{{$dish->image}}" alt="">
                 </div>
-                <div class="col-4">
+                <div class="col-4 d-flex ">
                     <a href="{{ route('admin.dishes.show', ['dish' => $dish]) }}" class="btn btn-outline-info">Info</a>
                     <a href="{{ route('admin.dishes.edit', ['dish' => $dish]) }}" class="btn btn-outline-success">Modifica</a>
                     <form action="{{ route('admin.dishes.destroy', ['dish' => $dish]) }}" method="post">
@@ -20,13 +25,8 @@
                         @csrf
                         <button class="btn btn-outline-danger">Elimina</button>
                     </form>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ee98fd3f04bdb319bcd323c663cf3f1212153c31
                 </div>
-                
+
             </div>
         @endforeach
     </ol>
@@ -35,5 +35,7 @@
             <li>{{$type->name}}</li>
         @endforeach
     </ul>
+</div>
+
 
 @endsection

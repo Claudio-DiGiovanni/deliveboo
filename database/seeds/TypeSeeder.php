@@ -16,23 +16,27 @@ class TypeSeeder extends Seeder
     {
         $restaurants = User::all()->pluck('id');
         $types = [
-            'pizzeria',
-            'sushi',
-            'trattoria',
-            'fast food',
-            'cinese',
-            'street food',
-            'vegano',
-            'vegetariano',
+            'Americani',
+            'Thai',
+            'Halal',
+            'Sushi',
+            'Italiano',
+            'Libanese',
+            'Indiano',
+            'Messicano',
+            'Greco',
+            'Dolci',
+            'Vegetariani',
+            'Giapponese',
+            'Cinese',
+            'Colazione',
+            'Pizza',
         ];
 
         foreach ($types as $type) {
             $objType = new Type;
             $objType->name = $type;
             $objType->save();
-            //$users = User::all();
-            //$users->types()->attach($faker->randomElements($users->id, 2));
-            // $objType->users()->attach($faker->randomElements($restaurants, 2));
         }
     }
 }

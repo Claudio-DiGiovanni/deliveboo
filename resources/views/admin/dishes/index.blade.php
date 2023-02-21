@@ -26,7 +26,6 @@
                         <button class="btn btn-outline-danger">Elimina</button>
                     </form>
                 </div>
-
             </div>
         @endforeach
     </ol>

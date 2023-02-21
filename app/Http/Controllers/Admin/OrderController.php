@@ -15,13 +15,20 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::with('dishes')->get();
+        $total_cost = 0;
+
+        foreach ($orders as $order) {
+            foreach ($order->dishes as $dish) {
+                $total_cost += $dish->price;
+            }
+        }
 
         return view('admin.orders.index', [
             'orders' => $orders,
+            'total_cost' => $total_cost,
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *

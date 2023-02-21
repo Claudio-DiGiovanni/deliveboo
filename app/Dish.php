@@ -15,6 +15,8 @@ class Dish extends Model
         return $this->belongsTo('App\User');
     }
 
+
+
     public function orders() {
         return $this->belongsToMany('App\Order');
     }

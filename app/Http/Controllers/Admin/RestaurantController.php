@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Dish;
 use App\User;
 use Illuminate\Http\Request;
@@ -51,7 +52,6 @@ class RestaurantController extends Controller
     public function create()
     {
         return view('admin.dishes.create');
-
     }
 
     /**
@@ -62,16 +62,18 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->validations);
         $user = Auth::user();
         $data = $request->all();
+        $visibility = isset($data['visibility']) ? $data['visibility']  : 0;;
         $dish = new Dish;
         $dish->name = $data['name'];
         $dish->price = $data['price'];
         $dish->image = $data['image'];
         $dish->description = $data['description'];
-        $dish->visibility = $data['visibility'];
+        $dish->visibility = $visibility;
         $dish->slug = $data['slug'];
-        $dish->user_id = $user->id ;
+        $dish->user_id = $user->id;
         $dish->save();
         return redirect()->route('admin.dishes.index');
     }
@@ -84,8 +86,7 @@ class RestaurantController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view('admin.dishes.show',compact('dish'));
-
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -108,6 +109,7 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
+        $request->validate($this->validations);
         $data = $request->all();
         $dish->name = $data['name'];
         $dish->price = $data['price'];
@@ -131,6 +133,4 @@ class RestaurantController extends Controller
         $dish->delete();
         return redirect()->route('admin.dishes.index');
     }
-
-
 }

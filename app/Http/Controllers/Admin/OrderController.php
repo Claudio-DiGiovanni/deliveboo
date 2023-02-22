@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Order;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -14,24 +15,27 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
-        $user = Auth::user();
-        $orders = Order::query()
-            ->where('user_id', $user->id)
-            ->when($request->filled('search'), function ($query) use ($request) {
-                $search = $request->input('search');
-                $query->where(function ($query) use ($search) {
-                    $query->where('id', 'LIKE', "%$search%")
-                        ->orWhere('customer_name', 'LIKE', "%$search%")
-                        ->orWhere('customer_address', 'LIKE', "%$search%")
-                        ->orWhere('created_at', 'LIKE', "%$search%");
-                });
-            })
-            ->orderByDesc('created_at')
-            ->paginate(10);
+{
+    $orders = Order::where('dish_id', function($query) {
+        $query->select('id')
+              ->from('dishes')
+              ->where('restaurant_id', Auth::user()->id);
+    });
 
-        return view('admin.orders.index', compact('orders'));
+    if ($request->has('q')) {
+        $q = $request->q;
+        $orders = $orders->where(function($query) use ($q) {
+            $query->where('customer_name', 'like', '%'.$q.'%')
+                  ->orWhere('address', 'like', '%'.$q.'%')
+                  ->orWhere('email', 'like', '%'.$q.'%');
+
+        });
     }
+
+    $orders = $orders->paginate(10);
+
+    return view('admin.orders.index', compact('orders'));
+}
 
     /**
      * Show the form for creating a new resource.

@@ -1,27 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Ordini:</h1>
 
-    @if(count($orders) > 0)
-    @foreach($orders as $order)
-    <div class="row">
-        <ul class="col-5">
-            <a href="{{ route('admin.orders.show', ['order' => $order]) }}" class="btn btn-outline-info">Info</a>
-            <li>
-                {{$order->order_number}}
-            </li>
-            <li>
-                {{$order->created_at}}
-            </li>
-        </ul>
-    </div>
-    @endforeach
-@else
-    <p>No orders found.</p>
-@endif
+<h1 class="justify-content-center d-flex">Lista ordini</h1>
 
+<div class="container d-flex justify-content-center flex-column align-items-center ">
+
+@foreach ($orders as $order)
+<div class="">
+    <ul class="m-3 list-style-none; ">
+        <li class="">
+            {{$order->order_number}}
+        </li>
+        <li>
+            {{$order->created_at}}
+        </li>
+        <a href="{{ route('admin.orders.show', ['order' => $order]) }}" class="btn btn-outline-info">Info</a>
+    </ul>
+</div>
+@endforeach
 </div>
 
 @endsection

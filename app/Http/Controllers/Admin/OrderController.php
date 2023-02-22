@@ -100,8 +100,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        //
+        $order->dishes()->detach();
+        $order->delete();
+        return redirect()->route('admin.orders.index');
     }
 }

@@ -4,7 +4,8 @@
 
 <h1 class="justify-content-center d-flex">Lista ordini</h1>
 
-<div class="">
+<div>
+<div class="container">
     <table class="table table-striped">
         <tr class="table-success">
         <th>Numero ordine</th>
@@ -25,5 +26,5 @@
         @endforeach
       </table>
 </div>
-
+</div>
 @endsection

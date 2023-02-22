@@ -65,7 +65,7 @@ class RestaurantController extends Controller
         $request->validate($this->validations);
         $user = Auth::user();
         $data = $request->all();
-        $visibility = isset($data['visibility']) ? $data['visibility']  : 0;;
+        $visibility = isset($data['visibility']) ? $data['visibility']  : 0;
         $dish = new Dish;
         $dish->name = $data['name'];
         $dish->price = $data['price'];
@@ -111,11 +111,12 @@ class RestaurantController extends Controller
     {
         $request->validate($this->validations);
         $data = $request->all();
+        $visibility = isset($data['visibility']) ? $data['visibility']  : 0;
         $dish->name = $data['name'];
         $dish->price = $data['price'];
         $dish->image = $data['image'];
         $dish->description = $data['description'];
-        $dish->visibility = $data['visibility'];
+        $dish->visibility = $visibility;
         $dish->slug = $data['slug'];
         $dish->update();
         return redirect()->route('admin.dishes.show', ['dish' => $dish]);

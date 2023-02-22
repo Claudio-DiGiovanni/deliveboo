@@ -60,11 +60,11 @@ class OrderController extends Controller
                     })->get();
         $total_cost = 0;
 
-    foreach ($orders as $order) {
-        foreach ($order->dishes as $dish) {
-            $total_cost += $dish->price;
+        foreach ($orders as $orderx) {
+            foreach ($orderx->dishes as $dish) {
+                $total_cost += $dish->price;
+            }
         }
-    }
         return view('admin.orders.show', [
             'order' => $order,
             'total_cost' => $total_cost,

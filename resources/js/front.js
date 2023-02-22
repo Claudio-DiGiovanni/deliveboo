@@ -14,7 +14,7 @@ const routes = [
         component: PageHome,
     },
     {
-        path:'/:slug',
+        path:'/restaurants/:id/dishes',
         name:'dishes',
         component: PageDishes,
     },

@@ -3,36 +3,36 @@
 
 <div>
 <div class="container ">
-    <table class="table table-striped w-100">
+    <table class="table table-striped">
         <thead>
        <tr class="table-success ">
-        <th style="vertical-align: middle">Numero ordine</th>
-        <th style="vertical-align: middle">Prezzo totale</th>
-        <th style="vertical-align: middle">Via</th>
-        <th style="vertical-align: middle">Nome</th>
-        <th style="vertical-align: middle">Email</th>
-        <th style="vertical-align: middle">Piatti</th>
-        <th style="vertical-align: middle"></th>
+        <th>Numero ordine</th>
+        <th>Prezzo totale</th>
+        <th>Via</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Piatti</th>
+        <th></th>
        </tr>
         </thead>
         <tbody>
-            <tr class=" ">
-                <td  style="vertical-align: middle"> {{$order->order_number}}</td>
-                <td  style="vertical-align: middle"> {{($total_cost + $order->ship_cost) / 100}} €</td>
-                <td  style="vertical-align: middle"> {{$order->address}}</td>
-                <td  style="vertical-align: middle"> {{$order->customer_name}}</td>
-                <td  style="vertical-align: middle"> {{$order->email}}</td>
+            <tr>
+                <td > {{$order->order_number}}</td>
+                <td > {{($total_cost + $order->ship_cost) / 100}} €</td>
+                <td > {{$order->address}}</td>
+                <td > {{$order->customer_name}}</td>
+                <td > {{$order->email}}</td>
 
                 <td class="td_show_orders" >
-                    <ul class="list-style p-0" >
+                    <ul class="p-0" >
                     @foreach ($dishes as $dish)
-                    
-                    <li  style="list-style: none"> {{$dish->name}}</li>
+
+                    <li> {{$dish->name}}</li>
                     @endforeach
                 </ul>
-                    
+
                 </td>
-                <td style="vertical-align: middle">
+                <td>
                     <form action="{{ route('admin.orders.destroy', ['order' => $order]) }}" method="post">
                          @method('DELETE')
                          @csrf

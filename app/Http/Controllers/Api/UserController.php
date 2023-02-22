@@ -50,9 +50,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dish $dish)
     {
-        //
+        $dish = Dish::where('id', $dish->id);
+        return response()->json([
+            'success' => true,
+            'post' => $dish,
+        ]);
     }
 
     /**
@@ -88,4 +92,20 @@ class UserController extends Controller
     {
         //
     }
+    public function getDishesByUser($id)
+{
+    $user = User::find($id);
+
+    if (!$user) {
+        return response()->json([
+            'message' => 'L\'utente specificato non esiste'
+        ], 404);
+    }
+
+    $dishes = $user->dishes();
+
+    return response()->json([
+        'dishes' => $dishes
+    ], 200);
+}
 }

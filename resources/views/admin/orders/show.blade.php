@@ -17,13 +17,13 @@
         </thead>
         <tbody>
             <tr class=" ">
-                <td> {{$order->order_number}}</td>
-                <td> {{($total_cost + $order->ship_cost) / 100}} €</td>
-                <td> {{$order->address}}</td>
-                <td> {{$order->customer_name}}</td>
-                <td> {{$order->email}}</td>
+                <td  style="vertical-align: middle"> {{$order->order_number}}</td>
+                <td  style="vertical-align: middle"> {{($total_cost + $order->ship_cost) / 100}} €</td>
+                <td  style="vertical-align: middle"> {{$order->address}}</td>
+                <td  style="vertical-align: middle"> {{$order->customer_name}}</td>
+                <td  style="vertical-align: middle"> {{$order->email}}</td>
 
-                <td>
+                <td class="td_show_orders" >
                     <ul class="list-style p-0" >
                     @foreach ($dishes as $dish)
                     
@@ -32,7 +32,7 @@
                 </ul>
                     
                 </td>
-                <td>
+                <td style="vertical-align: middle">
                     <form action="{{ route('admin.orders.destroy', ['order' => $order]) }}" method="post">
                          @method('DELETE')
                          @csrf

@@ -17,19 +17,11 @@ class OrderController extends Controller
 {
     $user = auth()->user();
     $orders = Order::whereHas('dishes.user', function ($query) use ($user) {
-                        $query->where('id', $user->id);
-                    })->get();
-    $total_cost = 0;
-
-    foreach ($orders as $order) {
-        foreach ($order->dishes as $dish) {
-            $total_cost += $dish->price;
-        }
-    }
+        $query->where('id', $user->id);
+    })->get();
 
     return view('admin.orders.index', [
         'orders' => $orders,
-        'total_cost' => $total_cost,
     ]);
 }
 
@@ -60,9 +52,23 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        //
+        $user = auth()->user();
+        $orders = Order::whereHas('dishes.user', function ($query) use ($user) {
+                        $query->where('id', $user->id);
+                    })->get();
+        $total_cost = 0;
+
+    foreach ($orders as $order) {
+        foreach ($order->dishes as $dish) {
+            $total_cost += $dish->price;
+        }
+    }
+        return view('admin.orders.show', [
+            'order' => $order,
+            'total_cost' => $total_cost,
+        ]);
     }
 
     /**

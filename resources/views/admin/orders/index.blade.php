@@ -6,12 +6,13 @@
 @foreach ($orders as $order)
 <div class="row">
     <ul class="col-5">
-        <li>{{$order->order_number}}</li>
-        <li>costo totale {{($total_cost + $order->ship_cost)/100}} €</li>
-
-        <li>{{$order->address}}</li>
-        <li>{{$order->customer_name}}</li>
-        <li>{{$order->email}}</li>
+        <a href="{{ route('admin.orders.show', ['order' => $order]) }}" class="btn btn-outline-info">Info</a>
+        <li>
+            {{$order->order_number}}
+        </li>
+        <li>
+            {{$order->created_at}}
+        </li>
     </ul>
 </div>
 @endforeach

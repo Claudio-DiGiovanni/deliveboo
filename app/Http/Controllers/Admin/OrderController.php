@@ -15,27 +15,19 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-{
-    $orders = Order::where('dish_id', function($query) {
-        $query->select('id')
-              ->from('dishes')
-              ->where('restaurant_id', Auth::user()->id);
-    });
+    {
+        $query = $request->query('search');
+        $user = Auth::user();
+        $orders = $user->orders();
 
-    if ($request->has('q')) {
-        $q = $request->q;
-        $orders = $orders->where(function($query) use ($q) {
-            $query->where('customer_name', 'like', '%'.$q.'%')
-                  ->orWhere('address', 'like', '%'.$q.'%')
-                  ->orWhere('email', 'like', '%'.$q.'%');
+        if ($query) {
+            $orders = $orders->where('customer_name', 'like', '%' . $query . '%');
+        }
 
-        });
+        $orders = $orders->paginate(10);
+
+        return view('admin.orders.index', compact('orders'));
     }
-
-    $orders = $orders->paginate(10);
-
-    return view('admin.orders.index', compact('orders'));
-}
 
     /**
      * Show the form for creating a new resource.

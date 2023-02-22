@@ -29,23 +29,20 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-{
-    $user = Auth::user();
-    $dishes = Dish::query()
-        ->where('restaurant_id', $user->id)
-        ->when($request->filled('search'), function ($query) use ($request) {
-            $search = $request->input('search');
-            $query->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', "%$search%")
-                    ->orWhere('description', 'LIKE', "%$search%")
-                    ->orWhere('price', 'LIKE', "%$search%");
-            });
-        })
-        ->orderBy('name')
-        ->paginate(10);
+    {
+        $user = Auth::user();
+        $dishes = $user->dishes();
+        $query = $request->query('search');
 
-    return view('dishes.index', compact('dishes', 'user'));
-}
+
+        if ($query) {
+            $dishes = $dishes->where('name', 'like', '%' . $query . '%');
+        }
+
+        $dishes = $dishes->paginate(10);
+
+        return view('admin.dishes.index', compact('dishes', 'user'));
+    }
     /**
      * Show the form for creating a new resource.
      *

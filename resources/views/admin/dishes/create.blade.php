@@ -34,7 +34,7 @@
         </div>
 
         <div class="mb-3 form-check">
-        <input value="1" type="checkbox" class="form-check-input" id="visibility" name="visibility">
+        <input value="0" type="checkbox" class="form-check-input" id="visibility" name="visibility">
         <label class="form-check-label" for="visibility">visibilità</label>
         </div>
 

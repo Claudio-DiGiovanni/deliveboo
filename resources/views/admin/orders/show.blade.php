@@ -6,13 +6,13 @@
     <table class="table table-striped w-100">
         <thead>
        <tr class="table-success ">
-        <th>Numero ordine</th>
-        <th>Prezzo totale</th>
-        <th>Via</th>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>Piatti</th>
-        <th></th>
+        <th style="vertical-align: middle">Numero ordine</th>
+        <th style="vertical-align: middle">Prezzo totale</th>
+        <th style="vertical-align: middle">Via</th>
+        <th style="vertical-align: middle">Nome</th>
+        <th style="vertical-align: middle">Email</th>
+        <th style="vertical-align: middle">Piatti</th>
+        <th style="vertical-align: middle"></th>
        </tr>
         </thead>
         <tbody>

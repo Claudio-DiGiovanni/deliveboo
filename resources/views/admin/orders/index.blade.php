@@ -5,7 +5,7 @@
 <h1 class="justify-content-center d-flex">Lista ordini</h1>
 
 <div class="">
-    <table class="table">
+    <table class="table table-striped">
         <tr class="table-success">
         <th>Numero ordine</th>
         <th>Data e ora</th>

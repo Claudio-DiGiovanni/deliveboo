@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-<div class="container p-2">
+<div class="container ">
     <table class="table table-striped w-100">
         <thead>
        <tr class="table-success">

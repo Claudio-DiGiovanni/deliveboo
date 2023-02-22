@@ -24,7 +24,7 @@
                 <div class="col-4 d-flex align-items-center">
                     <a href="{{ route('admin.dishes.show', ['dish' => $dish]) }}" class="btn btn-outline-info m-3  ">Info</a>
                     <a href="{{ route('admin.dishes.edit', ['dish' => $dish]) }}" class="btn btn-outline-success m-3  ">Modifica</a>
-                     <button id="delete" class="btn btn-outline-danger" onclick="showPopup()" data-id="{{$dish->id}}">Elimina</button>
+                    <button id="delete" class="btn btn-outline-danger" onclick="showPopup(event)" data-id="{{$dish->id}}">Elimina</button>
                             <div class="background">
                                 <div class="popup">
                                     <h5 class="w-100 text-center mb-3">Sei sicuro di volerlo eliminare?</h5>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<div class="d-flex justify-content-center">
 <form action="{{route('admin.dishes.update', ['dish' => $dish])}}" method="POST">
     @method('PUT')
     @csrf
@@ -37,8 +38,7 @@
       <label class="form-check-label" for="visibility">visibilità</label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Modifica piatto</button>
-
-
+    <button type="submit" class="btn btn-outline-success bg-success text-white">Modifica piatto</button>
 </form>
+</div>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div>
+<div class="d-flex justify-content-center">
     <ul>
         <li>
            {{$dish->name}}

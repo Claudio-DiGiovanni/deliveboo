@@ -41,3 +41,22 @@ Route::get('{any?}', function () {
     return view('guest.home');
     })->where("any", ".*")->name('guest.home');
 
+    Route::get('/search', function(Request $request) {
+        $searchTerm = $request->input('q');
+        $route = $request->input('route');
+
+        if ($searchTerm === '') {
+            return redirect()->back();
+        }
+
+        $dishes = [];
+        $orders = [];
+
+        if ($route === 'dishes.index') {
+            $dishes = App\Models\Dish::where('name', 'like', '%'.$searchTerm.'%')->get();
+        } else if ($route === 'orders.index') {
+            $orders = App\Models\Order::where('customer_name', 'like', '%'.$searchTerm.'%')->get();
+        }
+
+        return view($route, compact('dishes', 'orders', 'searchTerm'));
+    })->name('search');

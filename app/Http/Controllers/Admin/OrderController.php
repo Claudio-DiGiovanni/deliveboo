@@ -13,17 +13,25 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-{
-    $user = auth()->user();
-    $orders = Order::whereHas('dishes.user', function ($query) use ($user) {
-        $query->where('id', $user->id);
-    })->get();
+    public function index(Request $request)
+    {
+        $user = Auth::user();
+        $orders = Order::query()
+            ->where('user_id', $user->id)
+            ->when($request->filled('search'), function ($query) use ($request) {
+                $search = $request->input('search');
+                $query->where(function ($query) use ($search) {
+                    $query->where('id', 'LIKE', "%$search%")
+                        ->orWhere('customer_name', 'LIKE', "%$search%")
+                        ->orWhere('customer_address', 'LIKE', "%$search%")
+                        ->orWhere('created_at', 'LIKE', "%$search%");
+                });
+            })
+            ->orderByDesc('created_at')
+            ->paginate(10);
 
-    return view('admin.orders.index', [
-        'orders' => $orders,
-    ]);
-}
+        return view('admin.orders.index', compact('orders'));
+    }
 
     /**
      * Show the form for creating a new resource.

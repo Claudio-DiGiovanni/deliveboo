@@ -96,9 +96,9 @@
                                 </div>
 
                             </li>
-                            <form action="{{ route('search') }}" method="GET" class="form-inline my-2 my-lg-0" id="search-form">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Cerca" name="q">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
+                            <form action="{{ Request::url() }}" method="GET" class="d-flex">
+                                <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         @endguest
                     </ul>
@@ -110,18 +110,5 @@
             @yield('content')
         </main>
     </div>
-    <script>
-        $(document).ready(function() {
-            $('#search-form').on('submit', function(e) {
-                e.preventDefault();
-
-                var searchTerm = $(this).find('input[name="q"]').val();
-
-                $.get('{{ route('search') }}', { q: searchTerm }, function(response) {
-                    $('#content-section').html(response);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

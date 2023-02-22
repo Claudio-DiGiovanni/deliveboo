@@ -27,10 +27,11 @@ class RestaurantController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */ public function index()
+     */ public function index(Request $request)
     {
+        $query = $request->input('search');
         $user = Auth::user();
-        $dishes = Dish::where('user_id', $user->id)->get();
+        $dishes = Dish::where('name', 'like', '%'.$query.'%')->get();
 
         return view('admin.dishes.index', [
             'dishes' => $dishes,
@@ -125,4 +126,6 @@ class RestaurantController extends Controller
         $dish->delete();
         return redirect()->route('admin.dishes.index');
     }
+
+
 }

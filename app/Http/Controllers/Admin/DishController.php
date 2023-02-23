@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class RestaurantController extends Controller
+class DishController extends Controller
 {
 
     private $validations = [

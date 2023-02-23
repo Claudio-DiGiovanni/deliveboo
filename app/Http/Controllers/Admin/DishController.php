@@ -86,6 +86,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        $this->authorize('view', $dish);
         return view('admin.dishes.show', compact('dish'));
 
     }

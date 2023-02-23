@@ -1997,11 +1997,11 @@ var render = function render() {
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row row-cols-lg-4 row-cols-md-4 row-cols-sm-2"
+    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2"
   }, _vm._l(_vm.users, function (user) {
     return _c("router-link", {
       key: user.id,
-      staticClass: "m-3",
+      staticClass: "p-3",
       attrs: {
         to: {
           name: "dishes"
@@ -2009,8 +2009,10 @@ var render = function render() {
       }
     }, [_c("div", {
       staticClass: "card card-ristoranti col"
-    }, [_c("div", [_c("img", {
-      staticClass: "card-img-top w-100 p-2",
+    }, [_c("div", {
+      staticClass: "w-75 h-75 m-auto"
+    }, [_c("img", {
+      staticClass: "card-img-top p-2",
       attrs: {
         src: user.image_logo,
         alt: "..."
@@ -2018,9 +2020,9 @@ var render = function render() {
     })]), _vm._v(" "), _c("div", {
       staticClass: "card-body text-center"
     }, [_c("h2", {
-      staticClass: "card-text text-white m-3"
+      staticClass: "card-text text-dark m-3"
     }, [_c("router-link", {
-      staticClass: "text-white",
+      staticClass: "text-dark",
       attrs: {
         to: {
           name: "dishes"

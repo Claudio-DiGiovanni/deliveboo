@@ -1,13 +1,13 @@
 <template>
     <div class="container ">
-        <div class="row row-cols-lg-4 row-cols-md-4 row-cols-sm-2">
-            <router-link :to="{ name: 'dishes' }" class="m-3" v-for="user in users" :key="user.id">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2" >
+            <router-link :to="{ name: 'dishes' }" class="p-3" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti col">
-                <div>
-                    <img :src="user.image_logo" class="card-img-top w-100 p-2" alt="...">
+                <div class="w-75 h-75 m-auto">
+                    <img :src="user.image_logo" class="card-img-top p-2" alt="...">
                 </div>
                 <div class="card-body text-center">
-                    <h2 class="card-text text-white m-3"><router-link :to="{ name: 'dishes' }" class=" text-white">{{ user.name }}</router-link></h2>
+                    <h2 class="card-text text-dark m-3"><router-link :to="{ name: 'dishes' }" class=" text-dark">{{ user.name }}</router-link></h2>
                 </div>
             </div>
         </router-link>

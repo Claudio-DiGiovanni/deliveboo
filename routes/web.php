@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,27 +15,22 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
+$user = Auth::user();
+// Guest routes
+Route::get('/', function () {
+    return view('guest.home');
+})->name('guest.home');
 
-// Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-Route::middleware('auth')
-    ->namespace('Admin')
-    ->name('admin.')
-    ->prefix('admin')
+// Admin routes
+Route::middleware(['auth', "check.owner:dish,user"])
     ->group(function () {
-    Route::resource('dishes','RestaurantController');
-    Route::resource('orders', 'OrderController');
+        Route::resource('dishes','Admin\RestaurantController');
+    })->name('admin.dishes');
+
+Route::middleware(['auth', 'check.owner:order,user'])->group(function () {
+    Route::resource('orders', 'Admin\OrderController');
 });
 
-
-Route::get('/admin',function(){
+Route::get('/admin', function () {
     return view('admin.home');
-    })->name('home');
-
-
-Route::get('{any?}', function () {
-    return view('guest.home');
-    })->where("any", ".*")->name('guest.home');
+})->name('admin.home');

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Dish;
+use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DishController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,12 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return response()->json([
+            'success' => true,
+            'results' => $users,
+        ]);
+
     }
 
     /**
@@ -41,21 +47,25 @@ class DishController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Dish $dish)
     {
-        //
+        $dish = Dish::where('id', $dish->id);
+        return response()->json([
+            'success' => true,
+            'post' => $dish,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dish $dish)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +74,10 @@ class DishController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dish  $dish
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,11 +85,27 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dish  $dish
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dish $dish)
+    public function destroy($id)
     {
         //
     }
+    public function getDishesByUser($id)
+{
+    $user = User::find($id);
+
+    if (!$user) {
+        return response()->json([
+            'message' => 'L\'utente specificato non esiste'
+        ], 404);
+    }
+
+    $dishes = $user->dishes();
+
+    return response()->json([
+        'dishes' => $dishes
+    ], 200);
+}
 }

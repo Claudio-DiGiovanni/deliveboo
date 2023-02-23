@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Traits\slugger;
 
 class User extends Authenticatable
 {
+    use slugger;
     use Notifiable;
 
     /**
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'address', 'PIVA', 'slug', 'image_logo',
     ];
 
     /**
@@ -43,5 +45,10 @@ class User extends Authenticatable
 
     public function types() {
         return $this->belongsToMany('App\Type');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

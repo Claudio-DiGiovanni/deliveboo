@@ -15,7 +15,7 @@ class OrderSeeder extends Seeder
             $user_id = rand(1, $max_user_id);
             $dish_ids = Dish::where('user_id', $user_id)->pluck('id')->toArray();
             $order = Order::create([
-                'order_number' => rand(0, 1000),
+                'order_number' => rand(0, 100000),
                 'ship_cost' => $faker->randomElement([250, 350, 450, 700]),
                 'address' => $faker->address(),
                 'customer_name' => $faker->words(2, true),

@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -19,7 +20,7 @@ class DishController extends Controller
         ],
         'name'          => 'required|string|max:100',
         'price'         => 'required|integer',
-        'image'         => 'url|max:200',
+        // 'image'         => 'url|max:200',
         'visibility'    => 'integer',
         'description'   => 'required|string',
 
@@ -63,17 +64,23 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $request->validate($this->validations);
-        $user = Auth::user();
-        $data = $request->all();
+        $user       = Auth::user();
+        $data       = $request->all();
         $visibility = isset($data['visibility']) ? $data['visibility']  : 0;
+
+        if (array_key_exists('image', $data)) {
+            $image = Storage::put('dishes_images', $data['image']);
+            $data['image'] = $image;
+        }
         $dish = new Dish;
-        $dish->name = $data['name'];
-        $dish->price = $data['price'];
-        $dish->image = $data['image'];
-        $dish->description = $data['description'];
-        $dish->visibility = $visibility;
-        $dish->slug = $data['slug'];
-        $dish->user_id = $user->id;
+
+        $dish->name             = $data['name'];
+        $dish->price            = $data['price'];
+        $dish->image            = $data['image'];
+        $dish->description      = $data['description'];
+        $dish->visibility       = $visibility;
+        $dish->slug             = $data['slug'];
+        $dish->user_id          = $user->id;
         $dish->save();
         return redirect()->route('admin.dishes.index');
     }

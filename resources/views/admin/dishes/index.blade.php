@@ -3,8 +3,12 @@
 
 <div class="container">
     <div class="d-flex justify-content-center">
-        <img src="{{$user->image_logo}}" alt="logo" class="img-fluid w-25  rounded ">
+        <img class="img-fluid w-25 rounded " src="{{$user->image_logo}}" alt="">
     </div>
+    <div class="d-flex justify-content-center">
+        <img class="img-fluid w-25 rounded " src="{{ asset("storage/$user->image_logo") }}" alt="">
+    </div>
+
     <div class="d-flex  justify-content-center">
         <h1 class="p-3 fw-bold ">I nostri piatti</h1>
     </div>
@@ -24,7 +28,10 @@
           <tr>
             <td>{{$dish->name}}</td>
             <td>{{$dish->price/100}} €</td>
-            <td class="w-25"><img class="img-fluid" src="{{$dish->image}}" alt=""></td>
+            <td class="w-25">
+                <img class="img-fluid w-50" src="{{$dish->image}}" alt="">
+                <img class="img-fluid w-50" src="{{ asset("storage/$dish->image") }}" alt="">
+            </td>
             <th scope="row">
                 <div class=" d-flex align-items-center">
                     <a href="{{ route('admin.dishes.show', ['dish' => $dish]) }}" class="btn btn-outline-info m-3  ">Info</a>

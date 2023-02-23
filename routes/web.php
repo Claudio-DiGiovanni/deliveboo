@@ -24,3 +24,7 @@ Route::get('/admin',function(){
 Route::get('{any?}', function () {
     return view('guest.home');
     })->where("any", ".")->name('guest.home');
+
+    Route::get('/unauthorized', function () {
+        return view('auth.unauthorized');
+    })->name('unauthorized');

@@ -2007,12 +2007,13 @@ var render = function render() {
         }
       }
     }, [_c("div", {
-      staticClass: "card col m-4",
+      staticClass: "card col m-4 border-secondary",
       staticStyle: {
-        width: "18rem"
+        width: "21rem",
+        height: "23rem"
       }
     }, [_c("img", {
-      staticClass: "card-img-top h-75",
+      staticClass: "card-img-top p-2 rounded-circle",
       attrs: {
         src: user.image_logo,
         alt: "..."

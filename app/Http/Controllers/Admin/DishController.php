@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class RestaurantController extends Controller
+class DishController extends Controller
 {
 
     private $validations = [
@@ -93,6 +93,7 @@ class RestaurantController extends Controller
      */
     public function show(Dish $dish)
     {
+        $this->authorize('view', $dish);
         return view('admin.dishes.show', compact('dish'));
 
     }

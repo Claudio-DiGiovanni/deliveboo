@@ -74,9 +74,10 @@ class OrderController extends Controller
         foreach ($orders as $orderx) {
             foreach ($orderx->dishes as $dish) {
                 $total_cost += $dish->price;
-                
+
             }
         }
+        $this->authorize('view', $order);
         return view('admin.orders.show', [
             'order' => $order,
             'total_cost' => $total_cost,

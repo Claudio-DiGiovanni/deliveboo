@@ -11,7 +11,7 @@ class OrderSeeder extends Seeder
     {
 
         $max_user_id = User::max('id');
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $user_id = rand(1, $max_user_id);
             $dish_ids = Dish::where('user_id', $user_id)->pluck('id')->toArray();
             $order = Order::create([

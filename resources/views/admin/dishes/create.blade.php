@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <div class="d-flex justify-content-center">
-    <form action="{{route('admin.dishes.store')}}" method="POST">
+    <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
         <div class="mb-3">
-        <label for="name" class="form-label">nome piatto</label>
+        <label for="name" class="form-label">Nome piatto</label>
         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" id="name" name="name">
                 <div class="invalid-feedback">
                     @error('name')
@@ -21,7 +21,7 @@
         </div>
 
         <div class="mb-3">
-        <label for="price" class="form-label">prezzo</label>
+        <label for="price" class="form-label">Prezzo</label>
         <input type="number" class="form-control  @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
         <div class="invalid-feedback">
             @error('price')
@@ -34,7 +34,7 @@
         </div>
         </div>
 
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="image" class="form-label">url immagine</label>
             <input type="url" class="form-control  @error('image') is-invalid @enderror" id="image" name="image" value="{{ old('image') }}">
             <div class="invalid-feedback">
@@ -46,10 +46,26 @@
                     </ul>
                 @enderror
             </div>
-        </div>
+        </div> --}}
+
+        <div class="input-group mb-3">
+            <div class="custom-file">
+              <input class="custom-file-input form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+              <label class="custom-file-label" for="image">Carica una immagine</label>
+            </div>
+          </div>
+            <div class="invalid-feedback">
+                @error('image')
+                    <ul>
+                        @foreach ($errors->get('image') as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @enderror
+            </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">decrizione</label>
+            <label for="description" class="form-label">Decrizione</label>
             <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" value="{{ old('description') }}"> </textarea>
             <div class="invalid-feedback">
                 @error('description')
@@ -83,7 +99,7 @@
         <label class="form-check-label" for="visibility">visibilità</label>
         </div>
 
-        <button type="submit" class="btn btn-outline-success bg-success text-white">aggiungi piatto</button>
+        <button type="submit" class="btn btn-outline-success bg-success text-white">Aggiungi piatto</button>
 
 
     </form>

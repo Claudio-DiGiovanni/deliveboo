@@ -9,7 +9,7 @@
         <table class="table table-striped">
             <tr class="table-success">
             <th>Numero ordine</th>
-            <th>Data e ora</th>
+            <th>Data e ora </th>
             <th></th>
             </tr>
             @foreach ($orders as $order)

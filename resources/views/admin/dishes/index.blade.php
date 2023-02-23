@@ -58,6 +58,8 @@
         @endforeach
     </ul>
 </div>
-
+<div>
+    {{ $dishes->links() }}
+</div>
 
 @endsection

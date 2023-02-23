@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="d-flex justify-content-center">
-    <form action="{{route('admin.dishes.store')}}" method="POST">
+    <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -34,9 +34,23 @@
         </div>
         </div>
 
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="image" class="form-label">url immagine</label>
             <input type="url" class="form-control  @error('image') is-invalid @enderror" id="image" name="image" value="{{ old('image') }}">
+            <div class="invalid-feedback">
+                @error('image')
+                    <ul>
+                        @foreach ($errors->get('image') as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @enderror
+            </div>
+        </div> --}}
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Immagine</label>
+            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
             <div class="invalid-feedback">
                 @error('image')
                     <ul>

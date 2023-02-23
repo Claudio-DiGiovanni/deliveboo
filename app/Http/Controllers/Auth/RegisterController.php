@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -64,7 +65,7 @@ class RegisterController extends Controller
         'address' => ['required', 'string'],
         'PIVA' => ['required', 'integer', 'unique:users'],
         'slug' => ['required', 'string', 'max:255'],
-        'image_logo' => ['required', 'string'],
+        'image_logo' => ['required'],
         'types' => ['required'],
     ]);
 }
@@ -78,6 +79,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        if (array_key_exists('image_logo', $data)) {
+            $image_logo = Storage::put('restaurants_images', $data['image_logo']);
+            $data['image_logo'] = $image_logo;
+        }
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],

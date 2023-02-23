@@ -2001,7 +2001,7 @@ var render = function render() {
   }, _vm._l(_vm.users, function (user) {
     return _c("router-link", {
       key: user.id,
-      staticClass: "p-3",
+      staticClass: "p-3 w-75 m-auto",
       attrs: {
         to: {
           name: "dishes"
@@ -6455,7 +6455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "a[data-v-13e03f97] {\n  text-decoration: none;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  background-color: rgb(25, 135, 84);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "a[data-v-13e03f97] {\n  text-decoration: none;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  background-color: rgb(154, 234, 197);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

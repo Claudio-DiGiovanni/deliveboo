@@ -1,7 +1,7 @@
 <template>
     <div class="container ">
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2" >
-            <router-link :to="{ name: 'dishes' }" class="p-3" v-for="user in users" :key="user.id">
+            <router-link :to="{ name: 'dishes' }" class="p-3 w-75 m-auto" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
                 <div class="w-75 h-75 m-auto">
                     <img :src="user.image_logo" class="card-img-top p-2 h-100 w-100" alt="...">
@@ -41,6 +41,6 @@ export default {
     }
     .card-ristoranti {
         height: 20rem;
-        background-color: rgb(25,135,84);
+        background-color: rgb(154, 234, 197);
     }
 </style>

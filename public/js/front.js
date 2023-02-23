@@ -2008,11 +2008,11 @@ var render = function render() {
         }
       }
     }, [_c("div", {
-      staticClass: "card card-ristoranti col"
+      staticClass: "card card-ristoranti bg-opacity-25 col"
     }, [_c("div", {
       staticClass: "w-75 h-75 m-auto"
     }, [_c("img", {
-      staticClass: "card-img-top p-2",
+      staticClass: "card-img-top p-2 h-100 w-100",
       attrs: {
         src: user.image_logo,
         alt: "..."
@@ -2022,7 +2022,7 @@ var render = function render() {
     }, [_c("h2", {
       staticClass: "card-text text-dark m-3"
     }, [_c("router-link", {
-      staticClass: "text-dark",
+      staticClass: "text-white",
       attrs: {
         to: {
           name: "dishes"
@@ -6455,7 +6455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "a[data-v-13e03f97] {\n  text-decoration: none;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "a[data-v-13e03f97] {\n  text-decoration: none;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  background-color: rgb(25, 135, 84);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

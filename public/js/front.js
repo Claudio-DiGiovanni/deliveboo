@@ -1967,13 +1967,13 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
+  return _c("div", [_c("h2", [_vm._v("Elenco piatti ristorante:")]), _vm._v(" "), _c("ul", _vm._l(_vm.dishes, function (dish) {
+    return _c("li", {
+      key: dish.id
+    }, [_vm._v(_vm._s(dish.name))]);
+  }), 0)]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("h2", [_vm._v("Elenco piatti ristorante:")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -1996,17 +1996,18 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("div", [_c("router-link", {
-    staticClass: "row row-col-lg-4",
-    attrs: {
-      to: {
-        name: "dishes"
-      }
-    }
+  }, [_c("div", {
+    staticClass: "row row-cols-3"
   }, _vm._l(_vm.users, function (user) {
-    return _c("div", {
+    return _c("router-link", {
       key: user.id,
-      staticClass: "card m-4",
+      attrs: {
+        to: {
+          name: "dishes"
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card col m-4",
       staticStyle: {
         width: "18rem"
       }
@@ -2026,8 +2027,8 @@ var render = function render() {
           name: "dishes"
         }
       }
-    }, [_vm._v(_vm._s(user.name))])], 1)])]);
-  }), 0)], 1)]);
+    }, [_vm._v(_vm._s(user.name))])], 1)])])]);
+  }), 1)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

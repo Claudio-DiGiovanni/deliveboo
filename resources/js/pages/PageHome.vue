@@ -1,14 +1,14 @@
 <template>
     <div class="container">
-        <div>
-            <router-link :to="{ name: 'dishes' }" class="row row-col-lg-4">
-                <div class="card m-4" v-for="user in users" :key="user.id" style="width: 18rem;">
-                    <img :src="user.image_logo" class="card-img-top h-75" alt="...">
-                    <div class="card-body text-center">
-                        <h2 class="card-text"><router-link :to="{ name: 'dishes' }">{{ user.name }}</router-link></h2>
-                    </div>
+        <div class="row row-cols-3">
+            <router-link :to="{ name: 'dishes' }" class="" v-for="user in users" :key="user.id">
+            <div class="card col m-4" style="width: 18rem;">
+                <img :src="user.image_logo" class="card-img-top h-75" alt="...">
+                <div class="card-body text-center">
+                    <h2 class="card-text"><router-link :to="{ name: 'dishes' }">{{ user.name }}</router-link></h2>
                 </div>
-            </router-link>
+            </div>
+        </router-link>
         </div>
     </div>
 </template>

@@ -1,9 +1,9 @@
 <template>
     <div>
       <h2>Elenco piatti ristorante:</h2>
-      <!-- <ul>
+      <ul>
         <li v-for="dish in dishes" :key="dish.id">{{ dish.name }}</li>
-      </ul> -->
+      </ul>
     </div>
   </template>
 

@@ -20,7 +20,7 @@ class RestaurantController extends Controller
         'name'          => 'required|string|max:100',
         'price'         => 'required|integer',
         'image'         => 'url|max:200',
-        'visibility'    => 'tinyinteger',
+        'visibility'    => 'integer',
         'description'   => 'required|string',
 
     ];
@@ -87,7 +87,7 @@ class RestaurantController extends Controller
     public function show(Dish $dish)
     {
         return view('admin.dishes.show', compact('dish'));
-        
+
     }
 
     /**

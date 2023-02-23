@@ -33,11 +33,18 @@
 
                 </td>
                 <td>
-                    <form action="{{ route('admin.orders.destroy', ['order' => $order]) }}" method="post">
-                         @method('DELETE')
-                         @csrf
-                        <button class="btn btn-outline-danger">Elimina</button>
-                    </form>
+                    <button id="delete" class="btn btn-outline-danger" onclick="showPopup(event)" data-id="{{$order->id}}">Elimina</button>
+                        <div class="background">
+                            <div class="popup">
+                                <h5 class="w-100 text-center mb-3">Sei sicuro di volerlo eliminare?</h5>
+                                <form action="{{ route('admin.orders.destroy', ['order' => $order]) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger">Elimina</button>
+                                </form>
+                                <button class="btn btn-secondary" id="retry" onclick="hidePopup()">Annulla</button>
+                            </div>
+                        </div>
                 </td>
             </tr>
 

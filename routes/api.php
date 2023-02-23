@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
  Route::get('/', 'Api\UserController@index')->name('users.index');
- Route::get('/restaurants/{id}/dishes', 'UserController@getDishesByUser({id})');
+ Route::get("/restaurants/{id}/dishes", "UserController@getDishesByUser{{id}}");
 

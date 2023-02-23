@@ -9267,8 +9267,3 @@ a.text-dark:hover, a.text-dark:focus {
 td, th {
   vertical-align: middle !important;
 }
-
-.card-img-top {
-  -o-object-fit: cover;
-     object-fit: cover;
-}

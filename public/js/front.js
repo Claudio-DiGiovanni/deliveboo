@@ -1967,13 +1967,13 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
+  return _c("div", [_c("h2", [_vm._v("Elenco piatti ristorante:")]), _vm._v(" "), _c("ul", _vm._l(_vm.dishes, function (dish) {
+    return _c("li", {
+      key: dish.id
+    }, [_vm._v(_vm._s(dish.name))]);
+  }), 0)]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("h2", [_vm._v("Elenco piatti ristorante:")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

@@ -2010,12 +2010,9 @@ var render = function render() {
       key: dish.id,
       staticClass: "p-3"
     }, [_c("div", {
-      staticClass: "card card-ristoranti bg-opacity-25 col",
-      staticStyle: {
-        height: "100%"
-      }
+      staticClass: "card card-ristoranti bg-opacity-25 col"
     }, [_c("div", {
-      staticClass: "w-75 h-75 m-auto"
+      staticClass: "container_img"
     }, [_c("img", {
       staticClass: "card-img-top p-2 h-100 w-100",
       attrs: {
@@ -2024,7 +2021,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card_body"
-    }, [_vm._v("\n              " + _vm._s(dish.description) + "\n            ")]), _vm._v(" "), _c("div", [_vm._v("\n              Prezzo: " + _vm._s(dish.price) + " €\n            ")])])]);
+    }, [_vm._v("\n                        " + _vm._s(dish.description) + "\n                    ")]), _vm._v(" "), _c("div", [_vm._v("\n                        Prezzo: " + _vm._s(dish.price) + " €\n                    ")])])]);
   }), 0)])]);
 };
 var staticRenderFns = [];
@@ -6505,7 +6502,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  width: 300px;\n  height: 300px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

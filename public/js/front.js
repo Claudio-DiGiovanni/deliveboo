@@ -2019,7 +2019,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card-body text-center"
-    }, [_c("p", [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", [_c("p", [_vm._v("Prezzo: " + _vm._s(dish.price) + " €")])])])])]);
+    }, [_c("p", [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", [_c("p", [_vm._v("Prezzo: " + _vm._s(dish.price / 100) + " €")])])])])]);
   })], 2);
 };
 var staticRenderFns = [];

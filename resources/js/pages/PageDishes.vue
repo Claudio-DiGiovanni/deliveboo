@@ -11,7 +11,7 @@
                         <p>{{ dish.description }}</p>
                     </div>
                     <div>
-                        <p>Prezzo: {{ dish.price }} €</p>
+                        <p>Prezzo: {{ dish.price / 100 }} €</p>
                     </div>
                 </div>
             </div>

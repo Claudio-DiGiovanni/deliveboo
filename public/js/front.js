@@ -1993,7 +1993,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("h1", [_vm._v("I Nostri Piatti")]), _vm._v(" "), _vm._l(_vm.dishes, function (dish) {
+  return _c("div", {
+    staticClass: "container text-alight-center"
+  }, [_c("h1", [_vm._v("I Nostri Piatti")]), _vm._v(" "), _vm._l(_vm.dishes, function (dish) {
     return _c("div", {
       directives: [{
         name: "show",
@@ -2001,8 +2003,23 @@ var render = function render() {
         value: dish.user_id === _vm.$route.params.id,
         expression: "dish.user_id === $route.params.id"
       }],
-      key: dish.id
-    }, [_c("h2", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("p", [_vm._v("Prezzo: " + _vm._s(dish.price) + " €")])]);
+      key: dish.id,
+      staticClass: "d-fex"
+    }, [_c("div", {
+      staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2"
+    }, [_c("div", {
+      staticClass: "card card-ristoranti bg-opacity-25 col"
+    }, [_c("div", {
+      staticClass: "w-75 h-75 m-auto"
+    }, [_c("img", {
+      staticClass: "card-img-top p-2 h-100 w-100",
+      attrs: {
+        src: dish.image,
+        alt: ""
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card-body text-center"
+    }, [_c("p", [_vm._v(_vm._s(dish.description))])]), _vm._v(" "), _c("div", [_c("p", [_vm._v("Prezzo: " + _vm._s(dish.price) + " €")])])])])]);
   })], 2);
 };
 var staticRenderFns = [];

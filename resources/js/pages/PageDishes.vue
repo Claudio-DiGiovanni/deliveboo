@@ -12,8 +12,13 @@
                             {{ dish.description }}
                         </div>
                         <div>
-                            Prezzo: {{ dish.price }} €
+                            Prezzo: {{ dish.price / 100 }} €
                         </div>
+                        <form action="/action_page.php">
+                            <label for="quantity">Quantità:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="5">
+                            <input type="submit">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -50,11 +55,9 @@ export default {
 .card_body {
     margin-bottom: 1rem;
 }
+
 .card-ristoranti {
     height: 100%;
 }
-.container_img {
-    width: 300px;
-    height: 300px;
-}
+
 </style>

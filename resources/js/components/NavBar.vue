@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-md bg-light">
+  <nav class="navbar navbar-expand-md bac-g text-white">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <router-link :to="{name: 'home'}" class="nav-link">Ristoranti</router-link>
+                        <router-link :to="{name: 'home'}" class="nav-link text-white">Ristoranti</router-link>
                     </li>
                 </ul>
             </div>
@@ -18,6 +18,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+ .bac-g {
+    background-color: rgb(249,206,25);
+ }
 </style>

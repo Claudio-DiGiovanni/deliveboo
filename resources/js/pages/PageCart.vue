@@ -6,33 +6,49 @@
           <ul>
             <li>{{ dish.name }}</li>
             <li>{{ dish.price/100 }}</li>
-            <li>{{ dish.quantity }}</li>
+            <li>
+              <button @click="decrementItem(dish)">-</button>
+              {{ dish.quantity }}
+              <button @click="incrementItem(dish)">+</button>
+            </li>
+            <li>
+              <button @click="removeFromCart(dish)">Rimuovi</button>
+            </li>
           </ul>
         </li>
       </ol>
-      <p>Totale: {{ getTotal() }} €</p>
+      <p>Totale: {{ cartTotal/100 }} €</p>
+      <button @click="clearCart">Svuota il carrello</button>
     </div>
   </template>
 
   <script>
   export default {
-    name: 'Cart',
-    methods: {
-        getTotal() {
-            let total = 0;
-            this.cart.forEach(dish => {
-                total = total + dish.price;
-            });
-        return total/100;
-        },
-    },
+    name: "Cart",
     computed: {
-  id() {
-    return this.$route.params.id;
-  },
-  cart() {
-    return this.$store.state.cart.items.filter(item => item.quantity > 0);
-  }
-}
-  }
+      id() {
+        return this.$route.params.id;
+      },
+      cart() {
+        return this.$store.getters.cartItems;
+      },
+      cartTotal() {
+        return this.$store.getters.cartTotal;
+      },
+    },
+    methods: {
+      removeFromCart(dish) {
+        this.$store.commit("REMOVE_ITEM", dish);
+      },
+      incrementItem(dish) {
+        this.$store.commit("INCREMENT_ITEM_QUANTITY", dish);
+      },
+      decrementItem(dish) {
+        this.$store.commit("DECREMENT_ITEM_QUANTITY", dish);
+      },
+      clearCart() {
+        this.$store.commit("CLEAR_CART");
+      },
+    },
+  };
   </script>

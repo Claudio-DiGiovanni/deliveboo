@@ -59,8 +59,8 @@ const state = {
     },
 
     REMOVE_ITEM(state, payload) {
-      state.cart.items.splice(payload.index, 1);
-    },
+        state.cart.items = state.cart.items.filter((item) => item !== payload);
+      },
 
     INCREMENT_ITEM_QUANTITY(state, payload) {
       payload.quantity++;

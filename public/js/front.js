@@ -2050,7 +2050,7 @@ var render = function render() {
       staticClass: "card-img-top p-2 h-100 w-100",
       attrs: {
         src: user.image_logo,
-        alt: "..."
+        alt: user.name
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card-body text-center"

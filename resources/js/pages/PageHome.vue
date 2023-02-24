@@ -4,7 +4,7 @@
             <router-link :to="{name: 'dishes', params: { id: user.id }}" class="p-3 w-75 m-auto" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
                 <div class="w-75 h-75 m-auto">
-                    <img :src="user.image_logo" class="card-img-top p-2 h-100 w-100" alt="...">
+                    <img :src="user.image_logo" class="card-img-top p-2 h-100 w-100" :alt="user.name">
                 </div>
                 <div class="card-body text-center">
                     <h2 class="card-text text-dark m-3">{{ user.name }}</h2>

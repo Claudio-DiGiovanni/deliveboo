@@ -19,7 +19,7 @@
                             <input type="submit">
                         </form>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -84,14 +84,14 @@ export default {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     transition: transform 0.4s linear;
-    overflow: scroll;
+    overflow: hidden;
 }
 .card:hover .container_img{
     transform: rotateY(-180deg);
 }
 .card:hover .card_body{
     transform: rotateY(0deg);
-    transition: 2s;
+    transition: 1s;
     background-color: black;
 
 }

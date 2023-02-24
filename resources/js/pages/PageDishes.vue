@@ -17,11 +17,11 @@
                                 <form class="text-center"> <!-- FORM PER INSERIRE QUANTITA' -->
                                 <label class="text-center" for="quantita">Quantità:</label>
                                 <div class="number-input">
-                                    <button type="button" @click="incrementaQuantita()"><i class="fa-solid fa-plus"></i></button>
-                                    <div class="quantity">
+                                    <button type="button" @click="incrementaQuantita()">+</button>
+                                    <div class="quantity text-white">
                                         {{ quantita }}
                                     </div>
-                                    <button type="button" @click="decrementaQuantita()"><i class="fa-solid fa-minus"></i></button>
+                                    <button type="button" @click="decrementaQuantita()">-</button>
                                 </div>
                             </form>
                             </div>

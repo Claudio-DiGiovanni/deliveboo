@@ -2064,10 +2064,8 @@ var render = function render() {
           return _vm.incrementaQuantita();
         }
       }
-    }, [_c("i", {
-      staticClass: "fa-solid fa-plus"
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "quantity"
+    }, [_vm._v("+")]), _vm._v(" "), _c("div", {
+      staticClass: "quantity text-white"
     }, [_vm._v("\n                                    " + _vm._s(_vm.quantita) + "\n                                ")]), _vm._v(" "), _c("button", {
       attrs: {
         type: "button"
@@ -2077,9 +2075,7 @@ var render = function render() {
           return _vm.decrementaQuantita();
         }
       }
-    }, [_c("i", {
-      staticClass: "fa-solid fa-minus"
-    })])])])])])]);
+    }, [_vm._v("-")])])])])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [];

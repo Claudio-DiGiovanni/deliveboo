@@ -2021,7 +2021,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card_body"
-    }, [_vm._v("\n                        " + _vm._s(dish.description) + "\n                    ")]), _vm._v(" "), _c("div", [_vm._v("\n                        Prezzo: " + _vm._s(dish.price / 100) + " €\n                    ")]), _vm._v(" "), _vm._m(0, true)])]);
+    }, [_vm._v("\n                    Descrizione: " + _vm._s(dish.description) + "\n                    "), _c("div", [_vm._v("\n                        Prezzo: " + _vm._s(dish.price / 100) + " €\n                    ")]), _vm._v(" "), _vm._m(0, true)])])]);
   }), 0)])]);
 };
 var staticRenderFns = [function () {
@@ -6526,7 +6526,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.4s linear;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.4s linear;\n  overflow: scroll;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 2s;\n  background-color: black;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

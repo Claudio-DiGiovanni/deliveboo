@@ -9,8 +9,7 @@
                             <img :src="dish.image" class="card-img-top p-2 h-100 w-100" alt="" />
                         </div>
                         <div class="card_body">
-                            {{ dish.description }}
-                        </div>
+                        Descrizione: {{ dish.description }}
                         <div>
                             Prezzo: {{ dish.price / 100 }} €
                         </div>
@@ -19,6 +18,8 @@
                             <input type="number" id="quantity" name="quantity" min="1" max="5">
                             <input type="submit">
                         </form>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -55,9 +56,43 @@ export default {
 .card_body {
     margin-bottom: 1rem;
 }
-
+.card{
+    position: relative;
+    perspective: 1000px;
+    border: none !important;
+}
 .card-ristoranti {
     height: 100%;
 }
+.container_img{
+    width: 100%;
+    transform: rotate(0deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
+    img{
+        width: 100%;
+    }
+}
+.card_body{
+    padding: 1rem;
+    color: white;
+    position: absolute;
+    top: 0;
 
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
+    overflow: scroll;
+}
+.card:hover .container_img{
+    transform: rotateY(-180deg);
+}
+.card:hover .card_body{
+    transform: rotateY(0deg);
+    transition: 2s;
+    background-color: black;
+
+}
 </style>

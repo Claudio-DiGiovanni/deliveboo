@@ -1918,7 +1918,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     addToCart: function addToCart(dish) {
-      console.log(dish);
       this.$store.dispatch("addToCart", dish);
     }
   },
@@ -2108,7 +2107,7 @@ var render = function render() {
         expression: "dish.user_id === $route.params.id"
       }],
       key: dish.id
-    }, [_c("h2", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("p", [_vm._v("Prezzo: " + _vm._s(dish.price) + " €")]), _vm._v(" "), _c("button", {
+    }, [_c("h2", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("p", [_vm._v("Prezzo: " + _vm._s(dish.price / 100) + " €")]), _vm._v(" "), _c("button", {
       on: {
         click: function click($event) {
           return _vm.addToCart(dish);
@@ -2232,6 +2231,14 @@ var actions = {
     var item = state.cart.items.find(function (item) {
       return item.id === payload.id;
     });
+    var restaurant_id = payload.user_id;
+    if (state.cart.items.length > 0) {
+      var cart_restaurant_id = state.cart.items[0].restaurant_id;
+      if (cart_restaurant_id != restaurant_id) {
+        alert('Mi dispiace, non puoi aggiungere al carrello i piatti di più ristoranti');
+        return;
+      }
+    }
     if (!item) {
       commit("ADD_ITEM", payload);
     } else {
@@ -2261,6 +2268,7 @@ var mutations = {
       id: payload.id,
       name: payload.name,
       price: payload.price,
+      restaurant_id: payload.user_id,
       quantity: 1
     });
   },

@@ -22,13 +22,22 @@ const state = {
 
   const actions = {
     addToCart({ state, commit }, payload) {
-      const item = state.cart.items.find((item) => item.id === payload.id);
 
-      if (!item) {
-        commit("ADD_ITEM", payload);
-      } else {
-        commit("INCREMENT_ITEM_QUANTITY", item);
-      }
+        const item = state.cart.items.find((item) => item.id === payload.id);
+        const restaurant_id = payload.user_id;
+        if (state.cart.items.length > 0) {
+            const cart_restaurant_id = state.cart.items[0].restaurant_id;
+            if (cart_restaurant_id != restaurant_id) {
+                alert('Mi dispiace, non puoi aggiungere al carrello i piatti di più ristoranti');
+                return;
+            }
+        }
+
+        if (!item) {
+            commit("ADD_ITEM", payload);
+        } else {
+            commit("INCREMENT_ITEM_QUANTITY", item);
+        }
     },
 
     removeFromCart({ commit }, payload) {
@@ -54,6 +63,7 @@ const state = {
         id: payload.id,
         name: payload.name,
         price: payload.price,
+        restaurant_id: payload.user_id,
         quantity: 1,
       });
     },

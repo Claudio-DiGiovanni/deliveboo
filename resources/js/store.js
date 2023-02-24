@@ -1,23 +1,28 @@
+import Vuex from 'vuex';
+import Vue from 'vue';
+Vue.use(Vuex)
 const state = {
-    items: [],
+    cart: {
+      items: []
+    }
   };
 
   const getters = {
-    cartItems: (state) => state.items,
+    cartItems: (state) => state.cart.items,
     cartTotal: (state) => {
-      return state.items.reduce(
+      return state.cart.items.reduce(
         (total, item) => total + item.quantity * item.price,
         0
       );
     },
     cartQuantity: (state) => {
-      return state.items.reduce((total, item) => total + item.quantity, 0);
+      return state.cart.items.reduce((total, item) => total + item.quantity, 0);
     },
   };
 
   const actions = {
     addToCart({ state, commit }, payload) {
-      const item = state.items.find((item) => item.id === payload.id);
+      const item = state.cart.items.find((item) => item.id === payload.id);
 
       if (!item) {
         commit("ADD_ITEM", payload);
@@ -45,7 +50,7 @@ const state = {
 
   const mutations = {
     ADD_ITEM(state, payload) {
-      state.items.push({
+      state.cart.items.push({
         id: payload.id,
         name: payload.name,
         price: payload.price,
@@ -54,7 +59,7 @@ const state = {
     },
 
     REMOVE_ITEM(state, payload) {
-      state.items.splice(payload.index, 1);
+      state.cart.items.splice(payload.index, 1);
     },
 
     INCREMENT_ITEM_QUANTITY(state, payload) {
@@ -68,13 +73,13 @@ const state = {
     },
 
     CLEAR_CART(state) {
-      state.items = [];
+      state.cart.items = [];
     },
   };
 
-  export default {
-    state,
-    getters,
-    actions,
-    mutations,
-  };
+  export default new Vuex.Store({
+  state,
+  getters,
+  actions,
+  mutations
+});

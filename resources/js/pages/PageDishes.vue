@@ -11,6 +11,7 @@
   </template>
 
   <script>
+  import store from '../store';
   export default {
     data() {
       return {
@@ -26,9 +27,10 @@
         console.log(error)
         }
     },
-    addToCart (dish) {
-      this.$store.commit('addToCart', dish)
-    },
+    addToCart(dish) {
+        console.log(dish)
+        this.$store.dispatch("addToCart", dish);
+},
     },
     mounted() {
     this.loadDishes()

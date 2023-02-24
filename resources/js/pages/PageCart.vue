@@ -1,25 +1,38 @@
 <template>
     <div>
       <h2>Carrello</h2>
-      <ul>
+      <ol>
         <li v-for="dish in cart" :key="dish.id">
-          {{ dish.name }} - {{ dish.price }} €
+          <ul>
+            <li>{{ dish.name }}</li>
+            <li>{{ dish.price/100 }}</li>
+            <li>{{ dish.quantity }}</li>
+          </ul>
         </li>
-      </ul>
-      <p>Totale: {{ total }} €</p>
+      </ol>
+      <p>Totale: {{ getTotal() }} €</p>
     </div>
   </template>
 
   <script>
   export default {
     name: 'Cart',
-    computed: {
-    cart() {
-      return this.$store.state.cart.items;
+    methods: {
+        getTotal() {
+            let total = 0;
+            this.cart.forEach(dish => {
+                total = total + dish.price;
+            });
+        return total/100;
+        },
     },
-      total () {
-        return this.$store.state.total
-      }
-    }
+    computed: {
+  id() {
+    return this.$route.params.id;
+  },
+  cart() {
+    return this.$store.state.cart.items.filter(item => item.quantity > 0);
+  }
+}
   }
   </script>

@@ -14,11 +14,16 @@
                                 <div>
                                     Prezzo: {{ dish.price / 100 }} €
                                 </div>
-                                <form action="/action_page.php">
-                                    <label for="quantity">Quantità:</label>
-                                    <input type="number" id="quantity" name="quantity" min="1" max="5">
-                                    <input type="submit">
-                                </form>
+                                <form class="text-center"> <!-- FORM PER INSERIRE QUANTITA' -->
+                                <label class="text-center" for="quantita">Quantità:</label>
+                                <div class="number-input">
+                                    <button type="button" @click="incrementaQuantita()"><i class="fa-solid fa-plus"></i></button>
+                                    <div class="quantity">
+                                        {{ quantita }}
+                                    </div>
+                                    <button type="button" @click="decrementaQuantita()"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+                            </form>
                             </div>
 
                         </div>
@@ -30,6 +35,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     data() {
         return {
@@ -45,6 +52,14 @@ export default {
                 this.dishes = response.data;
             } catch (error) {
                 console.log(error);
+            }
+        },
+        incrementaQuantita() {  //gestione quantità piatto con + -
+            this.quantita++;
+        },
+        decrementaQuantita() {  //gestione quantità piatto con + -
+            if (this.quantita > 0) {
+                this.quantita--;
             }
         },
     },
@@ -110,5 +125,30 @@ export default {
 
 .card-ristoranti-2 {
     background: transparent;
+}
+
+.number-input {
+    //gestione quantità piatto con + -
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-input input {
+    //gestione quantità piatto con + -
+    width: 40px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+}
+
+.number-input .quantity {
+    //gestione quantità piatto con + -
+    width: 60px;
+    /* larghezza del campo di input */
 }
 </style>

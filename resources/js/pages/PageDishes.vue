@@ -5,6 +5,7 @@
       <h2>{{ dish.name }}</h2>
       <p>{{ dish.description }}</p>
       <p>Prezzo: {{ dish.price }} €</p>
+      <button @click="addToCart(dish)">Aggiungi al carrello</button>
     </div>
   </div>
   </template>
@@ -24,7 +25,10 @@
         } catch (error) {
         console.log(error)
         }
-    }
+    },
+    addToCart (dish) {
+      this.$store.commit('addToCart', dish)
+    },
     },
     mounted() {
     this.loadDishes()

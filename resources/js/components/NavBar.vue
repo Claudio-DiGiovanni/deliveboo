@@ -6,6 +6,7 @@
                     <li class="nav-item">
                         <router-link :to="{name: 'home'}" class="nav-link">Ristoranti</router-link>
                     </li>
+                    <li class="nav-item"><router-link class="nav-link" :to="{ name: 'cart' }">Carrello</router-link></li>
                 </ul>
             </div>
         </div>

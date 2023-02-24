@@ -1,10 +1,12 @@
 <template>
-    <div>
-      <h2>Elenco piatti ristorante:</h2>
-      <ul>
-        <li v-for="dish in dishes" :key="dish.id">{{ dish.name }}</li>
-      </ul>
+     <div>
+    <h1>I Nostri Piatti</h1>
+    <div v-for="dish in dishes" :key="dish.id" v-show="dish.user_id === $route.params.id">
+      <h2>{{ dish.name }}</h2>
+      <p>{{ dish.description }}</p>
+      <p>Prezzo: {{ dish.price }} €</p>
     </div>
+  </div>
   </template>
 
   <script>
@@ -14,15 +16,18 @@
         dishes: []
       };
     },
-    created() {
-      const userId = 1; // sostituire con l'ID dell'utente selezionato
-      axios.get(`/api/restaurants/${userId}/dishes`)
-        .then(response => {
-          this.dishes = response.data.dishes;
-        })
-        .catch(error => {
-          console.log(error);
-        });
+    methods: {
+    async loadDishes() {
+        try {
+        const response = await axios.get(`/api/dishes/user/${this.$route.params.id}`)
+        this.dishes = response.data
+        } catch (error) {
+        console.log(error)
+        }
+    }
+    },
+    mounted() {
+    this.loadDishes()
     }
   };
   </script>

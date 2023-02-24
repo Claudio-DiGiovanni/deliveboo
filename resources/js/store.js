@@ -3,7 +3,8 @@ import Vue from 'vue';
 Vue.use(Vuex)
 const state = {
     cart: {
-      items: []
+      items: [],
+      order: ['ciao'],
     }
   };
 
@@ -22,13 +23,13 @@ const state = {
 
   const actions = {
     addToCart({ state, commit }, payload) {
-
+        console.log(state.cart.order)
         const item = state.cart.items.find((item) => item.id === payload.id);
         const restaurant_id = payload.user_id;
         if (state.cart.items.length > 0) {
             const cart_restaurant_id = state.cart.items[0].restaurant_id;
             if (cart_restaurant_id != restaurant_id) {
-                alert('Mi dispiace, non puoi aggiungere al carrello i piatti di più ristoranti');
+                alert('Mi dispiace, non puoi aggiungere al carrello i piatti da più ristoranti');
                 return;
             }
         }
@@ -55,6 +56,16 @@ const state = {
     clearCart({ commit }) {
       commit("CLEAR_CART");
     },
+    async createOrder({ state, commit }, payload) {
+        try {
+          const response = await axios.post("/api/orders", payload);
+          commit("CLEAR_CART");
+          return response.data;
+        } catch (error) {
+          console.error(error);
+          throw error;
+        }
+      },
   };
 
   const mutations = {

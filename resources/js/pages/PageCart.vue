@@ -19,12 +19,34 @@
       </ol>
       <p>Totale: {{ cartTotal/100 }} €</p>
       <button @click="clearCart">Svuota il carrello</button>
+      <form @submit.prevent="createOrder">
+      <div class="form-group">
+                <label for="customer_name">Nome</label>
+                <input type="text" id="customer_name" v-model="customer_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" v-model="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Indirizzo di consegna</label>
+                <textarea id="address" v-model="address" required></textarea>
+            </div>
+            <button type="submit">Crea Ordine</button>
+            </form>
     </div>
   </template>
 
   <script>
   export default {
     name: "Cart",
+    data() {
+        return {
+            customer_name: "",
+            email: "",
+            address: "",
+        };
+    },
     computed: {
       id() {
         return this.$route.params.id;
@@ -49,6 +71,22 @@
       clearCart() {
         this.$store.commit("CLEAR_CART");
       },
+      createOrder() {
+  const payload = {
+    customer_name: this.customer_name,
+    email: this.email,
+    address: this.address,
+  };
+  this.$store.dispatch("createOrder", payload)
+    .then(() => {
+      this.customer_name = "";
+      this.email = "";
+      this.address = "";
+    })
+    .catch(error => {
+      console.error(error);
+    });
+},
     },
   };
   </script>

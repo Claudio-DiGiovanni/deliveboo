@@ -18,7 +18,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td> {{$order->order_number}}</td>
+                    <td> {{$order->id}}</td>
                     <td>  {{$order->created_at}}</td>
                     <td>  <a href="{{ route('admin.orders.show', ['order' => $order]) }}" class="btn btn-outline-info">Info</a></td>
                 </tr>

@@ -24,7 +24,7 @@ class OrderController extends Controller
                     ->where(function ($query) use ($request) {
                         if (!empty($request->search)) {
                             $query->where(function ($q) use ($request) {
-                                $q->where('order_number', 'like', '%' . $request->search . '%')
+                                $q->where('id', 'like', '%' . $request->search . '%')
                                     ->orWhere('customer_name', 'like', '%' . $request->search . '%')
                                     ->orWhere('created_at', 'like', '%' . $request->search . '%');
                             });
@@ -120,4 +120,28 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('admin.orders.index');
     }
+
+    public function createOrder(Request $request)
+    {
+        $validatedData = $request->validate([
+            'customer_name' => 'required|string|max:50',
+            'email' => 'required|email|unique:users,email|max:100',
+            'address' => 'required|string|max:100',
+        ]);
+
+        $user = auth()->user();
+        $order = new Order();
+        $order->customer_name = $validatedData['customer_name'];
+        $order->email = $validatedData['email'];
+        $order->address = $validatedData['address'];
+        $order->save();
+
+        $cart = session('cart');
+        foreach ($cart->items as $item) {
+            $order->dishes()->attach($item['item']->id);
+        }
+
+        return response()->json(['success' => true]);
+    }
+
 }

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\User;
-use App\Dish;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Dish;
 
 class UserController extends Controller
 {
@@ -93,20 +93,10 @@ class UserController extends Controller
     {
         //
     }
-    public function getDishesByUser($id)
-{
-    $user = User::find($id);
+    public function getDishesByUser($userId)
+    {
+        $dishes = Dish::where('user_id', $userId)->get();
 
-    if (!$user) {
-        return response()->json([
-            'message' => 'L\'utente specificato non esiste'
-        ], 404);
+        return response()->json($dishes);
     }
-
-    $dishes = $user->dishes();
-
-    return response()->json([
-        'dishes' => $dishes
-    ], 200);
-}
 }

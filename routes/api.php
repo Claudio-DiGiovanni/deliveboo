@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
  Route::get('/', 'Api\UserController@index')->name('users.index');
  Route::get('/dishes/user/{userId}', 'Api\UserController@getDishesByUser');
  Route::post('/orders', 'Admin\OrderController@createOrder');
- Route::get('/orders/{id}', 'Admin\OrderController@showRecap');
+ Route::get('/order/{orderId}', 'App\Http\Controllers\Admin\OrderController@showOrderRecap');
 

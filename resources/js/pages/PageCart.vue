@@ -32,7 +32,17 @@
                 <label for="address">Indirizzo di consegna</label>
                 <input type="text" id="address" v-model="address" required>
             </div>
-            <router-link :to="{ name: 'order-recap', params: { orderId: orderId || 'default' } }">
+            <button @click="showPopup()" type="submit">Crea Ordine</button>
+                <div class="background" :class="popupVisibility ? 'd-flex' : 'd-none'">
+                    <div class="popup">
+                        <h5 class="w-100 text-center mb-3">Ordine Completato</h5>
+                        <router-link :to="{ name: 'order', params: { orderId: order.id || 'default' } }">
+                            <button class="btn btn-success">Vedi ordine</button>
+                        </router-link>
+                        <button class="btn btn-secondary" id="retry" @click="hidePopup()">Annulla</button>
+                    </div>
+                </div>
+            <router-link :to="{ name: 'order', params: { orderId: order || 'default' } }">
                 <button type="submit">Crea Ordine</button>
             </router-link>
             </form>
@@ -47,6 +57,8 @@
             customer_name: "",
             email: "",
             address: "",
+            order: '',
+            popupVisibility: false,
         };
     },
     computed: {
@@ -85,11 +97,41 @@
       this.customer_name = "";
       this.email = "";
       this.address = "";
+      this.order = response.data.order;
     })
     .catch(error => {
       console.error(error);
     });
 },
+showPopup() {
+    this.popupVisibility = true;
+},
+hidePopup() {
+    this.popupVisibility = false;
+},
     },
   };
   </script>
+  <style lang="scss" scoped>
+  .background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: .4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    .popup{
+        z-index: 999;
+        padding: 5rem;
+        background-color: whitesmoke;
+        border: 2px solid grey;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+  </style>

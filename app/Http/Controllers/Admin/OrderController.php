@@ -148,4 +148,10 @@ class OrderController extends Controller
                                  'id' => $order->id]);
     }
 
+    public function showOrderRecap($orderId) {
+        $orderRecap = Order::where('id', $orderId)->get();
+
+        return response()->json($orderRecap);
+    }
+
 }

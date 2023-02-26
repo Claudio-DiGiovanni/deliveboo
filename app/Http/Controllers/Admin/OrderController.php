@@ -138,14 +138,14 @@ class OrderController extends Controller
         $cart = $validatedData['cart'];
         $dishes = [];
         foreach ($cart as $item) {
-            for ($i = 0; $i <= $item['quantity']; $i++) {
+            for ($i = 0; $i < $item['quantity']; $i++) {
                 array_push($dishes, $item['id']);
             };
         };
         $order->dishes()->attach($dishes);
 
         return response()->json(['success' => true,
-                                 'order' => $order]);
+                                 'id' => $order->id]);
     }
 
 }

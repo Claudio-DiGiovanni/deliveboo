@@ -1836,7 +1836,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['success', 'order']
+});
 
 /***/ }),
 
@@ -2087,7 +2089,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("h1", [_vm._v("ordine completato")]);
+  return _c("div", {
+    staticClass: "container"
+  }, [_vm.success ? _c("div", [_c("h1", [_vm._v("Ordine completato con successo")]), _vm._v(" "), _c("p", [_vm._v("Grazie, " + _vm._s(_vm.order.customer_name) + ". L'ordine numero " + _vm._s(_vm.order.id) + " verrà consegnato il prima possibile all'indirizzo " + _vm._s(_vm.order.address) + " ")])]) : _c("div", [_c("h2", [_vm._v("Qualcosa è andato storto")])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2206,7 +2210,7 @@ var render = function render() {
     attrs: {
       "for": "address"
     }
-  }, [_vm._v("Indirizzo di consegna")]), _vm._v(" "), _c("textarea", {
+  }, [_vm._v("Indirizzo di consegna")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2214,6 +2218,7 @@ var render = function render() {
       expression: "address"
     }],
     attrs: {
+      type: "text",
       id: "address",
       required: ""
     },
@@ -2226,11 +2231,20 @@ var render = function render() {
         _vm.address = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("button", {
+  })]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: {
+        name: "order-recap",
+        params: {
+          orderId: _vm.orderId || "default"
+        }
+      }
+    }
+  }, [_c("button", {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Crea Ordine")])])]);
+  }, [_vm._v("Crea Ordine")])])], 1)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2304,7 +2318,8 @@ var render = function render() {
         to: {
           name: "dishes",
           params: {
-            id: user.id
+            id: user.id,
+            slug: user.slug
           }
         }
       }
@@ -2429,24 +2444,22 @@ var actions = {
           case 0:
             state = _ref6.state, commit = _ref6.commit;
             _context.prev = 1;
-            console.log(payload);
-            _context.next = 5;
+            _context.next = 4;
             return axios.post("/api/orders", payload);
-          case 5:
+          case 4:
             response = _context.sent;
             commit("CLEAR_CART");
-            console.log(response);
             return _context.abrupt("return", response.data);
-          case 11:
-            _context.prev = 11;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](1);
             console.error(_context.t0);
             throw _context.t0;
-          case 15:
+          case 13:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[1, 11]]);
+      }, _callee, null, [[1, 9]]);
     }))();
   }
 };

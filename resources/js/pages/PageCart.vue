@@ -30,9 +30,11 @@
             </div>
             <div class="form-group">
                 <label for="address">Indirizzo di consegna</label>
-                <textarea id="address" v-model="address" required></textarea>
+                <input type="text" id="address" v-model="address" required>
             </div>
-            <button type="submit">Crea Ordine</button>
+            <router-link :to="{ name: 'order-recap', params: { orderId: orderId || 'default' } }">
+                <button type="submit">Crea Ordine</button>
+            </router-link>
             </form>
     </div>
   </template>

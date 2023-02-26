@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Dish;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -127,21 +128,24 @@ class OrderController extends Controller
             'customer_name' => 'required|string|max:50',
             'email' => 'required|email|unique:users,email|max:100',
             'address' => 'required|string|max:100',
+            'cart' => 'required',
         ]);
-
-        $user = auth()->user();
         $order = new Order();
         $order->customer_name = $validatedData['customer_name'];
         $order->email = $validatedData['email'];
         $order->address = $validatedData['address'];
         $order->save();
+        $cart = $validatedData['cart'];
+        $dishes = [];
+        foreach ($cart as $item) {
+            for ($i = 0; $i <= $item['quantity']; $i++) {
+                array_push($dishes, $item['id']);
+            };
+        };
+        $order->dishes()->attach($dishes);
 
-        $cart = session('cart');
-        foreach ($cart->items as $item) {
-            $order->dishes()->attach($item['item']->id);
-        }
-
-        return response()->json(['success' => true]);
+        return response()->json(['success' => true,
+                                 'order' => $order]);
     }
 
 }

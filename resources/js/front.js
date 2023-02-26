@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 import PageHome from './pages/PageHome';
 import PageDishes from './pages/PageDishes';
 import PageCart from './pages/PageCart';
+import OrderSuccess from './pages/OrderSuccess';
 Vue.use(VueRouter);
 Vue.use(Vuex)
 
@@ -18,7 +19,7 @@ const routes = [
         component: PageHome,
     },
     {
-        path:'/restaurants/:id/dishes',
+        path:'/restaurants/:slug/dishes',
         name:'dishes',
         component: PageDishes,
     },
@@ -26,7 +27,12 @@ const routes = [
         path:'/cart',
         name:'cart',
         component: PageCart,
-    }
+    },
+    {
+        path: '/order/:id',
+        name: 'order',
+        component: OrderSuccess,
+    },
 ];
 
 const router = new VueRouter({

@@ -5,4 +5,5 @@ use Illuminate\Support\Facades\Route;
 
  Route::get('/', 'Api\UserController@index')->name('users.index');
  Route::get('/dishes/user/{userId}', 'Api\UserController@getDishesByUser');
- Route::post('/api/orders', 'Admin\OrderController@createOrder');
+ Route::post('/orders', 'Admin\OrderController@createOrder');
+

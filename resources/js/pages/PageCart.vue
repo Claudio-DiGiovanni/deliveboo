@@ -19,7 +19,7 @@
       </ol>
       <p>Totale: {{ cartTotal/100 }} €</p>
       <button @click="clearCart">Svuota il carrello</button>
-      <form @submit.prevent="createOrder">
+      <form @submit.prevent="createOrder" method="POST">
       <div class="form-group">
                 <label for="customer_name">Nome</label>
                 <input type="text" id="customer_name" v-model="customer_name" required>
@@ -76,6 +76,7 @@
     customer_name: this.customer_name,
     email: this.email,
     address: this.address,
+    cart: this.cart,
   };
   this.$store.dispatch("createOrder", payload)
     .then(() => {

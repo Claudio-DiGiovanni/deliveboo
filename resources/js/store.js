@@ -23,7 +23,6 @@ const state = {
 
   const actions = {
     addToCart({ state, commit }, payload) {
-        console.log(state.cart.order)
         const item = state.cart.items.find((item) => item.id === payload.id);
         const restaurant_id = payload.user_id;
         if (state.cart.items.length > 0) {
@@ -58,8 +57,10 @@ const state = {
     },
     async createOrder({ state, commit }, payload) {
         try {
+            console.log(payload);
           const response = await axios.post("/api/orders", payload);
           commit("CLEAR_CART");
+          console.log(response)
           return response.data;
         } catch (error) {
           console.error(error);

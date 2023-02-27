@@ -2192,7 +2192,7 @@ var render = function render() {
           return _vm.decrementItem(dish);
         }
       }
-    }, [_vm._v("-")]), _vm._v("\n                    " + _vm._s(dish.quantity) + "\n            "), _c("button", {
+    }, [_vm._v("-")]), _vm._v("\n                    " + _vm._s(dish.quantity) + "\n                    "), _c("button", {
       staticClass: "btn btn-light",
       on: {
         click: function click($event) {
@@ -2209,7 +2209,7 @@ var render = function render() {
     }, [_vm._v("Rimuovi")])])])]);
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "text-center"
-  }, [_c("p", [_vm._v("TOTALE: " + _vm._s(_vm.cartTotal / 100) + " ")])]), _vm._v(" "), _c("div", {}, [_c("form", {
+  }, [_c("h4", [_vm._v("TOTALE:")]), _vm._v(" "), _c("h6", [_vm._v(_vm._s(_vm.cartTotal / 100) + " ")])]), _vm._v(" "), _c("div", {}, [_c("form", {
     attrs: {
       method: "POST"
     },
@@ -2219,13 +2219,13 @@ var render = function render() {
         return _vm.createOrder.apply(null, arguments);
       }
     }
-  }, [_c("div", {
-    staticClass: "form-group"
   }, [_c("label", {
     attrs: {
       "for": "customer_name"
     }
-  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Nome")]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2246,13 +2246,13 @@ var render = function render() {
         _vm.customer_name = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
+  })]), _vm._v(" "), _c("label", {
     attrs: {
       "for": "email"
     }
-  }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Email")]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2273,13 +2273,13 @@ var render = function render() {
         _vm.email = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
+  })]), _vm._v(" "), _c("label", {
     attrs: {
       "for": "address"
     }
-  }, [_vm._v("Indirizzo di consegna")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Indirizzo di consegna")]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",

@@ -5,7 +5,7 @@
             <div class="card card-carrello m-3" v-for="dish in cart" :key="dish.id">
                 <div class="card-body col">
                     <h5 class="card-title">{{ dish.name }}</h5>
-                    <p class="card-text">{{ dish.price / 100 }}</p>
+                    <p class="card-text">{{ dish.price / 100 }} €</p>
                     <div class="m-2">
                         <button @click="decrementItem(dish)" class="btn btn-light">-</button>
                         {{ dish.quantity }}
@@ -17,11 +17,14 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
+        <div class="text-center" v-if="cartTotal !== 0">
             <h4>TOTALE:</h4>
-            <h6>{{ cartTotal / 100 }} </h6>
+            <h6>{{ cartTotal / 100 }} €</h6>
         </div>
-        <div class="">
+        <div v-else>
+            <h3>Non ci sono piatti nel tuo carrello</h3>
+        </div>
+        <div v-if="cartTotal !== 0">
             <div>
                 <router-link :to="{name: 'payment', params: {cart: cart}}">
                     <button class="btn btn-success">Procedi con il pagamento</button>

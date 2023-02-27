@@ -1805,6 +1805,9 @@ __webpack_require__.r(__webpack_exports__);
   name: 'App',
   components: {
     NavBar: _components_NavBar__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  created: function created() {
+    this.$store.dispatch('beforeUnload');
   }
 });
 
@@ -1821,7 +1824,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  computed: {
+    cartQuantity: function cartQuantity() {
+      return this.$store.getters.cartQuantity;
+    }
+  }
+});
 
 /***/ }),
 
@@ -2011,7 +2020,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     filterRestaurant: function filterRestaurant(typeId) {
       var _this = this;
-      if (typeId !== 'none') {
+      if (typeId !== 'all') {
         axios.get("/api/filter/".concat(typeId)).then(function (response) {
           if (response.data.success) {
             _this.users = response.data.results;
@@ -2167,7 +2176,7 @@ var render = function render() {
         name: "cart"
       }
     }
-  }, [_c("button", [_vm._v("Carrello")])]), _vm._v(" "), _vm._m(0)], 1)])])])]);
+  }, [_c("button", [_vm._v("Carrello "), _vm.cartQuantity !== 0 ? _c("strong", [_vm._v(_vm._s(_vm.cartQuantity))]) : _vm._e()])]), _vm._v(" "), _vm._m(0)], 1)])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2238,7 +2247,7 @@ var render = function render() {
       staticClass: "card-title"
     }, [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", {
       staticClass: "card-text"
-    }, [_vm._v(_vm._s(dish.price / 100))]), _vm._v(" "), _c("div", {
+    }, [_vm._v(_vm._s(dish.price / 100) + " €")]), _vm._v(" "), _c("div", {
       staticClass: "m-2"
     }, [_c("button", {
       staticClass: "btn btn-light",
@@ -2262,9 +2271,9 @@ var render = function render() {
         }
       }
     }, [_vm._v("Rimuovi")])])])]);
-  }), 0), _vm._v(" "), _c("div", {
+  }), 0), _vm._v(" "), _vm.cartTotal !== 0 ? _c("div", {
     staticClass: "text-center"
-  }, [_c("h4", [_vm._v("TOTALE:")]), _vm._v(" "), _c("h6", [_vm._v(_vm._s(_vm.cartTotal / 100) + " ")])]), _vm._v(" "), _c("div", {}, [_c("div", [_c("router-link", {
+  }, [_c("h4", [_vm._v("TOTALE:")]), _vm._v(" "), _c("h6", [_vm._v(_vm._s(_vm.cartTotal / 100) + " €")])]) : _c("div", [_c("h3", [_vm._v("Non ci sono piatti nel tuo carrello")])]), _vm._v(" "), _vm.cartTotal !== 0 ? _c("div", [_c("div", [_c("router-link", {
     attrs: {
       to: {
         name: "payment",
@@ -2280,7 +2289,7 @@ var render = function render() {
     on: {
       click: _vm.clearCart
     }
-  }, [_vm._v("Svuota il carrello")])])])]);
+  }, [_vm._v("Svuota il carrello")])])]) : _vm._e()]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2318,8 +2327,8 @@ var render = function render() {
       directives: [{
         name: "show",
         rawName: "v-show",
-        value: dish.user_id === _vm.$route.params.id,
-        expression: "dish.user_id === $route.params.id"
+        value: dish.user_id === _vm.$route.params.id && dish.visibility === 1,
+        expression: "dish.user_id === $route.params.id && dish.visibility === 1"
       }],
       key: dish.id,
       staticClass: "p-3"
@@ -2390,6 +2399,7 @@ var render = function render() {
       value: _vm.value,
       expression: "value"
     }],
+    staticClass: "form-select filter",
     attrs: {
       name: "type",
       id: "type"
@@ -2409,12 +2419,10 @@ var render = function render() {
     }
   }, [_c("option", {
     attrs: {
+      value: "all",
       selected: ""
-    },
-    domProps: {
-      value: "none"
     }
-  }, [_vm._v("Nessun Filtro")]), _vm._v(" "), _vm._l(_vm.types, function (typex) {
+  }, [_vm._v("Tutti")]), _vm._v(" "), _vm._l(_vm.types, function (typex) {
     return _c("option", {
       key: typex.id,
       domProps: {
@@ -2647,15 +2655,15 @@ var state = {
 };
 var getters = {
   cartItems: function cartItems(state) {
-    return state.cart.items;
+    return state.cart.items.length > 0 ? state.cart.items : JSON.parse(localStorage.getItem('cart')) || [];
   },
   cartTotal: function cartTotal(state) {
-    return state.cart.items.reduce(function (total, item) {
+    return (state.cart.items.length > 0 ? state.cart.items : JSON.parse(localStorage.getItem('cart')) || []).reduce(function (total, item) {
       return total + item.quantity * item.price;
     }, 0);
   },
   cartQuantity: function cartQuantity(state) {
-    return state.cart.items.reduce(function (total, item) {
+    return (state.cart.items.length > 0 ? state.cart.items : JSON.parse(localStorage.getItem('cart')) || []).reduce(function (total, item) {
       return total + item.quantity;
     }, 0);
   }
@@ -2695,6 +2703,7 @@ var actions = {
   },
   clearCart: function clearCart(_ref5) {
     var commit = _ref5.commit;
+    localStorage.removeItem('cart');
     commit("CLEAR_CART");
   },
   createOrder: function createOrder(_ref6, payload) {
@@ -2709,27 +2718,34 @@ var actions = {
             return axios.post("/api/orders", payload);
           case 4:
             response = _context.sent;
+            localStorage.removeItem('cart');
             commit("CLEAR_CART");
             return _context.abrupt("return", response.data);
-          case 9:
-            _context.prev = 9;
+          case 10:
+            _context.prev = 10;
             _context.t0 = _context["catch"](1);
             console.error(_context.t0);
             throw _context.t0;
-          case 13:
+          case 14:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[1, 9]]);
+      }, _callee, null, [[1, 10]]);
     }))();
   },
-  generateBraintreeToken: function generateBraintreeToken(_ref7) {
+  beforeUnload: function beforeUnload(_ref7) {
+    var state = _ref7.state;
+    window.addEventListener('beforeunload', function () {
+      localStorage.setItem('cart', JSON.stringify(state.cart.items));
+    });
+  },
+  generateBraintreeToken: function generateBraintreeToken(_ref8) {
     return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
       var commit, response;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            commit = _ref7.commit;
+            commit = _ref8.commit;
             _context2.prev = 1;
             _context2.next = 4;
             return axios.get('/api/braintree/token');
@@ -2748,13 +2764,13 @@ var actions = {
       }, _callee2, null, [[1, 8]]);
     }))();
   },
-  processPayment: function processPayment(_ref8, payload) {
+  processPayment: function processPayment(_ref9, payload) {
     return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
       var state, response;
       return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
-            state = _ref8.state;
+            state = _ref9.state;
             _context3.prev = 1;
             _context3.next = 4;
             return axios.post('/api/braintree/payment', {
@@ -2802,6 +2818,7 @@ var mutations = {
     }
   },
   CLEAR_CART: function CLEAR_CART(state) {
+    localStorage.removeItem('cart');
     state.cart.items = [];
   },
   SET_BRAINTREE_CUSTOMER_ID: function SET_BRAINTREE_CUSTOMER_ID(state, payload) {
@@ -7271,7 +7288,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  border-radius: 2rem;\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s linear;\n  box-shadow: 10px 10px 5px #141414;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n  border-radius: 2rem;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s linear;\n  overflow: visible;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 1.5s;\n  background-color: black;\n  border-radius: 2rem;\n}\n.bg_img[data-v-84cf3c00] {\n  background-image: url(https://blendofbites.com/wp-content/uploads/2021/01/varity-of-fast-food-on-black-table-2048x1365.jpg);\n  background-size: cover;\n}\n.card-ristoranti-2[data-v-84cf3c00] {\n  background: transparent;\n}\n.quantity[data-v-84cf3c00] {\n  color: white;\n  margin-right: 2rem;\n  font-size: 2rem;\n  font-weight: 700;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  border-radius: 2rem;\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.3s linear;\n  box-shadow: 10px 10px 5px #141414;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n  border-radius: 2rem;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.3s linear;\n  overflow: visible;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 1s;\n  background-color: black;\n  border-radius: 2rem;\n}\n.bg_img[data-v-84cf3c00] {\n  background-image: url(https://blendofbites.com/wp-content/uploads/2021/01/varity-of-fast-food-on-black-table-2048x1365.jpg);\n  background-size: cover;\n}\n.card-ristoranti-2[data-v-84cf3c00] {\n  background: transparent;\n}\n.quantity[data-v-84cf3c00] {\n  color: white;\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  font-weight: 700;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7295,7 +7312,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n  padding-top: 4rem;\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: rgb(213, 234, 162);\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem;\n  background-color: rgb(213, 234, 162);\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n  padding-top: 4rem;\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: rgb(213, 234, 162);\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem;\n  background-color: rgb(213, 234, 162);\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n.section_nav .filter[data-v-13e03f97] {\n  position: absolute;\n  top: 80%;\n  right: 50%;\n  transform: translate(50%, 50%);\n  z-index: 9999;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

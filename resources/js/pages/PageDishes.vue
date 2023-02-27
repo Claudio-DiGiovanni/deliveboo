@@ -4,7 +4,7 @@
             <h1 class="text-center text-white p-4">I Nostri Piatti</h1>
             <div class="container ">
                 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
-                    <div v-for="dish in dishes" :key="dish.id" v-show="dish.user_id === $route.params.id" class="p-3">
+                    <div v-for="dish in dishes" :key="dish.id" v-show="dish.user_id === $route.params.id && dish.visibility === 1" class="p-3">
                         <div class="card card-ristoranti-2 bg-opacity-25 p-0 col">
                             <div class="container_img">
                                 <img :src="dish.image" class="card-img-top h-100 w-100" alt="" />
@@ -80,7 +80,7 @@ export default {
     width: 100%;
     transform: rotate(0deg);
     backface-visibility: hidden;
-    transition: transform 0.6s linear;
+    transition: transform 0.3s linear;
     box-shadow: 10px 10px 5px #141414;
 
     img {
@@ -98,7 +98,7 @@ export default {
     height: 100%;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    transition: transform 0.6s linear;
+    transition: transform 0.3s linear;
     overflow:visible;
 }
 
@@ -108,7 +108,7 @@ export default {
 
 .card:hover .card_body {
     transform: rotateY(0deg);
-    transition: 1.5s;
+    transition: 1s;
     background-color: black;
     border-radius: 2rem;
 }
@@ -123,8 +123,8 @@ export default {
 }
 .quantity{
     color: white;
-    margin-right: 2rem;
-    font-size: 2rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 

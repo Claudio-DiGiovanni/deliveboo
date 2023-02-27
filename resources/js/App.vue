@@ -13,6 +13,9 @@ export default {
     components: {
         NavBar,
     },
+    created() {
+        this.$store.dispatch('beforeUnload');
+    }
 }
 </script>
 

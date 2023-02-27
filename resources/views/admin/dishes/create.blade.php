@@ -92,7 +92,7 @@
                         <label class="form-check-label" for="visibility">Visibilità</label>
                     </div>
 
-                    <button type="submit" class="btn btn-outline-success bg-success text-white">aggiungi piatto</button>
+                    <button type="submit" class="btn btn-outline-success bg-success text-white">Aggiungi piatto</button>
 
 
                 </form>

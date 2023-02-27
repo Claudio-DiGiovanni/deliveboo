@@ -1,8 +1,8 @@
 <template>
     <div class="container_section">
         <section class="section_nav">
-            <select v-if="types" name="type" id="type" v-model="value" @change="filterRestaurant(value)">
-        <option :value="'none'" selected>Nessun Filtro</option>
+            <select class="form-select filter" v-if="types" name="type" id="type" v-model="value" @change="filterRestaurant(value)">
+        <option value="all" selected>Tutti</option>
         <option v-for="typex in types" :key="typex.id" :value="typex.id" >{{ typex.name }}</option>
     </select>
       <h2>I piatti che ami, a domicilio</h2>
@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         filterRestaurant(typeId) {
-            if(typeId !== 'none') {
+            if(typeId !== 'all') {
                 axios.get(`/api/filter/${typeId}`)
                     .then(response => {
                         if (response.data.success) {
@@ -136,6 +136,18 @@ export default {
     color: white;
     font-size: 40px;
     border-top-left-radius: 80%;
+  }
+  .filter{
+    position: absolute;
+    top: 80%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    z-index: 9999;
+    width: 10%;
+    border: 2px solid #5cc9bc;
+    border-radius: 10px;
+    padding: .5rem;
+    text-align: center;
   }
 }
 </style>

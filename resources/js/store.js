@@ -1,5 +1,6 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
+
 Vue.use(Vuex)
 const state = {
     cart: {
@@ -9,16 +10,18 @@ const state = {
   };
 
   const getters = {
-    cartItems: (state) => state.cart.items,
-    cartTotal: (state) => {
-      return state.cart.items.reduce(
+    cartItems: (state) =>
+      state.cart.items.length > 0 ? state.cart.items : JSON.parse(localStorage.getItem('cart')) || [],
+    cartTotal: (state) =>
+      (state.cart.items.length > 0 ? state.cart.items : JSON.parse(localStorage.getItem('cart')) || []).reduce(
         (total, item) => total + item.quantity * item.price,
         0
-      );
-    },
-    cartQuantity: (state) => {
-      return state.cart.items.reduce((total, item) => total + item.quantity, 0);
-    },
+      ),
+    cartQuantity: (state) =>
+      (state.cart.items.length > 0 ? state.cart.items : JSON.parse(localStorage.getItem('cart')) || []).reduce(
+        (total, item) => total + item.quantity,
+        0
+      ),
   };
 
   const actions = {
@@ -38,6 +41,7 @@ const state = {
         } else {
             commit("INCREMENT_ITEM_QUANTITY", item);
         }
+
     },
 
     removeFromCart({ commit }, payload) {
@@ -53,17 +57,24 @@ const state = {
     },
 
     clearCart({ commit }) {
-      commit("CLEAR_CART");
+        localStorage.removeItem('cart');
+        commit("CLEAR_CART");
     },
     async createOrder({ state, commit }, payload) {
         try {
           const response = await axios.post("/api/orders", payload);
+          localStorage.removeItem('cart');
           commit("CLEAR_CART");
           return response.data;
         } catch (error) {
           console.error(error);
           throw error;
         }
+      },
+      beforeUnload({ state }) {
+        window.addEventListener('beforeunload', () => {
+          localStorage.setItem('cart', JSON.stringify(state.cart.items));
+        });
       },
       async generateBraintreeToken({ commit }) {
         try {
@@ -115,7 +126,8 @@ const state = {
     },
 
     CLEAR_CART(state) {
-      state.cart.items = [];
+        localStorage.removeItem('cart');
+        state.cart.items = [];
     },
     SET_BRAINTREE_CUSTOMER_ID(state, payload) {
         state.braintreeCustomerId = payload;

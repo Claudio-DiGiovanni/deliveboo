@@ -18,7 +18,7 @@
         </div>
         </div>
         <div class="text-center">
-            <p>Totale: {{ cartTotal / 100 }} €</p>
+            <p><h3>TOTALE:</h3> {{ cartTotal / 100 }} €</p>
         </div>
         <button @click="clearCart" class="m-4 btn btn-warning">Svuota il carrello</button>
         <div class="">

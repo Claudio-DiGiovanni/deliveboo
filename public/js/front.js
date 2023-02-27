@@ -2262,7 +2262,7 @@ var render = function render() {
     }, [_vm._v("Rimuovi")])])])]);
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "text-center"
-  }, [_c("p", [_vm._v("Totale: " + _vm._s(_vm.cartTotal / 100) + " €")])]), _vm._v(" "), _c("button", {
+  }, [_c("p"), _c("h3", [_vm._v("TOTALE:")]), _vm._v(" " + _vm._s(_vm.cartTotal / 100) + " €"), _c("p")]), _vm._v(" "), _c("button", {
     staticClass: "m-4 btn btn-warning",
     on: {
       click: _vm.clearCart

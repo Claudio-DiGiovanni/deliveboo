@@ -58,8 +58,6 @@ export default{
                 address: this.address,
                 cart: this.cart,
             };
-            console.log(this.cart)
-            console.log(payload)
             this.$store.dispatch("createOrder", payload)
                 .then(() => {
                     this.customer_name = "";
@@ -73,11 +71,11 @@ export default{
         },
         onSuccess (payload) {
       let nonce = payload.nonce;
-      // Do something great with the nonce...
+
     },
     onError (error) {
       let message = error.message;
-      // Whoops, an error has occured while trying to get the nonce
+
     },
     }
 }

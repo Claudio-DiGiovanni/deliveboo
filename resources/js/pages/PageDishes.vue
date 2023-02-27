@@ -14,8 +14,9 @@
                                 <div>
                                     Prezzo: {{ dish.price / 100 }} €
                                 </div>
-                                    <div class="number-input d-flex justifly-center alight-center">
-                                        <button @click="addToCart(dish)">Aggiungi al carrello</button>
+                                    <div class="number-input d-flex justify-center alight-center">
+                                        <button class="btn btn-secondary" @click="addToCart(dish)">Aggiungi al carrello</button>
+                                        <div v-if="cart"><span v-for="item in cart.items" :key="item.id" v-show="dish.id === item.id" class="quantity">X {{ item.quantity }}</span></div>
                                     </div>
                             </div>
 
@@ -34,6 +35,7 @@ export default {
     data() {
         return {
             dishes: [],
+            cart: null,
         };
     },
     methods: {
@@ -47,6 +49,7 @@ export default {
     },
     addToCart(dish) {
         this.$store.dispatch("addToCart", dish);
+        this.cart =  this.$store.state.cart;
 },
     },
     mounted() {
@@ -118,30 +121,11 @@ export default {
 .card-ristoranti-2 {
     background: transparent;
 }
-
-.number-input {
-    //gestione quantità piatto con + -
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-.number-input input {
-    //gestione quantità piatto con + -
-    width: 40px;
-    font-size: 18px;
-    text-align: center;
-    border: none;
-    background-color: transparent;
-}
-
-.number-input .quantity {
-    //gestione quantità piatto con + -
-    width: 60px;
-    /* larghezza del campo di input */
+.quantity{
+    color: white;
+    margin-right: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 </style>

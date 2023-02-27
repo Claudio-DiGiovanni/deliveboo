@@ -1946,7 +1946,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      dishes: []
+      dishes: [],
+      cart: null
     };
   },
   methods: {
@@ -1978,6 +1979,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     addToCart: function addToCart(dish) {
       this.$store.dispatch("addToCart", dish);
+      this.cart = this.$store.state.cart;
     }
   },
   mounted: function mounted() {
@@ -2002,7 +2004,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       users: null,
-      types: null
+      types: null,
+      value: ''
     };
   },
   methods: {
@@ -2076,8 +2079,6 @@ __webpack_require__.r(__webpack_exports__);
         address: this.address,
         cart: this.cart
       };
-      console.log(this.cart);
-      console.log(payload);
       this.$store.dispatch("createOrder", payload).then(function () {
         _this.customer_name = "";
         _this.email = "";
@@ -2089,11 +2090,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     onSuccess: function onSuccess(payload) {
       var nonce = payload.nonce;
-      // Do something great with the nonce...
     },
     onError: function onError(error) {
       var message = error.message;
-      // Whoops, an error has occured while trying to get the nonce
     }
   }
 });
@@ -2202,7 +2201,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("div", [_c("h1", [_vm._v("Ordine completato con successo")]), _vm._v(" "), _c("p", [_vm._v("Grazie, " + _vm._s(_vm.order.customer_name) + ". L'ordine numero " + _vm._s(_vm.order.id) + " verrà consegnato il prima possibile all'indirizzo " + _vm._s(_vm.order.address) + " ")])])]);
+  }, [_vm.order ? _c("div", [_c("h1", [_vm._v("Ordine completato con successo")]), _vm._v(" "), _c("p", [_vm._v("Grazie, " + _vm._s(_vm.order.customer_name) + ". L'ordine numero " + _vm._s(_vm.order.id) + " verrà consegnato il prima possibile all'indirizzo " + _vm._s(_vm.order.address) + " ")])]) : _vm._e()]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2337,14 +2336,26 @@ var render = function render() {
     })]), _vm._v(" "), _c("div", {
       staticClass: "card_body d-flex flex-column justify-content-between"
     }, [_vm._v("\n                            Descrizione: " + _vm._s(dish.description) + "\n                            "), _c("div", [_vm._v("\n                                Prezzo: " + _vm._s(dish.price / 100) + " €\n                            ")]), _vm._v(" "), _c("div", {
-      staticClass: "number-input d-flex justifly-center alight-center"
+      staticClass: "number-input d-flex justify-center alight-center"
     }, [_c("button", {
+      staticClass: "btn btn-secondary",
       on: {
         click: function click($event) {
           return _vm.addToCart(dish);
         }
       }
-    }, [_vm._v("Aggiungi al carrello")])])])])]);
+    }, [_vm._v("Aggiungi al carrello")]), _vm._v(" "), _vm.cart ? _c("div", _vm._l(_vm.cart.items, function (item) {
+      return _c("span", {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: dish.id === item.id,
+          expression: "dish.id === item.id"
+        }],
+        key: item.id,
+        staticClass: "quantity"
+      }, [_vm._v("X " + _vm._s(item.quantity))]);
+    }), 0) : _vm._e()])])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [];
@@ -2424,7 +2435,8 @@ var render = function render() {
         to: {
           name: "dishes",
           params: {
-            id: user.id
+            id: user.id,
+            slug: user.slug
           }
         }
       }
@@ -7259,7 +7271,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  border-radius: 2rem;\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s linear;\n  box-shadow: 10px 10px 5px #141414;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n  border-radius: 2rem;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s linear;\n  overflow: visible;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 1.5s;\n  background-color: black;\n  border-radius: 2rem;\n}\n.bg_img[data-v-84cf3c00] {\n  background-image: url(https://blendofbites.com/wp-content/uploads/2021/01/varity-of-fast-food-on-black-table-2048x1365.jpg);\n  background-size: cover;\n}\n.card-ristoranti-2[data-v-84cf3c00] {\n  background: transparent;\n}\n.number-input[data-v-84cf3c00] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-direction: row-reverse;\n  justify-content: center;\n  align-items: center;\n}\n.number-input input[data-v-84cf3c00] {\n  width: 40px;\n  font-size: 18px;\n  text-align: center;\n  border: none;\n  background-color: transparent;\n}\n.number-input .quantity[data-v-84cf3c00] {\n  width: 60px;\n  /* larghezza del campo di input */\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  border-radius: 2rem;\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s linear;\n  box-shadow: 10px 10px 5px #141414;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n  border-radius: 2rem;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s linear;\n  overflow: visible;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 1.5s;\n  background-color: black;\n  border-radius: 2rem;\n}\n.bg_img[data-v-84cf3c00] {\n  background-image: url(https://blendofbites.com/wp-content/uploads/2021/01/varity-of-fast-food-on-black-table-2048x1365.jpg);\n  background-size: cover;\n}\n.card-ristoranti-2[data-v-84cf3c00] {\n  background: transparent;\n}\n.quantity[data-v-84cf3c00] {\n  color: white;\n  margin-right: 2rem;\n  font-size: 2rem;\n  font-weight: 700;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

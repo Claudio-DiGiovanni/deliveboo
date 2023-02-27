@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </form>
-      <button class="btn btn-primary text-light"><router-link :to="{ name: 'payment' }">Paga</router-link></button>
+      <button class="btn btn-primary"><router-link :to="{ name: 'payment' }">Paga</router-link></button>
     </div>
   </template>
 

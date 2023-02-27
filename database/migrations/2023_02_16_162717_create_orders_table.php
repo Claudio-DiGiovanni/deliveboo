@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('address', 100);
             $table->string('customer_name', 50);
-            $table->string('email', 100)->unique();
+            $table->string('email', 100);
             $table->timestamps();
         });
     }

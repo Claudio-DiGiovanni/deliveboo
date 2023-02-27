@@ -2262,12 +2262,7 @@ var render = function render() {
     }, [_vm._v("Rimuovi")])])])]);
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "text-center"
-  }, [_c("p"), _c("h3", [_vm._v("TOTALE:")]), _vm._v(" " + _vm._s(_vm.cartTotal / 100) + " €"), _c("p")]), _vm._v(" "), _c("button", {
-    staticClass: "m-4 btn btn-warning",
-    on: {
-      click: _vm.clearCart
-    }
-  }, [_vm._v("Svuota il carrello")]), _vm._v(" "), _c("div", {}, [_c("form", {
+  }, [_c("p"), _c("h3", [_vm._v("TOTALE:")]), _vm._v(" " + _vm._s(_vm.cartTotal / 100) + " €"), _c("p")]), _vm._v(" "), _c("div", {}, [_c("form", {
     attrs: {
       method: "POST"
     },
@@ -2358,8 +2353,8 @@ var render = function render() {
         _vm.address = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("button", {
-    staticClass: "m-4 btn btn-success",
+  })]), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "m-2 btn btn-success",
     attrs: {
       type: "submit"
     },
@@ -2368,7 +2363,12 @@ var render = function render() {
         return _vm.showPopup();
       }
     }
-  }, [_vm._v("Crea Ordine")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Crea Ordine")])]), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "m-2 btn btn-warning",
+    on: {
+      click: _vm.clearCart
+    }
+  }, [_vm._v("Svuota il carrello")])]), _vm._v(" "), _c("div", {
     staticClass: "background",
     "class": _vm.popupVisibility ? "d-flex" : "d-none"
   }, [_c("div", {

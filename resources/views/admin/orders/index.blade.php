@@ -7,9 +7,9 @@
 
 
             <div class="h-100" >
-                
+
                 <div class="d-flex justify-content-center align-items-center flex-column h-100">
-                    
+
                     <div class="container container_order">
                         <h1 class="">Lista ordini</h1>
                         <table class="table table-striped table_orders">
@@ -20,28 +20,29 @@
                             </tr>
                             @foreach ($orders as $order)
                                 <thead>
-    
+
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td> {{ $order->order_number }}</td>
-                                        <td> {{ $order->created_at }}</td>
-                                        <td> <a href="{{ route('admin.orders.show', ['order' => $order]) }}"
+                                        <td class="white"> {{ $order->order_number }}</td>
+                                        <td class="white"> {{ $order->created_at }}</td>
+                                        <td class="white"> <a href="{{ route('admin.orders.show', ['order' => $order]) }}"
                                                 class="btn btn-outline-info">Info</a></td>
                                     </tr>
                                 </tbody>
                             @endforeach
                         </table>
                     </div>
-    
+
                 </div>
                 <div>
                     {{ $orders->links() }}
                 </div>
-    
+
             </div>
-    
+
         </div>
     </div>
-   
+
 @endsection
+

@@ -24,16 +24,16 @@
                                 <td> {{ $order->address }}</td>
                                 <td> {{ $order->customer_name }}</td>
                                 <td> {{ $order->email }}</td>
-    
-                                <td class="td_show_orders">
+
+                                <td class="td_show_orders white">
                                     <ul class="p-0">
                                         @foreach ($dishes as $dish)
                                             <li> {{ $dish->name }}</li>
                                         @endforeach
                                     </ul>
-    
+
                                 </td>
-                                <td>
+                                <td class="white">
                                     <button id="delete" class="btn btn-outline-danger" onclick="showPopup(event)"
                                         data-id="{{ $order->id }}">Elimina</button>
                                     <div class="background">
@@ -51,13 +51,13 @@
                                     </div>
                                 </td>
                             </tr>
-    
+
                         </tbody>
-    
+
                     </table>
 
                 </div>
-             
+
 
             </div>
 

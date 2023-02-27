@@ -9320,3 +9320,8 @@ label {
   color: white;
   border-radius: 1rem;
 }
+
+.white {
+  background-color: white;
+  opacity: 0.9;
+}

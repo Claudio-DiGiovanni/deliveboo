@@ -2237,7 +2237,7 @@ var render = function render() {
           return _vm.decrementItem(dish);
         }
       }
-    }, [_vm._v("-")]), _vm._v("\n                    " + _vm._s(dish.quantity) + "\n            "), _c("button", {
+    }, [_vm._v("-")]), _vm._v("\n                    " + _vm._s(dish.quantity) + "\n                    "), _c("button", {
       staticClass: "btn btn-light",
       on: {
         click: function click($event) {
@@ -2254,7 +2254,7 @@ var render = function render() {
     }, [_vm._v("Rimuovi")])])])]);
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "text-center"
-  }, [_c("p", [_vm._v("TOTALE: " + _vm._s(_vm.cartTotal / 100) + " ")])]), _vm._v(" "), _c("div", {}, [_c("div", [_c("router-link", {
+  }, [_c("h4", [_vm._v("TOTALE:")]), _vm._v(" "), _c("h6", [_vm._v(_vm._s(_vm.cartTotal / 100) + " ")])]), _vm._v(" "), _c("div", {}, [_c("div", [_c("router-link", {
     attrs: {
       to: {
         name: "payment",

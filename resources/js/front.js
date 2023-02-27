@@ -8,11 +8,8 @@ import VueRouter from 'vue-router';
 import PageHome from './pages/PageHome';
 import PageDishes from './pages/PageDishes';
 import PageCart from './pages/PageCart';
-<<<<<<< HEAD
 import OrderSuccess from './pages/OrderSuccess';
-=======
 import PagePayment from './pages/PagePayment';
->>>>>>> pagamento
 Vue.use(VueRouter);
 Vue.use(Vuex)
 

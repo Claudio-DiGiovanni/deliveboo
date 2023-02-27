@@ -1,6 +1,9 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+<<<<<<< HEAD
+/***/ "./resources/js/front.js":
+=======
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -2537,9 +2540,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ "./resources/js/store.js":
+>>>>>>> 3600913e2427b887da1a7403d1eaea95423c0daa
 /*!*******************************!*\
-  !*** ./resources/js/store.js ***!
+  !*** ./resources/js/front.js ***!
   \*******************************/
+<<<<<<< HEAD
+/***/ (() => {
+=======
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -62936,152 +62943,20 @@ var index_esm = {
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (index_esm);
+>>>>>>> 3600913e2427b887da1a7403d1eaea95423c0daa
 
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\resources\\js\\front.js: Unexpected token (11:0)\n\n\u001b[0m \u001b[90m  9 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mPageDishes\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./pages/PageDishes'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mPageCart\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./pages/PageCart'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mOrderSuccess\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./pages/OrderSuccess'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mPagePayment\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./pages/PagePayment'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at instantiate (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:64:32)\n    at constructor (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:362:12)\n    at Parser.raise (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:3254:19)\n    at Parser.unexpected (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:3284:16)\n    at Parser.parseExprAtom (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11231:22)\n    at Parser.parseExprSubscripts (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10847:23)\n    at Parser.parseUpdate (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10830:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10806:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10644:61)\n    at Parser.parseExprOps (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10649:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10626:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10587:21)\n    at Parser.parseExpressionBase (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10541:23)\n    at C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10537:39\n    at Parser.allowInAnd (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12232:16)\n    at Parser.parseExpression (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10537:17)\n    at Parser.parseStatementContent (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12674:23)\n    at Parser.parseStatementLike (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Parser.parseModuleItem (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12518:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13104:36)\n    at Parser.parseBlockBody (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13097:10)\n    at Parser.parseProgram (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12432:10)\n    at Parser.parseTopLevel (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12422:25)\n    at Parser.parse (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14234:10)\n    at parse (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14276:38)\n    at parser (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\core\\lib\\parser\\index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:65:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\core\\lib\\transformation\\index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\@babel\\core\\lib\\transform.js:22:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\Claudio\\Documents\\Boolean\\GitHub\\deliveboo\\node_modules\\gensync\\index.js:223:11)");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
 /******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./resources/js/front.js"]();
 /******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nc = undefined;
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-/*!*******************************!*\
-  !*** ./resources/js/front.js ***!
-  \*******************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _pages_PageHome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/PageHome */ "./resources/js/pages/PageHome.vue");
-/* harmony import */ var _pages_PageDishes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PageDishes */ "./resources/js/pages/PageDishes.vue");
-/* harmony import */ var _pages_PageCart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PageCart */ "./resources/js/pages/PageCart.vue");
-/* harmony import */ var _pages_PagePayment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/PagePayment */ "./resources/js/pages/PagePayment.vue");
-/* harmony import */ var _pages_OrderSuccess__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/OrderSuccess */ "./resources/js/pages/OrderSuccess.vue");
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-
-
-
-
-
-
-
-
-
-vue__WEBPACK_IMPORTED_MODULE_8__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_8__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var routes = [{
-  path: '/',
-  name: 'home',
-  component: _pages_PageHome__WEBPACK_IMPORTED_MODULE_3__["default"]
-}, {
-  path: '/restaurants/:slug/dishes',
-  name: 'dishes',
-  component: _pages_PageDishes__WEBPACK_IMPORTED_MODULE_4__["default"]
-}, {
-  path: '/cart',
-  name: 'cart',
-  component: _pages_PageCart__WEBPACK_IMPORTED_MODULE_5__["default"]
-}];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
-  mode: 'history',
-  routes: routes
-});
-new vue__WEBPACK_IMPORTED_MODULE_8__["default"]({
-  el: '#root',
-  render: function render(h) {
-    return h(_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  },
-  router: router,
-  store: _store__WEBPACK_IMPORTED_MODULE_2__["default"]
-});
-})();
-
 /******/ })()
 ;

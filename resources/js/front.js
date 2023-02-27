@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 import PageHome from './pages/PageHome';
 import PageDishes from './pages/PageDishes';
 import PageCart from './pages/PageCart';
+import PagePayment from './pages/PagePayment';
 Vue.use(VueRouter);
 Vue.use(Vuex)
 
@@ -26,6 +27,11 @@ const routes = [
         path:'/cart',
         name:'cart',
         component: PageCart,
+    },
+    {
+        path:'/payment',
+        name:'payment',
+        component: PagePayment,
     }
 ];
 

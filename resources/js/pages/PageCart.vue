@@ -19,6 +19,7 @@
       </ol>
       <p>Totale: {{ cartTotal/100 }} €</p>
       <button @click="clearCart">Svuota il carrello</button>
+      <button class="btn btn-primary text-light"><router-link :to="{ name: 'payment' }">Paga</router-link></button>
     </div>
   </template>
 

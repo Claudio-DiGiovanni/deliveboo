@@ -4,7 +4,7 @@
     <div v-for="dish in dishes" :key="dish.id" v-show="dish.user_id === $route.params.id">
       <h2>{{ dish.name }}</h2>
       <p>{{ dish.description }}</p>
-      <p>Prezzo: {{ dish.price/100 }} €</p>
+      <p>Prezzo: {{ dish.price }} €</p>
       <button @click="addToCart(dish)">Aggiungi al carrello</button>
     </div>
   </div>

@@ -2302,7 +2302,7 @@ var render = function render() {
         expression: "dish.user_id === $route.params.id"
       }],
       key: dish.id
-    }, [_c("h2", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("p", [_vm._v("Prezzo: " + _vm._s(dish.price / 100) + " €")]), _vm._v(" "), _c("button", {
+    }, [_c("h2", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(dish.description))]), _vm._v(" "), _c("p", [_vm._v("Prezzo: " + _vm._s(dish.price) + " €")]), _vm._v(" "), _c("button", {
       on: {
         click: function click($event) {
           return _vm.addToCart(dish);
@@ -2382,8 +2382,7 @@ var render = function render() {
         to: {
           name: "dishes",
           params: {
-            id: user.id,
-            slug: user.slug
+            id: user.id
           }
         }
       }
@@ -2395,7 +2394,7 @@ var render = function render() {
       staticClass: "card-img-top p-2 h-100 w-100",
       attrs: {
         src: user.image_logo,
-        alt: user.name
+        alt: "..."
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card-body text-center"

@@ -5,10 +5,10 @@
         <option v-for="typex in types" :key="typex.id" :value="typex.id" >{{ typex.name }}</option>
     </select>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2" >
-            <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto" v-for="user in users" :key="user.id">
+            <router-link :to="{name: 'dishes', params: { id: user.id }}" class="p-3 w-75 m-auto" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
                 <div class="w-75 h-75 m-auto">
-                    <img :src="user.image_logo" class="card-img-top p-2 h-100 w-100" :alt="user.name">
+                    <img :src="user.image_logo" class="card-img-top p-2 h-100 w-100" alt="...">
                 </div>
                 <div class="card-body text-center">
                     <h2 class="card-text text-dark m-3">{{ user.name }}</h2>

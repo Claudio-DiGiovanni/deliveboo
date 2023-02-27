@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Cache;
     return response()->json(['order_id' => $order_id]);
 });
 
+// <router-link class="nav-link" :to="{ name: 'cart' }">Carrello</router-link>
+

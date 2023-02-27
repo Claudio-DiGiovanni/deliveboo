@@ -1985,7 +1985,7 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("Deliveroo")])], 1)]), _vm._v(" "), _vm._m(0)])])])]);
+  }, [_vm._v("DeliveBoo")])], 1)]), _vm._v(" "), _vm._m(0)])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2141,7 +2141,7 @@ var staticRenderFns = [function () {
     staticClass: "section_nav"
   }, [_c("h2", [_vm._v("I piatti che ami, a domicilio")]), _vm._v(" "), _c("div", {
     staticClass: "hash"
-  }, [_vm._v("#aCasaTuaConDeliveroo")])]);
+  }, [_vm._v("#aCasaTuaConDeliveBoo")])]);
 }];
 render._withStripped = true;
 

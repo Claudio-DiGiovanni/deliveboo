@@ -2,7 +2,7 @@
     <div class="container_section">
         <section class="section_nav">
       <h2>I piatti che ami, a domicilio</h2>
-      <div class="hash">#aCasaTuaConDeliveroo</div>
+      <div class="hash">#aCasaTuaConDeliveBoo</div>
     </section>
         <div class="container ">
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2" >
@@ -19,7 +19,7 @@
         </div>
     </div>
     </div>
-   
+
 </template>
 
 <script>
@@ -65,7 +65,7 @@ export default {
     width: 300px;
     justify-content: space-between;
     background-color: bisque ;
-   
+
   }
   .card-img-top{
     object-fit: contain;

@@ -14,7 +14,6 @@
           <div class="nav-item">
               <button>Collabora con noi</button>
 
-              <button>Registrati</button>
 
             </div>
 
@@ -39,7 +38,7 @@ export default {};
   font-size: 2rem;
 }
 .navbar {
-  background-color: rgb(253,189,16);
+  background-color: rgba(92, 201, 188, 1);
 }
 
 button{

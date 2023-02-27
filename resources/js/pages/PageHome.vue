@@ -44,15 +44,16 @@ export default {
 
 <style lang="scss" scoped>
 .container_section{
-    background-color: rgb(255, 196, 124);
+    background-color: rgba(92, 201, 188, 1);
 }
 .container{
-    background-color: rgb(255, 196, 124);
+    background-color: rgba(92, 201, 188, 1);
     padding-top: 4rem;
 }
 .card, .col{
     padding-left: 0 !important;
     padding-right: 0 !important;
+    
 }
     a {
         text-decoration: none;
@@ -60,25 +61,33 @@ export default {
     }
     .card-ristoranti {
         height: 20rem;
+        border-radius: 2rem;
+        box-shadow: 10px 10px 5px #424242;
+        transition: 1s;
     }
+    .card-ristoranti:hover{
+        transform: scale(1.1);
+    }
+
   .card{
     border: none;
     width: 300px;
     justify-content: space-between;
-    background-color:rgb(255, 196, 124) ;
+    background-color:rgba(213, 234, 162, 1) ;
 
   }
   .card-img-top{
-    object-fit: contain;
-    background-color: rgb(255, 196, 124);
+   border-radius: 2rem;
+    
+    background-color: rgba(213, 234, 162, 1);
   }
   .section_nav {
   position: relative;
   height: 35rem;
-  background-color: rgb(253,189,16);
+  background-color: rgba(54, 124, 136, 1);
   display: flex;
   align-items: center;
-  background-image: url(https://i.pinimg.com/originals/12/48/e2/1248e2491e090960c1d4d060036185fa.jpg);
+  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);
   background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -86,13 +95,13 @@ export default {
     padding: 2rem;
     font-style: oblique;
     font-size: xx-large;
-    color: rgb(253,189,16);
+    color: rgba(213, 234, 162, 1);
   }
   .hash {
     position: absolute;
     bottom: 0;
     right: 0;
-    background-color: rgb(253,189,16);
+    background-color: rgba(54, 124, 136, 1);
     padding: 4rem;
     font-weight: bolder;
     color: white;

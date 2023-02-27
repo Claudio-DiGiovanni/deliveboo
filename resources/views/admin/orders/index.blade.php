@@ -1,35 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="background_img">
+        <img class="img_background" src="https://media.discordapp.net/attachments/1031881470786154557/1079778610757521480/deliveboo-upscaling.png" alt="">
+        <div class="container_home">
 
-<h1 class="justify-content-center d-flex">Lista ordini</h1>
 
-<div>
-    <div class="container">
-        <table class="table table-striped">
-            <tr class="table-success">
-            <th>Numero ordine</th>
-            <th>Data e ora</th>
-            <th></th>
-            </tr>
-            @foreach ($orders as $order)
-            <thead>
-
-            </thead>
-            <tbody>
-                <tr>
-                    <td> {{$order->order_number}}</td>
-                    <td>  {{$order->created_at}}</td>
-                    <td>  <a href="{{ route('admin.orders.show', ['order' => $order]) }}" class="btn btn-outline-info">Info</a></td>
-                </tr>
-            </tbody>
-            @endforeach
-        </table>
+            <div class="h-100" >
+                
+                <div class="d-flex justify-content-center align-items-center flex-column h-100">
+                    
+                    <div class="container container_order">
+                        <h1 class="">Lista ordini</h1>
+                        <table class="table table-striped table_orders">
+                            <tr class="table-success">
+                                <th>Numero ordine</th>
+                                <th>Data e ora</th>
+                                <th></th>
+                            </tr>
+                            @foreach ($orders as $order)
+                                <thead>
+    
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> {{ $order->order_number }}</td>
+                                        <td> {{ $order->created_at }}</td>
+                                        <td> <a href="{{ route('admin.orders.show', ['order' => $order]) }}"
+                                                class="btn btn-outline-info">Info</a></td>
+                                    </tr>
+                                </tbody>
+                            @endforeach
+                        </table>
+                    </div>
+    
+                </div>
+                <div>
+                    {{ $orders->links() }}
+                </div>
+    
+            </div>
+    
+        </div>
     </div>
-
-</div>
-<div>
-    {{ $orders->links() }}
-</div>
-
+   
 @endsection

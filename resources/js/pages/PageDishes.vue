@@ -77,16 +77,21 @@ export default {
 
 .card-ristoranti {
     height: 100%;
+    
 }
 
+
 .container_img {
+    border-radius: 2rem;
     width: 100%;
     transform: rotate(0deg);
     backface-visibility: hidden;
     transition: transform 0.6s linear;
+    box-shadow: 10px 10px 5px #141414;
 
     img {
         width: 100%;
+        border-radius: 2rem;
     }
 }
 
@@ -100,7 +105,7 @@ export default {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     transition: transform 0.6s linear;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .card:hover .container_img {
@@ -111,6 +116,7 @@ export default {
     transform: rotateY(0deg);
     transition: 1.5s;
     background-color: black;
+    border-radius: 2rem;
 }
 
 .bg_img {
@@ -146,4 +152,5 @@ export default {
     width: 60px;
     /* larghezza del campo di input */
 }
+
 </style>

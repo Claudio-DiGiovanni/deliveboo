@@ -33,4 +33,48 @@
 td, th{
  vertical-align: middle !important;
 }
+.background_img{
+position: relative;
+height: 100vh;
+width: 100vw;
+}
+.img_background{
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+.title_home_admin{
+    font-size: xx-large;
+    font-weight: 900;
+    font-style: oblique;
+    
+}
+.container_home{
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+}
+pb-4, .py-4{
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+label{
+    font-size: 18px;
+}
+.container_order{
+    overflow: auto;
+    background:rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    color: white;
+    border-radius: 1rem;
+}
+.container_show_order{
+    overflow: auto;
+}
+.form_container{
+    background:rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    color: white;
+    border-radius: 1rem;
+}
 

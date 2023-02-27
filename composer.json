@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5|^8.0",
+        "braintree/braintree_php": "*",
         "doctrine/dbal": "2.*",
         "fakerphp/faker": "^1.21",
         "fideloper/proxy": "^4.4",

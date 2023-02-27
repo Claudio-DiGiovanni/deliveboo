@@ -9266,6 +9266,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 td, th {
   vertical-align: middle !important;
+  background-color: white;
+  opacity: 0.9;
 }
 
 .background_img {
@@ -9319,9 +9321,4 @@ label {
   padding: 2rem;
   color: white;
   border-radius: 1rem;
-}
-
-.white {
-  background-color: white;
-  opacity: 0.9;
 }

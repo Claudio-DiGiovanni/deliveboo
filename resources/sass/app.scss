@@ -32,6 +32,8 @@
 
 td, th{
  vertical-align: middle !important;
+ background-color: white;
+ opacity: 0.9;
 }
 .background_img{
 position: relative;
@@ -78,8 +80,4 @@ label{
     border-radius: 1rem;
 }
 
-.white {
-    background-color: white;
-    opacity: 0.9;
-}
 

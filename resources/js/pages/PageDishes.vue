@@ -77,7 +77,7 @@ export default {
 
 .card-ristoranti {
     height: 100%;
-    
+
 }
 
 
@@ -105,7 +105,7 @@ export default {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     transition: transform 0.6s linear;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .card:hover .container_img {

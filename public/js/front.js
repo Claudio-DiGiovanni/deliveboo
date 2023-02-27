@@ -2161,22 +2161,25 @@ var render = function render() {
       }
     }
   }, [_vm._v("DeliveBoo")])], 1)]), _vm._v(" "), _c("div", {
-    staticClass: "nav-item"
-  }, [_c("a", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      href: "/admin"
-    }
-  }, [_vm._v("Collabora con noi")]), _vm._v(" "), _c("router-link", {
-    staticClass: "nav-link",
+    staticClass: "nav-item d-flex"
+  }, [_c("router-link", {
     attrs: {
       to: {
         name: "cart"
       }
     }
-  }, [_c("button", [_vm._v("Carrello")])])], 1)])])])]);
+  }, [_c("button", [_vm._v("Carrello")])]), _vm._v(" "), _vm._m(0)], 1)])])])]);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", {
+    staticClass: "mx-5",
+    attrs: {
+      href: "/admin"
+    }
+  }, [_c("button", [_vm._v("Collabora con noi")])]);
+}];
 render._withStripped = true;
 
 

@@ -11,9 +11,9 @@
             </li>
 
           </ul>
-          <div class="nav-item">
-              <a class="btn btn-secondary" href="/admin">Collabora con noi</a>
-              <router-link class="nav-link" :to="{ name: 'cart' }"><button>Carrello</button></router-link>
+          <div class="nav-item d-flex">
+              <router-link :to="{ name: 'cart' }"><button>Carrello</button></router-link>
+              <a class="mx-5" href="/admin"><button>Collabora con noi</button></a>
             </div>
         </div>
       </div>
@@ -30,6 +30,7 @@ export default {};
 .navbar-collapse{
     justify-content: space-between;
 }
+
 .nav-link {
   color: white;
   font-weight: bold;

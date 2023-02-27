@@ -2,15 +2,18 @@
 
 @section('content')
 @auth
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1>Ciao capo, benvenuto nel tuo ristorante</h1>
+<div class="background_img">
+  <img  class="img_background" src="https://media.discordapp.net/attachments/1031881470786154557/1079778610757521480/deliveboo-upscaling.png" alt="">
+  <div class="container container_home ">
+    <div class="row justify-content-center h-100 align-items-center">
+      <h1 class="title_home_admin">Ciao  {{ Auth::user()->name }}, benvenuto nel tuo ristorante</h1>
+        <div class="col-md-8 align-self-baseline container_order">
+            
            <div class="container">
-            <div class="row">
+              <div class="row">
                 <div class="col-sm-6">
                     <div class="card h-100">
-                      <div class="card-body d-flex flex-column justify-content-between">
+                      <div class="card-body d-flex flex-column justify-content-between ">
                         <h5 class="card-title text-center">Menù piatti</h5>
                         <img src="https://media-assets.lacucinaitaliana.it/photos/638e66dca4734137a7a3e238/16:9/w_1280,c_limit/spaghetti-spezzati-con-sugo-di-pesce1.jpg" class="card-img-top" alt="...">
 
@@ -37,6 +40,9 @@
         </div>
     </div>
 </div>
+</div>
+
+
 @endauth
 
 @endsection

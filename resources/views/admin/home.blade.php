@@ -15,7 +15,7 @@
                         <img src="https://media-assets.lacucinaitaliana.it/photos/638e66dca4734137a7a3e238/16:9/w_1280,c_limit/spaghetti-spezzati-con-sugo-di-pesce1.jpg" class="card-img-top" alt="...">
 
                         <div class="row">
-                          <a class="col-10 m-auto btn btn-outline-primary" href="{{ route('admin.dishes.index') }}">Entra</a>
+                          <a class="col-10 m-auto btn btn-outline-primary" href="{{ route('admin.dishes.index') }}">Entra </a>
                         </div>
                       </div>
                     </div>

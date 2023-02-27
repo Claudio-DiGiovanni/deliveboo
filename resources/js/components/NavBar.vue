@@ -12,16 +12,9 @@
 
           </ul>
           <div class="nav-item">
-              <button>Collabora con noi</button>
-
-
+              <a class="btn btn-secondary" href="/admin">Collabora con noi</a>
+              <router-link class="nav-link" :to="{ name: 'cart' }"><button>Carrello</button></router-link>
             </div>
-            <div class="nav-item">
-                <router-link class="nav-link" :to="{ name: 'cart' }">Carrello</router-link>
-
-
-            </div>
-
         </div>
       </div>
     </nav>

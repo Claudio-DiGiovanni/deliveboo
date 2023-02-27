@@ -14,11 +14,9 @@
                                 <div>
                                     Prezzo: {{ dish.price / 100 }} €
                                 </div>
-                                <form class="text-center"> <!-- FORM PER INSERIRE QUANTITA' -->
                                     <div class="number-input d-flex justifly-center alight-center">
                                         <button @click="addToCart(dish)">Aggiungi al carrello</button>
                                     </div>
-                                </form>
                             </div>
 
                         </div>

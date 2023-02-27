@@ -2160,24 +2160,23 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("DeliveBoo")])], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v("DeliveBoo")])], 1)]), _vm._v(" "), _c("div", {
     staticClass: "nav-item"
-  }, [_c("router-link", {
+  }, [_c("a", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      href: "/admin"
+    }
+  }, [_vm._v("Collabora con noi")]), _vm._v(" "), _c("router-link", {
     staticClass: "nav-link",
     attrs: {
       to: {
         name: "cart"
       }
     }
-  }, [_vm._v("Carrello")])], 1)])])])]);
+  }, [_c("button", [_vm._v("Carrello")])])], 1)])])])]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "nav-item"
-  }, [_c("button", [_vm._v("Collabora con noi")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -2334,9 +2333,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card_body d-flex flex-column justify-content-between"
-    }, [_vm._v("\n                            Descrizione: " + _vm._s(dish.description) + "\n                            "), _c("div", [_vm._v("\n                                Prezzo: " + _vm._s(dish.price / 100) + " €\n                            ")]), _vm._v(" "), _c("form", {
-      staticClass: "text-center"
-    }, [_c("div", {
+    }, [_vm._v("\n                            Descrizione: " + _vm._s(dish.description) + "\n                            "), _c("div", [_vm._v("\n                                Prezzo: " + _vm._s(dish.price / 100) + " €\n                            ")]), _vm._v(" "), _c("div", {
       staticClass: "number-input d-flex justifly-center alight-center"
     }, [_c("button", {
       on: {
@@ -2344,7 +2341,7 @@ var render = function render() {
           return _vm.addToCart(dish);
         }
       }
-    }, [_vm._v("Aggiungi al carrello")])])])])])]);
+    }, [_vm._v("Aggiungi al carrello")])])])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [];

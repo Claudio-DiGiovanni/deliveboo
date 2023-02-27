@@ -7,6 +7,8 @@ use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cache;
 
 class OrderController extends Controller
 {
@@ -143,15 +145,16 @@ class OrderController extends Controller
             };
         };
         $order->dishes()->attach($dishes);
-
+        $orderId = $order->id;
+        Cache::put('order_id', $orderId);
         return response()->json(['success' => true,
-                                 'id' => $order->id]);
+                                'order_id' => $orderId]);
     }
 
     public function showOrderRecap($orderId) {
-        $orderRecap = Order::where('id', $orderId)->get();
+        $orderRecap = Order::findOrFail($orderId);
 
-        return response()->json($orderRecap);
+        return response()->json(['orderRecap' => $orderRecap]);
     }
 
 }

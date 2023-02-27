@@ -29,7 +29,7 @@ const routes = [
         component: PageCart,
     },
     {
-        path: '/order/:orderId',
+        path: '/order',
         name: 'order',
         component: OrderSuccess,
     },

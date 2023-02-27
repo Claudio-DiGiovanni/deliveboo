@@ -58,6 +58,7 @@ const state = {
     async createOrder({ state, commit }, payload) {
         try {
           const response = await axios.post("/api/orders", payload);
+          console.log(response)
           commit("CLEAR_CART");
           return response.data;
         } catch (error) {

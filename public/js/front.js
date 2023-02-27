@@ -1843,7 +1843,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      order: {}
+      order: null
     };
   },
   methods: {
@@ -1853,23 +1853,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.prev = 0;
-              _context.next = 3;
-              return axios.get("/api/order/".concat(_this.$route.params.orderId)).then(function (response) {
-                _this.order = response.data.orderRecap;
-              });
-            case 3:
-              _context.next = 8;
-              break;
-            case 5:
-              _context.prev = 5;
-              _context.t0 = _context["catch"](0);
-              console.log(_context.t0);
-            case 8:
+              _context.next = 2;
+              return axios.get('/api/get-order-id').then(function (response) {
+                var order_id = response.data.order_id;
+                try {
+                  axios.get("/api/order/".concat(order_id)).then(function (response) {
+                    var orderx = response.data.orderRecap;
+                    this.order = orderx;
+                    console.log('4', this.order);
+                  }.bind(this));
+                } catch (error) {
+                  console.log(error);
+                }
+              }.bind(_this))["catch"](function (error) {
+                console.log(error);
+              }.bind(_this));
+            case 2:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[0, 5]]);
+        }, _callee);
       }))();
     }
   },
@@ -1898,7 +1901,6 @@ __webpack_require__.r(__webpack_exports__);
       customer_name: "",
       email: "",
       address: "",
-      order: '',
       popupVisibility: false
     };
   },
@@ -1938,16 +1940,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.customer_name = "";
         _this.email = "";
         _this.address = "";
-        _this.order = response.data.order;
       })["catch"](function (error) {
         console.error(error);
       });
     },
     showPopup: function showPopup() {
       this.popupVisibility = true;
-    },
-    hidePopup: function hidePopup() {
-      this.popupVisibility = false;
     }
   }
 });
@@ -2297,38 +2295,20 @@ var render = function render() {
   }, [_vm._v("Ordine Completato")]), _vm._v(" "), _c("router-link", {
     attrs: {
       to: {
-        name: "order",
-        params: {
-          orderId: _vm.order.id || "default"
-        }
+        name: "order"
       }
     }
   }, [_c("button", {
     staticClass: "btn btn-success"
-  }, [_vm._v("Vedi ordine")])]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      id: "retry"
-    },
-    on: {
-      click: function click($event) {
-        return _vm.hidePopup();
-      }
-    }
-  }, [_vm._v("Annulla")])], 1)]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("Vedi ordine")])]), _vm._v(" "), _c("router-link", {
     attrs: {
       to: {
-        name: "order",
-        params: {
-          orderId: _vm.order || "default"
-        }
+        name: "home"
       }
     }
   }, [_c("button", {
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Crea Ordine")])])], 1)]);
+    staticClass: "btn btn-success"
+  }, [_vm._v("Torna alla Home")])])], 1)])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2532,18 +2512,19 @@ var actions = {
             return axios.post("/api/orders", payload);
           case 4:
             response = _context.sent;
+            console.log(response);
             commit("CLEAR_CART");
             return _context.abrupt("return", response.data);
-          case 9:
-            _context.prev = 9;
+          case 10:
+            _context.prev = 10;
             _context.t0 = _context["catch"](1);
             console.error(_context.t0);
             throw _context.t0;
-          case 13:
+          case 14:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[1, 9]]);
+      }, _callee, null, [[1, 10]]);
     }))();
   }
 };
@@ -38082,7 +38063,7 @@ var routes = [{
   name: 'cart',
   component: _pages_PageCart__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, {
-  path: '/order/:orderId',
+  path: '/order',
   name: 'order',
   component: _pages_OrderSuccess__WEBPACK_IMPORTED_MODULE_6__["default"]
 }];

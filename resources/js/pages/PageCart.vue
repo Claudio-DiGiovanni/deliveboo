@@ -36,15 +36,14 @@
                 <div class="background" :class="popupVisibility ? 'd-flex' : 'd-none'">
                     <div class="popup">
                         <h5 class="w-100 text-center mb-3">Ordine Completato</h5>
-                        <router-link :to="{ name: 'order', params: { orderId: order.id || 'default' } }">
+                        <router-link :to="{ name: 'order'}">
                             <button class="btn btn-success">Vedi ordine</button>
                         </router-link>
-                        <button class="btn btn-secondary" id="retry" @click="hidePopup()">Annulla</button>
+                        <router-link :to="{ name: 'home'}">
+                            <button class="btn btn-success">Torna alla Home</button>
+                        </router-link>
                     </div>
                 </div>
-            <router-link :to="{ name: 'order', params: { orderId: order || 'default' } }">
-                <button type="submit">Crea Ordine</button>
-            </router-link>
             </form>
     </div>
   </template>
@@ -57,7 +56,6 @@
             customer_name: "",
             email: "",
             address: "",
-            order: '',
             popupVisibility: false,
         };
     },
@@ -97,7 +95,6 @@
       this.customer_name = "";
       this.email = "";
       this.address = "";
-      this.order = response.data.order;
     })
     .catch(error => {
       console.error(error);
@@ -105,9 +102,6 @@
 },
 showPopup() {
     this.popupVisibility = true;
-},
-hidePopup() {
-    this.popupVisibility = false;
 },
     },
   };

@@ -7,6 +7,7 @@ use App\User;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {

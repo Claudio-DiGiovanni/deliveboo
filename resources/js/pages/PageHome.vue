@@ -30,8 +30,8 @@ export default {
                 } else {
                     this.users = 'non va un cazzo';
                 }
-            })
-    }
+            });
+    },
 }
 </script>
 

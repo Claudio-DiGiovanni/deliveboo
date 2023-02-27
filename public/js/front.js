@@ -1898,9 +1898,9 @@ __webpack_require__.r(__webpack_exports__);
   name: "Cart",
   data: function data() {
     return {
-      customer_name: "",
-      email: "",
-      address: "",
+      customer_name: null,
+      email: null,
+      address: null,
       popupVisibility: false
     };
   },
@@ -1940,8 +1940,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.customer_name = "";
         _this.email = "";
         _this.address = "";
-      })["catch"](function (error) {
-        console.error(error);
+        _this.popupVisibility = true;
       });
     },
     showPopup: function showPopup() {
@@ -2303,12 +2302,8 @@ var render = function render() {
   })]), _vm._v(" "), _c("div", [_c("button", {
     staticClass: "m-2 btn btn-success",
     attrs: {
+      disabled: !_vm.customer_name || !_vm.email || !_vm.address,
       type: "submit"
-    },
-    on: {
-      click: function click($event) {
-        return _vm.showPopup();
-      }
     }
   }, [_vm._v("Crea Ordine")])]), _vm._v(" "), _c("div", [_c("button", {
     staticClass: "m-2 btn btn-warning",
@@ -2340,13 +2335,13 @@ var render = function render() {
     staticClass: "btn btn-success"
   }, [_vm._v("Torna alla Home")])])], 1)])])]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
-  }, [_c("router-link", {
+  }, [_vm._v("Paga"), _c("router-link", {
     attrs: {
       to: {
         name: "payment"
       }
     }
-  }, [_vm._v("Paga")])], 1)]);
+  })], 1)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

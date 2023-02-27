@@ -36,7 +36,8 @@
                     <input type="text" id="address" v-model="address" required>
                 </div>
                 <div>
-                    <button @click="showPopup()" type="submit" class="m-2 btn btn-success">Crea Ordine</button>
+                    <button class="m-2 btn btn-success" :disabled="!customer_name || !email || !address" type="submit">Crea
+                        Ordine</button>
                 </div>
                 <div>
                     <button @click="clearCart" class="m-2 btn btn-warning">Svuota il carrello</button>
@@ -53,22 +54,25 @@
                     </div>
                 </div>
             </form>
+
         </div>
-        <button class="btn btn-primary"><router-link :to="{ name: 'payment' }">Paga</router-link></button>
+        <button class="btn btn-primary">Paga<router-link :to="{ name: 'payment' }"></router-link></button>
     </div>
 </template>
 
 <script>
+
 export default {
     name: "Cart",
     data() {
         return {
-            customer_name: "",
-            email: "",
-            address: "",
+            customer_name: null,
+            email: null,
+            address: null,
             popupVisibility: false,
         };
     },
+
     computed: {
         id() {
             return this.$route.params.id;
@@ -105,10 +109,9 @@ export default {
                     this.customer_name = "";
                     this.email = "";
                     this.address = "";
+                    this.popupVisibility = true
                 })
-                .catch(error => {
-                    console.error(error);
-                });
+
         },
         showPopup() {
             this.popupVisibility = true;

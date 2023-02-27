@@ -19,8 +19,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td> {{ $order->order_number }}</td>
-                                <td> {{ ($total_cost + $order->ship_cost) / 100 }} €</td>
+                                <td> {{ $order->id }}</td>
+                                <td> {{ $total_cost / 100 }} €</td>
                                 <td> {{ $order->address }}</td>
                                 <td> {{ $order->customer_name }}</td>
                                 <td> {{ $order->email }}</td>

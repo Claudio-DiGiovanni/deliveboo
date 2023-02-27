@@ -24,7 +24,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="white"> {{ $order->order_number }}</td>
+                                        <td class="white"> {{ $order->id }}</td>
                                         <td class="white"> {{ $order->created_at }}</td>
                                         <td class="white"> <a href="{{ route('admin.orders.show', ['order' => $order]) }}"
                                                 class="btn btn-outline-info">Info</a></td>

@@ -105,7 +105,7 @@ export default {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     transition: transform 0.6s linear;
-    overflow: hidden;
+    overflow:visible;
 }
 
 .card:hover .container_img {

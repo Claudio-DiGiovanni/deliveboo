@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Dish;
+use App\Type;
 use App\User;
 use App\Order;
 use Illuminate\Http\Request;
@@ -13,12 +14,25 @@ class UserController extends Controller
 {
     public function index()
     {
+        $types = Type::all();
         $users = User::all();
         return response()->json([
             'success' => true,
             'results' => $users,
+            'types' => $types,
         ]);
 
+    }
+
+    public function filter ($typeId)
+    {
+        $users = User::all();
+
+        $userFiltered = Type::find($typeId)->users()->get();
+        return response()->json([
+            'success' => true,
+            'results' => $userFiltered,
+        ]);
     }
     public function show(Dish $dish)
     {

@@ -1,5 +1,9 @@
 <template>
    <div class="container ">
+    <select v-if="types" name="type" id="type" v-model="value" @change="filterRestaurant(value)">
+        <option :value="'none'" selected>Nessun Filtro</option>
+        <option v-for="typex in types" :key="typex.id" :value="typex.id" >{{ typex.name }}</option>
+    </select>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2" >
             <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
@@ -20,13 +24,37 @@ export default {
     data() {
         return {
             users: null,
+            types: null,
         }
+    },
+    methods: {
+        filterRestaurant(typeId) {
+            if(typeId !== 'none') {
+                axios.get(`/api/filter/${typeId}`)
+                    .then(response => {
+                        if (response.data.success) {
+                            this.users = response.data.results;
+                        }
+                    })
+            } else {
+                axios.get('/api/')
+                    .then(response => {
+                        if (response.data.success) {
+                            this.users = response.data.results;
+                            this.types = response.data.types;
+                        } else {
+                            this.users = 'non va un cazzo';
+                        }
+                    });
+            }
+        },
     },
     created() {
         axios.get('/api/')
             .then(response => {
                 if (response.data.success) {
                     this.users = response.data.results;
+                    this.types = response.data.types;
                 } else {
                     this.users = 'non va un cazzo';
                 }

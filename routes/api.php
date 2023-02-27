@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 
  Route::get('/', 'Api\UserController@index')->name('users.index');
+ Route::get('/filter/{typeId}', 'Api\UserController@filter');
  Route::get('/dishes/user/{userId}', 'Api\UserController@getDishesByUser');
  Route::post('/orders', 'Admin\OrderController@createOrder');
  Route::get('/order/{orderId}', 'Admin\OrderController@showOrderRecap');

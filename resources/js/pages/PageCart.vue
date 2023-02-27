@@ -20,7 +20,6 @@
         <div class="text-center">
             <p>TOTALE: {{ cartTotal / 100 }} </p>
         </div>
-        <button @click="clearCart" class="m-4 btn btn-warning">Svuota il carrello</button>
         <div class="">
             <form @submit.prevent="createOrder" method="POST">
             <div class="form-group">
@@ -35,7 +34,12 @@
                 <label for="address">Indirizzo di consegna</label>
                 <input type="text" id="address" v-model="address" required>
             </div>
-            <button @click="showPopup()" type="submit" class="m-4 btn btn-success">Crea Ordine</button>
+            <div>
+                <button @click="showPopup()" type="submit" class="m-2 btn btn-success">Crea Ordine</button>
+            </div>
+            <div>
+                <button @click="clearCart" class="m-2 btn btn-warning">Svuota il carrello</button>
+            </div>
             <div class="background" :class="popupVisibility ? 'd-flex' : 'd-none'">
                 <div class="popup">
                     <h5 class="w-100 text-center mb-3">Ordine Completato</h5>

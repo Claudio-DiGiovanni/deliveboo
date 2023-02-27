@@ -9,21 +9,16 @@
                             <div class="container_img">
                                 <img :src="dish.image" class="card-img-top h-100 w-100" alt="" />
                             </div>
-                            <div class="card_body">
+                            <div class="card_body d-flex flex-column justify-content-between">
                                 Descrizione: {{ dish.description }}
                                 <div>
                                     Prezzo: {{ dish.price / 100 }} €
                                 </div>
                                 <form class="text-center"> <!-- FORM PER INSERIRE QUANTITA' -->
-                                <label class="text-center" for="quantita">Quantità:</label>
-                                <div class="number-input">
-                                    <button type="button" @click="incrementaQuantita()">+</button>
-                                    <div class="quantity text-white">
-                                        {{ quantita }}
+                                    <div class="number-input d-flex justifly-center alight-center">
+                                        <button type="button" @click="incrementaQuantita()" class="btn btn-secondary m-2">Aggiungi al carrello</button>
                                     </div>
-                                    <button type="button" @click="decrementaQuantita()">-</button>
-                                </div>
-                            </form>
+                                </form>
                             </div>
 
                         </div>

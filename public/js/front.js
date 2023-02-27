@@ -2045,17 +2045,13 @@ var render = function render() {
         alt: ""
       }
     })]), _vm._v(" "), _c("div", {
-      staticClass: "card_body"
+      staticClass: "card_body d-flex flex-column justify-content-between"
     }, [_vm._v("\n                            Descrizione: " + _vm._s(dish.description) + "\n                            "), _c("div", [_vm._v("\n                                Prezzo: " + _vm._s(dish.price / 100) + " €\n                            ")]), _vm._v(" "), _c("form", {
       staticClass: "text-center"
-    }, [_c("label", {
-      staticClass: "text-center",
-      attrs: {
-        "for": "quantita"
-      }
-    }, [_vm._v("Quantità:")]), _vm._v(" "), _c("div", {
-      staticClass: "number-input"
+    }, [_c("div", {
+      staticClass: "number-input d-flex justifly-center alight-center"
     }, [_c("button", {
+      staticClass: "btn btn-secondary m-2",
       attrs: {
         type: "button"
       },
@@ -2064,18 +2060,7 @@ var render = function render() {
           return _vm.incrementaQuantita();
         }
       }
-    }, [_vm._v("+")]), _vm._v(" "), _c("div", {
-      staticClass: "quantity text-white"
-    }, [_vm._v("\n                                    " + _vm._s(_vm.quantita) + "\n                                ")]), _vm._v(" "), _c("button", {
-      attrs: {
-        type: "button"
-      },
-      on: {
-        click: function click($event) {
-          return _vm.decrementaQuantita();
-        }
-      }
-    }, [_vm._v("-")])])])])])]);
+    }, [_vm._v("Aggiungi al carrello")])])])])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [];
@@ -6566,7 +6551,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".navbar-collapse[data-v-5dd24bca] {\n  justify-content: space-between;\n}\n.nav-link[data-v-5dd24bca] {\n  color: white;\n  font-weight: bold;\n  font-size: 2rem;\n}\n.navbar[data-v-5dd24bca] {\n  background-color: rgb(13, 244, 209);\n}\nbutton[data-v-5dd24bca] {\n  border: none;\n  background-color: white;\n  padding: 0.5rem;\n  border-radius: 0.5rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".navbar-collapse[data-v-5dd24bca] {\n  justify-content: space-between;\n}\n.nav-link[data-v-5dd24bca] {\n  color: white;\n  font-weight: bold;\n  font-size: 2rem;\n}\n.navbar[data-v-5dd24bca] {\n  background-color: rgb(253, 189, 16);\n}\nbutton[data-v-5dd24bca] {\n  border: none;\n  background-color: white;\n  padding: 0.5rem;\n  border-radius: 0.5rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6614,7 +6599,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: bisque;\n}\n.container[data-v-13e03f97] {\n  background-color: bisque;\n  padding-top: 4rem;\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: bisque;\n}\n.card-img-top[data-v-13e03f97] {\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: bisque;\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 20rem;\n  background-color: rgb(13, 244, 209);\n  display: flex;\n  align-items: center;\n  background-image: url(https://thumbs.dreamstime.com/b/deliveroo-cargo-box-city-strasbourg-france-apr-near-parked-bicycle-cafe-terrace-restaurant-background-to-deliver-92371752.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(13, 244, 209);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(13, 244, 209);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(255, 196, 124);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(255, 196, 124);\n  padding-top: 4rem;\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: rgb(255, 196, 124);\n}\n.card-img-top[data-v-13e03f97] {\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: rgb(255, 196, 124);\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(253, 189, 16);\n  display: flex;\n  align-items: center;\n  background-image: url(https://i.pinimg.com/originals/12/48/e2/1248e2491e090960c1d4d060036185fa.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(253, 189, 16);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(253, 189, 16);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

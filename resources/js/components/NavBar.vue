@@ -39,7 +39,7 @@ export default {};
   font-size: 2rem;
 }
 .navbar {
-  background-color: rgb(13, 244, 209);
+  background-color: rgb(253,189,16);
 }
 
 button{

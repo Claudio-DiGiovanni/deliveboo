@@ -2222,33 +2222,52 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("h2", [_vm._v("Carrello")]), _vm._v(" "), _c("ol", _vm._l(_vm.cart, function (dish) {
-    return _c("li", {
-      key: dish.id
-    }, [_c("ul", [_c("li", [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("li", [_vm._v(_vm._s(dish.price / 100))]), _vm._v(" "), _c("li", [_c("button", {
+  return _c("div", {
+    staticClass: "text-center"
+  }, [_c("h2", [_vm._v("Carrello")]), _vm._v(" "), _c("div", {
+    staticClass: "container-shop d-flex text-center row row-cols-3 justify-content-center"
+  }, _vm._l(_vm.cart, function (dish) {
+    return _c("div", {
+      key: dish.id,
+      staticClass: "card card-carrello m-3"
+    }, [_c("div", {
+      staticClass: "card-body col"
+    }, [_c("h5", {
+      staticClass: "card-title"
+    }, [_vm._v(_vm._s(dish.name))]), _vm._v(" "), _c("p", {
+      staticClass: "card-text"
+    }, [_vm._v(_vm._s(dish.price / 100))]), _vm._v(" "), _c("div", {
+      staticClass: "m-2"
+    }, [_c("button", {
+      staticClass: "btn btn-light",
       on: {
         click: function click($event) {
           return _vm.decrementItem(dish);
         }
       }
-    }, [_vm._v("-")]), _vm._v("\n          " + _vm._s(dish.quantity) + "\n          "), _c("button", {
+    }, [_vm._v("-")]), _vm._v("\n                    " + _vm._s(dish.quantity) + "\n            "), _c("button", {
+      staticClass: "btn btn-light",
       on: {
         click: function click($event) {
           return _vm.incrementItem(dish);
         }
       }
-    }, [_vm._v("+")])]), _vm._v(" "), _c("li", [_c("button", {
+    }, [_vm._v("+")])]), _vm._v(" "), _c("div", [_c("button", {
+      staticClass: "btn btn-danger",
       on: {
         click: function click($event) {
           return _vm.removeFromCart(dish);
         }
       }
     }, [_vm._v("Rimuovi")])])])]);
-  }), 0), _vm._v(" "), _c("p", [_vm._v("Totale: " + _vm._s(_vm.cartTotal / 100) + " €")]), _vm._v(" "), _c("button", {
+  }), 0), _vm._v(" "), _c("div", {
+    staticClass: "text-center"
+  }, [_c("p", [_vm._v("Totale: " + _vm._s(_vm.cartTotal / 100) + " €")])]), _vm._v(" "), _c("button", {
+    staticClass: "m-4 btn btn-warning",
     on: {
       click: _vm.clearCart
     }
-  }, [_vm._v("Svuota il carrello")]), _vm._v(" "), _c("form", {
+  }, [_vm._v("Svuota il carrello")]), _vm._v(" "), _c("div", {}, [_c("form", {
     attrs: {
       method: "POST"
     },
@@ -2340,6 +2359,7 @@ var render = function render() {
       }
     }
   })]), _vm._v(" "), _c("button", {
+    staticClass: "m-4 btn btn-success",
     attrs: {
       type: "submit"
     },
@@ -2371,7 +2391,7 @@ var render = function render() {
     }
   }, [_c("button", {
     staticClass: "btn btn-success"
-  }, [_vm._v("Torna alla Home")])])], 1)])]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Torna alla Home")])])], 1)])])]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
   }, [_c("router-link", {
     attrs: {
@@ -31813,7 +31833,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".background[data-v-313ebd58] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.4);\n  display: none;\n  justify-content: center;\n  align-items: center;\n}\n.background .popup[data-v-313ebd58] {\n  z-index: 999;\n  padding: 5rem;\n  background-color: whitesmoke;\n  border: 2px solid grey;\n  border-radius: 10px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".background[data-v-313ebd58] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.4);\n  display: none;\n  justify-content: center;\n  align-items: center;\n}\n.background .popup[data-v-313ebd58] {\n  z-index: 999;\n  padding: 5rem;\n  background-color: whitesmoke;\n  border: 2px solid grey;\n  border-radius: 10px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n}\n.background .card-carrello[data-v-313ebd58] {\n  width: 18rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

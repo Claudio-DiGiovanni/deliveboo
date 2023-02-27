@@ -56,6 +56,7 @@ export default {
 }
     a {
         text-decoration: none;
+        margin: 0 !important;
     }
     .card-ristoranti {
         height: 20rem;

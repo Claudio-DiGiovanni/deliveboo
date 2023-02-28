@@ -2234,7 +2234,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "text-center"
+    staticClass: "text-center mt-5"
   }, [_c("h2", [_vm._v("Carrello")]), _vm._v(" "), _c("div", {
     staticClass: "container-shop d-flex text-center row row-cols-3 justify-content-center"
   }, _vm._l(_vm.cart, function (dish) {

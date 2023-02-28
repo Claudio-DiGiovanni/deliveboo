@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="d-flex justify-content-center">
-    <form action="{{route('admin.dishes.update', ['dish' => $dish])}}" method="POST">
+    <form action="{{route('admin.dishes.update', ['dish' => $dish])}}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="mb-3">
@@ -34,8 +34,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="image" class="form-label">url immagine</label>
-            <input type="url" class="form-control  @error('image') is-invalid @enderror" id="image" name="image" value="{{ old('image', $dish->image) }}">
+            <label for="image" class="form-label">immagine</label>
+            <input type="file" class="form-control  @error('image') is-invalid @enderror" id="image" name="image" value="{{ old('image', $dish->image) }}">
             <div class="invalid-feedback">
                 @error('image')
                     <ul>

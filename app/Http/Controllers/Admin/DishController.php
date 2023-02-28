@@ -20,7 +20,7 @@ class DishController extends Controller
         ],
         'name'          => 'required|string|max:100',
         'price'         => 'required|integer',
-        // 'image'         => 'url|max:200',
+        'image'         => 'required',
         'visibility'    => 'integer',
         'description'   => 'required|string',
 
@@ -121,9 +121,17 @@ class DishController extends Controller
         $request->validate($this->validations);
         $data = $request->all();
         $visibility = isset($data['visibility']) ? $data['visibility']  : 0;
+        if (isset($data['image'])) {
+            $img = Storage::put('uploades_images', $data['image']);
+            Storage::delete($dish->image);
+        } else {
+            $img = $dish->image;
+        }
+
+
         $dish->name = $data['name'];
         $dish->price = $data['price'];
-        $dish->image = $data['image'];
+        $dish->image = $img;
         $dish->description = $data['description'];
         $dish->visibility = $visibility;
         $dish->slug = $data['slug'];

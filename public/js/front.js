@@ -2805,6 +2805,7 @@ var mutations = {
     });
   },
   REMOVE_ITEM: function REMOVE_ITEM(state, payload) {
+    localStorage.removeItem('cart');
     state.cart.items = state.cart.items.filter(function (item) {
       return item !== payload;
     });

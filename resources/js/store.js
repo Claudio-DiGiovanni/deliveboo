@@ -112,6 +112,7 @@ const state = {
     },
 
     REMOVE_ITEM(state, payload) {
+        localStorage.removeItem('cart');
         state.cart.items = state.cart.items.filter((item) => item !== payload);
       },
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container my-5">
     <form action="POST" @submit.prevent="createOrder">
         <div class="form-group">
                 <label for="customer_name">Nome</label>

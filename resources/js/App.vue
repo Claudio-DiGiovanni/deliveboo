@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NavBar />
-    <router-view></router-view>
+    <NavBar  />
+    <router-view class="margin-top"></router-view>
   </div>
 </template>
 
@@ -21,4 +21,7 @@ export default {
 
 <style lang="scss">
     @import '~bootstrap/scss/bootstrap';
+    .margin-top {
+    padding-top: 80px;
+}
 </style>

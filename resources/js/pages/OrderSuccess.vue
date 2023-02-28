@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container my-5">
         <div v-if="order">
             <h1>Ordine completato con successo</h1>
             <p>Grazie, {{ order.customer_name }}. L'ordine numero {{ order.id }} verrà consegnato il prima possibile all'indirizzo {{ order.address }} </p>

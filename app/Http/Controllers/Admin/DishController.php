@@ -106,6 +106,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        $this->authorize('view', $dish);
         return view('admin.dishes.edit', ['dish' => $dish]);
     }
 

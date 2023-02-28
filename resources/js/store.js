@@ -4,8 +4,8 @@ Vue.use(Vuex)
 const state = {
     cart: {
       items: [],
-      order: ['ciao'],
-    }
+    },
+    braintreeCustomerId: null,
   };
 
   const getters = {
@@ -58,9 +58,30 @@ const state = {
     async createOrder({ state, commit }, payload) {
         try {
           const response = await axios.post("/api/orders", payload);
-          console.log(response)
           commit("CLEAR_CART");
           return response.data;
+        } catch (error) {
+          console.error(error);
+          throw error;
+        }
+      },
+      async generateBraintreeToken({ commit }) {
+        try {
+          const response = await axios.get('/api/braintree/token');
+          return response.data;
+        } catch (error) {
+          console.error(error);
+          throw error;
+        }
+      },
+      async processPayment({ state }, payload) {
+        try {
+          const response = await axios.post('/api/braintree/payment', {
+            nonce: payload.nonce,
+            amount: payload.amount,
+            customerId: state.braintreeCustomerId,
+          });
+          return response.data.success;
         } catch (error) {
           console.error(error);
           throw error;
@@ -95,6 +116,9 @@ const state = {
 
     CLEAR_CART(state) {
       state.cart.items = [];
+    },
+    SET_BRAINTREE_CUSTOMER_ID(state, payload) {
+        state.braintreeCustomerId = payload;
     },
   };
 

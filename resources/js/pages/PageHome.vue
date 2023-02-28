@@ -74,6 +74,7 @@ export default {
 <style lang="scss" scoped>
 .container_section{
     background-color: rgba(92, 201, 188, 1);
+    padding-top: 80px;
 }
 .container{
     background-color: rgba(92, 201, 188, 1);
@@ -142,7 +143,7 @@ export default {
     top: 80%;
     right: 50%;
     transform: translate(50%, 50%);
-    z-index: 9999;
+    z-index: 1;
     width: 10%;
     border: 2px solid #5cc9bc;
     border-radius: 10px;

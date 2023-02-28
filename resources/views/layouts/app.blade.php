@@ -116,8 +116,9 @@ function showPopup(event) {
     const btn = event.target;
     btn.parentElement.querySelector(".background").classList.add("d-flex");
 };
-function hidePopup() {
-    document.querySelector(".background").classList.remove("d-flex");
+function hidePopup(event) {
+    const btn = event.target;
+    document.querySelectorAll(".background").classList.remove("d-flex");
 }
 
     </script>

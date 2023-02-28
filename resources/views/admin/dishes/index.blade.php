@@ -45,7 +45,7 @@
                                     @csrf
                                     <button class="btn btn-danger">Elimina</button>
                                 </form>
-                                <button class="btn btn-secondary" id="retry" onclick="hidePopup()">Annulla</button>
+                                <button class="btn btn-secondary" id="retry" onclick="hidePopup(event)">Annulla</button>
                             </div>
                         </div>
                 </div>

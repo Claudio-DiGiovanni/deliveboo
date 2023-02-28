@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center mt-5">
+    <div class="text-center margin-top">
         <h2>Carrello</h2>
         <div class="container-shop d-flex text-center row row-cols-3 justify-content-center">
             <div class="card card-carrello m-3" v-for="dish in cart" :key="dish.id">
@@ -71,6 +71,10 @@ export default {
 <style lang="scss" scoped>
 .card-carrello {
     width: 30%;
+}
+
+.margin-top {
+    margin-top: 90px;
 }
 
 </style>

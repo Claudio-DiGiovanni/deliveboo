@@ -2234,7 +2234,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "text-center mt-5"
+    staticClass: "text-center margin-top"
   }, [_c("h2", [_vm._v("Carrello")]), _vm._v(" "), _c("div", {
     staticClass: "container-shop d-flex text-center row row-cols-3 justify-content-center"
   }, _vm._l(_vm.cart, function (dish) {
@@ -7265,7 +7265,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card-carrello[data-v-313ebd58] {\n  width: 30%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card-carrello[data-v-313ebd58] {\n  width: 30%;\n}\n.margin-top[data-v-313ebd58] {\n  margin-top: 90px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

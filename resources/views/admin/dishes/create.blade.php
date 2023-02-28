@@ -5,7 +5,7 @@
         <img class="img_background" src="https://media.discordapp.net/attachments/1031881470786154557/1079778610757521480/deliveboo-upscaling.png" alt="">
         <div class="container_home ">
             <div class="d-flex justify-content-center align-items-center h-100 container_form">
-                <form  class="form_container" action="{{ route('admin.dishes.store') }}" method="POST">
+                <form  class="form_container" action="{{ route('admin.dishes.store') }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
 

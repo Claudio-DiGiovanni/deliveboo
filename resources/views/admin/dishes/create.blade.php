@@ -40,20 +40,35 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="image" class="form-label">Url immagine</label>
-                        <input type="url" class="form-control  @error('image') is-invalid @enderror" id="image"
-                            name="image" value="{{ old('image') }}">
-                        <div class="invalid-feedback">
-                            @error('image')
-                                <ul>
-                                    @foreach ($errors->get('image') as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            @enderror
-                        </div>
-                    </div>
+                      {{-- <div class="mb-3">
+            <label for="image" class="form-label">url immagine</label>
+            <input type="url" class="form-control  @error('image') is-invalid @enderror" id="image" name="image" value="{{ old('image') }}">
+            <div class="invalid-feedback">
+                @error('image')
+                    <ul>
+                        @foreach ($errors->get('image') as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @enderror
+            </div>
+        </div> --}}
+
+        <div class="input-group mb-3">
+            <div class="custom-file">
+              <input class="custom-file-input form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+              <label class="custom-file-label" for="image">Carica una immagine</label>
+            </div>
+          </div>
+            <div class="invalid-feedback">
+                @error('image')
+                    <ul>
+                        @foreach ($errors->get('image') as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @enderror
+            </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Decrizione</label>

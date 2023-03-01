@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Cache;
     $order_id = Cache::get('order_id');
     return response()->json(['order_id' => $order_id]);
 });
+Route::post('/payment','PaymentController@createPaymentSession');
 
 // <router-link class="nav-link" :to="{ name: 'cart' }">Carrello</router-link>
 

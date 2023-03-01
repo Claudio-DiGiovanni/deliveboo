@@ -19,17 +19,26 @@
       <div class="form-group">
         <span class="card-errors" v-if="cardErrors">{{ cardErrors }}</span>
       </div>
+      <button class="btn btn-primary" @click="handleSubmit">Paga ora</button>
+      <span v-if="loading" class="loading-spinner"></span>
     </div>
-  </template>
+</template>
 
   <script>
+  import { mapGetters } from 'vuex';
   export default {
+    computed: {
+    ...mapGetters(['cartTotal']),
+  },
     data() {
       return {
         stripe: null,
         card: null,
         cardErrors: null,
         loading: false,
+        paymentSucceeded: false,
+        paymentError: null,
+        processing: false,
       };
     },
     mounted() {
@@ -64,6 +73,42 @@
         this.cardErrors = event.error ? event.error.message : null;
       });
     },
+    methods: {
+    async handleSubmit(event) {
+      event.preventDefault();
+      this.processing = true;
+
+      const { token, error } = await this.$stripe.createToken('card');
+
+      if (error) {
+        this.paymentError = error.message;
+        this.processing = false;
+        return;
+      }
+
+      const response = await fetch('/api/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: this.cartTotal,
+          token: token.id,
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        this.paymentSucceeded = true;
+        this.$store.dispatch('clearCart');
+        this.processing = false;
+      } else {
+        this.paymentError = responseData.message;
+        this.processing = false;
+      }
+    },
+  },
   }
   </script>
 

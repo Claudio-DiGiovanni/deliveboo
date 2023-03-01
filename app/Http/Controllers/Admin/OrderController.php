@@ -126,6 +126,8 @@ class OrderController extends Controller
 
     public function createOrder(Request $request)
     {
+
+
         $validatedData = $request->validate([
             'customer_name' => 'required|string|max:50',
             'email' => 'required|email|max:100',

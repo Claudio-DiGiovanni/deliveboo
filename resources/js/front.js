@@ -10,10 +10,8 @@ import PageDishes from './pages/PageDishes';
 import PageCart from './pages/PageCart';
 import OrderSuccess from './pages/OrderSuccess';
 import PagePayment from './pages/PagePayment';
-//import VueStripeElementsPlus from 'vue-stripe-elements-plus';
-//Vue.use(VueStripeElementsPlus, {
-//  key: (env('STRIPE_KEY')),
-//});
+import Stripe from 'stripe';
+
 
 Vue.use(VueRouter);
 Vue.use(Vuex)

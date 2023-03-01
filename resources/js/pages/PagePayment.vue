@@ -1,7 +1,7 @@
 <template>
   <div class="container my-5">
-    <div>Totale da pagare: {{ cartTotal }}</div>
-    <form action="POST" @submit.prevent="handleSubmit">
+    <div>Totale da pagare: {{ cartTotal/100 }} €</div>
+    <form @submit.prevent="handleSubmit">
         <div class="form-group">
                 <label for="customer_name">Nome</label>
                 <input type="text" id="customer_name" v-model="customer_name" required>
@@ -34,9 +34,9 @@
       <div class="form-group">
         <span class="card-errors" v-if="cardErrors">{{ cardErrors }}</span>
       </div>
-      <button type="submit" class="btn btn-primary">Paga ora</button>
       <span v-if="processing" class="loading-spinner"></span>
     </div>
+    <button type="submit" class="btn btn-primary">Paga ora</button>
     </form>
     <div class="background" :class="popupVisibility ? 'd-flex' : 'd-none'">
                 <div class="popup">
@@ -65,7 +65,6 @@ export default{
             stripe: null,
             card: null,
             cardErrors: null,
-            loading: false,
             paymentSucceeded: false,
             paymentError: null,
             processing: false,
@@ -90,76 +89,77 @@ export default{
                     console.error(error);
                 });
         },
-         handleSubmit() {
-      this.processing = true;
+        async handleSubmit() {
+            try {
+                this.processing = true;
 
-      const { token, error } = this.$stripe.createToken('card');
+                const { paymentMethod, error } = await this.stripe.createPaymentMethod({
+                    type: 'card',
+                    card: this.card,
+                });
+                console.log(paymentMethod)
+                console.log(error)
 
-      if (error) {
-        console.log(error)
-        this.paymentError = error.message;
-        this.processing = false;
-        return;
-      }
 
-      const response = axios.post('/api/payment', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+                if (error) {
+                    this.paymentError = error.message;
+                    this.processing = false;
+                    return;
+                }
+
+                const response = await axios.post('/api/payment', {
+                    amount: this.$store.getters.cartTotal / 100,
+                    payment_method_id: paymentMethod.id,
+                });
+                console.log(response)
+                const responseData = response.data;
+
+                if (response.status === 200) {
+                    this.paymentSucceeded = true;
+                    this.createOrder();
+                    this.processing = false;
+                } else {
+                    this.paymentError = responseData.message;
+                    this.processing = false;
+                }
+            } catch (error) {
+                console.error(error);
+                this.paymentError = 'Errore durante l\'elaborazione del pagamento. Riprova più tardi.';
+                this.processing = false;
+            }
         },
-        body: JSON.stringify({
-          amount: this.$store.getters.cartTotal/100,
-          token: token.id,
-        }),
-      });
-
-      const responseData = response.json();
-
-      if (response.ok) {
-        this.paymentSucceeded = true;
-        console.log('ce l\'hai fatta!!');
-        this.$store.dispatch('clearCart');
-        this.processing = false;
-      } else {
-        console.log('niente bro!');
-        this.paymentError = responseData.message;
-        this.processing = false;
-      }
-    },
     },
     mounted() {
-      this.stripe = window.Stripe('pk_test_51MgU1OI0cwEBFrNvakyDBs96H0O0GHuzQOmRKNHWVQNP3GmqUtqvqMNiny7qG0kvxTSI3Iwyee3gMX0XKXsEm1go00CoGXINkY', {
-          locale: 'auto'
-      });
-      this.card = this.stripe.elements().create('card', {
-        style: {
-          base: {
-            color: '#32325d',
-            fontFamily: 'Arial, sans-serif',
-            fontSmoothing: 'antialiased',
-            fontSize: '16px',
-            '::placeholder': {
-              color: '#aab7c4'
+        this.stripe = window.Stripe('pk_test_51MgU1OI0cwEBFrNvakyDBs96H0O0GHuzQOmRKNHWVQNP3GmqUtqvqMNiny7qG0kvxTSI3Iwyee3gMX0XKXsEm1go00CoGXINkY', {
+            locale: 'auto'
+        });
+        this.card = this.stripe.elements().create('card', {
+            style: {
+                base: {
+                    color: '#32325d',
+                    fontFamily: 'Arial, sans-serif',
+                    fontSmoothing: 'antialiased',
+                    fontSize: '16px',
+                    '::placeholder': {
+                        color: '#a0aec0'
+                    }
+                },
+                invalid: {
+                    color: '#ff0000',
+                    iconColor: '#ff0000'
+                }
             }
-          },
-          invalid: {
-            color: '#fa755a',
-            iconColor: '#fa755a'
-          }
-        },
-        classes: {
-          focus: 'focused',
-          empty: 'empty',
-          invalid: 'invalid'
-        }
-      });
-      this.card.mount('#card-element');
+        });
+        this.card.mount('#card-element');
 
-      this.card.addEventListener('change', (event) => {
-        this.cardErrors = event.error ? event.error.message : null;
-      });
+        this.card.addEventListener('change', (event) => {
+            if (event.error) {
+                this.cardErrors = event.error.message;
+            } else {
+                this.cardErrors = null;
+            }
+        });
     },
-
 }
 </script>
 

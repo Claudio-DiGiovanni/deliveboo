@@ -18,7 +18,6 @@ class PaymentController extends Controller
             'description' => 'Ordine su DeliveBoo',
             'payment_method_types' => ['card'],
         ]);
-
         // Restituisce l'ID dell'intento di pagamento
         return response()->json(['paymentIntentId' => $paymentIntent->id]);
     }

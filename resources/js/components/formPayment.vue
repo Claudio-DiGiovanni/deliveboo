@@ -1,6 +1,7 @@
 <template>
     <div id="card-element" :class="{ 'has-errors': cardErrors }">
-      <div class="form-group">
+        <form action="POST" @submit="handleSubmit(event)">
+            <div class="form-group">
         <label for="card-number">Card number</label>
         <div id="card-number" class="form-control"></div>
       </div>
@@ -19,8 +20,9 @@
       <div class="form-group">
         <span class="card-errors" v-if="cardErrors">{{ cardErrors }}</span>
       </div>
-      <button class="btn btn-primary" @click="handleSubmit">Paga ora</button>
-      <span v-if="loading" class="loading-spinner"></span>
+      <button type="submit" class="btn btn-primary">Paga ora</button>
+      <span v-if="processing" class="loading-spinner"></span>
+        </form>
     </div>
 </template>
 
@@ -81,18 +83,19 @@
       const { token, error } = await this.$stripe.createToken('card');
 
       if (error) {
+        console.log(error)
         this.paymentError = error.message;
         this.processing = false;
         return;
       }
 
-      const response = await fetch('/api/payment', {
+      const response = await axios.post('/api/payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount: this.cartTotal,
+          amount: this.$store.getters.cartTotal/100,
           token: token.id,
         }),
       });
@@ -101,9 +104,11 @@
 
       if (response.ok) {
         this.paymentSucceeded = true;
+        console.log('ce l\'hai fatta!!');
         this.$store.dispatch('clearCart');
         this.processing = false;
       } else {
+        console.log('niente bro!');
         this.paymentError = responseData.message;
         this.processing = false;
       }

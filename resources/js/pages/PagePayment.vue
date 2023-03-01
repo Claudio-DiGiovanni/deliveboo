@@ -13,7 +13,7 @@
                 <label for="address">Indirizzo di consegna</label>
                 <input type="text" id="address" v-model="address" required>
             </div>
-            <StripeElementCard />
+             <formPayment />
             <button type="submit" class="m-2 btn btn-success">Paga</button>
     </form>
     <div v-if="error">
@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import { StripeElementCard } from '@stripe/stripe-elements';
+import  formPayment  from '../components/formPayment.vue';
 export default{
     components: {
-    StripeElementCard,
+    formPayment,
   },
 
     data() {
@@ -47,10 +47,6 @@ export default{
             address: "",
             cart: this.$route.params.cart,
             popupVisibility: false,
-            stripe: null,
-            card: null,
-            cardErrors: null,
-            loading: false,
         }
     },
     methods: {
@@ -73,15 +69,7 @@ export default{
                 });
         },
     },
-    mounted() {
-        this.stripe = window.Stripe('pk_test_51MgU1OI0cwEBFrNvakyDBs96H0O0GHuzQOmRKNHWVQNP3GmqUtqvqMNiny7qG0kvxTSI3Iwyee3gMX0XKXsEm1go00CoGXINkY');
-        this.card = this.stripe.elements().create('card');
-        this.card.mount('#card-element');
 
-        this.card.addEventListener('change', (event) => {
-        this.cardErrors = event.error ? event.error.message : null;
-        });
-    },
 }
 </script>
 

@@ -2,16 +2,19 @@
   <div>
     <NavBar  />
     <router-view class="margin-top"></router-view>
+    <FooterComp />
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar';
+import FooterComp from './components/FooterComp';
 
 export default {
     name:'App',
     components: {
         NavBar,
+        FooterComp,
     },
     created() {
         this.$store.dispatch('beforeUnload');

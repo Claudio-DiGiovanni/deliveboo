@@ -2106,7 +2106,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     handleSubmit: function handleSubmit() {
       var _this2 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _yield$_this2$stripe$, paymentMethod, error, response, responseData;
+        var _yield$_this2$stripe$, paymentMethod, error, response, clientSecret, _yield$_this2$stripe$2, paymentIntent;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
@@ -2121,46 +2121,60 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _yield$_this2$stripe$ = _context.sent;
               paymentMethod = _yield$_this2$stripe$.paymentMethod;
               error = _yield$_this2$stripe$.error;
-              console.log(paymentMethod);
-              console.log(error);
               if (!error) {
-                _context.next = 13;
+                _context.next = 11;
                 break;
               }
               _this2.paymentError = error.message;
               _this2.processing = false;
               return _context.abrupt("return");
-            case 13:
-              _context.next = 15;
+            case 11:
+              _context.next = 13;
               return axios.post('/api/payment', {
                 amount: _this2.$store.getters.cartTotal / 100,
-                payment_method_id: paymentMethod.id
+                currency: 'EUR',
+                payment_method: paymentMethod.id
               });
-            case 15:
+            case 13:
               response = _context.sent;
               console.log(response);
-              responseData = response.data;
-              if (response.status === 200) {
+              clientSecret = response.data.clientSecret; // Conferma l'intento di pagamento
+              _context.next = 18;
+              return _this2.stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                  card: _this2.card,
+                  billing_details: {
+                    name: _this2.customer_name,
+                    email: _this2.email
+                  }
+                }
+              });
+            case 18:
+              _yield$_this2$stripe$2 = _context.sent;
+              paymentIntent = _yield$_this2$stripe$2.paymentIntent;
+              if (paymentIntent.status === 'succeeded') {
+                console.log(paymentIntent);
                 _this2.paymentSucceeded = true;
                 _this2.createOrder();
                 _this2.processing = false;
               } else {
-                _this2.paymentError = responseData.message;
+                _this2.paymentError = 'Il pagamento non è andato a buon fine. Riprova.';
+                console.log(_this2.paymentError);
                 _this2.processing = false;
               }
-              _context.next = 26;
+              _context.next = 28;
               break;
-            case 21:
-              _context.prev = 21;
+            case 23:
+              _context.prev = 23;
               _context.t0 = _context["catch"](0);
               console.error(_context.t0);
               _this2.paymentError = 'Errore durante l\'elaborazione del pagamento. Riprova più tardi.';
               _this2.processing = false;
-            case 26:
+            case 28:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[0, 21]]);
+        }, _callee, null, [[0, 23]]);
       }))();
     }
   },

@@ -90,44 +90,56 @@ export default{
                 });
         },
         async handleSubmit() {
-            try {
-                this.processing = true;
+    try {
+        this.processing = true;
 
-                const { paymentMethod, error } = await this.stripe.createPaymentMethod({
-                    type: 'card',
-                    card: this.card,
-                });
-                console.log(paymentMethod)
-                console.log(error)
+        const { paymentMethod, error } = await this.stripe.createPaymentMethod({
+            type: 'card',
+            card: this.card,
+        });
 
+        if (error) {
+            this.paymentError = error.message;
+            this.processing = false;
+            return;
+        }
 
-                if (error) {
-                    this.paymentError = error.message;
-                    this.processing = false;
-                    return;
+        // Richiedi al server di creare un'istanza di pagamento
+        const response = await axios.post('/api/payment', {
+            amount: this.$store.getters.cartTotal/100,
+            currency: 'EUR',
+            payment_method: paymentMethod.id
+        });
+        console.log(response)
+        const clientSecret = response.data.clientSecret;
+
+        // Conferma l'intento di pagamento
+        const { paymentIntent } = await this.stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: this.card,
+                billing_details: {
+                    name: this.customer_name,
+                    email: this.email
                 }
-
-                const response = await axios.post('/api/payment', {
-                    amount: this.$store.getters.cartTotal / 100,
-                    payment_method_id: paymentMethod.id,
-                });
-                console.log(response)
-                const responseData = response.data;
-
-                if (response.status === 200) {
-                    this.paymentSucceeded = true;
-                    this.createOrder();
-                    this.processing = false;
-                } else {
-                    this.paymentError = responseData.message;
-                    this.processing = false;
-                }
-            } catch (error) {
-                console.error(error);
-                this.paymentError = 'Errore durante l\'elaborazione del pagamento. Riprova più tardi.';
-                this.processing = false;
             }
-        },
+        });
+
+        if (paymentIntent.status === 'succeeded') {
+            console.log(paymentIntent)
+            this.paymentSucceeded = true;
+            this.createOrder();
+            this.processing = false;
+        } else {
+            this.paymentError = 'Il pagamento non è andato a buon fine. Riprova.';
+            console.log(this.paymentError)
+            this.processing = false;
+        }
+    } catch (error) {
+        console.error(error);
+        this.paymentError = 'Errore durante l\'elaborazione del pagamento. Riprova più tardi.';
+        this.processing = false;
+    }
+},
     },
     mounted() {
         this.stripe = window.Stripe('pk_test_51MgU1OI0cwEBFrNvakyDBs96H0O0GHuzQOmRKNHWVQNP3GmqUtqvqMNiny7qG0kvxTSI3Iwyee3gMX0XKXsEm1go00CoGXINkY', {

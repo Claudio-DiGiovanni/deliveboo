@@ -8,18 +8,20 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function createPaymentSession(Request $request)
+    public function createPaymentIntent(Request $request)
 {
     try {
         // Imposta la chiave segreta di Stripe
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        // Conferma l'intento di pagamento
-        $paymentIntent = PaymentIntent::retrieve($request->input('payment_intent_id'));
-        $paymentIntent->confirm();
+        // Crea l'intento di pagamento
+        $paymentIntent = PaymentIntent::create([
+            'amount' => $request->amount,
+            'currency' => 'eur',
+        ]);
 
-        // Restituisce la conferma dell'intento di pagamento
-        return response()->json(['paymentIntent' => $paymentIntent]);
+        // Restituisce l'intento di pagamento
+        return response()->json(['clientSecret' => $paymentIntent->client_secret]);
     } catch (\Exception $e) {
         // Restituisce un messaggio di errore con una risposta JSON
         return response()->json(['error' => $e->getMessage()]);

@@ -12,11 +12,11 @@
 
           </ul>
           <div class="nav-item d-flex">
-            
-              <router-link :to="{ name: 'cart' }"><button>Carrello <strong v-if="cartQuantity !== 0">{{ cartQuantity }}</strong></button></router-link>
+
+              <router-link :to="{ name:  'cart' }"><button>Carrello <strong v-if="cartQuantity !== 0">{{ cartQuantity }}</strong></button></router-link>
               <a class="mx-5" href="/admin"><button>Collabora con noi</button></a>
             </div>
-           
+
         </div>
       </div>
     </nav>

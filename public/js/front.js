@@ -2131,7 +2131,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 11:
               _context.next = 13;
               return axios.post('/api/payment', {
-                amount: _this2.$store.getters.cartTotal / 100,
+                amount: _this2.$store.getters.cartTotal,
                 currency: 'EUR',
                 payment_method: paymentMethod.id
               });

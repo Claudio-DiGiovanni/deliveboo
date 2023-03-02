@@ -106,7 +106,7 @@ export default{
 
         // Richiedi al server di creare un'istanza di pagamento
         const response = await axios.post('/api/payment', {
-            amount: this.$store.getters.cartTotal/100,
+            amount: this.$store.getters.cartTotal,
             currency: 'EUR',
             payment_method: paymentMethod.id
         });

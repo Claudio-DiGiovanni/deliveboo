@@ -1,11 +1,10 @@
 <template>
-    <div class="container my-5">
-        <div v-if="order">
-            <h1>Ordine completato con successo</h1>
-            <p>Grazie, {{ order.customer_name }}. L'ordine numero {{ order.id }} verrà consegnato il prima possibile all'indirizzo {{ order.address }} </p>
-        </div>
-    </div>
-
+ <div class="container my-5">
+  <div class="order-completed" v-if="order">
+    <h1 class="order-title">Ordine completato con successo</h1>
+    <p class="order-details">Grazie, {{ order.customer_name }}. L'ordine numero {{ order.id }} verrà consegnato il prima possibile all'indirizzo {{ order.address }}</p>
+  </div>
+</div>
 </template>
 
 <script>
@@ -42,6 +41,22 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.order-completed {
+  background-color: #ebebeb;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
 
+  .order-title {
+    font-size: 3.5rem;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  .order-details {
+    font-size: 1.5rem;
+    color: #484848;
+  }
+}
 </style>

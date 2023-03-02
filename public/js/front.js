@@ -2064,19 +2064,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//import VueBraintree from 'vue-braintree';
-
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    // VueBraintree,
-  },
   data: function data() {
     return {
       customer_name: "",
       email: "",
       address: "",
       cart: this.$route.params.cart,
-      popupVisibility: false
+      cartTotal: this.$store.getters.cartTotal,
+      popupVisibility: false,
+      stripe: null,
+      card: null,
+      cardErrors: null,
+      paymentSucceeded: false,
+      paymentError: null,
+      processing: false
     };
   },
   methods: {
@@ -2097,12 +2103,111 @@ __webpack_require__.r(__webpack_exports__);
         console.error(error);
       });
     },
-    onSuccess: function onSuccess(payload) {
-      var nonce = payload.nonce;
-    },
-    onError: function onError(error) {
-      var message = error.message;
+    handleSubmit: function handleSubmit() {
+      var _this2 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var _yield$_this2$stripe$, paymentMethod, error, response, clientSecret, _yield$_this2$stripe$2, paymentIntent;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _this2.processing = true;
+              _context.next = 4;
+              return _this2.stripe.createPaymentMethod({
+                type: 'card',
+                card: _this2.card
+              });
+            case 4:
+              _yield$_this2$stripe$ = _context.sent;
+              paymentMethod = _yield$_this2$stripe$.paymentMethod;
+              error = _yield$_this2$stripe$.error;
+              if (!error) {
+                _context.next = 11;
+                break;
+              }
+              _this2.paymentError = error.message;
+              _this2.processing = false;
+              return _context.abrupt("return");
+            case 11:
+              _context.next = 13;
+              return axios.post('/api/payment', {
+                amount: _this2.$store.getters.cartTotal,
+                currency: 'EUR',
+                payment_method: paymentMethod.id
+              });
+            case 13:
+              response = _context.sent;
+              console.log(response);
+              clientSecret = response.data.clientSecret; // Conferma l'intento di pagamento
+              _context.next = 18;
+              return _this2.stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                  card: _this2.card,
+                  billing_details: {
+                    name: _this2.customer_name,
+                    email: _this2.email
+                  }
+                }
+              });
+            case 18:
+              _yield$_this2$stripe$2 = _context.sent;
+              paymentIntent = _yield$_this2$stripe$2.paymentIntent;
+              if (paymentIntent.status === 'succeeded') {
+                console.log(paymentIntent);
+                _this2.paymentSucceeded = true;
+                _this2.createOrder();
+                _this2.processing = false;
+              } else {
+                _this2.paymentError = 'Il pagamento non è andato a buon fine. Riprova.';
+                console.log(_this2.paymentError);
+                _this2.processing = false;
+              }
+              _context.next = 28;
+              break;
+            case 23:
+              _context.prev = 23;
+              _context.t0 = _context["catch"](0);
+              console.error(_context.t0);
+              _this2.paymentError = 'Errore durante l\'elaborazione del pagamento. Riprova più tardi.';
+              _this2.processing = false;
+            case 28:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 23]]);
+      }))();
     }
+  },
+  mounted: function mounted() {
+    var _this3 = this;
+    this.stripe = window.Stripe('pk_test_51MgU1OI0cwEBFrNvakyDBs96H0O0GHuzQOmRKNHWVQNP3GmqUtqvqMNiny7qG0kvxTSI3Iwyee3gMX0XKXsEm1go00CoGXINkY', {
+      locale: 'auto'
+    });
+    this.card = this.stripe.elements().create('card', {
+      style: {
+        base: {
+          color: '#32325d',
+          fontFamily: 'Arial, sans-serif',
+          fontSmoothing: 'antialiased',
+          fontSize: '16px',
+          '::placeholder': {
+            color: '#a0aec0'
+          }
+        },
+        invalid: {
+          color: '#ff0000',
+          iconColor: '#ff0000'
+        }
+      }
+    });
+    this.card.mount('#card-element');
+    this.card.addEventListener('change', function (event) {
+      if (event.error) {
+        _this3.cardErrors = event.error.message;
+      } else {
+        _this3.cardErrors = null;
+      }
+    });
   }
 });
 
@@ -2123,13 +2228,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-<<<<<<< HEAD
   return _c("div", [_c("NavBar"), _vm._v(" "), _c("router-view", {
     staticClass: "margin-top"
   })], 1);
-=======
-  return _c("div", [_c("NavBar"), _vm._v(" "), _c("router-view")], 1);
->>>>>>> 9a8ba2a4588cd8778e6040b85fc166ac3e4c76db
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2494,14 +2595,11 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container my-5"
-  }, [_c("form", {
-    attrs: {
-      action: "POST"
-    },
+  }, [_c("div", [_vm._v("Totale da pagare: " + _vm._s(_vm.cartTotal / 100) + " €")]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createOrder.apply(null, arguments);
+        return _vm.handleSubmit.apply(null, arguments);
       }
     }
   }, [_c("div", {
@@ -2585,12 +2683,25 @@ var render = function render() {
         _vm.address = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("button", {
-    staticClass: "m-2 btn btn-success",
+  })]), _vm._v(" "), _c("div", {
+    "class": {
+      "has-errors": _vm.cardErrors
+    },
+    attrs: {
+      id: "card-element"
+    }
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_vm.cardErrors ? _c("span", {
+    staticClass: "card-errors"
+  }, [_vm._v(_vm._s(_vm.cardErrors))]) : _vm._e()]), _vm._v(" "), _vm.processing ? _c("span", {
+    staticClass: "loading-spinner"
+  }) : _vm._e()]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Crea Ordine")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Paga ora")])]), _vm._v(" "), _c("div", {
     staticClass: "background",
     "class": _vm.popupVisibility ? "d-flex" : "d-none"
   }, [_c("div", {
@@ -2615,7 +2726,67 @@ var render = function render() {
     staticClass: "btn btn-success"
   }, [_vm._v("Torna alla Home")])])], 1)])]);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "card-number"
+    }
+  }, [_vm._v("Card number")]), _vm._v(" "), _c("div", {
+    staticClass: "form-control",
+    attrs: {
+      id: "card-number"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "card-expiry"
+    }
+  }, [_vm._v("Expiration date")]), _vm._v(" "), _c("div", {
+    staticClass: "form-control",
+    attrs: {
+      id: "card-expiry"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "card-cvc"
+    }
+  }, [_vm._v("CVC")]), _vm._v(" "), _c("div", {
+    staticClass: "form-control",
+    attrs: {
+      id: "card-cvc"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "card-postal-code"
+    }
+  }, [_vm._v("Postal code")]), _vm._v(" "), _c("div", {
+    staticClass: "form-control",
+    attrs: {
+      id: "card-postal-code"
+    }
+  })]);
+}];
 render._withStripped = true;
 
 
@@ -7206,6 +7377,90 @@ var mutations = {
 
 /***/ }),
 
+/***/ "./node_modules/call-bind/callBound.js":
+/*!*********************************************!*\
+  !*** ./node_modules/call-bind/callBound.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
+
+var callBind = __webpack_require__(/*! ./ */ "./node_modules/call-bind/index.js");
+
+var $indexOf = callBind(GetIntrinsic('String.prototype.indexOf'));
+
+module.exports = function callBoundIntrinsic(name, allowMissing) {
+	var intrinsic = GetIntrinsic(name, !!allowMissing);
+	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
+		return callBind(intrinsic);
+	}
+	return intrinsic;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/call-bind/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/call-bind/index.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
+
+var $apply = GetIntrinsic('%Function.prototype.apply%');
+var $call = GetIntrinsic('%Function.prototype.call%');
+var $reflectApply = GetIntrinsic('%Reflect.apply%', true) || bind.call($call, $apply);
+
+var $gOPD = GetIntrinsic('%Object.getOwnPropertyDescriptor%', true);
+var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
+var $max = GetIntrinsic('%Math.max%');
+
+if ($defineProperty) {
+	try {
+		$defineProperty({}, 'a', { value: 1 });
+	} catch (e) {
+		// IE 8 has a broken defineProperty
+		$defineProperty = null;
+	}
+}
+
+module.exports = function callBind(originalFunction) {
+	var func = $reflectApply(bind, $call, arguments);
+	if ($gOPD && $defineProperty) {
+		var desc = $gOPD(func, 'length');
+		if (desc.configurable) {
+			// original length, plus the receiver, minus any additional arguments (after the receiver)
+			$defineProperty(
+				func,
+				'length',
+				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
+			);
+		}
+	}
+	return func;
+};
+
+var applyBind = function applyBind() {
+	return $reflectApply(bind, $apply, arguments);
+};
+
+if ($defineProperty) {
+	$defineProperty(module.exports, 'apply', { value: applyBind });
+} else {
+	module.exports.apply = applyBind;
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/App.vue?vue&type=style&index=0&id=f348271a&lang=scss&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/App.vue?vue&type=style&index=0&id=f348271a&lang=scss& ***!
@@ -7223,11 +7478,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-<<<<<<< HEAD
 ___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n/*!\n * Bootstrap v4.6.2 (https://getbootstrap.com/)\n * Copyright 2011-2022 The Bootstrap Authors\n * Copyright 2011-2022 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)\n */\n:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --primary: #007bff;\n  --secondary: #6c757d;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\nhtml {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\narticle, aside, figcaption, figure, footer, header, hgroup, main, nav, section {\n  display: block;\n}\nbody {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"]:focus:not(:focus-visible) {\n  outline: 0 !important;\n}\nhr {\n  box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title],\nabbr[data-original-title] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n  -webkit-text-decoration-skip-ink: none;\n          text-decoration-skip-ink: none;\n}\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\ndt {\n  font-weight: 700;\n}\ndd {\n  margin-bottom: 0.5rem;\n  margin-left: 0;\n}\nblockquote {\n  margin: 0 0 1rem;\n}\nb,\nstrong {\n  font-weight: bolder;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -0.25em;\n}\nsup {\n  top: -0.5em;\n}\na {\n  color: #007bff;\n  text-decoration: none;\n  background-color: transparent;\n}\na:hover {\n  color: #0056b3;\n  text-decoration: underline;\n}\na:not([href]):not([class]) {\n  color: inherit;\n  text-decoration: none;\n}\na:not([href]):not([class]):hover {\n  color: inherit;\n  text-decoration: none;\n}\npre,\ncode,\nkbd,\nsamp {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure {\n  margin: 0 0 1rem;\n}\nimg {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable {\n  border-collapse: collapse;\n}\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth {\n  text-align: inherit;\n  text-align: -webkit-match-parent;\n}\nlabel {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton {\n  border-radius: 0;\n}\nbutton:focus:not(:focus-visible) {\n  outline: 0;\n}\ninput,\nbutton,\nselect,\noptgroup,\ntextarea {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton,\ninput {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\n[role=button] {\n  cursor: pointer;\n}\nselect {\n  word-wrap: normal;\n}\nbutton,\n[type=button],\n[type=reset],\n[type=submit] {\n  -webkit-appearance: button;\n}\nbutton:not(:disabled),\n[type=button]:not(:disabled),\n[type=reset]:not(:disabled),\n[type=submit]:not(:disabled) {\n  cursor: pointer;\n}\nbutton::-moz-focus-inner,\n[type=button]::-moz-focus-inner,\n[type=reset]::-moz-focus-inner,\n[type=submit]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=radio],\ninput[type=checkbox] {\n  box-sizing: border-box;\n  padding: 0;\n}\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: 0.5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress {\n  vertical-align: baseline;\n}\n[type=number]::-webkit-inner-spin-button,\n[type=number]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=search] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=search]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput {\n  display: inline-block;\n}\nsummary {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate {\n  display: none;\n}\n[hidden] {\n  display: none !important;\n}\nh1, h2, h3, h4, h5, h6,\n.h1, .h2, .h3, .h4, .h5, .h6 {\n  margin-bottom: 0.5rem;\n  font-weight: 500;\n  line-height: 1.2;\n}\nh1, .h1 {\n  font-size: 2.5rem;\n}\nh2, .h2 {\n  font-size: 2rem;\n}\nh3, .h3 {\n  font-size: 1.75rem;\n}\nh4, .h4 {\n  font-size: 1.5rem;\n}\nh5, .h5 {\n  font-size: 1.25rem;\n}\nh6, .h6 {\n  font-size: 1rem;\n}\n.lead {\n  font-size: 1.25rem;\n  font-weight: 300;\n}\n.display-1 {\n  font-size: 6rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\n.display-2 {\n  font-size: 5.5rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\n.display-3 {\n  font-size: 4.5rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\n.display-4 {\n  font-size: 3.5rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\nhr {\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n  border: 0;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\nsmall,\n.small {\n  font-size: 0.875em;\n  font-weight: 400;\n}\nmark,\n.mark {\n  padding: 0.2em;\n  background-color: #fcf8e3;\n}\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline-item {\n  display: inline-block;\n}\n.list-inline-item:not(:last-child) {\n  margin-right: 0.5rem;\n}\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\n.blockquote {\n  margin-bottom: 1rem;\n  font-size: 1.25rem;\n}\n.blockquote-footer {\n  display: block;\n  font-size: 0.875em;\n  color: #6c757d;\n}\n.blockquote-footer::before {\n  content: \"— \";\n}\n.img-fluid {\n  max-width: 100%;\n  height: auto;\n}\n.img-thumbnail {\n  padding: 0.25rem;\n  background-color: #fff;\n  border: 1px solid #dee2e6;\n  border-radius: 0.25rem;\n  max-width: 100%;\n  height: auto;\n}\n.figure {\n  display: inline-block;\n}\n.figure-img {\n  margin-bottom: 0.5rem;\n  line-height: 1;\n}\n.figure-caption {\n  font-size: 90%;\n  color: #6c757d;\n}\ncode {\n  font-size: 87.5%;\n  color: #e83e8c;\n  word-wrap: break-word;\n}\na > code {\n  color: inherit;\n}\nkbd {\n  padding: 0.2rem 0.4rem;\n  font-size: 87.5%;\n  color: #fff;\n  background-color: #212529;\n  border-radius: 0.2rem;\n}\nkbd kbd {\n  padding: 0;\n  font-size: 100%;\n  font-weight: 700;\n}\npre {\n  display: block;\n  font-size: 87.5%;\n  color: #212529;\n}\npre code {\n  font-size: inherit;\n  color: inherit;\n  word-break: normal;\n}\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n.container,\n.container-fluid,\n.container-xl,\n.container-lg,\n.container-md,\n.container-sm {\n  width: 100%;\n  padding-right: 15px;\n  padding-left: 15px;\n  margin-right: auto;\n  margin-left: auto;\n}\n@media (min-width: 576px) {\n.container-sm, .container {\n    max-width: 540px;\n}\n}\n@media (min-width: 768px) {\n.container-md, .container-sm, .container {\n    max-width: 720px;\n}\n}\n@media (min-width: 992px) {\n.container-lg, .container-md, .container-sm, .container {\n    max-width: 960px;\n}\n}\n@media (min-width: 1200px) {\n.container-xl, .container-lg, .container-md, .container-sm, .container {\n    max-width: 1140px;\n}\n}\n.row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n}\n.no-gutters {\n  margin-right: 0;\n  margin-left: 0;\n}\n.no-gutters > .col,\n.no-gutters > [class*=col-] {\n  padding-right: 0;\n  padding-left: 0;\n}\n.col-xl,\n.col-xl-auto, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-lg,\n.col-lg-auto, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md,\n.col-md-auto, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-sm,\n.col-sm-auto, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col,\n.col-auto, .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {\n  position: relative;\n  width: 100%;\n  padding-right: 15px;\n  padding-left: 15px;\n}\n.col {\n  flex-basis: 0;\n  flex-grow: 1;\n  max-width: 100%;\n}\n.row-cols-1 > * {\n  flex: 0 0 100%;\n  max-width: 100%;\n}\n.row-cols-2 > * {\n  flex: 0 0 50%;\n  max-width: 50%;\n}\n.row-cols-3 > * {\n  flex: 0 0 33.3333333333%;\n  max-width: 33.3333333333%;\n}\n.row-cols-4 > * {\n  flex: 0 0 25%;\n  max-width: 25%;\n}\n.row-cols-5 > * {\n  flex: 0 0 20%;\n  max-width: 20%;\n}\n.row-cols-6 > * {\n  flex: 0 0 16.6666666667%;\n  max-width: 16.6666666667%;\n}\n.col-auto {\n  flex: 0 0 auto;\n  width: auto;\n  max-width: 100%;\n}\n.col-1 {\n  flex: 0 0 8.33333333%;\n  max-width: 8.33333333%;\n}\n.col-2 {\n  flex: 0 0 16.66666667%;\n  max-width: 16.66666667%;\n}\n.col-3 {\n  flex: 0 0 25%;\n  max-width: 25%;\n}\n.col-4 {\n  flex: 0 0 33.33333333%;\n  max-width: 33.33333333%;\n}\n.col-5 {\n  flex: 0 0 41.66666667%;\n  max-width: 41.66666667%;\n}\n.col-6 {\n  flex: 0 0 50%;\n  max-width: 50%;\n}\n.col-7 {\n  flex: 0 0 58.33333333%;\n  max-width: 58.33333333%;\n}\n.col-8 {\n  flex: 0 0 66.66666667%;\n  max-width: 66.66666667%;\n}\n.col-9 {\n  flex: 0 0 75%;\n  max-width: 75%;\n}\n.col-10 {\n  flex: 0 0 83.33333333%;\n  max-width: 83.33333333%;\n}\n.col-11 {\n  flex: 0 0 91.66666667%;\n  max-width: 91.66666667%;\n}\n.col-12 {\n  flex: 0 0 100%;\n  max-width: 100%;\n}\n.order-first {\n  order: -1;\n}\n.order-last {\n  order: 13;\n}\n.order-0 {\n  order: 0;\n}\n.order-1 {\n  order: 1;\n}\n.order-2 {\n  order: 2;\n}\n.order-3 {\n  order: 3;\n}\n.order-4 {\n  order: 4;\n}\n.order-5 {\n  order: 5;\n}\n.order-6 {\n  order: 6;\n}\n.order-7 {\n  order: 7;\n}\n.order-8 {\n  order: 8;\n}\n.order-9 {\n  order: 9;\n}\n.order-10 {\n  order: 10;\n}\n.order-11 {\n  order: 11;\n}\n.order-12 {\n  order: 12;\n}\n.offset-1 {\n  margin-left: 8.33333333%;\n}\n.offset-2 {\n  margin-left: 16.66666667%;\n}\n.offset-3 {\n  margin-left: 25%;\n}\n.offset-4 {\n  margin-left: 33.33333333%;\n}\n.offset-5 {\n  margin-left: 41.66666667%;\n}\n.offset-6 {\n  margin-left: 50%;\n}\n.offset-7 {\n  margin-left: 58.33333333%;\n}\n.offset-8 {\n  margin-left: 66.66666667%;\n}\n.offset-9 {\n  margin-left: 75%;\n}\n.offset-10 {\n  margin-left: 83.33333333%;\n}\n.offset-11 {\n  margin-left: 91.66666667%;\n}\n@media (min-width: 576px) {\n.col-sm {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-sm-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-sm-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-sm-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-sm-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-sm-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-sm-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-sm-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-sm-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-sm-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-sm-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-sm-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-sm-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-sm-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-sm-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-sm-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-sm-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-sm-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-sm-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-sm-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-sm-first {\n    order: -1;\n}\n.order-sm-last {\n    order: 13;\n}\n.order-sm-0 {\n    order: 0;\n}\n.order-sm-1 {\n    order: 1;\n}\n.order-sm-2 {\n    order: 2;\n}\n.order-sm-3 {\n    order: 3;\n}\n.order-sm-4 {\n    order: 4;\n}\n.order-sm-5 {\n    order: 5;\n}\n.order-sm-6 {\n    order: 6;\n}\n.order-sm-7 {\n    order: 7;\n}\n.order-sm-8 {\n    order: 8;\n}\n.order-sm-9 {\n    order: 9;\n}\n.order-sm-10 {\n    order: 10;\n}\n.order-sm-11 {\n    order: 11;\n}\n.order-sm-12 {\n    order: 12;\n}\n.offset-sm-0 {\n    margin-left: 0;\n}\n.offset-sm-1 {\n    margin-left: 8.33333333%;\n}\n.offset-sm-2 {\n    margin-left: 16.66666667%;\n}\n.offset-sm-3 {\n    margin-left: 25%;\n}\n.offset-sm-4 {\n    margin-left: 33.33333333%;\n}\n.offset-sm-5 {\n    margin-left: 41.66666667%;\n}\n.offset-sm-6 {\n    margin-left: 50%;\n}\n.offset-sm-7 {\n    margin-left: 58.33333333%;\n}\n.offset-sm-8 {\n    margin-left: 66.66666667%;\n}\n.offset-sm-9 {\n    margin-left: 75%;\n}\n.offset-sm-10 {\n    margin-left: 83.33333333%;\n}\n.offset-sm-11 {\n    margin-left: 91.66666667%;\n}\n}\n@media (min-width: 768px) {\n.col-md {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-md-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-md-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-md-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-md-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-md-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-md-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-md-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-md-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-md-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-md-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-md-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-md-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-md-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-md-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-md-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-md-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-md-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-md-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-md-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-md-first {\n    order: -1;\n}\n.order-md-last {\n    order: 13;\n}\n.order-md-0 {\n    order: 0;\n}\n.order-md-1 {\n    order: 1;\n}\n.order-md-2 {\n    order: 2;\n}\n.order-md-3 {\n    order: 3;\n}\n.order-md-4 {\n    order: 4;\n}\n.order-md-5 {\n    order: 5;\n}\n.order-md-6 {\n    order: 6;\n}\n.order-md-7 {\n    order: 7;\n}\n.order-md-8 {\n    order: 8;\n}\n.order-md-9 {\n    order: 9;\n}\n.order-md-10 {\n    order: 10;\n}\n.order-md-11 {\n    order: 11;\n}\n.order-md-12 {\n    order: 12;\n}\n.offset-md-0 {\n    margin-left: 0;\n}\n.offset-md-1 {\n    margin-left: 8.33333333%;\n}\n.offset-md-2 {\n    margin-left: 16.66666667%;\n}\n.offset-md-3 {\n    margin-left: 25%;\n}\n.offset-md-4 {\n    margin-left: 33.33333333%;\n}\n.offset-md-5 {\n    margin-left: 41.66666667%;\n}\n.offset-md-6 {\n    margin-left: 50%;\n}\n.offset-md-7 {\n    margin-left: 58.33333333%;\n}\n.offset-md-8 {\n    margin-left: 66.66666667%;\n}\n.offset-md-9 {\n    margin-left: 75%;\n}\n.offset-md-10 {\n    margin-left: 83.33333333%;\n}\n.offset-md-11 {\n    margin-left: 91.66666667%;\n}\n}\n@media (min-width: 992px) {\n.col-lg {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-lg-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-lg-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-lg-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-lg-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-lg-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-lg-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-lg-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-lg-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-lg-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-lg-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-lg-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-lg-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-lg-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-lg-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-lg-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-lg-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-lg-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-lg-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-lg-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-lg-first {\n    order: -1;\n}\n.order-lg-last {\n    order: 13;\n}\n.order-lg-0 {\n    order: 0;\n}\n.order-lg-1 {\n    order: 1;\n}\n.order-lg-2 {\n    order: 2;\n}\n.order-lg-3 {\n    order: 3;\n}\n.order-lg-4 {\n    order: 4;\n}\n.order-lg-5 {\n    order: 5;\n}\n.order-lg-6 {\n    order: 6;\n}\n.order-lg-7 {\n    order: 7;\n}\n.order-lg-8 {\n    order: 8;\n}\n.order-lg-9 {\n    order: 9;\n}\n.order-lg-10 {\n    order: 10;\n}\n.order-lg-11 {\n    order: 11;\n}\n.order-lg-12 {\n    order: 12;\n}\n.offset-lg-0 {\n    margin-left: 0;\n}\n.offset-lg-1 {\n    margin-left: 8.33333333%;\n}\n.offset-lg-2 {\n    margin-left: 16.66666667%;\n}\n.offset-lg-3 {\n    margin-left: 25%;\n}\n.offset-lg-4 {\n    margin-left: 33.33333333%;\n}\n.offset-lg-5 {\n    margin-left: 41.66666667%;\n}\n.offset-lg-6 {\n    margin-left: 50%;\n}\n.offset-lg-7 {\n    margin-left: 58.33333333%;\n}\n.offset-lg-8 {\n    margin-left: 66.66666667%;\n}\n.offset-lg-9 {\n    margin-left: 75%;\n}\n.offset-lg-10 {\n    margin-left: 83.33333333%;\n}\n.offset-lg-11 {\n    margin-left: 91.66666667%;\n}\n}\n@media (min-width: 1200px) {\n.col-xl {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-xl-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-xl-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-xl-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-xl-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-xl-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-xl-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-xl-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-xl-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-xl-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-xl-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-xl-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-xl-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-xl-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-xl-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-xl-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-xl-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-xl-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-xl-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-xl-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-xl-first {\n    order: -1;\n}\n.order-xl-last {\n    order: 13;\n}\n.order-xl-0 {\n    order: 0;\n}\n.order-xl-1 {\n    order: 1;\n}\n.order-xl-2 {\n    order: 2;\n}\n.order-xl-3 {\n    order: 3;\n}\n.order-xl-4 {\n    order: 4;\n}\n.order-xl-5 {\n    order: 5;\n}\n.order-xl-6 {\n    order: 6;\n}\n.order-xl-7 {\n    order: 7;\n}\n.order-xl-8 {\n    order: 8;\n}\n.order-xl-9 {\n    order: 9;\n}\n.order-xl-10 {\n    order: 10;\n}\n.order-xl-11 {\n    order: 11;\n}\n.order-xl-12 {\n    order: 12;\n}\n.offset-xl-0 {\n    margin-left: 0;\n}\n.offset-xl-1 {\n    margin-left: 8.33333333%;\n}\n.offset-xl-2 {\n    margin-left: 16.66666667%;\n}\n.offset-xl-3 {\n    margin-left: 25%;\n}\n.offset-xl-4 {\n    margin-left: 33.33333333%;\n}\n.offset-xl-5 {\n    margin-left: 41.66666667%;\n}\n.offset-xl-6 {\n    margin-left: 50%;\n}\n.offset-xl-7 {\n    margin-left: 58.33333333%;\n}\n.offset-xl-8 {\n    margin-left: 66.66666667%;\n}\n.offset-xl-9 {\n    margin-left: 75%;\n}\n.offset-xl-10 {\n    margin-left: 83.33333333%;\n}\n.offset-xl-11 {\n    margin-left: 91.66666667%;\n}\n}\n.table {\n  width: 100%;\n  margin-bottom: 1rem;\n  color: #212529;\n}\n.table th,\n.table td {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n}\n.table thead th {\n  vertical-align: bottom;\n  border-bottom: 2px solid #dee2e6;\n}\n.table tbody + tbody {\n  border-top: 2px solid #dee2e6;\n}\n.table-sm th,\n.table-sm td {\n  padding: 0.3rem;\n}\n.table-bordered {\n  border: 1px solid #dee2e6;\n}\n.table-bordered th,\n.table-bordered td {\n  border: 1px solid #dee2e6;\n}\n.table-bordered thead th,\n.table-bordered thead td {\n  border-bottom-width: 2px;\n}\n.table-borderless th,\n.table-borderless td,\n.table-borderless thead th,\n.table-borderless tbody + tbody {\n  border: 0;\n}\n.table-striped tbody tr:nth-of-type(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.table-hover tbody tr:hover {\n  color: #212529;\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-primary,\n.table-primary > th,\n.table-primary > td {\n  background-color: #b8daff;\n}\n.table-primary th,\n.table-primary td,\n.table-primary thead th,\n.table-primary tbody + tbody {\n  border-color: #7abaff;\n}\n.table-hover .table-primary:hover {\n  background-color: #9fcdff;\n}\n.table-hover .table-primary:hover > td,\n.table-hover .table-primary:hover > th {\n  background-color: #9fcdff;\n}\n.table-secondary,\n.table-secondary > th,\n.table-secondary > td {\n  background-color: #d6d8db;\n}\n.table-secondary th,\n.table-secondary td,\n.table-secondary thead th,\n.table-secondary tbody + tbody {\n  border-color: #b3b7bb;\n}\n.table-hover .table-secondary:hover {\n  background-color: #c8cbcf;\n}\n.table-hover .table-secondary:hover > td,\n.table-hover .table-secondary:hover > th {\n  background-color: #c8cbcf;\n}\n.table-success,\n.table-success > th,\n.table-success > td {\n  background-color: #c3e6cb;\n}\n.table-success th,\n.table-success td,\n.table-success thead th,\n.table-success tbody + tbody {\n  border-color: #8fd19e;\n}\n.table-hover .table-success:hover {\n  background-color: #b1dfbb;\n}\n.table-hover .table-success:hover > td,\n.table-hover .table-success:hover > th {\n  background-color: #b1dfbb;\n}\n.table-info,\n.table-info > th,\n.table-info > td {\n  background-color: #bee5eb;\n}\n.table-info th,\n.table-info td,\n.table-info thead th,\n.table-info tbody + tbody {\n  border-color: #86cfda;\n}\n.table-hover .table-info:hover {\n  background-color: #abdde5;\n}\n.table-hover .table-info:hover > td,\n.table-hover .table-info:hover > th {\n  background-color: #abdde5;\n}\n.table-warning,\n.table-warning > th,\n.table-warning > td {\n  background-color: #ffeeba;\n}\n.table-warning th,\n.table-warning td,\n.table-warning thead th,\n.table-warning tbody + tbody {\n  border-color: #ffdf7e;\n}\n.table-hover .table-warning:hover {\n  background-color: #ffe8a1;\n}\n.table-hover .table-warning:hover > td,\n.table-hover .table-warning:hover > th {\n  background-color: #ffe8a1;\n}\n.table-danger,\n.table-danger > th,\n.table-danger > td {\n  background-color: #f5c6cb;\n}\n.table-danger th,\n.table-danger td,\n.table-danger thead th,\n.table-danger tbody + tbody {\n  border-color: #ed969e;\n}\n.table-hover .table-danger:hover {\n  background-color: #f1b0b7;\n}\n.table-hover .table-danger:hover > td,\n.table-hover .table-danger:hover > th {\n  background-color: #f1b0b7;\n}\n.table-light,\n.table-light > th,\n.table-light > td {\n  background-color: #fdfdfe;\n}\n.table-light th,\n.table-light td,\n.table-light thead th,\n.table-light tbody + tbody {\n  border-color: #fbfcfc;\n}\n.table-hover .table-light:hover {\n  background-color: #ececf6;\n}\n.table-hover .table-light:hover > td,\n.table-hover .table-light:hover > th {\n  background-color: #ececf6;\n}\n.table-dark,\n.table-dark > th,\n.table-dark > td {\n  background-color: #c6c8ca;\n}\n.table-dark th,\n.table-dark td,\n.table-dark thead th,\n.table-dark tbody + tbody {\n  border-color: #95999c;\n}\n.table-hover .table-dark:hover {\n  background-color: #b9bbbe;\n}\n.table-hover .table-dark:hover > td,\n.table-hover .table-dark:hover > th {\n  background-color: #b9bbbe;\n}\n.table-active,\n.table-active > th,\n.table-active > td {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-hover .table-active:hover {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-hover .table-active:hover > td,\n.table-hover .table-active:hover > th {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table .thead-dark th {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #454d55;\n}\n.table .thead-light th {\n  color: #495057;\n  background-color: #e9ecef;\n  border-color: #dee2e6;\n}\n.table-dark {\n  color: #fff;\n  background-color: #343a40;\n}\n.table-dark th,\n.table-dark td,\n.table-dark thead th {\n  border-color: #454d55;\n}\n.table-dark.table-bordered {\n  border: 0;\n}\n.table-dark.table-striped tbody tr:nth-of-type(odd) {\n  background-color: rgba(255, 255, 255, 0.05);\n}\n.table-dark.table-hover tbody tr:hover {\n  color: #fff;\n  background-color: rgba(255, 255, 255, 0.075);\n}\n@media (max-width: 575.98px) {\n.table-responsive-sm {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-sm > .table-bordered {\n    border: 0;\n}\n}\n@media (max-width: 767.98px) {\n.table-responsive-md {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-md > .table-bordered {\n    border: 0;\n}\n}\n@media (max-width: 991.98px) {\n.table-responsive-lg {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-lg > .table-bordered {\n    border: 0;\n}\n}\n@media (max-width: 1199.98px) {\n.table-responsive-xl {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-xl > .table-bordered {\n    border: 0;\n}\n}\n.table-responsive {\n  display: block;\n  width: 100%;\n  overflow-x: auto;\n  -webkit-overflow-scrolling: touch;\n}\n.table-responsive > .table-bordered {\n  border: 0;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.form-control {\n    transition: none;\n}\n}\n.form-control::-ms-expand {\n  background-color: transparent;\n  border: 0;\n}\n.form-control:focus {\n  color: #495057;\n  background-color: #fff;\n  border-color: #80bdff;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.form-control::-moz-placeholder {\n  color: #6c757d;\n  opacity: 1;\n}\n.form-control::placeholder {\n  color: #6c757d;\n  opacity: 1;\n}\n.form-control:disabled, .form-control[readonly] {\n  background-color: #e9ecef;\n  opacity: 1;\n}\ninput[type=date].form-control,\ninput[type=time].form-control,\ninput[type=datetime-local].form-control,\ninput[type=month].form-control {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\nselect.form-control:-moz-focusring {\n  color: transparent;\n  text-shadow: 0 0 0 #495057;\n}\nselect.form-control:focus::-ms-value {\n  color: #495057;\n  background-color: #fff;\n}\n.form-control-file,\n.form-control-range {\n  display: block;\n  width: 100%;\n}\n.col-form-label {\n  padding-top: calc(0.375rem + 1px);\n  padding-bottom: calc(0.375rem + 1px);\n  margin-bottom: 0;\n  font-size: inherit;\n  line-height: 1.5;\n}\n.col-form-label-lg {\n  padding-top: calc(0.5rem + 1px);\n  padding-bottom: calc(0.5rem + 1px);\n  font-size: 1.25rem;\n  line-height: 1.5;\n}\n.col-form-label-sm {\n  padding-top: calc(0.25rem + 1px);\n  padding-bottom: calc(0.25rem + 1px);\n  font-size: 0.875rem;\n  line-height: 1.5;\n}\n.form-control-plaintext {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0;\n  margin-bottom: 0;\n  font-size: 1rem;\n  line-height: 1.5;\n  color: #212529;\n  background-color: transparent;\n  border: solid transparent;\n  border-width: 1px 0;\n}\n.form-control-plaintext.form-control-sm, .form-control-plaintext.form-control-lg {\n  padding-right: 0;\n  padding-left: 0;\n}\n.form-control-sm {\n  height: calc(1.5em + 0.5rem + 2px);\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n.form-control-lg {\n  height: calc(1.5em + 1rem + 2px);\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\nselect.form-control[size], select.form-control[multiple] {\n  height: auto;\n}\ntextarea.form-control {\n  height: auto;\n}\n.form-group {\n  margin-bottom: 1rem;\n}\n.form-text {\n  display: block;\n  margin-top: 0.25rem;\n}\n.form-row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-right: -5px;\n  margin-left: -5px;\n}\n.form-row > .col,\n.form-row > [class*=col-] {\n  padding-right: 5px;\n  padding-left: 5px;\n}\n.form-check {\n  position: relative;\n  display: block;\n  padding-left: 1.25rem;\n}\n.form-check-input {\n  position: absolute;\n  margin-top: 0.3rem;\n  margin-left: -1.25rem;\n}\n.form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {\n  color: #6c757d;\n}\n.form-check-label {\n  margin-bottom: 0;\n}\n.form-check-inline {\n  display: inline-flex;\n  align-items: center;\n  padding-left: 0;\n  margin-right: 0.75rem;\n}\n.form-check-inline .form-check-input {\n  position: static;\n  margin-top: 0;\n  margin-right: 0.3125rem;\n  margin-left: 0;\n}\n.valid-feedback {\n  display: none;\n  width: 100%;\n  margin-top: 0.25rem;\n  font-size: 0.875em;\n  color: #28a745;\n}\n.valid-tooltip {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 5;\n  display: none;\n  max-width: 100%;\n  padding: 0.25rem 0.5rem;\n  margin-top: 0.1rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  color: #fff;\n  background-color: rgba(40, 167, 69, 0.9);\n  border-radius: 0.25rem;\n}\n.form-row > .col > .valid-tooltip, .form-row > [class*=col-] > .valid-tooltip {\n  left: 5px;\n}\n.was-validated :valid ~ .valid-feedback,\n.was-validated :valid ~ .valid-tooltip,\n.is-valid ~ .valid-feedback,\n.is-valid ~ .valid-tooltip {\n  display: block;\n}\n.was-validated .form-control:valid, .form-control.is-valid {\n  border-color: #28a745;\n  padding-right: calc(1.5em + 0.75rem) !important;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.was-validated .form-control:valid:focus, .form-control.is-valid:focus {\n  border-color: #28a745;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.was-validated select.form-control:valid, select.form-control.is-valid {\n  padding-right: 3rem !important;\n  background-position: right 1.5rem center;\n}\n.was-validated textarea.form-control:valid, textarea.form-control.is-valid {\n  padding-right: calc(1.5em + 0.75rem);\n  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);\n}\n.was-validated .custom-select:valid, .custom-select.is-valid {\n  border-color: #28a745;\n  padding-right: calc(0.75em + 2.3125rem) !important;\n  background: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e\") right 0.75rem center/8px 10px no-repeat, #fff url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;\n}\n.was-validated .custom-select:valid:focus, .custom-select.is-valid:focus {\n  border-color: #28a745;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {\n  color: #28a745;\n}\n.was-validated .form-check-input:valid ~ .valid-feedback,\n.was-validated .form-check-input:valid ~ .valid-tooltip, .form-check-input.is-valid ~ .valid-feedback,\n.form-check-input.is-valid ~ .valid-tooltip {\n  display: block;\n}\n.was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {\n  color: #28a745;\n}\n.was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {\n  border-color: #28a745;\n}\n.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {\n  border-color: #34ce57;\n  background-color: #34ce57;\n}\n.was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before {\n  border-color: #28a745;\n}\n.was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {\n  border-color: #28a745;\n}\n.was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {\n  border-color: #28a745;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.invalid-feedback {\n  display: none;\n  width: 100%;\n  margin-top: 0.25rem;\n  font-size: 0.875em;\n  color: #dc3545;\n}\n.invalid-tooltip {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 5;\n  display: none;\n  max-width: 100%;\n  padding: 0.25rem 0.5rem;\n  margin-top: 0.1rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  color: #fff;\n  background-color: rgba(220, 53, 69, 0.9);\n  border-radius: 0.25rem;\n}\n.form-row > .col > .invalid-tooltip, .form-row > [class*=col-] > .invalid-tooltip {\n  left: 5px;\n}\n.was-validated :invalid ~ .invalid-feedback,\n.was-validated :invalid ~ .invalid-tooltip,\n.is-invalid ~ .invalid-feedback,\n.is-invalid ~ .invalid-tooltip {\n  display: block;\n}\n.was-validated .form-control:invalid, .form-control.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(1.5em + 0.75rem) !important;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {\n  border-color: #dc3545;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.was-validated select.form-control:invalid, select.form-control.is-invalid {\n  padding-right: 3rem !important;\n  background-position: right 1.5rem center;\n}\n.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {\n  padding-right: calc(1.5em + 0.75rem);\n  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);\n}\n.was-validated .custom-select:invalid, .custom-select.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(0.75em + 2.3125rem) !important;\n  background: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e\") right 0.75rem center/8px 10px no-repeat, #fff url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;\n}\n.was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {\n  border-color: #dc3545;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {\n  color: #dc3545;\n}\n.was-validated .form-check-input:invalid ~ .invalid-feedback,\n.was-validated .form-check-input:invalid ~ .invalid-tooltip, .form-check-input.is-invalid ~ .invalid-feedback,\n.form-check-input.is-invalid ~ .invalid-tooltip {\n  display: block;\n}\n.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {\n  color: #dc3545;\n}\n.was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before {\n  border-color: #dc3545;\n}\n.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before {\n  border-color: #e4606d;\n  background-color: #e4606d;\n}\n.was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before {\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before {\n  border-color: #dc3545;\n}\n.was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {\n  border-color: #dc3545;\n}\n.was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {\n  border-color: #dc3545;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.form-inline {\n  display: flex;\n  flex-flow: row wrap;\n  align-items: center;\n}\n.form-inline .form-check {\n  width: 100%;\n}\n@media (min-width: 576px) {\n.form-inline label {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-bottom: 0;\n}\n.form-inline .form-group {\n    display: flex;\n    flex: 0 0 auto;\n    flex-flow: row wrap;\n    align-items: center;\n    margin-bottom: 0;\n}\n.form-inline .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n}\n.form-inline .form-control-plaintext {\n    display: inline-block;\n}\n.form-inline .input-group,\n  .form-inline .custom-select {\n    width: auto;\n}\n.form-inline .form-check {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: auto;\n    padding-left: 0;\n}\n.form-inline .form-check-input {\n    position: relative;\n    flex-shrink: 0;\n    margin-top: 0;\n    margin-right: 0.25rem;\n    margin-left: 0;\n}\n.form-inline .custom-control {\n    align-items: center;\n    justify-content: center;\n}\n.form-inline .custom-control-label {\n    margin-bottom: 0;\n}\n}\n.btn {\n  display: inline-block;\n  font-weight: 400;\n  color: #212529;\n  text-align: center;\n  vertical-align: middle;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n  background-color: transparent;\n  border: 1px solid transparent;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.25rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.btn {\n    transition: none;\n}\n}\n.btn:hover {\n  color: #212529;\n  text-decoration: none;\n}\n.btn:focus, .btn.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.btn.disabled, .btn:disabled {\n  opacity: 0.65;\n}\n.btn:not(:disabled):not(.disabled) {\n  cursor: pointer;\n}\na.btn.disabled,\nfieldset:disabled a.btn {\n  pointer-events: none;\n}\n.btn-primary {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-primary:hover {\n  color: #fff;\n  background-color: #0069d9;\n  border-color: #0062cc;\n}\n.btn-primary:focus, .btn-primary.focus {\n  color: #fff;\n  background-color: #0069d9;\n  border-color: #0062cc;\n  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);\n}\n.btn-primary.disabled, .btn-primary:disabled {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {\n  color: #fff;\n  background-color: #0062cc;\n  border-color: #005cbf;\n}\n.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);\n}\n.btn-secondary {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-secondary:hover {\n  color: #fff;\n  background-color: #5a6268;\n  border-color: #545b62;\n}\n.btn-secondary:focus, .btn-secondary.focus {\n  color: #fff;\n  background-color: #5a6268;\n  border-color: #545b62;\n  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);\n}\n.btn-secondary.disabled, .btn-secondary:disabled {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {\n  color: #fff;\n  background-color: #545b62;\n  border-color: #4e555b;\n}\n.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);\n}\n.btn-success {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-success:hover {\n  color: #fff;\n  background-color: #218838;\n  border-color: #1e7e34;\n}\n.btn-success:focus, .btn-success.focus {\n  color: #fff;\n  background-color: #218838;\n  border-color: #1e7e34;\n  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);\n}\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, .show > .btn-success.dropdown-toggle {\n  color: #fff;\n  background-color: #1e7e34;\n  border-color: #1c7430;\n}\n.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus, .show > .btn-success.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);\n}\n.btn-info {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-info:hover {\n  color: #fff;\n  background-color: #138496;\n  border-color: #117a8b;\n}\n.btn-info:focus, .btn-info.focus {\n  color: #fff;\n  background-color: #138496;\n  border-color: #117a8b;\n  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);\n}\n.btn-info.disabled, .btn-info:disabled {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active, .show > .btn-info.dropdown-toggle {\n  color: #fff;\n  background-color: #117a8b;\n  border-color: #10707f;\n}\n.btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus, .show > .btn-info.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);\n}\n.btn-warning {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-warning:hover {\n  color: #212529;\n  background-color: #e0a800;\n  border-color: #d39e00;\n}\n.btn-warning:focus, .btn-warning.focus {\n  color: #212529;\n  background-color: #e0a800;\n  border-color: #d39e00;\n  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);\n}\n.btn-warning.disabled, .btn-warning:disabled {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active, .show > .btn-warning.dropdown-toggle {\n  color: #212529;\n  background-color: #d39e00;\n  border-color: #c69500;\n}\n.btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus, .show > .btn-warning.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);\n}\n.btn-danger {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-danger:hover {\n  color: #fff;\n  background-color: #c82333;\n  border-color: #bd2130;\n}\n.btn-danger:focus, .btn-danger.focus {\n  color: #fff;\n  background-color: #c82333;\n  border-color: #bd2130;\n  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);\n}\n.btn-danger.disabled, .btn-danger:disabled {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active, .show > .btn-danger.dropdown-toggle {\n  color: #fff;\n  background-color: #bd2130;\n  border-color: #b21f2d;\n}\n.btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus, .show > .btn-danger.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);\n}\n.btn-light {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-light:hover {\n  color: #212529;\n  background-color: #e2e6ea;\n  border-color: #dae0e5;\n}\n.btn-light:focus, .btn-light.focus {\n  color: #212529;\n  background-color: #e2e6ea;\n  border-color: #dae0e5;\n  box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);\n}\n.btn-light.disabled, .btn-light:disabled {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active, .show > .btn-light.dropdown-toggle {\n  color: #212529;\n  background-color: #dae0e5;\n  border-color: #d3d9df;\n}\n.btn-light:not(:disabled):not(.disabled):active:focus, .btn-light:not(:disabled):not(.disabled).active:focus, .show > .btn-light.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);\n}\n.btn-dark {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-dark:hover {\n  color: #fff;\n  background-color: #23272b;\n  border-color: #1d2124;\n}\n.btn-dark:focus, .btn-dark.focus {\n  color: #fff;\n  background-color: #23272b;\n  border-color: #1d2124;\n  box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);\n}\n.btn-dark.disabled, .btn-dark:disabled {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active, .show > .btn-dark.dropdown-toggle {\n  color: #fff;\n  background-color: #1d2124;\n  border-color: #171a1d;\n}\n.btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus, .show > .btn-dark.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);\n}\n.btn-outline-primary {\n  color: #007bff;\n  border-color: #007bff;\n}\n.btn-outline-primary:hover {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-outline-primary:focus, .btn-outline-primary.focus {\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);\n}\n.btn-outline-primary.disabled, .btn-outline-primary:disabled {\n  color: #007bff;\n  background-color: transparent;\n}\n.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);\n}\n.btn-outline-secondary {\n  color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-outline-secondary:hover {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-outline-secondary:focus, .btn-outline-secondary.focus {\n  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);\n}\n.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {\n  color: #6c757d;\n  background-color: transparent;\n}\n.btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active, .show > .btn-outline-secondary.dropdown-toggle {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-secondary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);\n}\n.btn-outline-success {\n  color: #28a745;\n  border-color: #28a745;\n}\n.btn-outline-success:hover {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-outline-success:focus, .btn-outline-success.focus {\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n.btn-outline-success.disabled, .btn-outline-success:disabled {\n  color: #28a745;\n  background-color: transparent;\n}\n.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active, .show > .btn-outline-success.dropdown-toggle {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-success.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n.btn-outline-info {\n  color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-outline-info:hover {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-outline-info:focus, .btn-outline-info.focus {\n  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);\n}\n.btn-outline-info.disabled, .btn-outline-info:disabled {\n  color: #17a2b8;\n  background-color: transparent;\n}\n.btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active, .show > .btn-outline-info.dropdown-toggle {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-info.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);\n}\n.btn-outline-warning {\n  color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-outline-warning:hover {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-outline-warning:focus, .btn-outline-warning.focus {\n  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);\n}\n.btn-outline-warning.disabled, .btn-outline-warning:disabled {\n  color: #ffc107;\n  background-color: transparent;\n}\n.btn-outline-warning:not(:disabled):not(.disabled):active, .btn-outline-warning:not(:disabled):not(.disabled).active, .show > .btn-outline-warning.dropdown-toggle {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-warning.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);\n}\n.btn-outline-danger {\n  color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-outline-danger:hover {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-outline-danger:focus, .btn-outline-danger.focus {\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);\n}\n.btn-outline-danger.disabled, .btn-outline-danger:disabled {\n  color: #dc3545;\n  background-color: transparent;\n}\n.btn-outline-danger:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active, .show > .btn-outline-danger.dropdown-toggle {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-outline-danger:not(:disabled):not(.disabled):active:focus, .btn-outline-danger:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-danger.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);\n}\n.btn-outline-light {\n  color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-outline-light:hover {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-outline-light:focus, .btn-outline-light.focus {\n  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);\n}\n.btn-outline-light.disabled, .btn-outline-light:disabled {\n  color: #f8f9fa;\n  background-color: transparent;\n}\n.btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .show > .btn-outline-light.dropdown-toggle {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-light.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);\n}\n.btn-outline-dark {\n  color: #343a40;\n  border-color: #343a40;\n}\n.btn-outline-dark:hover {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-outline-dark:focus, .btn-outline-dark.focus {\n  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);\n}\n.btn-outline-dark.disabled, .btn-outline-dark:disabled {\n  color: #343a40;\n  background-color: transparent;\n}\n.btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active, .show > .btn-outline-dark.dropdown-toggle {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-outline-dark:not(:disabled):not(.disabled):active:focus, .btn-outline-dark:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-dark.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);\n}\n.btn-link {\n  font-weight: 400;\n  color: #007bff;\n  text-decoration: none;\n}\n.btn-link:hover {\n  color: #0056b3;\n  text-decoration: underline;\n}\n.btn-link:focus, .btn-link.focus {\n  text-decoration: underline;\n}\n.btn-link:disabled, .btn-link.disabled {\n  color: #6c757d;\n  pointer-events: none;\n}\n.btn-lg, .btn-group-lg > .btn {\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\n.btn-sm, .btn-group-sm > .btn {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n.btn-block {\n  display: block;\n  width: 100%;\n}\n.btn-block + .btn-block {\n  margin-top: 0.5rem;\n}\ninput[type=submit].btn-block,\ninput[type=reset].btn-block,\ninput[type=button].btn-block {\n  width: 100%;\n}\n.fade {\n  transition: opacity 0.15s linear;\n}\n@media (prefers-reduced-motion: reduce) {\n.fade {\n    transition: none;\n}\n}\n.fade:not(.show) {\n  opacity: 0;\n}\n.collapse:not(.show) {\n  display: none;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  transition: height 0.35s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.collapsing {\n    transition: none;\n}\n}\n.collapsing.width {\n  width: 0;\n  height: auto;\n  transition: width 0.35s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.collapsing.width {\n    transition: none;\n}\n}\n.dropup,\n.dropright,\n.dropdown,\n.dropleft {\n  position: relative;\n}\n.dropdown-toggle {\n  white-space: nowrap;\n}\n.dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0.3em solid;\n  border-right: 0.3em solid transparent;\n  border-bottom: 0;\n  border-left: 0.3em solid transparent;\n}\n.dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 10rem;\n  padding: 0.5rem 0;\n  margin: 0.125rem 0 0;\n  font-size: 1rem;\n  color: #212529;\n  text-align: left;\n  list-style: none;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 0.25rem;\n}\n.dropdown-menu-left {\n  right: auto;\n  left: 0;\n}\n.dropdown-menu-right {\n  right: 0;\n  left: auto;\n}\n@media (min-width: 576px) {\n.dropdown-menu-sm-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-sm-right {\n    right: 0;\n    left: auto;\n}\n}\n@media (min-width: 768px) {\n.dropdown-menu-md-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-md-right {\n    right: 0;\n    left: auto;\n}\n}\n@media (min-width: 992px) {\n.dropdown-menu-lg-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-lg-right {\n    right: 0;\n    left: auto;\n}\n}\n@media (min-width: 1200px) {\n.dropdown-menu-xl-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-xl-right {\n    right: 0;\n    left: auto;\n}\n}\n.dropup .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-top: 0;\n  margin-bottom: 0.125rem;\n}\n.dropup .dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0;\n  border-right: 0.3em solid transparent;\n  border-bottom: 0.3em solid;\n  border-left: 0.3em solid transparent;\n}\n.dropup .dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropright .dropdown-menu {\n  top: 0;\n  right: auto;\n  left: 100%;\n  margin-top: 0;\n  margin-left: 0.125rem;\n}\n.dropright .dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0.3em solid transparent;\n  border-right: 0;\n  border-bottom: 0.3em solid transparent;\n  border-left: 0.3em solid;\n}\n.dropright .dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropright .dropdown-toggle::after {\n  vertical-align: 0;\n}\n.dropleft .dropdown-menu {\n  top: 0;\n  right: 100%;\n  left: auto;\n  margin-top: 0;\n  margin-right: 0.125rem;\n}\n.dropleft .dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n}\n.dropleft .dropdown-toggle::after {\n  display: none;\n}\n.dropleft .dropdown-toggle::before {\n  display: inline-block;\n  margin-right: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0.3em solid transparent;\n  border-right: 0.3em solid;\n  border-bottom: 0.3em solid transparent;\n}\n.dropleft .dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropleft .dropdown-toggle::before {\n  vertical-align: 0;\n}\n.dropdown-menu[x-placement^=top], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left] {\n  right: auto;\n  bottom: auto;\n}\n.dropdown-divider {\n  height: 0;\n  margin: 0.5rem 0;\n  overflow: hidden;\n  border-top: 1px solid #e9ecef;\n}\n.dropdown-item {\n  display: block;\n  width: 100%;\n  padding: 0.25rem 1.5rem;\n  clear: both;\n  font-weight: 400;\n  color: #212529;\n  text-align: inherit;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 0;\n}\n.dropdown-item:hover, .dropdown-item:focus {\n  color: #16181b;\n  text-decoration: none;\n  background-color: #e9ecef;\n}\n.dropdown-item.active, .dropdown-item:active {\n  color: #fff;\n  text-decoration: none;\n  background-color: #007bff;\n}\n.dropdown-item.disabled, .dropdown-item:disabled {\n  color: #adb5bd;\n  pointer-events: none;\n  background-color: transparent;\n}\n.dropdown-menu.show {\n  display: block;\n}\n.dropdown-header {\n  display: block;\n  padding: 0.5rem 1.5rem;\n  margin-bottom: 0;\n  font-size: 0.875rem;\n  color: #6c757d;\n  white-space: nowrap;\n}\n.dropdown-item-text {\n  display: block;\n  padding: 0.25rem 1.5rem;\n  color: #212529;\n}\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: inline-flex;\n  vertical-align: middle;\n}\n.btn-group > .btn,\n.btn-group-vertical > .btn {\n  position: relative;\n  flex: 1 1 auto;\n}\n.btn-group > .btn:hover,\n.btn-group-vertical > .btn:hover {\n  z-index: 1;\n}\n.btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,\n.btn-group-vertical > .btn:focus,\n.btn-group-vertical > .btn:active,\n.btn-group-vertical > .btn.active {\n  z-index: 1;\n}\n.btn-toolbar {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n}\n.btn-toolbar .input-group {\n  width: auto;\n}\n.btn-group > .btn:not(:first-child),\n.btn-group > .btn-group:not(:first-child) {\n  margin-left: -1px;\n}\n.btn-group > .btn:not(:last-child):not(.dropdown-toggle),\n.btn-group > .btn-group:not(:last-child) > .btn {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.btn-group > .btn:not(:first-child),\n.btn-group > .btn-group:not(:first-child) > .btn {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.dropdown-toggle-split {\n  padding-right: 0.5625rem;\n  padding-left: 0.5625rem;\n}\n.dropdown-toggle-split::after, .dropup .dropdown-toggle-split::after, .dropright .dropdown-toggle-split::after {\n  margin-left: 0;\n}\n.dropleft .dropdown-toggle-split::before {\n  margin-right: 0;\n}\n.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {\n  padding-right: 0.375rem;\n  padding-left: 0.375rem;\n}\n.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {\n  padding-right: 0.75rem;\n  padding-left: 0.75rem;\n}\n.btn-group-vertical {\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n}\n.btn-group-vertical > .btn,\n.btn-group-vertical > .btn-group {\n  width: 100%;\n}\n.btn-group-vertical > .btn:not(:first-child),\n.btn-group-vertical > .btn-group:not(:first-child) {\n  margin-top: -1px;\n}\n.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),\n.btn-group-vertical > .btn-group:not(:last-child) > .btn {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn:not(:first-child),\n.btn-group-vertical > .btn-group:not(:first-child) > .btn {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group-toggle > .btn,\n.btn-group-toggle > .btn-group > .btn {\n  margin-bottom: 0;\n}\n.btn-group-toggle > .btn input[type=radio],\n.btn-group-toggle > .btn input[type=checkbox],\n.btn-group-toggle > .btn-group > .btn input[type=radio],\n.btn-group-toggle > .btn-group > .btn input[type=checkbox] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n.input-group {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: stretch;\n  width: 100%;\n}\n.input-group > .form-control,\n.input-group > .form-control-plaintext,\n.input-group > .custom-select,\n.input-group > .custom-file {\n  position: relative;\n  flex: 1 1 auto;\n  width: 1%;\n  min-width: 0;\n  margin-bottom: 0;\n}\n.input-group > .form-control + .form-control,\n.input-group > .form-control + .custom-select,\n.input-group > .form-control + .custom-file,\n.input-group > .form-control-plaintext + .form-control,\n.input-group > .form-control-plaintext + .custom-select,\n.input-group > .form-control-plaintext + .custom-file,\n.input-group > .custom-select + .form-control,\n.input-group > .custom-select + .custom-select,\n.input-group > .custom-select + .custom-file,\n.input-group > .custom-file + .form-control,\n.input-group > .custom-file + .custom-select,\n.input-group > .custom-file + .custom-file {\n  margin-left: -1px;\n}\n.input-group > .form-control:focus,\n.input-group > .custom-select:focus,\n.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {\n  z-index: 3;\n}\n.input-group > .custom-file .custom-file-input:focus {\n  z-index: 4;\n}\n.input-group > .form-control:not(:first-child),\n.input-group > .custom-select:not(:first-child) {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.input-group > .custom-file {\n  display: flex;\n  align-items: center;\n}\n.input-group > .custom-file:not(:last-child) .custom-file-label, .input-group > .custom-file:not(:last-child) .custom-file-label::after {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group > .custom-file:not(:first-child) .custom-file-label {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.input-group:not(.has-validation) > .form-control:not(:last-child),\n.input-group:not(.has-validation) > .custom-select:not(:last-child),\n.input-group:not(.has-validation) > .custom-file:not(:last-child) .custom-file-label,\n.input-group:not(.has-validation) > .custom-file:not(:last-child) .custom-file-label::after {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group.has-validation > .form-control:nth-last-child(n+3),\n.input-group.has-validation > .custom-select:nth-last-child(n+3),\n.input-group.has-validation > .custom-file:nth-last-child(n+3) .custom-file-label,\n.input-group.has-validation > .custom-file:nth-last-child(n+3) .custom-file-label::after {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group-prepend,\n.input-group-append {\n  display: flex;\n}\n.input-group-prepend .btn,\n.input-group-append .btn {\n  position: relative;\n  z-index: 2;\n}\n.input-group-prepend .btn:focus,\n.input-group-append .btn:focus {\n  z-index: 3;\n}\n.input-group-prepend .btn + .btn,\n.input-group-prepend .btn + .input-group-text,\n.input-group-prepend .input-group-text + .input-group-text,\n.input-group-prepend .input-group-text + .btn,\n.input-group-append .btn + .btn,\n.input-group-append .btn + .input-group-text,\n.input-group-append .input-group-text + .input-group-text,\n.input-group-append .input-group-text + .btn {\n  margin-left: -1px;\n}\n.input-group-prepend {\n  margin-right: -1px;\n}\n.input-group-append {\n  margin-left: -1px;\n}\n.input-group-text {\n  display: flex;\n  align-items: center;\n  padding: 0.375rem 0.75rem;\n  margin-bottom: 0;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  text-align: center;\n  white-space: nowrap;\n  background-color: #e9ecef;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n}\n.input-group-text input[type=radio],\n.input-group-text input[type=checkbox] {\n  margin-top: 0;\n}\n.input-group-lg > .form-control:not(textarea),\n.input-group-lg > .custom-select {\n  height: calc(1.5em + 1rem + 2px);\n}\n.input-group-lg > .form-control,\n.input-group-lg > .custom-select,\n.input-group-lg > .input-group-prepend > .input-group-text,\n.input-group-lg > .input-group-append > .input-group-text,\n.input-group-lg > .input-group-prepend > .btn,\n.input-group-lg > .input-group-append > .btn {\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\n.input-group-sm > .form-control:not(textarea),\n.input-group-sm > .custom-select {\n  height: calc(1.5em + 0.5rem + 2px);\n}\n.input-group-sm > .form-control,\n.input-group-sm > .custom-select,\n.input-group-sm > .input-group-prepend > .input-group-text,\n.input-group-sm > .input-group-append > .input-group-text,\n.input-group-sm > .input-group-prepend > .btn,\n.input-group-sm > .input-group-append > .btn {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n.input-group-lg > .custom-select,\n.input-group-sm > .custom-select {\n  padding-right: 1.75rem;\n}\n.input-group > .input-group-prepend > .btn,\n.input-group > .input-group-prepend > .input-group-text,\n.input-group:not(.has-validation) > .input-group-append:not(:last-child) > .btn,\n.input-group:not(.has-validation) > .input-group-append:not(:last-child) > .input-group-text,\n.input-group.has-validation > .input-group-append:nth-last-child(n+3) > .btn,\n.input-group.has-validation > .input-group-append:nth-last-child(n+3) > .input-group-text,\n.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group > .input-group-append > .btn,\n.input-group > .input-group-append > .input-group-text,\n.input-group > .input-group-prepend:not(:first-child) > .btn,\n.input-group > .input-group-prepend:not(:first-child) > .input-group-text,\n.input-group > .input-group-prepend:first-child > .btn:not(:first-child),\n.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.custom-control {\n  position: relative;\n  z-index: 1;\n  display: block;\n  min-height: 1.5rem;\n  padding-left: 1.5rem;\n  -webkit-print-color-adjust: exact;\n          print-color-adjust: exact;\n}\n.custom-control-inline {\n  display: inline-flex;\n  margin-right: 1rem;\n}\n.custom-control-input {\n  position: absolute;\n  left: 0;\n  z-index: -1;\n  width: 1rem;\n  height: 1.25rem;\n  opacity: 0;\n}\n.custom-control-input:checked ~ .custom-control-label::before {\n  color: #fff;\n  border-color: #007bff;\n  background-color: #007bff;\n}\n.custom-control-input:focus ~ .custom-control-label::before {\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {\n  border-color: #80bdff;\n}\n.custom-control-input:not(:disabled):active ~ .custom-control-label::before {\n  color: #fff;\n  background-color: #b3d7ff;\n  border-color: #b3d7ff;\n}\n.custom-control-input[disabled] ~ .custom-control-label, .custom-control-input:disabled ~ .custom-control-label {\n  color: #6c757d;\n}\n.custom-control-input[disabled] ~ .custom-control-label::before, .custom-control-input:disabled ~ .custom-control-label::before {\n  background-color: #e9ecef;\n}\n.custom-control-label {\n  position: relative;\n  margin-bottom: 0;\n  vertical-align: top;\n}\n.custom-control-label::before {\n  position: absolute;\n  top: 0.25rem;\n  left: -1.5rem;\n  display: block;\n  width: 1rem;\n  height: 1rem;\n  pointer-events: none;\n  content: \"\";\n  background-color: #fff;\n  border: 1px solid #adb5bd;\n}\n.custom-control-label::after {\n  position: absolute;\n  top: 0.25rem;\n  left: -1.5rem;\n  display: block;\n  width: 1rem;\n  height: 1rem;\n  content: \"\";\n  background: 50%/50% 50% no-repeat;\n}\n.custom-checkbox .custom-control-label::before {\n  border-radius: 0.25rem;\n}\n.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e\");\n}\n.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {\n  border-color: #007bff;\n  background-color: #007bff;\n}\n.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e\");\n}\n.custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-radio .custom-control-label::before {\n  border-radius: 50%;\n}\n.custom-radio .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e\");\n}\n.custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-switch {\n  padding-left: 2.25rem;\n}\n.custom-switch .custom-control-label::before {\n  left: -2.25rem;\n  width: 1.75rem;\n  pointer-events: all;\n  border-radius: 0.5rem;\n}\n.custom-switch .custom-control-label::after {\n  top: calc(0.25rem + 2px);\n  left: calc(-2.25rem + 2px);\n  width: calc(1rem - 4px);\n  height: calc(1rem - 4px);\n  background-color: #adb5bd;\n  border-radius: 0.5rem;\n  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-switch .custom-control-label::after {\n    transition: none;\n}\n}\n.custom-switch .custom-control-input:checked ~ .custom-control-label::after {\n  background-color: #fff;\n  transform: translateX(0.75rem);\n}\n.custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-select {\n  display: inline-block;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  padding: 0.375rem 1.75rem 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  vertical-align: middle;\n  background: #fff url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e\") right 0.75rem center/8px 10px no-repeat;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\n.custom-select:focus {\n  border-color: #80bdff;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-select:focus::-ms-value {\n  color: #495057;\n  background-color: #fff;\n}\n.custom-select[multiple], .custom-select[size]:not([size=\"1\"]) {\n  height: auto;\n  padding-right: 0.75rem;\n  background-image: none;\n}\n.custom-select:disabled {\n  color: #6c757d;\n  background-color: #e9ecef;\n}\n.custom-select::-ms-expand {\n  display: none;\n}\n.custom-select:-moz-focusring {\n  color: transparent;\n  text-shadow: 0 0 0 #495057;\n}\n.custom-select-sm {\n  height: calc(1.5em + 0.5rem + 2px);\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n  padding-left: 0.5rem;\n  font-size: 0.875rem;\n}\n.custom-select-lg {\n  height: calc(1.5em + 1rem + 2px);\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  padding-left: 1rem;\n  font-size: 1.25rem;\n}\n.custom-file {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  margin-bottom: 0;\n}\n.custom-file-input {\n  position: relative;\n  z-index: 2;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  margin: 0;\n  overflow: hidden;\n  opacity: 0;\n}\n.custom-file-input:focus ~ .custom-file-label {\n  border-color: #80bdff;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-file-input[disabled] ~ .custom-file-label, .custom-file-input:disabled ~ .custom-file-label {\n  background-color: #e9ecef;\n}\n.custom-file-input:lang(en) ~ .custom-file-label::after {\n  content: \"Browse\";\n}\n.custom-file-input ~ .custom-file-label[data-browse]::after {\n  content: attr(data-browse);\n}\n.custom-file-label {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 1;\n  height: calc(1.5em + 0.75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  overflow: hidden;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  background-color: #fff;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n}\n.custom-file-label::after {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 3;\n  display: block;\n  height: calc(1.5em + 0.75rem);\n  padding: 0.375rem 0.75rem;\n  line-height: 1.5;\n  color: #495057;\n  content: \"Browse\";\n  background-color: #e9ecef;\n  border-left: inherit;\n  border-radius: 0 0.25rem 0.25rem 0;\n}\n.custom-range {\n  width: 100%;\n  height: 1.4rem;\n  padding: 0;\n  background-color: transparent;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\n.custom-range:focus {\n  outline: 0;\n}\n.custom-range:focus::-webkit-slider-thumb {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-range:focus::-moz-range-thumb {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-range:focus::-ms-thumb {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-range::-moz-focus-outer {\n  border: 0;\n}\n.custom-range::-webkit-slider-thumb {\n  width: 1rem;\n  height: 1rem;\n  margin-top: -0.25rem;\n  background-color: #007bff;\n  border: 0;\n  border-radius: 1rem;\n  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -webkit-appearance: none;\n          appearance: none;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-range::-webkit-slider-thumb {\n    -webkit-transition: none;\n    transition: none;\n}\n}\n.custom-range::-webkit-slider-thumb:active {\n  background-color: #b3d7ff;\n}\n.custom-range::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 0.5rem;\n  color: transparent;\n  cursor: pointer;\n  background-color: #dee2e6;\n  border-color: transparent;\n  border-radius: 1rem;\n}\n.custom-range::-moz-range-thumb {\n  width: 1rem;\n  height: 1rem;\n  background-color: #007bff;\n  border: 0;\n  border-radius: 1rem;\n  -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -moz-appearance: none;\n       appearance: none;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-range::-moz-range-thumb {\n    -moz-transition: none;\n    transition: none;\n}\n}\n.custom-range::-moz-range-thumb:active {\n  background-color: #b3d7ff;\n}\n.custom-range::-moz-range-track {\n  width: 100%;\n  height: 0.5rem;\n  color: transparent;\n  cursor: pointer;\n  background-color: #dee2e6;\n  border-color: transparent;\n  border-radius: 1rem;\n}\n.custom-range::-ms-thumb {\n  width: 1rem;\n  height: 1rem;\n  margin-top: 0;\n  margin-right: 0.2rem;\n  margin-left: 0.2rem;\n  background-color: #007bff;\n  border: 0;\n  border-radius: 1rem;\n  -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  appearance: none;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-range::-ms-thumb {\n    -ms-transition: none;\n    transition: none;\n}\n}\n.custom-range::-ms-thumb:active {\n  background-color: #b3d7ff;\n}\n.custom-range::-ms-track {\n  width: 100%;\n  height: 0.5rem;\n  color: transparent;\n  cursor: pointer;\n  background-color: transparent;\n  border-color: transparent;\n  border-width: 0.5rem;\n}\n.custom-range::-ms-fill-lower {\n  background-color: #dee2e6;\n  border-radius: 1rem;\n}\n.custom-range::-ms-fill-upper {\n  margin-right: 15px;\n  background-color: #dee2e6;\n  border-radius: 1rem;\n}\n.custom-range:disabled::-webkit-slider-thumb {\n  background-color: #adb5bd;\n}\n.custom-range:disabled::-webkit-slider-runnable-track {\n  cursor: default;\n}\n.custom-range:disabled::-moz-range-thumb {\n  background-color: #adb5bd;\n}\n.custom-range:disabled::-moz-range-track {\n  cursor: default;\n}\n.custom-range:disabled::-ms-thumb {\n  background-color: #adb5bd;\n}\n.custom-control-label::before,\n.custom-file-label,\n.custom-select {\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-control-label::before,\n  .custom-file-label,\n  .custom-select {\n    transition: none;\n}\n}\n.nav {\n  display: flex;\n  flex-wrap: wrap;\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.nav-link {\n  display: block;\n  padding: 0.5rem 1rem;\n}\n.nav-link:hover, .nav-link:focus {\n  text-decoration: none;\n}\n.nav-link.disabled {\n  color: #6c757d;\n  pointer-events: none;\n  cursor: default;\n}\n.nav-tabs {\n  border-bottom: 1px solid #dee2e6;\n}\n.nav-tabs .nav-link {\n  margin-bottom: -1px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {\n  isolation: isolate;\n  border-color: #e9ecef #e9ecef #dee2e6;\n}\n.nav-tabs .nav-link.disabled {\n  color: #6c757d;\n  background-color: transparent;\n  border-color: transparent;\n}\n.nav-tabs .nav-link.active,\n.nav-tabs .nav-item.show .nav-link {\n  color: #495057;\n  background-color: #fff;\n  border-color: #dee2e6 #dee2e6 #fff;\n}\n.nav-tabs .dropdown-menu {\n  margin-top: -1px;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.nav-pills .nav-link {\n  background: none;\n  border: 0;\n  border-radius: 0.25rem;\n}\n.nav-pills .nav-link.active,\n.nav-pills .show > .nav-link {\n  color: #fff;\n  background-color: #007bff;\n}\n.nav-fill > .nav-link,\n.nav-fill .nav-item {\n  flex: 1 1 auto;\n  text-align: center;\n}\n.nav-justified > .nav-link,\n.nav-justified .nav-item {\n  flex-basis: 0;\n  flex-grow: 1;\n  text-align: center;\n}\n.tab-content > .tab-pane {\n  display: none;\n}\n.tab-content > .active {\n  display: block;\n}\n.navbar {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem 1rem;\n}\n.navbar .container,\n.navbar .container-fluid,\n.navbar .container-sm,\n.navbar .container-md,\n.navbar .container-lg,\n.navbar .container-xl {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n}\n.navbar-brand {\n  display: inline-block;\n  padding-top: 0.3125rem;\n  padding-bottom: 0.3125rem;\n  margin-right: 1rem;\n  font-size: 1.25rem;\n  line-height: inherit;\n  white-space: nowrap;\n}\n.navbar-brand:hover, .navbar-brand:focus {\n  text-decoration: none;\n}\n.navbar-nav {\n  display: flex;\n  flex-direction: column;\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.navbar-nav .nav-link {\n  padding-right: 0;\n  padding-left: 0;\n}\n.navbar-nav .dropdown-menu {\n  position: static;\n  float: none;\n}\n.navbar-text {\n  display: inline-block;\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.navbar-collapse {\n  flex-basis: 100%;\n  flex-grow: 1;\n  align-items: center;\n}\n.navbar-toggler {\n  padding: 0.25rem 0.75rem;\n  font-size: 1.25rem;\n  line-height: 1;\n  background-color: transparent;\n  border: 1px solid transparent;\n  border-radius: 0.25rem;\n}\n.navbar-toggler:hover, .navbar-toggler:focus {\n  text-decoration: none;\n}\n.navbar-toggler-icon {\n  display: inline-block;\n  width: 1.5em;\n  height: 1.5em;\n  vertical-align: middle;\n  content: \"\";\n  background: 50%/100% 100% no-repeat;\n}\n.navbar-nav-scroll {\n  max-height: 75vh;\n  overflow-y: auto;\n}\n@media (max-width: 575.98px) {\n.navbar-expand-sm > .container,\n  .navbar-expand-sm > .container-fluid,\n  .navbar-expand-sm > .container-sm,\n  .navbar-expand-sm > .container-md,\n  .navbar-expand-sm > .container-lg,\n  .navbar-expand-sm > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 576px) {\n.navbar-expand-sm {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-sm .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-sm .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-sm .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-sm > .container,\n  .navbar-expand-sm > .container-fluid,\n  .navbar-expand-sm > .container-sm,\n  .navbar-expand-sm > .container-md,\n  .navbar-expand-sm > .container-lg,\n  .navbar-expand-sm > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-sm .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-sm .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-sm .navbar-toggler {\n    display: none;\n}\n}\n@media (max-width: 767.98px) {\n.navbar-expand-md > .container,\n  .navbar-expand-md > .container-fluid,\n  .navbar-expand-md > .container-sm,\n  .navbar-expand-md > .container-md,\n  .navbar-expand-md > .container-lg,\n  .navbar-expand-md > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 768px) {\n.navbar-expand-md {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-md .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-md .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-md .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-md > .container,\n  .navbar-expand-md > .container-fluid,\n  .navbar-expand-md > .container-sm,\n  .navbar-expand-md > .container-md,\n  .navbar-expand-md > .container-lg,\n  .navbar-expand-md > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-md .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-md .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-md .navbar-toggler {\n    display: none;\n}\n}\n@media (max-width: 991.98px) {\n.navbar-expand-lg > .container,\n  .navbar-expand-lg > .container-fluid,\n  .navbar-expand-lg > .container-sm,\n  .navbar-expand-lg > .container-md,\n  .navbar-expand-lg > .container-lg,\n  .navbar-expand-lg > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) {\n.navbar-expand-lg {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-lg .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-lg .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-lg .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-lg > .container,\n  .navbar-expand-lg > .container-fluid,\n  .navbar-expand-lg > .container-sm,\n  .navbar-expand-lg > .container-md,\n  .navbar-expand-lg > .container-lg,\n  .navbar-expand-lg > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-lg .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-lg .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-lg .navbar-toggler {\n    display: none;\n}\n}\n@media (max-width: 1199.98px) {\n.navbar-expand-xl > .container,\n  .navbar-expand-xl > .container-fluid,\n  .navbar-expand-xl > .container-sm,\n  .navbar-expand-xl > .container-md,\n  .navbar-expand-xl > .container-lg,\n  .navbar-expand-xl > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 1200px) {\n.navbar-expand-xl {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-xl .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-xl .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-xl .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-xl > .container,\n  .navbar-expand-xl > .container-fluid,\n  .navbar-expand-xl > .container-sm,\n  .navbar-expand-xl > .container-md,\n  .navbar-expand-xl > .container-lg,\n  .navbar-expand-xl > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-xl .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-xl .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-xl .navbar-toggler {\n    display: none;\n}\n}\n.navbar-expand {\n  flex-flow: row nowrap;\n  justify-content: flex-start;\n}\n.navbar-expand > .container,\n.navbar-expand > .container-fluid,\n.navbar-expand > .container-sm,\n.navbar-expand > .container-md,\n.navbar-expand > .container-lg,\n.navbar-expand > .container-xl {\n  padding-right: 0;\n  padding-left: 0;\n}\n.navbar-expand .navbar-nav {\n  flex-direction: row;\n}\n.navbar-expand .navbar-nav .dropdown-menu {\n  position: absolute;\n}\n.navbar-expand .navbar-nav .nav-link {\n  padding-right: 0.5rem;\n  padding-left: 0.5rem;\n}\n.navbar-expand > .container,\n.navbar-expand > .container-fluid,\n.navbar-expand > .container-sm,\n.navbar-expand > .container-md,\n.navbar-expand > .container-lg,\n.navbar-expand > .container-xl {\n  flex-wrap: nowrap;\n}\n.navbar-expand .navbar-nav-scroll {\n  overflow: visible;\n}\n.navbar-expand .navbar-collapse {\n  display: flex !important;\n  flex-basis: auto;\n}\n.navbar-expand .navbar-toggler {\n  display: none;\n}\n.navbar-light .navbar-brand {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-nav .nav-link {\n  color: rgba(0, 0, 0, 0.5);\n}\n.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {\n  color: rgba(0, 0, 0, 0.7);\n}\n.navbar-light .navbar-nav .nav-link.disabled {\n  color: rgba(0, 0, 0, 0.3);\n}\n.navbar-light .navbar-nav .show > .nav-link,\n.navbar-light .navbar-nav .active > .nav-link,\n.navbar-light .navbar-nav .nav-link.show,\n.navbar-light .navbar-nav .nav-link.active {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-toggler {\n  color: rgba(0, 0, 0, 0.5);\n  border-color: rgba(0, 0, 0, 0.1);\n}\n.navbar-light .navbar-toggler-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\");\n}\n.navbar-light .navbar-text {\n  color: rgba(0, 0, 0, 0.5);\n}\n.navbar-light .navbar-text a {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-dark .navbar-brand {\n  color: #fff;\n}\n.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {\n  color: #fff;\n}\n.navbar-dark .navbar-nav .nav-link {\n  color: rgba(255, 255, 255, 0.5);\n}\n.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {\n  color: rgba(255, 255, 255, 0.75);\n}\n.navbar-dark .navbar-nav .nav-link.disabled {\n  color: rgba(255, 255, 255, 0.25);\n}\n.navbar-dark .navbar-nav .show > .nav-link,\n.navbar-dark .navbar-nav .active > .nav-link,\n.navbar-dark .navbar-nav .nav-link.show,\n.navbar-dark .navbar-nav .nav-link.active {\n  color: #fff;\n}\n.navbar-dark .navbar-toggler {\n  color: rgba(255, 255, 255, 0.5);\n  border-color: rgba(255, 255, 255, 0.1);\n}\n.navbar-dark .navbar-toggler-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\");\n}\n.navbar-dark .navbar-text {\n  color: rgba(255, 255, 255, 0.5);\n}\n.navbar-dark .navbar-text a {\n  color: #fff;\n}\n.navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {\n  color: #fff;\n}\n.card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n  word-wrap: break-word;\n  background-color: #fff;\n  background-clip: border-box;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n}\n.card > hr {\n  margin-right: 0;\n  margin-left: 0;\n}\n.card > .list-group {\n  border-top: inherit;\n  border-bottom: inherit;\n}\n.card > .list-group:first-child {\n  border-top-width: 0;\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.card > .list-group:last-child {\n  border-bottom-width: 0;\n  border-bottom-right-radius: calc(0.25rem - 1px);\n  border-bottom-left-radius: calc(0.25rem - 1px);\n}\n.card > .card-header + .list-group,\n.card > .list-group + .card-footer {\n  border-top: 0;\n}\n.card-body {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 1.25rem;\n}\n.card-title {\n  margin-bottom: 0.75rem;\n}\n.card-subtitle {\n  margin-top: -0.375rem;\n  margin-bottom: 0;\n}\n.card-text:last-child {\n  margin-bottom: 0;\n}\n.card-link:hover {\n  text-decoration: none;\n}\n.card-link + .card-link {\n  margin-left: 1.25rem;\n}\n.card-header {\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 0;\n  background-color: rgba(0, 0, 0, 0.03);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.125);\n}\n.card-header:first-child {\n  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;\n}\n.card-footer {\n  padding: 0.75rem 1.25rem;\n  background-color: rgba(0, 0, 0, 0.03);\n  border-top: 1px solid rgba(0, 0, 0, 0.125);\n}\n.card-footer:last-child {\n  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);\n}\n.card-header-tabs {\n  margin-right: -0.625rem;\n  margin-bottom: -0.75rem;\n  margin-left: -0.625rem;\n  border-bottom: 0;\n}\n.card-header-pills {\n  margin-right: -0.625rem;\n  margin-left: -0.625rem;\n}\n.card-img-overlay {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 1.25rem;\n  border-radius: calc(0.25rem - 1px);\n}\n.card-img,\n.card-img-top,\n.card-img-bottom {\n  flex-shrink: 0;\n  width: 100%;\n}\n.card-img,\n.card-img-top {\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.card-img,\n.card-img-bottom {\n  border-bottom-right-radius: calc(0.25rem - 1px);\n  border-bottom-left-radius: calc(0.25rem - 1px);\n}\n.card-deck .card {\n  margin-bottom: 15px;\n}\n@media (min-width: 576px) {\n.card-deck {\n    display: flex;\n    flex-flow: row wrap;\n    margin-right: -15px;\n    margin-left: -15px;\n}\n.card-deck .card {\n    flex: 1 0 0%;\n    margin-right: 15px;\n    margin-bottom: 0;\n    margin-left: 15px;\n}\n}\n.card-group > .card {\n  margin-bottom: 15px;\n}\n@media (min-width: 576px) {\n.card-group {\n    display: flex;\n    flex-flow: row wrap;\n}\n.card-group > .card {\n    flex: 1 0 0%;\n    margin-bottom: 0;\n}\n.card-group > .card + .card {\n    margin-left: 0;\n    border-left: 0;\n}\n.card-group > .card:not(:last-child) {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n}\n.card-group > .card:not(:last-child) .card-img-top,\n  .card-group > .card:not(:last-child) .card-header {\n    border-top-right-radius: 0;\n}\n.card-group > .card:not(:last-child) .card-img-bottom,\n  .card-group > .card:not(:last-child) .card-footer {\n    border-bottom-right-radius: 0;\n}\n.card-group > .card:not(:first-child) {\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n.card-group > .card:not(:first-child) .card-img-top,\n  .card-group > .card:not(:first-child) .card-header {\n    border-top-left-radius: 0;\n}\n.card-group > .card:not(:first-child) .card-img-bottom,\n  .card-group > .card:not(:first-child) .card-footer {\n    border-bottom-left-radius: 0;\n}\n}\n.card-columns .card {\n  margin-bottom: 0.75rem;\n}\n@media (min-width: 576px) {\n.card-columns {\n    -moz-column-count: 3;\n         column-count: 3;\n    -moz-column-gap: 1.25rem;\n         column-gap: 1.25rem;\n    orphans: 1;\n    widows: 1;\n}\n.card-columns .card {\n    display: inline-block;\n    width: 100%;\n}\n}\n.accordion {\n  overflow-anchor: none;\n}\n.accordion > .card {\n  overflow: hidden;\n}\n.accordion > .card:not(:last-of-type) {\n  border-bottom: 0;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.accordion > .card:not(:first-of-type) {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.accordion > .card > .card-header {\n  border-radius: 0;\n  margin-bottom: -1px;\n}\n.breadcrumb {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0.75rem 1rem;\n  margin-bottom: 1rem;\n  list-style: none;\n  background-color: #e9ecef;\n  border-radius: 0.25rem;\n}\n.breadcrumb-item + .breadcrumb-item {\n  padding-left: 0.5rem;\n}\n.breadcrumb-item + .breadcrumb-item::before {\n  float: left;\n  padding-right: 0.5rem;\n  color: #6c757d;\n  content: \"/\";\n}\n.breadcrumb-item + .breadcrumb-item:hover::before {\n  text-decoration: underline;\n}\n.breadcrumb-item + .breadcrumb-item:hover::before {\n  text-decoration: none;\n}\n.breadcrumb-item.active {\n  color: #6c757d;\n}\n.pagination {\n  display: flex;\n  padding-left: 0;\n  list-style: none;\n  border-radius: 0.25rem;\n}\n.page-link {\n  position: relative;\n  display: block;\n  padding: 0.5rem 0.75rem;\n  margin-left: -1px;\n  line-height: 1.25;\n  color: #007bff;\n  background-color: #fff;\n  border: 1px solid #dee2e6;\n}\n.page-link:hover {\n  z-index: 2;\n  color: #0056b3;\n  text-decoration: none;\n  background-color: #e9ecef;\n  border-color: #dee2e6;\n}\n.page-link:focus {\n  z-index: 3;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.page-item:first-child .page-link {\n  margin-left: 0;\n  border-top-left-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n}\n.page-item:last-child .page-link {\n  border-top-right-radius: 0.25rem;\n  border-bottom-right-radius: 0.25rem;\n}\n.page-item.active .page-link {\n  z-index: 3;\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.page-item.disabled .page-link {\n  color: #6c757d;\n  pointer-events: none;\n  cursor: auto;\n  background-color: #fff;\n  border-color: #dee2e6;\n}\n.pagination-lg .page-link {\n  padding: 0.75rem 1.5rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n}\n.pagination-lg .page-item:first-child .page-link {\n  border-top-left-radius: 0.3rem;\n  border-bottom-left-radius: 0.3rem;\n}\n.pagination-lg .page-item:last-child .page-link {\n  border-top-right-radius: 0.3rem;\n  border-bottom-right-radius: 0.3rem;\n}\n.pagination-sm .page-link {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n}\n.pagination-sm .page-item:first-child .page-link {\n  border-top-left-radius: 0.2rem;\n  border-bottom-left-radius: 0.2rem;\n}\n.pagination-sm .page-item:last-child .page-link {\n  border-top-right-radius: 0.2rem;\n  border-bottom-right-radius: 0.2rem;\n}\n.badge {\n  display: inline-block;\n  padding: 0.25em 0.4em;\n  font-size: 75%;\n  font-weight: 700;\n  line-height: 1;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: 0.25rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.badge {\n    transition: none;\n}\n}\na.badge:hover, a.badge:focus {\n  text-decoration: none;\n}\n.badge:empty {\n  display: none;\n}\n.btn .badge {\n  position: relative;\n  top: -1px;\n}\n.badge-pill {\n  padding-right: 0.6em;\n  padding-left: 0.6em;\n  border-radius: 10rem;\n}\n.badge-primary {\n  color: #fff;\n  background-color: #007bff;\n}\na.badge-primary:hover, a.badge-primary:focus {\n  color: #fff;\n  background-color: #0062cc;\n}\na.badge-primary:focus, a.badge-primary.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);\n}\n.badge-secondary {\n  color: #fff;\n  background-color: #6c757d;\n}\na.badge-secondary:hover, a.badge-secondary:focus {\n  color: #fff;\n  background-color: #545b62;\n}\na.badge-secondary:focus, a.badge-secondary.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);\n}\n.badge-success {\n  color: #fff;\n  background-color: #28a745;\n}\na.badge-success:hover, a.badge-success:focus {\n  color: #fff;\n  background-color: #1e7e34;\n}\na.badge-success:focus, a.badge-success.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n.badge-info {\n  color: #fff;\n  background-color: #17a2b8;\n}\na.badge-info:hover, a.badge-info:focus {\n  color: #fff;\n  background-color: #117a8b;\n}\na.badge-info:focus, a.badge-info.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);\n}\n.badge-warning {\n  color: #212529;\n  background-color: #ffc107;\n}\na.badge-warning:hover, a.badge-warning:focus {\n  color: #212529;\n  background-color: #d39e00;\n}\na.badge-warning:focus, a.badge-warning.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);\n}\n.badge-danger {\n  color: #fff;\n  background-color: #dc3545;\n}\na.badge-danger:hover, a.badge-danger:focus {\n  color: #fff;\n  background-color: #bd2130;\n}\na.badge-danger:focus, a.badge-danger.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);\n}\n.badge-light {\n  color: #212529;\n  background-color: #f8f9fa;\n}\na.badge-light:hover, a.badge-light:focus {\n  color: #212529;\n  background-color: #dae0e5;\n}\na.badge-light:focus, a.badge-light.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);\n}\n.badge-dark {\n  color: #fff;\n  background-color: #343a40;\n}\na.badge-dark:hover, a.badge-dark:focus {\n  color: #fff;\n  background-color: #1d2124;\n}\na.badge-dark:focus, a.badge-dark.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);\n}\n.jumbotron {\n  padding: 2rem 1rem;\n  margin-bottom: 2rem;\n  background-color: #e9ecef;\n  border-radius: 0.3rem;\n}\n@media (min-width: 576px) {\n.jumbotron {\n    padding: 4rem 2rem;\n}\n}\n.jumbotron-fluid {\n  padding-right: 0;\n  padding-left: 0;\n  border-radius: 0;\n}\n.alert {\n  position: relative;\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 1rem;\n  border: 1px solid transparent;\n  border-radius: 0.25rem;\n}\n.alert-heading {\n  color: inherit;\n}\n.alert-link {\n  font-weight: 700;\n}\n.alert-dismissible {\n  padding-right: 4rem;\n}\n.alert-dismissible .close {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  padding: 0.75rem 1.25rem;\n  color: inherit;\n}\n.alert-primary {\n  color: #004085;\n  background-color: #cce5ff;\n  border-color: #b8daff;\n}\n.alert-primary hr {\n  border-top-color: #9fcdff;\n}\n.alert-primary .alert-link {\n  color: #002752;\n}\n.alert-secondary {\n  color: #383d41;\n  background-color: #e2e3e5;\n  border-color: #d6d8db;\n}\n.alert-secondary hr {\n  border-top-color: #c8cbcf;\n}\n.alert-secondary .alert-link {\n  color: #202326;\n}\n.alert-success {\n  color: #155724;\n  background-color: #d4edda;\n  border-color: #c3e6cb;\n}\n.alert-success hr {\n  border-top-color: #b1dfbb;\n}\n.alert-success .alert-link {\n  color: #0b2e13;\n}\n.alert-info {\n  color: #0c5460;\n  background-color: #d1ecf1;\n  border-color: #bee5eb;\n}\n.alert-info hr {\n  border-top-color: #abdde5;\n}\n.alert-info .alert-link {\n  color: #062c33;\n}\n.alert-warning {\n  color: #856404;\n  background-color: #fff3cd;\n  border-color: #ffeeba;\n}\n.alert-warning hr {\n  border-top-color: #ffe8a1;\n}\n.alert-warning .alert-link {\n  color: #533f03;\n}\n.alert-danger {\n  color: #721c24;\n  background-color: #f8d7da;\n  border-color: #f5c6cb;\n}\n.alert-danger hr {\n  border-top-color: #f1b0b7;\n}\n.alert-danger .alert-link {\n  color: #491217;\n}\n.alert-light {\n  color: #818182;\n  background-color: #fefefe;\n  border-color: #fdfdfe;\n}\n.alert-light hr {\n  border-top-color: #ececf6;\n}\n.alert-light .alert-link {\n  color: #686868;\n}\n.alert-dark {\n  color: #1b1e21;\n  background-color: #d6d8d9;\n  border-color: #c6c8ca;\n}\n.alert-dark hr {\n  border-top-color: #b9bbbe;\n}\n.alert-dark .alert-link {\n  color: #040505;\n}\n@keyframes progress-bar-stripes {\nfrom {\n    background-position: 1rem 0;\n}\nto {\n    background-position: 0 0;\n}\n}\n.progress {\n  display: flex;\n  height: 1rem;\n  overflow: hidden;\n  line-height: 0;\n  font-size: 0.75rem;\n  background-color: #e9ecef;\n  border-radius: 0.25rem;\n}\n.progress-bar {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  overflow: hidden;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  background-color: #007bff;\n  transition: width 0.6s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.progress-bar {\n    transition: none;\n}\n}\n.progress-bar-striped {\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 1rem 1rem;\n}\n.progress-bar-animated {\n  animation: 1s linear infinite progress-bar-stripes;\n}\n@media (prefers-reduced-motion: reduce) {\n.progress-bar-animated {\n    animation: none;\n}\n}\n.media {\n  display: flex;\n  align-items: flex-start;\n}\n.media-body {\n  flex: 1;\n}\n.list-group {\n  display: flex;\n  flex-direction: column;\n  padding-left: 0;\n  margin-bottom: 0;\n  border-radius: 0.25rem;\n}\n.list-group-item-action {\n  width: 100%;\n  color: #495057;\n  text-align: inherit;\n}\n.list-group-item-action:hover, .list-group-item-action:focus {\n  z-index: 1;\n  color: #495057;\n  text-decoration: none;\n  background-color: #f8f9fa;\n}\n.list-group-item-action:active {\n  color: #212529;\n  background-color: #e9ecef;\n}\n.list-group-item {\n  position: relative;\n  display: block;\n  padding: 0.75rem 1.25rem;\n  background-color: #fff;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n}\n.list-group-item:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n}\n.list-group-item:last-child {\n  border-bottom-right-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.list-group-item.disabled, .list-group-item:disabled {\n  color: #6c757d;\n  pointer-events: none;\n  background-color: #fff;\n}\n.list-group-item.active {\n  z-index: 2;\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.list-group-item + .list-group-item {\n  border-top-width: 0;\n}\n.list-group-item + .list-group-item.active {\n  margin-top: -1px;\n  border-top-width: 1px;\n}\n.list-group-horizontal {\n  flex-direction: row;\n}\n.list-group-horizontal > .list-group-item:first-child {\n  border-bottom-left-radius: 0.25rem;\n  border-top-right-radius: 0;\n}\n.list-group-horizontal > .list-group-item:last-child {\n  border-top-right-radius: 0.25rem;\n  border-bottom-left-radius: 0;\n}\n.list-group-horizontal > .list-group-item.active {\n  margin-top: 0;\n}\n.list-group-horizontal > .list-group-item + .list-group-item {\n  border-top-width: 1px;\n  border-left-width: 0;\n}\n.list-group-horizontal > .list-group-item + .list-group-item.active {\n  margin-left: -1px;\n  border-left-width: 1px;\n}\n@media (min-width: 576px) {\n.list-group-horizontal-sm {\n    flex-direction: row;\n}\n.list-group-horizontal-sm > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-sm > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-sm > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-sm > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-sm > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n@media (min-width: 768px) {\n.list-group-horizontal-md {\n    flex-direction: row;\n}\n.list-group-horizontal-md > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-md > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-md > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-md > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-md > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n@media (min-width: 992px) {\n.list-group-horizontal-lg {\n    flex-direction: row;\n}\n.list-group-horizontal-lg > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-lg > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-lg > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-lg > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-lg > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n@media (min-width: 1200px) {\n.list-group-horizontal-xl {\n    flex-direction: row;\n}\n.list-group-horizontal-xl > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-xl > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-xl > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-xl > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-xl > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n.list-group-flush {\n  border-radius: 0;\n}\n.list-group-flush > .list-group-item {\n  border-width: 0 0 1px;\n}\n.list-group-flush > .list-group-item:last-child {\n  border-bottom-width: 0;\n}\n.list-group-item-primary {\n  color: #004085;\n  background-color: #b8daff;\n}\n.list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {\n  color: #004085;\n  background-color: #9fcdff;\n}\n.list-group-item-primary.list-group-item-action.active {\n  color: #fff;\n  background-color: #004085;\n  border-color: #004085;\n}\n.list-group-item-secondary {\n  color: #383d41;\n  background-color: #d6d8db;\n}\n.list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {\n  color: #383d41;\n  background-color: #c8cbcf;\n}\n.list-group-item-secondary.list-group-item-action.active {\n  color: #fff;\n  background-color: #383d41;\n  border-color: #383d41;\n}\n.list-group-item-success {\n  color: #155724;\n  background-color: #c3e6cb;\n}\n.list-group-item-success.list-group-item-action:hover, .list-group-item-success.list-group-item-action:focus {\n  color: #155724;\n  background-color: #b1dfbb;\n}\n.list-group-item-success.list-group-item-action.active {\n  color: #fff;\n  background-color: #155724;\n  border-color: #155724;\n}\n.list-group-item-info {\n  color: #0c5460;\n  background-color: #bee5eb;\n}\n.list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {\n  color: #0c5460;\n  background-color: #abdde5;\n}\n.list-group-item-info.list-group-item-action.active {\n  color: #fff;\n  background-color: #0c5460;\n  border-color: #0c5460;\n}\n.list-group-item-warning {\n  color: #856404;\n  background-color: #ffeeba;\n}\n.list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {\n  color: #856404;\n  background-color: #ffe8a1;\n}\n.list-group-item-warning.list-group-item-action.active {\n  color: #fff;\n  background-color: #856404;\n  border-color: #856404;\n}\n.list-group-item-danger {\n  color: #721c24;\n  background-color: #f5c6cb;\n}\n.list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {\n  color: #721c24;\n  background-color: #f1b0b7;\n}\n.list-group-item-danger.list-group-item-action.active {\n  color: #fff;\n  background-color: #721c24;\n  border-color: #721c24;\n}\n.list-group-item-light {\n  color: #818182;\n  background-color: #fdfdfe;\n}\n.list-group-item-light.list-group-item-action:hover, .list-group-item-light.list-group-item-action:focus {\n  color: #818182;\n  background-color: #ececf6;\n}\n.list-group-item-light.list-group-item-action.active {\n  color: #fff;\n  background-color: #818182;\n  border-color: #818182;\n}\n.list-group-item-dark {\n  color: #1b1e21;\n  background-color: #c6c8ca;\n}\n.list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {\n  color: #1b1e21;\n  background-color: #b9bbbe;\n}\n.list-group-item-dark.list-group-item-action.active {\n  color: #fff;\n  background-color: #1b1e21;\n  border-color: #1b1e21;\n}\n.close {\n  float: right;\n  font-size: 1.5rem;\n  font-weight: 700;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  opacity: 0.5;\n}\n.close:hover {\n  color: #000;\n  text-decoration: none;\n}\n.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {\n  opacity: 0.75;\n}\nbutton.close {\n  padding: 0;\n  background-color: transparent;\n  border: 0;\n}\na.close.disabled {\n  pointer-events: none;\n}\n.toast {\n  flex-basis: 350px;\n  max-width: 350px;\n  font-size: 0.875rem;\n  background-color: rgba(255, 255, 255, 0.85);\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  border-radius: 0.25rem;\n}\n.toast:not(:last-child) {\n  margin-bottom: 0.75rem;\n}\n.toast.showing {\n  opacity: 1;\n}\n.toast.show {\n  display: block;\n  opacity: 1;\n}\n.toast.hide {\n  display: none;\n}\n.toast-header {\n  display: flex;\n  align-items: center;\n  padding: 0.25rem 0.75rem;\n  color: #6c757d;\n  background-color: rgba(255, 255, 255, 0.85);\n  background-clip: padding-box;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.toast-body {\n  padding: 0.75rem;\n}\n.modal-open {\n  overflow: hidden;\n}\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.modal {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  display: none;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  outline: 0;\n}\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 0.5rem;\n  pointer-events: none;\n}\n.modal.fade .modal-dialog {\n  transition: transform 0.3s ease-out;\n  transform: translate(0, -50px);\n}\n@media (prefers-reduced-motion: reduce) {\n.modal.fade .modal-dialog {\n    transition: none;\n}\n}\n.modal.show .modal-dialog {\n  transform: none;\n}\n.modal.modal-static .modal-dialog {\n  transform: scale(1.02);\n}\n.modal-dialog-scrollable {\n  display: flex;\n  max-height: calc(100% - 1rem);\n}\n.modal-dialog-scrollable .modal-content {\n  max-height: calc(100vh - 1rem);\n  overflow: hidden;\n}\n.modal-dialog-scrollable .modal-header,\n.modal-dialog-scrollable .modal-footer {\n  flex-shrink: 0;\n}\n.modal-dialog-scrollable .modal-body {\n  overflow-y: auto;\n}\n.modal-dialog-centered {\n  display: flex;\n  align-items: center;\n  min-height: calc(100% - 1rem);\n}\n.modal-dialog-centered::before {\n  display: block;\n  height: calc(100vh - 1rem);\n  height: -moz-min-content;\n  height: min-content;\n  content: \"\";\n}\n.modal-dialog-centered.modal-dialog-scrollable {\n  flex-direction: column;\n  justify-content: center;\n  height: 100%;\n}\n.modal-dialog-centered.modal-dialog-scrollable .modal-content {\n  max-height: none;\n}\n.modal-dialog-centered.modal-dialog-scrollable::before {\n  content: none;\n}\n.modal-content {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  pointer-events: auto;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n  outline: 0;\n}\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1040;\n  width: 100vw;\n  height: 100vh;\n  background-color: #000;\n}\n.modal-backdrop.fade {\n  opacity: 0;\n}\n.modal-backdrop.show {\n  opacity: 0.5;\n}\n.modal-header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 1rem 1rem;\n  border-bottom: 1px solid #dee2e6;\n  border-top-left-radius: calc(0.3rem - 1px);\n  border-top-right-radius: calc(0.3rem - 1px);\n}\n.modal-header .close {\n  padding: 1rem 1rem;\n  margin: -1rem -1rem -1rem auto;\n}\n.modal-title {\n  margin-bottom: 0;\n  line-height: 1.5;\n}\n.modal-body {\n  position: relative;\n  flex: 1 1 auto;\n  padding: 1rem;\n}\n.modal-footer {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-end;\n  padding: 0.75rem;\n  border-top: 1px solid #dee2e6;\n  border-bottom-right-radius: calc(0.3rem - 1px);\n  border-bottom-left-radius: calc(0.3rem - 1px);\n}\n.modal-footer > * {\n  margin: 0.25rem;\n}\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n@media (min-width: 576px) {\n.modal-dialog {\n    max-width: 500px;\n    margin: 1.75rem auto;\n}\n.modal-dialog-scrollable {\n    max-height: calc(100% - 3.5rem);\n}\n.modal-dialog-scrollable .modal-content {\n    max-height: calc(100vh - 3.5rem);\n}\n.modal-dialog-centered {\n    min-height: calc(100% - 3.5rem);\n}\n.modal-dialog-centered::before {\n    height: calc(100vh - 3.5rem);\n    height: -moz-min-content;\n    height: min-content;\n}\n.modal-sm {\n    max-width: 300px;\n}\n}\n@media (min-width: 992px) {\n.modal-lg,\n  .modal-xl {\n    max-width: 800px;\n}\n}\n@media (min-width: 1200px) {\n.modal-xl {\n    max-width: 1140px;\n}\n}\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-style: normal;\n  font-weight: 400;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  white-space: normal;\n  word-spacing: normal;\n  line-break: auto;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  opacity: 0;\n}\n.tooltip.show {\n  opacity: 0.9;\n}\n.tooltip .arrow {\n  position: absolute;\n  display: block;\n  width: 0.8rem;\n  height: 0.4rem;\n}\n.tooltip .arrow::before {\n  position: absolute;\n  content: \"\";\n  border-color: transparent;\n  border-style: solid;\n}\n.bs-tooltip-top, .bs-tooltip-auto[x-placement^=top] {\n  padding: 0.4rem 0;\n}\n.bs-tooltip-top .arrow, .bs-tooltip-auto[x-placement^=top] .arrow {\n  bottom: 0;\n}\n.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^=top] .arrow::before {\n  top: 0;\n  border-width: 0.4rem 0.4rem 0;\n  border-top-color: #000;\n}\n.bs-tooltip-right, .bs-tooltip-auto[x-placement^=right] {\n  padding: 0 0.4rem;\n}\n.bs-tooltip-right .arrow, .bs-tooltip-auto[x-placement^=right] .arrow {\n  left: 0;\n  width: 0.4rem;\n  height: 0.8rem;\n}\n.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^=right] .arrow::before {\n  right: 0;\n  border-width: 0.4rem 0.4rem 0.4rem 0;\n  border-right-color: #000;\n}\n.bs-tooltip-bottom, .bs-tooltip-auto[x-placement^=bottom] {\n  padding: 0.4rem 0;\n}\n.bs-tooltip-bottom .arrow, .bs-tooltip-auto[x-placement^=bottom] .arrow {\n  top: 0;\n}\n.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^=bottom] .arrow::before {\n  bottom: 0;\n  border-width: 0 0.4rem 0.4rem;\n  border-bottom-color: #000;\n}\n.bs-tooltip-left, .bs-tooltip-auto[x-placement^=left] {\n  padding: 0 0.4rem;\n}\n.bs-tooltip-left .arrow, .bs-tooltip-auto[x-placement^=left] .arrow {\n  right: 0;\n  width: 0.4rem;\n  height: 0.8rem;\n}\n.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^=left] .arrow::before {\n  left: 0;\n  border-width: 0.4rem 0 0.4rem 0.4rem;\n  border-left-color: #000;\n}\n.tooltip-inner {\n  max-width: 200px;\n  padding: 0.25rem 0.5rem;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 0.25rem;\n}\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: block;\n  max-width: 276px;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-style: normal;\n  font-weight: 400;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  white-space: normal;\n  word-spacing: normal;\n  line-break: auto;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n}\n.popover .arrow {\n  position: absolute;\n  display: block;\n  width: 1rem;\n  height: 0.5rem;\n  margin: 0 0.3rem;\n}\n.popover .arrow::before, .popover .arrow::after {\n  position: absolute;\n  display: block;\n  content: \"\";\n  border-color: transparent;\n  border-style: solid;\n}\n.bs-popover-top, .bs-popover-auto[x-placement^=top] {\n  margin-bottom: 0.5rem;\n}\n.bs-popover-top > .arrow, .bs-popover-auto[x-placement^=top] > .arrow {\n  bottom: calc(-0.5rem - 1px);\n}\n.bs-popover-top > .arrow::before, .bs-popover-auto[x-placement^=top] > .arrow::before {\n  bottom: 0;\n  border-width: 0.5rem 0.5rem 0;\n  border-top-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-top > .arrow::after, .bs-popover-auto[x-placement^=top] > .arrow::after {\n  bottom: 1px;\n  border-width: 0.5rem 0.5rem 0;\n  border-top-color: #fff;\n}\n.bs-popover-right, .bs-popover-auto[x-placement^=right] {\n  margin-left: 0.5rem;\n}\n.bs-popover-right > .arrow, .bs-popover-auto[x-placement^=right] > .arrow {\n  left: calc(-0.5rem - 1px);\n  width: 0.5rem;\n  height: 1rem;\n  margin: 0.3rem 0;\n}\n.bs-popover-right > .arrow::before, .bs-popover-auto[x-placement^=right] > .arrow::before {\n  left: 0;\n  border-width: 0.5rem 0.5rem 0.5rem 0;\n  border-right-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-right > .arrow::after, .bs-popover-auto[x-placement^=right] > .arrow::after {\n  left: 1px;\n  border-width: 0.5rem 0.5rem 0.5rem 0;\n  border-right-color: #fff;\n}\n.bs-popover-bottom, .bs-popover-auto[x-placement^=bottom] {\n  margin-top: 0.5rem;\n}\n.bs-popover-bottom > .arrow, .bs-popover-auto[x-placement^=bottom] > .arrow {\n  top: calc(-0.5rem - 1px);\n}\n.bs-popover-bottom > .arrow::before, .bs-popover-auto[x-placement^=bottom] > .arrow::before {\n  top: 0;\n  border-width: 0 0.5rem 0.5rem 0.5rem;\n  border-bottom-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-bottom > .arrow::after, .bs-popover-auto[x-placement^=bottom] > .arrow::after {\n  top: 1px;\n  border-width: 0 0.5rem 0.5rem 0.5rem;\n  border-bottom-color: #fff;\n}\n.bs-popover-bottom .popover-header::before, .bs-popover-auto[x-placement^=bottom] .popover-header::before {\n  position: absolute;\n  top: 0;\n  left: 50%;\n  display: block;\n  width: 1rem;\n  margin-left: -0.5rem;\n  content: \"\";\n  border-bottom: 1px solid #f7f7f7;\n}\n.bs-popover-left, .bs-popover-auto[x-placement^=left] {\n  margin-right: 0.5rem;\n}\n.bs-popover-left > .arrow, .bs-popover-auto[x-placement^=left] > .arrow {\n  right: calc(-0.5rem - 1px);\n  width: 0.5rem;\n  height: 1rem;\n  margin: 0.3rem 0;\n}\n.bs-popover-left > .arrow::before, .bs-popover-auto[x-placement^=left] > .arrow::before {\n  right: 0;\n  border-width: 0.5rem 0 0.5rem 0.5rem;\n  border-left-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-left > .arrow::after, .bs-popover-auto[x-placement^=left] > .arrow::after {\n  right: 1px;\n  border-width: 0.5rem 0 0.5rem 0.5rem;\n  border-left-color: #fff;\n}\n.popover-header {\n  padding: 0.5rem 0.75rem;\n  margin-bottom: 0;\n  font-size: 1rem;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-top-left-radius: calc(0.3rem - 1px);\n  border-top-right-radius: calc(0.3rem - 1px);\n}\n.popover-header:empty {\n  display: none;\n}\n.popover-body {\n  padding: 0.5rem 0.75rem;\n  color: #212529;\n}\n.carousel {\n  position: relative;\n}\n.carousel.pointer-event {\n  touch-action: pan-y;\n}\n.carousel-inner {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.carousel-inner::after {\n  display: block;\n  clear: both;\n  content: \"\";\n}\n.carousel-item {\n  position: relative;\n  display: none;\n  float: left;\n  width: 100%;\n  margin-right: -100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-item {\n    transition: none;\n}\n}\n.carousel-item.active,\n.carousel-item-next,\n.carousel-item-prev {\n  display: block;\n}\n.carousel-item-next:not(.carousel-item-left),\n.active.carousel-item-right {\n  transform: translateX(100%);\n}\n.carousel-item-prev:not(.carousel-item-right),\n.active.carousel-item-left {\n  transform: translateX(-100%);\n}\n.carousel-fade .carousel-item {\n  opacity: 0;\n  transition-property: opacity;\n  transform: none;\n}\n.carousel-fade .carousel-item.active,\n.carousel-fade .carousel-item-next.carousel-item-left,\n.carousel-fade .carousel-item-prev.carousel-item-right {\n  z-index: 1;\n  opacity: 1;\n}\n.carousel-fade .active.carousel-item-left,\n.carousel-fade .active.carousel-item-right {\n  z-index: 0;\n  opacity: 0;\n  transition: opacity 0s 0.6s;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-fade .active.carousel-item-left,\n  .carousel-fade .active.carousel-item-right {\n    transition: none;\n}\n}\n.carousel-control-prev,\n.carousel-control-next {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 15%;\n  padding: 0;\n  color: #fff;\n  text-align: center;\n  background: none;\n  border: 0;\n  opacity: 0.5;\n  transition: opacity 0.15s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-control-prev,\n  .carousel-control-next {\n    transition: none;\n}\n}\n.carousel-control-prev:hover, .carousel-control-prev:focus,\n.carousel-control-next:hover,\n.carousel-control-next:focus {\n  color: #fff;\n  text-decoration: none;\n  outline: 0;\n  opacity: 0.9;\n}\n.carousel-control-prev {\n  left: 0;\n}\n.carousel-control-next {\n  right: 0;\n}\n.carousel-control-prev-icon,\n.carousel-control-next-icon {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  background: 50%/100% 100% no-repeat;\n}\n.carousel-control-prev-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e\");\n}\n.carousel-control-next-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e\");\n}\n.carousel-indicators {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 15;\n  display: flex;\n  justify-content: center;\n  padding-left: 0;\n  margin-right: 15%;\n  margin-left: 15%;\n  list-style: none;\n}\n.carousel-indicators li {\n  box-sizing: content-box;\n  flex: 0 1 auto;\n  width: 30px;\n  height: 3px;\n  margin-right: 3px;\n  margin-left: 3px;\n  text-indent: -999px;\n  cursor: pointer;\n  background-color: #fff;\n  background-clip: padding-box;\n  border-top: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n  opacity: 0.5;\n  transition: opacity 0.6s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-indicators li {\n    transition: none;\n}\n}\n.carousel-indicators .active {\n  opacity: 1;\n}\n.carousel-caption {\n  position: absolute;\n  right: 15%;\n  bottom: 20px;\n  left: 15%;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n}\n@keyframes spinner-border {\nto {\n    transform: rotate(360deg);\n}\n}\n.spinner-border {\n  display: inline-block;\n  width: 2rem;\n  height: 2rem;\n  vertical-align: -0.125em;\n  border: 0.25em solid currentcolor;\n  border-right-color: transparent;\n  border-radius: 50%;\n  animation: 0.75s linear infinite spinner-border;\n}\n.spinner-border-sm {\n  width: 1rem;\n  height: 1rem;\n  border-width: 0.2em;\n}\n@keyframes spinner-grow {\n0% {\n    transform: scale(0);\n}\n50% {\n    opacity: 1;\n    transform: none;\n}\n}\n.spinner-grow {\n  display: inline-block;\n  width: 2rem;\n  height: 2rem;\n  vertical-align: -0.125em;\n  background-color: currentcolor;\n  border-radius: 50%;\n  opacity: 0;\n  animation: 0.75s linear infinite spinner-grow;\n}\n.spinner-grow-sm {\n  width: 1rem;\n  height: 1rem;\n}\n@media (prefers-reduced-motion: reduce) {\n.spinner-border,\n  .spinner-grow {\n    animation-duration: 1.5s;\n}\n}\n.align-baseline {\n  vertical-align: baseline !important;\n}\n.align-top {\n  vertical-align: top !important;\n}\n.align-middle {\n  vertical-align: middle !important;\n}\n.align-bottom {\n  vertical-align: bottom !important;\n}\n.align-text-bottom {\n  vertical-align: text-bottom !important;\n}\n.align-text-top {\n  vertical-align: text-top !important;\n}\n.bg-primary {\n  background-color: #007bff !important;\n}\na.bg-primary:hover, a.bg-primary:focus,\nbutton.bg-primary:hover,\nbutton.bg-primary:focus {\n  background-color: #0062cc !important;\n}\n.bg-secondary {\n  background-color: #6c757d !important;\n}\na.bg-secondary:hover, a.bg-secondary:focus,\nbutton.bg-secondary:hover,\nbutton.bg-secondary:focus {\n  background-color: #545b62 !important;\n}\n.bg-success {\n  background-color: #28a745 !important;\n}\na.bg-success:hover, a.bg-success:focus,\nbutton.bg-success:hover,\nbutton.bg-success:focus {\n  background-color: #1e7e34 !important;\n}\n.bg-info {\n  background-color: #17a2b8 !important;\n}\na.bg-info:hover, a.bg-info:focus,\nbutton.bg-info:hover,\nbutton.bg-info:focus {\n  background-color: #117a8b !important;\n}\n.bg-warning {\n  background-color: #ffc107 !important;\n}\na.bg-warning:hover, a.bg-warning:focus,\nbutton.bg-warning:hover,\nbutton.bg-warning:focus {\n  background-color: #d39e00 !important;\n}\n.bg-danger {\n  background-color: #dc3545 !important;\n}\na.bg-danger:hover, a.bg-danger:focus,\nbutton.bg-danger:hover,\nbutton.bg-danger:focus {\n  background-color: #bd2130 !important;\n}\n.bg-light {\n  background-color: #f8f9fa !important;\n}\na.bg-light:hover, a.bg-light:focus,\nbutton.bg-light:hover,\nbutton.bg-light:focus {\n  background-color: #dae0e5 !important;\n}\n.bg-dark {\n  background-color: #343a40 !important;\n}\na.bg-dark:hover, a.bg-dark:focus,\nbutton.bg-dark:hover,\nbutton.bg-dark:focus {\n  background-color: #1d2124 !important;\n}\n.bg-white {\n  background-color: #fff !important;\n}\n.bg-transparent {\n  background-color: transparent !important;\n}\n.border {\n  border: 1px solid #dee2e6 !important;\n}\n.border-top {\n  border-top: 1px solid #dee2e6 !important;\n}\n.border-right {\n  border-right: 1px solid #dee2e6 !important;\n}\n.border-bottom {\n  border-bottom: 1px solid #dee2e6 !important;\n}\n.border-left {\n  border-left: 1px solid #dee2e6 !important;\n}\n.border-0 {\n  border: 0 !important;\n}\n.border-top-0 {\n  border-top: 0 !important;\n}\n.border-right-0 {\n  border-right: 0 !important;\n}\n.border-bottom-0 {\n  border-bottom: 0 !important;\n}\n.border-left-0 {\n  border-left: 0 !important;\n}\n.border-primary {\n  border-color: #007bff !important;\n}\n.border-secondary {\n  border-color: #6c757d !important;\n}\n.border-success {\n  border-color: #28a745 !important;\n}\n.border-info {\n  border-color: #17a2b8 !important;\n}\n.border-warning {\n  border-color: #ffc107 !important;\n}\n.border-danger {\n  border-color: #dc3545 !important;\n}\n.border-light {\n  border-color: #f8f9fa !important;\n}\n.border-dark {\n  border-color: #343a40 !important;\n}\n.border-white {\n  border-color: #fff !important;\n}\n.rounded-sm {\n  border-radius: 0.2rem !important;\n}\n.rounded {\n  border-radius: 0.25rem !important;\n}\n.rounded-top {\n  border-top-left-radius: 0.25rem !important;\n  border-top-right-radius: 0.25rem !important;\n}\n.rounded-right {\n  border-top-right-radius: 0.25rem !important;\n  border-bottom-right-radius: 0.25rem !important;\n}\n.rounded-bottom {\n  border-bottom-right-radius: 0.25rem !important;\n  border-bottom-left-radius: 0.25rem !important;\n}\n.rounded-left {\n  border-top-left-radius: 0.25rem !important;\n  border-bottom-left-radius: 0.25rem !important;\n}\n.rounded-lg {\n  border-radius: 0.3rem !important;\n}\n.rounded-circle {\n  border-radius: 50% !important;\n}\n.rounded-pill {\n  border-radius: 50rem !important;\n}\n.rounded-0 {\n  border-radius: 0 !important;\n}\n.clearfix::after {\n  display: block;\n  clear: both;\n  content: \"\";\n}\n.d-none {\n  display: none !important;\n}\n.d-inline {\n  display: inline !important;\n}\n.d-inline-block {\n  display: inline-block !important;\n}\n.d-block {\n  display: block !important;\n}\n.d-table {\n  display: table !important;\n}\n.d-table-row {\n  display: table-row !important;\n}\n.d-table-cell {\n  display: table-cell !important;\n}\n.d-flex {\n  display: flex !important;\n}\n.d-inline-flex {\n  display: inline-flex !important;\n}\n@media (min-width: 576px) {\n.d-sm-none {\n    display: none !important;\n}\n.d-sm-inline {\n    display: inline !important;\n}\n.d-sm-inline-block {\n    display: inline-block !important;\n}\n.d-sm-block {\n    display: block !important;\n}\n.d-sm-table {\n    display: table !important;\n}\n.d-sm-table-row {\n    display: table-row !important;\n}\n.d-sm-table-cell {\n    display: table-cell !important;\n}\n.d-sm-flex {\n    display: flex !important;\n}\n.d-sm-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media (min-width: 768px) {\n.d-md-none {\n    display: none !important;\n}\n.d-md-inline {\n    display: inline !important;\n}\n.d-md-inline-block {\n    display: inline-block !important;\n}\n.d-md-block {\n    display: block !important;\n}\n.d-md-table {\n    display: table !important;\n}\n.d-md-table-row {\n    display: table-row !important;\n}\n.d-md-table-cell {\n    display: table-cell !important;\n}\n.d-md-flex {\n    display: flex !important;\n}\n.d-md-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media (min-width: 992px) {\n.d-lg-none {\n    display: none !important;\n}\n.d-lg-inline {\n    display: inline !important;\n}\n.d-lg-inline-block {\n    display: inline-block !important;\n}\n.d-lg-block {\n    display: block !important;\n}\n.d-lg-table {\n    display: table !important;\n}\n.d-lg-table-row {\n    display: table-row !important;\n}\n.d-lg-table-cell {\n    display: table-cell !important;\n}\n.d-lg-flex {\n    display: flex !important;\n}\n.d-lg-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media (min-width: 1200px) {\n.d-xl-none {\n    display: none !important;\n}\n.d-xl-inline {\n    display: inline !important;\n}\n.d-xl-inline-block {\n    display: inline-block !important;\n}\n.d-xl-block {\n    display: block !important;\n}\n.d-xl-table {\n    display: table !important;\n}\n.d-xl-table-row {\n    display: table-row !important;\n}\n.d-xl-table-cell {\n    display: table-cell !important;\n}\n.d-xl-flex {\n    display: flex !important;\n}\n.d-xl-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media print {\n.d-print-none {\n    display: none !important;\n}\n.d-print-inline {\n    display: inline !important;\n}\n.d-print-inline-block {\n    display: inline-block !important;\n}\n.d-print-block {\n    display: block !important;\n}\n.d-print-table {\n    display: table !important;\n}\n.d-print-table-row {\n    display: table-row !important;\n}\n.d-print-table-cell {\n    display: table-cell !important;\n}\n.d-print-flex {\n    display: flex !important;\n}\n.d-print-inline-flex {\n    display: inline-flex !important;\n}\n}\n.embed-responsive {\n  position: relative;\n  display: block;\n  width: 100%;\n  padding: 0;\n  overflow: hidden;\n}\n.embed-responsive::before {\n  display: block;\n  content: \"\";\n}\n.embed-responsive .embed-responsive-item,\n.embed-responsive iframe,\n.embed-responsive embed,\n.embed-responsive object,\n.embed-responsive video {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 0;\n}\n.embed-responsive-21by9::before {\n  padding-top: 42.85714286%;\n}\n.embed-responsive-16by9::before {\n  padding-top: 56.25%;\n}\n.embed-responsive-4by3::before {\n  padding-top: 75%;\n}\n.embed-responsive-1by1::before {\n  padding-top: 100%;\n}\n.flex-row {\n  flex-direction: row !important;\n}\n.flex-column {\n  flex-direction: column !important;\n}\n.flex-row-reverse {\n  flex-direction: row-reverse !important;\n}\n.flex-column-reverse {\n  flex-direction: column-reverse !important;\n}\n.flex-wrap {\n  flex-wrap: wrap !important;\n}\n.flex-nowrap {\n  flex-wrap: nowrap !important;\n}\n.flex-wrap-reverse {\n  flex-wrap: wrap-reverse !important;\n}\n.flex-fill {\n  flex: 1 1 auto !important;\n}\n.flex-grow-0 {\n  flex-grow: 0 !important;\n}\n.flex-grow-1 {\n  flex-grow: 1 !important;\n}\n.flex-shrink-0 {\n  flex-shrink: 0 !important;\n}\n.flex-shrink-1 {\n  flex-shrink: 1 !important;\n}\n.justify-content-start {\n  justify-content: flex-start !important;\n}\n.justify-content-end {\n  justify-content: flex-end !important;\n}\n.justify-content-center {\n  justify-content: center !important;\n}\n.justify-content-between {\n  justify-content: space-between !important;\n}\n.justify-content-around {\n  justify-content: space-around !important;\n}\n.align-items-start {\n  align-items: flex-start !important;\n}\n.align-items-end {\n  align-items: flex-end !important;\n}\n.align-items-center {\n  align-items: center !important;\n}\n.align-items-baseline {\n  align-items: baseline !important;\n}\n.align-items-stretch {\n  align-items: stretch !important;\n}\n.align-content-start {\n  align-content: flex-start !important;\n}\n.align-content-end {\n  align-content: flex-end !important;\n}\n.align-content-center {\n  align-content: center !important;\n}\n.align-content-between {\n  align-content: space-between !important;\n}\n.align-content-around {\n  align-content: space-around !important;\n}\n.align-content-stretch {\n  align-content: stretch !important;\n}\n.align-self-auto {\n  align-self: auto !important;\n}\n.align-self-start {\n  align-self: flex-start !important;\n}\n.align-self-end {\n  align-self: flex-end !important;\n}\n.align-self-center {\n  align-self: center !important;\n}\n.align-self-baseline {\n  align-self: baseline !important;\n}\n.align-self-stretch {\n  align-self: stretch !important;\n}\n@media (min-width: 576px) {\n.flex-sm-row {\n    flex-direction: row !important;\n}\n.flex-sm-column {\n    flex-direction: column !important;\n}\n.flex-sm-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-sm-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-sm-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-sm-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-sm-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-sm-fill {\n    flex: 1 1 auto !important;\n}\n.flex-sm-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-sm-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-sm-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-sm-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-sm-start {\n    justify-content: flex-start !important;\n}\n.justify-content-sm-end {\n    justify-content: flex-end !important;\n}\n.justify-content-sm-center {\n    justify-content: center !important;\n}\n.justify-content-sm-between {\n    justify-content: space-between !important;\n}\n.justify-content-sm-around {\n    justify-content: space-around !important;\n}\n.align-items-sm-start {\n    align-items: flex-start !important;\n}\n.align-items-sm-end {\n    align-items: flex-end !important;\n}\n.align-items-sm-center {\n    align-items: center !important;\n}\n.align-items-sm-baseline {\n    align-items: baseline !important;\n}\n.align-items-sm-stretch {\n    align-items: stretch !important;\n}\n.align-content-sm-start {\n    align-content: flex-start !important;\n}\n.align-content-sm-end {\n    align-content: flex-end !important;\n}\n.align-content-sm-center {\n    align-content: center !important;\n}\n.align-content-sm-between {\n    align-content: space-between !important;\n}\n.align-content-sm-around {\n    align-content: space-around !important;\n}\n.align-content-sm-stretch {\n    align-content: stretch !important;\n}\n.align-self-sm-auto {\n    align-self: auto !important;\n}\n.align-self-sm-start {\n    align-self: flex-start !important;\n}\n.align-self-sm-end {\n    align-self: flex-end !important;\n}\n.align-self-sm-center {\n    align-self: center !important;\n}\n.align-self-sm-baseline {\n    align-self: baseline !important;\n}\n.align-self-sm-stretch {\n    align-self: stretch !important;\n}\n}\n@media (min-width: 768px) {\n.flex-md-row {\n    flex-direction: row !important;\n}\n.flex-md-column {\n    flex-direction: column !important;\n}\n.flex-md-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-md-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-md-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-md-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-md-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-md-fill {\n    flex: 1 1 auto !important;\n}\n.flex-md-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-md-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-md-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-md-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-md-start {\n    justify-content: flex-start !important;\n}\n.justify-content-md-end {\n    justify-content: flex-end !important;\n}\n.justify-content-md-center {\n    justify-content: center !important;\n}\n.justify-content-md-between {\n    justify-content: space-between !important;\n}\n.justify-content-md-around {\n    justify-content: space-around !important;\n}\n.align-items-md-start {\n    align-items: flex-start !important;\n}\n.align-items-md-end {\n    align-items: flex-end !important;\n}\n.align-items-md-center {\n    align-items: center !important;\n}\n.align-items-md-baseline {\n    align-items: baseline !important;\n}\n.align-items-md-stretch {\n    align-items: stretch !important;\n}\n.align-content-md-start {\n    align-content: flex-start !important;\n}\n.align-content-md-end {\n    align-content: flex-end !important;\n}\n.align-content-md-center {\n    align-content: center !important;\n}\n.align-content-md-between {\n    align-content: space-between !important;\n}\n.align-content-md-around {\n    align-content: space-around !important;\n}\n.align-content-md-stretch {\n    align-content: stretch !important;\n}\n.align-self-md-auto {\n    align-self: auto !important;\n}\n.align-self-md-start {\n    align-self: flex-start !important;\n}\n.align-self-md-end {\n    align-self: flex-end !important;\n}\n.align-self-md-center {\n    align-self: center !important;\n}\n.align-self-md-baseline {\n    align-self: baseline !important;\n}\n.align-self-md-stretch {\n    align-self: stretch !important;\n}\n}\n@media (min-width: 992px) {\n.flex-lg-row {\n    flex-direction: row !important;\n}\n.flex-lg-column {\n    flex-direction: column !important;\n}\n.flex-lg-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-lg-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-lg-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-lg-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-lg-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-lg-fill {\n    flex: 1 1 auto !important;\n}\n.flex-lg-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-lg-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-lg-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-lg-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-lg-start {\n    justify-content: flex-start !important;\n}\n.justify-content-lg-end {\n    justify-content: flex-end !important;\n}\n.justify-content-lg-center {\n    justify-content: center !important;\n}\n.justify-content-lg-between {\n    justify-content: space-between !important;\n}\n.justify-content-lg-around {\n    justify-content: space-around !important;\n}\n.align-items-lg-start {\n    align-items: flex-start !important;\n}\n.align-items-lg-end {\n    align-items: flex-end !important;\n}\n.align-items-lg-center {\n    align-items: center !important;\n}\n.align-items-lg-baseline {\n    align-items: baseline !important;\n}\n.align-items-lg-stretch {\n    align-items: stretch !important;\n}\n.align-content-lg-start {\n    align-content: flex-start !important;\n}\n.align-content-lg-end {\n    align-content: flex-end !important;\n}\n.align-content-lg-center {\n    align-content: center !important;\n}\n.align-content-lg-between {\n    align-content: space-between !important;\n}\n.align-content-lg-around {\n    align-content: space-around !important;\n}\n.align-content-lg-stretch {\n    align-content: stretch !important;\n}\n.align-self-lg-auto {\n    align-self: auto !important;\n}\n.align-self-lg-start {\n    align-self: flex-start !important;\n}\n.align-self-lg-end {\n    align-self: flex-end !important;\n}\n.align-self-lg-center {\n    align-self: center !important;\n}\n.align-self-lg-baseline {\n    align-self: baseline !important;\n}\n.align-self-lg-stretch {\n    align-self: stretch !important;\n}\n}\n@media (min-width: 1200px) {\n.flex-xl-row {\n    flex-direction: row !important;\n}\n.flex-xl-column {\n    flex-direction: column !important;\n}\n.flex-xl-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-xl-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-xl-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-xl-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-xl-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-xl-fill {\n    flex: 1 1 auto !important;\n}\n.flex-xl-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-xl-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-xl-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-xl-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-xl-start {\n    justify-content: flex-start !important;\n}\n.justify-content-xl-end {\n    justify-content: flex-end !important;\n}\n.justify-content-xl-center {\n    justify-content: center !important;\n}\n.justify-content-xl-between {\n    justify-content: space-between !important;\n}\n.justify-content-xl-around {\n    justify-content: space-around !important;\n}\n.align-items-xl-start {\n    align-items: flex-start !important;\n}\n.align-items-xl-end {\n    align-items: flex-end !important;\n}\n.align-items-xl-center {\n    align-items: center !important;\n}\n.align-items-xl-baseline {\n    align-items: baseline !important;\n}\n.align-items-xl-stretch {\n    align-items: stretch !important;\n}\n.align-content-xl-start {\n    align-content: flex-start !important;\n}\n.align-content-xl-end {\n    align-content: flex-end !important;\n}\n.align-content-xl-center {\n    align-content: center !important;\n}\n.align-content-xl-between {\n    align-content: space-between !important;\n}\n.align-content-xl-around {\n    align-content: space-around !important;\n}\n.align-content-xl-stretch {\n    align-content: stretch !important;\n}\n.align-self-xl-auto {\n    align-self: auto !important;\n}\n.align-self-xl-start {\n    align-self: flex-start !important;\n}\n.align-self-xl-end {\n    align-self: flex-end !important;\n}\n.align-self-xl-center {\n    align-self: center !important;\n}\n.align-self-xl-baseline {\n    align-self: baseline !important;\n}\n.align-self-xl-stretch {\n    align-self: stretch !important;\n}\n}\n.float-left {\n  float: left !important;\n}\n.float-right {\n  float: right !important;\n}\n.float-none {\n  float: none !important;\n}\n@media (min-width: 576px) {\n.float-sm-left {\n    float: left !important;\n}\n.float-sm-right {\n    float: right !important;\n}\n.float-sm-none {\n    float: none !important;\n}\n}\n@media (min-width: 768px) {\n.float-md-left {\n    float: left !important;\n}\n.float-md-right {\n    float: right !important;\n}\n.float-md-none {\n    float: none !important;\n}\n}\n@media (min-width: 992px) {\n.float-lg-left {\n    float: left !important;\n}\n.float-lg-right {\n    float: right !important;\n}\n.float-lg-none {\n    float: none !important;\n}\n}\n@media (min-width: 1200px) {\n.float-xl-left {\n    float: left !important;\n}\n.float-xl-right {\n    float: right !important;\n}\n.float-xl-none {\n    float: none !important;\n}\n}\n.user-select-all {\n  -webkit-user-select: all !important;\n     -moz-user-select: all !important;\n          user-select: all !important;\n}\n.user-select-auto {\n  -webkit-user-select: auto !important;\n     -moz-user-select: auto !important;\n          user-select: auto !important;\n}\n.user-select-none {\n  -webkit-user-select: none !important;\n     -moz-user-select: none !important;\n          user-select: none !important;\n}\n.overflow-auto {\n  overflow: auto !important;\n}\n.overflow-hidden {\n  overflow: hidden !important;\n}\n.position-static {\n  position: static !important;\n}\n.position-relative {\n  position: relative !important;\n}\n.position-absolute {\n  position: absolute !important;\n}\n.position-fixed {\n  position: fixed !important;\n}\n.position-sticky {\n  position: sticky !important;\n}\n.fixed-top {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n.fixed-bottom {\n  position: fixed;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1030;\n}\n@supports (position: sticky) {\n.sticky-top {\n    position: sticky;\n    top: 0;\n    z-index: 1020;\n}\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n.sr-only-focusable:active, .sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  overflow: visible;\n  clip: auto;\n  white-space: normal;\n}\n.shadow-sm {\n  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;\n}\n.shadow {\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.shadow-lg {\n  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;\n}\n.shadow-none {\n  box-shadow: none !important;\n}\n.w-25 {\n  width: 25% !important;\n}\n.w-50 {\n  width: 50% !important;\n}\n.w-75 {\n  width: 75% !important;\n}\n.w-100 {\n  width: 100% !important;\n}\n.w-auto {\n  width: auto !important;\n}\n.h-25 {\n  height: 25% !important;\n}\n.h-50 {\n  height: 50% !important;\n}\n.h-75 {\n  height: 75% !important;\n}\n.h-100 {\n  height: 100% !important;\n}\n.h-auto {\n  height: auto !important;\n}\n.mw-100 {\n  max-width: 100% !important;\n}\n.mh-100 {\n  max-height: 100% !important;\n}\n.min-vw-100 {\n  min-width: 100vw !important;\n}\n.min-vh-100 {\n  min-height: 100vh !important;\n}\n.vw-100 {\n  width: 100vw !important;\n}\n.vh-100 {\n  height: 100vh !important;\n}\n.m-0 {\n  margin: 0 !important;\n}\n.mt-0,\n.my-0 {\n  margin-top: 0 !important;\n}\n.mr-0,\n.mx-0 {\n  margin-right: 0 !important;\n}\n.mb-0,\n.my-0 {\n  margin-bottom: 0 !important;\n}\n.ml-0,\n.mx-0 {\n  margin-left: 0 !important;\n}\n.m-1 {\n  margin: 0.25rem !important;\n}\n.mt-1,\n.my-1 {\n  margin-top: 0.25rem !important;\n}\n.mr-1,\n.mx-1 {\n  margin-right: 0.25rem !important;\n}\n.mb-1,\n.my-1 {\n  margin-bottom: 0.25rem !important;\n}\n.ml-1,\n.mx-1 {\n  margin-left: 0.25rem !important;\n}\n.m-2 {\n  margin: 0.5rem !important;\n}\n.mt-2,\n.my-2 {\n  margin-top: 0.5rem !important;\n}\n.mr-2,\n.mx-2 {\n  margin-right: 0.5rem !important;\n}\n.mb-2,\n.my-2 {\n  margin-bottom: 0.5rem !important;\n}\n.ml-2,\n.mx-2 {\n  margin-left: 0.5rem !important;\n}\n.m-3 {\n  margin: 1rem !important;\n}\n.mt-3,\n.my-3 {\n  margin-top: 1rem !important;\n}\n.mr-3,\n.mx-3 {\n  margin-right: 1rem !important;\n}\n.mb-3,\n.my-3 {\n  margin-bottom: 1rem !important;\n}\n.ml-3,\n.mx-3 {\n  margin-left: 1rem !important;\n}\n.m-4 {\n  margin: 1.5rem !important;\n}\n.mt-4,\n.my-4 {\n  margin-top: 1.5rem !important;\n}\n.mr-4,\n.mx-4 {\n  margin-right: 1.5rem !important;\n}\n.mb-4,\n.my-4 {\n  margin-bottom: 1.5rem !important;\n}\n.ml-4,\n.mx-4 {\n  margin-left: 1.5rem !important;\n}\n.m-5 {\n  margin: 3rem !important;\n}\n.mt-5,\n.my-5 {\n  margin-top: 3rem !important;\n}\n.mr-5,\n.mx-5 {\n  margin-right: 3rem !important;\n}\n.mb-5,\n.my-5 {\n  margin-bottom: 3rem !important;\n}\n.ml-5,\n.mx-5 {\n  margin-left: 3rem !important;\n}\n.p-0 {\n  padding: 0 !important;\n}\n.pt-0,\n.py-0 {\n  padding-top: 0 !important;\n}\n.pr-0,\n.px-0 {\n  padding-right: 0 !important;\n}\n.pb-0,\n.py-0 {\n  padding-bottom: 0 !important;\n}\n.pl-0,\n.px-0 {\n  padding-left: 0 !important;\n}\n.p-1 {\n  padding: 0.25rem !important;\n}\n.pt-1,\n.py-1 {\n  padding-top: 0.25rem !important;\n}\n.pr-1,\n.px-1 {\n  padding-right: 0.25rem !important;\n}\n.pb-1,\n.py-1 {\n  padding-bottom: 0.25rem !important;\n}\n.pl-1,\n.px-1 {\n  padding-left: 0.25rem !important;\n}\n.p-2 {\n  padding: 0.5rem !important;\n}\n.pt-2,\n.py-2 {\n  padding-top: 0.5rem !important;\n}\n.pr-2,\n.px-2 {\n  padding-right: 0.5rem !important;\n}\n.pb-2,\n.py-2 {\n  padding-bottom: 0.5rem !important;\n}\n.pl-2,\n.px-2 {\n  padding-left: 0.5rem !important;\n}\n.p-3 {\n  padding: 1rem !important;\n}\n.pt-3,\n.py-3 {\n  padding-top: 1rem !important;\n}\n.pr-3,\n.px-3 {\n  padding-right: 1rem !important;\n}\n.pb-3,\n.py-3 {\n  padding-bottom: 1rem !important;\n}\n.pl-3,\n.px-3 {\n  padding-left: 1rem !important;\n}\n.p-4 {\n  padding: 1.5rem !important;\n}\n.pt-4,\n.py-4 {\n  padding-top: 1.5rem !important;\n}\n.pr-4,\n.px-4 {\n  padding-right: 1.5rem !important;\n}\n.pb-4,\n.py-4 {\n  padding-bottom: 1.5rem !important;\n}\n.pl-4,\n.px-4 {\n  padding-left: 1.5rem !important;\n}\n.p-5 {\n  padding: 3rem !important;\n}\n.pt-5,\n.py-5 {\n  padding-top: 3rem !important;\n}\n.pr-5,\n.px-5 {\n  padding-right: 3rem !important;\n}\n.pb-5,\n.py-5 {\n  padding-bottom: 3rem !important;\n}\n.pl-5,\n.px-5 {\n  padding-left: 3rem !important;\n}\n.m-n1 {\n  margin: -0.25rem !important;\n}\n.mt-n1,\n.my-n1 {\n  margin-top: -0.25rem !important;\n}\n.mr-n1,\n.mx-n1 {\n  margin-right: -0.25rem !important;\n}\n.mb-n1,\n.my-n1 {\n  margin-bottom: -0.25rem !important;\n}\n.ml-n1,\n.mx-n1 {\n  margin-left: -0.25rem !important;\n}\n.m-n2 {\n  margin: -0.5rem !important;\n}\n.mt-n2,\n.my-n2 {\n  margin-top: -0.5rem !important;\n}\n.mr-n2,\n.mx-n2 {\n  margin-right: -0.5rem !important;\n}\n.mb-n2,\n.my-n2 {\n  margin-bottom: -0.5rem !important;\n}\n.ml-n2,\n.mx-n2 {\n  margin-left: -0.5rem !important;\n}\n.m-n3 {\n  margin: -1rem !important;\n}\n.mt-n3,\n.my-n3 {\n  margin-top: -1rem !important;\n}\n.mr-n3,\n.mx-n3 {\n  margin-right: -1rem !important;\n}\n.mb-n3,\n.my-n3 {\n  margin-bottom: -1rem !important;\n}\n.ml-n3,\n.mx-n3 {\n  margin-left: -1rem !important;\n}\n.m-n4 {\n  margin: -1.5rem !important;\n}\n.mt-n4,\n.my-n4 {\n  margin-top: -1.5rem !important;\n}\n.mr-n4,\n.mx-n4 {\n  margin-right: -1.5rem !important;\n}\n.mb-n4,\n.my-n4 {\n  margin-bottom: -1.5rem !important;\n}\n.ml-n4,\n.mx-n4 {\n  margin-left: -1.5rem !important;\n}\n.m-n5 {\n  margin: -3rem !important;\n}\n.mt-n5,\n.my-n5 {\n  margin-top: -3rem !important;\n}\n.mr-n5,\n.mx-n5 {\n  margin-right: -3rem !important;\n}\n.mb-n5,\n.my-n5 {\n  margin-bottom: -3rem !important;\n}\n.ml-n5,\n.mx-n5 {\n  margin-left: -3rem !important;\n}\n.m-auto {\n  margin: auto !important;\n}\n.mt-auto,\n.my-auto {\n  margin-top: auto !important;\n}\n.mr-auto,\n.mx-auto {\n  margin-right: auto !important;\n}\n.mb-auto,\n.my-auto {\n  margin-bottom: auto !important;\n}\n.ml-auto,\n.mx-auto {\n  margin-left: auto !important;\n}\n@media (min-width: 576px) {\n.m-sm-0 {\n    margin: 0 !important;\n}\n.mt-sm-0,\n  .my-sm-0 {\n    margin-top: 0 !important;\n}\n.mr-sm-0,\n  .mx-sm-0 {\n    margin-right: 0 !important;\n}\n.mb-sm-0,\n  .my-sm-0 {\n    margin-bottom: 0 !important;\n}\n.ml-sm-0,\n  .mx-sm-0 {\n    margin-left: 0 !important;\n}\n.m-sm-1 {\n    margin: 0.25rem !important;\n}\n.mt-sm-1,\n  .my-sm-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-sm-1,\n  .mx-sm-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-sm-1,\n  .my-sm-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-sm-1,\n  .mx-sm-1 {\n    margin-left: 0.25rem !important;\n}\n.m-sm-2 {\n    margin: 0.5rem !important;\n}\n.mt-sm-2,\n  .my-sm-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-sm-2,\n  .mx-sm-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-sm-2,\n  .my-sm-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-sm-2,\n  .mx-sm-2 {\n    margin-left: 0.5rem !important;\n}\n.m-sm-3 {\n    margin: 1rem !important;\n}\n.mt-sm-3,\n  .my-sm-3 {\n    margin-top: 1rem !important;\n}\n.mr-sm-3,\n  .mx-sm-3 {\n    margin-right: 1rem !important;\n}\n.mb-sm-3,\n  .my-sm-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-sm-3,\n  .mx-sm-3 {\n    margin-left: 1rem !important;\n}\n.m-sm-4 {\n    margin: 1.5rem !important;\n}\n.mt-sm-4,\n  .my-sm-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-sm-4,\n  .mx-sm-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-sm-4,\n  .my-sm-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-sm-4,\n  .mx-sm-4 {\n    margin-left: 1.5rem !important;\n}\n.m-sm-5 {\n    margin: 3rem !important;\n}\n.mt-sm-5,\n  .my-sm-5 {\n    margin-top: 3rem !important;\n}\n.mr-sm-5,\n  .mx-sm-5 {\n    margin-right: 3rem !important;\n}\n.mb-sm-5,\n  .my-sm-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-sm-5,\n  .mx-sm-5 {\n    margin-left: 3rem !important;\n}\n.p-sm-0 {\n    padding: 0 !important;\n}\n.pt-sm-0,\n  .py-sm-0 {\n    padding-top: 0 !important;\n}\n.pr-sm-0,\n  .px-sm-0 {\n    padding-right: 0 !important;\n}\n.pb-sm-0,\n  .py-sm-0 {\n    padding-bottom: 0 !important;\n}\n.pl-sm-0,\n  .px-sm-0 {\n    padding-left: 0 !important;\n}\n.p-sm-1 {\n    padding: 0.25rem !important;\n}\n.pt-sm-1,\n  .py-sm-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-sm-1,\n  .px-sm-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-sm-1,\n  .py-sm-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-sm-1,\n  .px-sm-1 {\n    padding-left: 0.25rem !important;\n}\n.p-sm-2 {\n    padding: 0.5rem !important;\n}\n.pt-sm-2,\n  .py-sm-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-sm-2,\n  .px-sm-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-sm-2,\n  .py-sm-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-sm-2,\n  .px-sm-2 {\n    padding-left: 0.5rem !important;\n}\n.p-sm-3 {\n    padding: 1rem !important;\n}\n.pt-sm-3,\n  .py-sm-3 {\n    padding-top: 1rem !important;\n}\n.pr-sm-3,\n  .px-sm-3 {\n    padding-right: 1rem !important;\n}\n.pb-sm-3,\n  .py-sm-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-sm-3,\n  .px-sm-3 {\n    padding-left: 1rem !important;\n}\n.p-sm-4 {\n    padding: 1.5rem !important;\n}\n.pt-sm-4,\n  .py-sm-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-sm-4,\n  .px-sm-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-sm-4,\n  .py-sm-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-sm-4,\n  .px-sm-4 {\n    padding-left: 1.5rem !important;\n}\n.p-sm-5 {\n    padding: 3rem !important;\n}\n.pt-sm-5,\n  .py-sm-5 {\n    padding-top: 3rem !important;\n}\n.pr-sm-5,\n  .px-sm-5 {\n    padding-right: 3rem !important;\n}\n.pb-sm-5,\n  .py-sm-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-sm-5,\n  .px-sm-5 {\n    padding-left: 3rem !important;\n}\n.m-sm-n1 {\n    margin: -0.25rem !important;\n}\n.mt-sm-n1,\n  .my-sm-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-sm-n1,\n  .mx-sm-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-sm-n1,\n  .my-sm-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-sm-n1,\n  .mx-sm-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-sm-n2 {\n    margin: -0.5rem !important;\n}\n.mt-sm-n2,\n  .my-sm-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-sm-n2,\n  .mx-sm-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-sm-n2,\n  .my-sm-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-sm-n2,\n  .mx-sm-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-sm-n3 {\n    margin: -1rem !important;\n}\n.mt-sm-n3,\n  .my-sm-n3 {\n    margin-top: -1rem !important;\n}\n.mr-sm-n3,\n  .mx-sm-n3 {\n    margin-right: -1rem !important;\n}\n.mb-sm-n3,\n  .my-sm-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-sm-n3,\n  .mx-sm-n3 {\n    margin-left: -1rem !important;\n}\n.m-sm-n4 {\n    margin: -1.5rem !important;\n}\n.mt-sm-n4,\n  .my-sm-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-sm-n4,\n  .mx-sm-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-sm-n4,\n  .my-sm-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-sm-n4,\n  .mx-sm-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-sm-n5 {\n    margin: -3rem !important;\n}\n.mt-sm-n5,\n  .my-sm-n5 {\n    margin-top: -3rem !important;\n}\n.mr-sm-n5,\n  .mx-sm-n5 {\n    margin-right: -3rem !important;\n}\n.mb-sm-n5,\n  .my-sm-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-sm-n5,\n  .mx-sm-n5 {\n    margin-left: -3rem !important;\n}\n.m-sm-auto {\n    margin: auto !important;\n}\n.mt-sm-auto,\n  .my-sm-auto {\n    margin-top: auto !important;\n}\n.mr-sm-auto,\n  .mx-sm-auto {\n    margin-right: auto !important;\n}\n.mb-sm-auto,\n  .my-sm-auto {\n    margin-bottom: auto !important;\n}\n.ml-sm-auto,\n  .mx-sm-auto {\n    margin-left: auto !important;\n}\n}\n@media (min-width: 768px) {\n.m-md-0 {\n    margin: 0 !important;\n}\n.mt-md-0,\n  .my-md-0 {\n    margin-top: 0 !important;\n}\n.mr-md-0,\n  .mx-md-0 {\n    margin-right: 0 !important;\n}\n.mb-md-0,\n  .my-md-0 {\n    margin-bottom: 0 !important;\n}\n.ml-md-0,\n  .mx-md-0 {\n    margin-left: 0 !important;\n}\n.m-md-1 {\n    margin: 0.25rem !important;\n}\n.mt-md-1,\n  .my-md-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-md-1,\n  .mx-md-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-md-1,\n  .my-md-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-md-1,\n  .mx-md-1 {\n    margin-left: 0.25rem !important;\n}\n.m-md-2 {\n    margin: 0.5rem !important;\n}\n.mt-md-2,\n  .my-md-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-md-2,\n  .mx-md-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-md-2,\n  .my-md-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-md-2,\n  .mx-md-2 {\n    margin-left: 0.5rem !important;\n}\n.m-md-3 {\n    margin: 1rem !important;\n}\n.mt-md-3,\n  .my-md-3 {\n    margin-top: 1rem !important;\n}\n.mr-md-3,\n  .mx-md-3 {\n    margin-right: 1rem !important;\n}\n.mb-md-3,\n  .my-md-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-md-3,\n  .mx-md-3 {\n    margin-left: 1rem !important;\n}\n.m-md-4 {\n    margin: 1.5rem !important;\n}\n.mt-md-4,\n  .my-md-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-md-4,\n  .mx-md-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-md-4,\n  .my-md-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-md-4,\n  .mx-md-4 {\n    margin-left: 1.5rem !important;\n}\n.m-md-5 {\n    margin: 3rem !important;\n}\n.mt-md-5,\n  .my-md-5 {\n    margin-top: 3rem !important;\n}\n.mr-md-5,\n  .mx-md-5 {\n    margin-right: 3rem !important;\n}\n.mb-md-5,\n  .my-md-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-md-5,\n  .mx-md-5 {\n    margin-left: 3rem !important;\n}\n.p-md-0 {\n    padding: 0 !important;\n}\n.pt-md-0,\n  .py-md-0 {\n    padding-top: 0 !important;\n}\n.pr-md-0,\n  .px-md-0 {\n    padding-right: 0 !important;\n}\n.pb-md-0,\n  .py-md-0 {\n    padding-bottom: 0 !important;\n}\n.pl-md-0,\n  .px-md-0 {\n    padding-left: 0 !important;\n}\n.p-md-1 {\n    padding: 0.25rem !important;\n}\n.pt-md-1,\n  .py-md-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-md-1,\n  .px-md-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-md-1,\n  .py-md-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-md-1,\n  .px-md-1 {\n    padding-left: 0.25rem !important;\n}\n.p-md-2 {\n    padding: 0.5rem !important;\n}\n.pt-md-2,\n  .py-md-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-md-2,\n  .px-md-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-md-2,\n  .py-md-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-md-2,\n  .px-md-2 {\n    padding-left: 0.5rem !important;\n}\n.p-md-3 {\n    padding: 1rem !important;\n}\n.pt-md-3,\n  .py-md-3 {\n    padding-top: 1rem !important;\n}\n.pr-md-3,\n  .px-md-3 {\n    padding-right: 1rem !important;\n}\n.pb-md-3,\n  .py-md-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-md-3,\n  .px-md-3 {\n    padding-left: 1rem !important;\n}\n.p-md-4 {\n    padding: 1.5rem !important;\n}\n.pt-md-4,\n  .py-md-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-md-4,\n  .px-md-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-md-4,\n  .py-md-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-md-4,\n  .px-md-4 {\n    padding-left: 1.5rem !important;\n}\n.p-md-5 {\n    padding: 3rem !important;\n}\n.pt-md-5,\n  .py-md-5 {\n    padding-top: 3rem !important;\n}\n.pr-md-5,\n  .px-md-5 {\n    padding-right: 3rem !important;\n}\n.pb-md-5,\n  .py-md-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-md-5,\n  .px-md-5 {\n    padding-left: 3rem !important;\n}\n.m-md-n1 {\n    margin: -0.25rem !important;\n}\n.mt-md-n1,\n  .my-md-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-md-n1,\n  .mx-md-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-md-n1,\n  .my-md-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-md-n1,\n  .mx-md-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-md-n2 {\n    margin: -0.5rem !important;\n}\n.mt-md-n2,\n  .my-md-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-md-n2,\n  .mx-md-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-md-n2,\n  .my-md-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-md-n2,\n  .mx-md-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-md-n3 {\n    margin: -1rem !important;\n}\n.mt-md-n3,\n  .my-md-n3 {\n    margin-top: -1rem !important;\n}\n.mr-md-n3,\n  .mx-md-n3 {\n    margin-right: -1rem !important;\n}\n.mb-md-n3,\n  .my-md-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-md-n3,\n  .mx-md-n3 {\n    margin-left: -1rem !important;\n}\n.m-md-n4 {\n    margin: -1.5rem !important;\n}\n.mt-md-n4,\n  .my-md-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-md-n4,\n  .mx-md-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-md-n4,\n  .my-md-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-md-n4,\n  .mx-md-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-md-n5 {\n    margin: -3rem !important;\n}\n.mt-md-n5,\n  .my-md-n5 {\n    margin-top: -3rem !important;\n}\n.mr-md-n5,\n  .mx-md-n5 {\n    margin-right: -3rem !important;\n}\n.mb-md-n5,\n  .my-md-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-md-n5,\n  .mx-md-n5 {\n    margin-left: -3rem !important;\n}\n.m-md-auto {\n    margin: auto !important;\n}\n.mt-md-auto,\n  .my-md-auto {\n    margin-top: auto !important;\n}\n.mr-md-auto,\n  .mx-md-auto {\n    margin-right: auto !important;\n}\n.mb-md-auto,\n  .my-md-auto {\n    margin-bottom: auto !important;\n}\n.ml-md-auto,\n  .mx-md-auto {\n    margin-left: auto !important;\n}\n}\n@media (min-width: 992px) {\n.m-lg-0 {\n    margin: 0 !important;\n}\n.mt-lg-0,\n  .my-lg-0 {\n    margin-top: 0 !important;\n}\n.mr-lg-0,\n  .mx-lg-0 {\n    margin-right: 0 !important;\n}\n.mb-lg-0,\n  .my-lg-0 {\n    margin-bottom: 0 !important;\n}\n.ml-lg-0,\n  .mx-lg-0 {\n    margin-left: 0 !important;\n}\n.m-lg-1 {\n    margin: 0.25rem !important;\n}\n.mt-lg-1,\n  .my-lg-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-lg-1,\n  .mx-lg-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-lg-1,\n  .my-lg-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-lg-1,\n  .mx-lg-1 {\n    margin-left: 0.25rem !important;\n}\n.m-lg-2 {\n    margin: 0.5rem !important;\n}\n.mt-lg-2,\n  .my-lg-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-lg-2,\n  .mx-lg-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-lg-2,\n  .my-lg-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-lg-2,\n  .mx-lg-2 {\n    margin-left: 0.5rem !important;\n}\n.m-lg-3 {\n    margin: 1rem !important;\n}\n.mt-lg-3,\n  .my-lg-3 {\n    margin-top: 1rem !important;\n}\n.mr-lg-3,\n  .mx-lg-3 {\n    margin-right: 1rem !important;\n}\n.mb-lg-3,\n  .my-lg-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-lg-3,\n  .mx-lg-3 {\n    margin-left: 1rem !important;\n}\n.m-lg-4 {\n    margin: 1.5rem !important;\n}\n.mt-lg-4,\n  .my-lg-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-lg-4,\n  .mx-lg-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-lg-4,\n  .my-lg-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-lg-4,\n  .mx-lg-4 {\n    margin-left: 1.5rem !important;\n}\n.m-lg-5 {\n    margin: 3rem !important;\n}\n.mt-lg-5,\n  .my-lg-5 {\n    margin-top: 3rem !important;\n}\n.mr-lg-5,\n  .mx-lg-5 {\n    margin-right: 3rem !important;\n}\n.mb-lg-5,\n  .my-lg-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-lg-5,\n  .mx-lg-5 {\n    margin-left: 3rem !important;\n}\n.p-lg-0 {\n    padding: 0 !important;\n}\n.pt-lg-0,\n  .py-lg-0 {\n    padding-top: 0 !important;\n}\n.pr-lg-0,\n  .px-lg-0 {\n    padding-right: 0 !important;\n}\n.pb-lg-0,\n  .py-lg-0 {\n    padding-bottom: 0 !important;\n}\n.pl-lg-0,\n  .px-lg-0 {\n    padding-left: 0 !important;\n}\n.p-lg-1 {\n    padding: 0.25rem !important;\n}\n.pt-lg-1,\n  .py-lg-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-lg-1,\n  .px-lg-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-lg-1,\n  .py-lg-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-lg-1,\n  .px-lg-1 {\n    padding-left: 0.25rem !important;\n}\n.p-lg-2 {\n    padding: 0.5rem !important;\n}\n.pt-lg-2,\n  .py-lg-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-lg-2,\n  .px-lg-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-lg-2,\n  .py-lg-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-lg-2,\n  .px-lg-2 {\n    padding-left: 0.5rem !important;\n}\n.p-lg-3 {\n    padding: 1rem !important;\n}\n.pt-lg-3,\n  .py-lg-3 {\n    padding-top: 1rem !important;\n}\n.pr-lg-3,\n  .px-lg-3 {\n    padding-right: 1rem !important;\n}\n.pb-lg-3,\n  .py-lg-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-lg-3,\n  .px-lg-3 {\n    padding-left: 1rem !important;\n}\n.p-lg-4 {\n    padding: 1.5rem !important;\n}\n.pt-lg-4,\n  .py-lg-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-lg-4,\n  .px-lg-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-lg-4,\n  .py-lg-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-lg-4,\n  .px-lg-4 {\n    padding-left: 1.5rem !important;\n}\n.p-lg-5 {\n    padding: 3rem !important;\n}\n.pt-lg-5,\n  .py-lg-5 {\n    padding-top: 3rem !important;\n}\n.pr-lg-5,\n  .px-lg-5 {\n    padding-right: 3rem !important;\n}\n.pb-lg-5,\n  .py-lg-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-lg-5,\n  .px-lg-5 {\n    padding-left: 3rem !important;\n}\n.m-lg-n1 {\n    margin: -0.25rem !important;\n}\n.mt-lg-n1,\n  .my-lg-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-lg-n1,\n  .mx-lg-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-lg-n1,\n  .my-lg-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-lg-n1,\n  .mx-lg-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-lg-n2 {\n    margin: -0.5rem !important;\n}\n.mt-lg-n2,\n  .my-lg-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-lg-n2,\n  .mx-lg-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-lg-n2,\n  .my-lg-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-lg-n2,\n  .mx-lg-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-lg-n3 {\n    margin: -1rem !important;\n}\n.mt-lg-n3,\n  .my-lg-n3 {\n    margin-top: -1rem !important;\n}\n.mr-lg-n3,\n  .mx-lg-n3 {\n    margin-right: -1rem !important;\n}\n.mb-lg-n3,\n  .my-lg-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-lg-n3,\n  .mx-lg-n3 {\n    margin-left: -1rem !important;\n}\n.m-lg-n4 {\n    margin: -1.5rem !important;\n}\n.mt-lg-n4,\n  .my-lg-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-lg-n4,\n  .mx-lg-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-lg-n4,\n  .my-lg-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-lg-n4,\n  .mx-lg-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-lg-n5 {\n    margin: -3rem !important;\n}\n.mt-lg-n5,\n  .my-lg-n5 {\n    margin-top: -3rem !important;\n}\n.mr-lg-n5,\n  .mx-lg-n5 {\n    margin-right: -3rem !important;\n}\n.mb-lg-n5,\n  .my-lg-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-lg-n5,\n  .mx-lg-n5 {\n    margin-left: -3rem !important;\n}\n.m-lg-auto {\n    margin: auto !important;\n}\n.mt-lg-auto,\n  .my-lg-auto {\n    margin-top: auto !important;\n}\n.mr-lg-auto,\n  .mx-lg-auto {\n    margin-right: auto !important;\n}\n.mb-lg-auto,\n  .my-lg-auto {\n    margin-bottom: auto !important;\n}\n.ml-lg-auto,\n  .mx-lg-auto {\n    margin-left: auto !important;\n}\n}\n@media (min-width: 1200px) {\n.m-xl-0 {\n    margin: 0 !important;\n}\n.mt-xl-0,\n  .my-xl-0 {\n    margin-top: 0 !important;\n}\n.mr-xl-0,\n  .mx-xl-0 {\n    margin-right: 0 !important;\n}\n.mb-xl-0,\n  .my-xl-0 {\n    margin-bottom: 0 !important;\n}\n.ml-xl-0,\n  .mx-xl-0 {\n    margin-left: 0 !important;\n}\n.m-xl-1 {\n    margin: 0.25rem !important;\n}\n.mt-xl-1,\n  .my-xl-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-xl-1,\n  .mx-xl-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-xl-1,\n  .my-xl-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-xl-1,\n  .mx-xl-1 {\n    margin-left: 0.25rem !important;\n}\n.m-xl-2 {\n    margin: 0.5rem !important;\n}\n.mt-xl-2,\n  .my-xl-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-xl-2,\n  .mx-xl-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-xl-2,\n  .my-xl-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-xl-2,\n  .mx-xl-2 {\n    margin-left: 0.5rem !important;\n}\n.m-xl-3 {\n    margin: 1rem !important;\n}\n.mt-xl-3,\n  .my-xl-3 {\n    margin-top: 1rem !important;\n}\n.mr-xl-3,\n  .mx-xl-3 {\n    margin-right: 1rem !important;\n}\n.mb-xl-3,\n  .my-xl-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-xl-3,\n  .mx-xl-3 {\n    margin-left: 1rem !important;\n}\n.m-xl-4 {\n    margin: 1.5rem !important;\n}\n.mt-xl-4,\n  .my-xl-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-xl-4,\n  .mx-xl-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-xl-4,\n  .my-xl-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-xl-4,\n  .mx-xl-4 {\n    margin-left: 1.5rem !important;\n}\n.m-xl-5 {\n    margin: 3rem !important;\n}\n.mt-xl-5,\n  .my-xl-5 {\n    margin-top: 3rem !important;\n}\n.mr-xl-5,\n  .mx-xl-5 {\n    margin-right: 3rem !important;\n}\n.mb-xl-5,\n  .my-xl-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-xl-5,\n  .mx-xl-5 {\n    margin-left: 3rem !important;\n}\n.p-xl-0 {\n    padding: 0 !important;\n}\n.pt-xl-0,\n  .py-xl-0 {\n    padding-top: 0 !important;\n}\n.pr-xl-0,\n  .px-xl-0 {\n    padding-right: 0 !important;\n}\n.pb-xl-0,\n  .py-xl-0 {\n    padding-bottom: 0 !important;\n}\n.pl-xl-0,\n  .px-xl-0 {\n    padding-left: 0 !important;\n}\n.p-xl-1 {\n    padding: 0.25rem !important;\n}\n.pt-xl-1,\n  .py-xl-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-xl-1,\n  .px-xl-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-xl-1,\n  .py-xl-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-xl-1,\n  .px-xl-1 {\n    padding-left: 0.25rem !important;\n}\n.p-xl-2 {\n    padding: 0.5rem !important;\n}\n.pt-xl-2,\n  .py-xl-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-xl-2,\n  .px-xl-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-xl-2,\n  .py-xl-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-xl-2,\n  .px-xl-2 {\n    padding-left: 0.5rem !important;\n}\n.p-xl-3 {\n    padding: 1rem !important;\n}\n.pt-xl-3,\n  .py-xl-3 {\n    padding-top: 1rem !important;\n}\n.pr-xl-3,\n  .px-xl-3 {\n    padding-right: 1rem !important;\n}\n.pb-xl-3,\n  .py-xl-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-xl-3,\n  .px-xl-3 {\n    padding-left: 1rem !important;\n}\n.p-xl-4 {\n    padding: 1.5rem !important;\n}\n.pt-xl-4,\n  .py-xl-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-xl-4,\n  .px-xl-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-xl-4,\n  .py-xl-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-xl-4,\n  .px-xl-4 {\n    padding-left: 1.5rem !important;\n}\n.p-xl-5 {\n    padding: 3rem !important;\n}\n.pt-xl-5,\n  .py-xl-5 {\n    padding-top: 3rem !important;\n}\n.pr-xl-5,\n  .px-xl-5 {\n    padding-right: 3rem !important;\n}\n.pb-xl-5,\n  .py-xl-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-xl-5,\n  .px-xl-5 {\n    padding-left: 3rem !important;\n}\n.m-xl-n1 {\n    margin: -0.25rem !important;\n}\n.mt-xl-n1,\n  .my-xl-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-xl-n1,\n  .mx-xl-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-xl-n1,\n  .my-xl-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-xl-n1,\n  .mx-xl-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-xl-n2 {\n    margin: -0.5rem !important;\n}\n.mt-xl-n2,\n  .my-xl-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-xl-n2,\n  .mx-xl-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-xl-n2,\n  .my-xl-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-xl-n2,\n  .mx-xl-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-xl-n3 {\n    margin: -1rem !important;\n}\n.mt-xl-n3,\n  .my-xl-n3 {\n    margin-top: -1rem !important;\n}\n.mr-xl-n3,\n  .mx-xl-n3 {\n    margin-right: -1rem !important;\n}\n.mb-xl-n3,\n  .my-xl-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-xl-n3,\n  .mx-xl-n3 {\n    margin-left: -1rem !important;\n}\n.m-xl-n4 {\n    margin: -1.5rem !important;\n}\n.mt-xl-n4,\n  .my-xl-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-xl-n4,\n  .mx-xl-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-xl-n4,\n  .my-xl-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-xl-n4,\n  .mx-xl-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-xl-n5 {\n    margin: -3rem !important;\n}\n.mt-xl-n5,\n  .my-xl-n5 {\n    margin-top: -3rem !important;\n}\n.mr-xl-n5,\n  .mx-xl-n5 {\n    margin-right: -3rem !important;\n}\n.mb-xl-n5,\n  .my-xl-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-xl-n5,\n  .mx-xl-n5 {\n    margin-left: -3rem !important;\n}\n.m-xl-auto {\n    margin: auto !important;\n}\n.mt-xl-auto,\n  .my-xl-auto {\n    margin-top: auto !important;\n}\n.mr-xl-auto,\n  .mx-xl-auto {\n    margin-right: auto !important;\n}\n.mb-xl-auto,\n  .my-xl-auto {\n    margin-bottom: auto !important;\n}\n.ml-xl-auto,\n  .mx-xl-auto {\n    margin-left: auto !important;\n}\n}\n.stretched-link::after {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1;\n  pointer-events: auto;\n  content: \"\";\n  background-color: rgba(0, 0, 0, 0);\n}\n.text-monospace {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace !important;\n}\n.text-justify {\n  text-align: justify !important;\n}\n.text-wrap {\n  white-space: normal !important;\n}\n.text-nowrap {\n  white-space: nowrap !important;\n}\n.text-truncate {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.text-left {\n  text-align: left !important;\n}\n.text-right {\n  text-align: right !important;\n}\n.text-center {\n  text-align: center !important;\n}\n@media (min-width: 576px) {\n.text-sm-left {\n    text-align: left !important;\n}\n.text-sm-right {\n    text-align: right !important;\n}\n.text-sm-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 768px) {\n.text-md-left {\n    text-align: left !important;\n}\n.text-md-right {\n    text-align: right !important;\n}\n.text-md-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 992px) {\n.text-lg-left {\n    text-align: left !important;\n}\n.text-lg-right {\n    text-align: right !important;\n}\n.text-lg-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 1200px) {\n.text-xl-left {\n    text-align: left !important;\n}\n.text-xl-right {\n    text-align: right !important;\n}\n.text-xl-center {\n    text-align: center !important;\n}\n}\n.text-lowercase {\n  text-transform: lowercase !important;\n}\n.text-uppercase {\n  text-transform: uppercase !important;\n}\n.text-capitalize {\n  text-transform: capitalize !important;\n}\n.font-weight-light {\n  font-weight: 300 !important;\n}\n.font-weight-lighter {\n  font-weight: lighter !important;\n}\n.font-weight-normal {\n  font-weight: 400 !important;\n}\n.font-weight-bold {\n  font-weight: 700 !important;\n}\n.font-weight-bolder {\n  font-weight: bolder !important;\n}\n.font-italic {\n  font-style: italic !important;\n}\n.text-white {\n  color: #fff !important;\n}\n.text-primary {\n  color: #007bff !important;\n}\na.text-primary:hover, a.text-primary:focus {\n  color: #0056b3 !important;\n}\n.text-secondary {\n  color: #6c757d !important;\n}\na.text-secondary:hover, a.text-secondary:focus {\n  color: #494f54 !important;\n}\n.text-success {\n  color: #28a745 !important;\n}\na.text-success:hover, a.text-success:focus {\n  color: #19692c !important;\n}\n.text-info {\n  color: #17a2b8 !important;\n}\na.text-info:hover, a.text-info:focus {\n  color: #0f6674 !important;\n}\n.text-warning {\n  color: #ffc107 !important;\n}\na.text-warning:hover, a.text-warning:focus {\n  color: #ba8b00 !important;\n}\n.text-danger {\n  color: #dc3545 !important;\n}\na.text-danger:hover, a.text-danger:focus {\n  color: #a71d2a !important;\n}\n.text-light {\n  color: #f8f9fa !important;\n}\na.text-light:hover, a.text-light:focus {\n  color: #cbd3da !important;\n}\n.text-dark {\n  color: #343a40 !important;\n}\na.text-dark:hover, a.text-dark:focus {\n  color: #121416 !important;\n}\n.text-body {\n  color: #212529 !important;\n}\n.text-muted {\n  color: #6c757d !important;\n}\n.text-black-50 {\n  color: rgba(0, 0, 0, 0.5) !important;\n}\n.text-white-50 {\n  color: rgba(255, 255, 255, 0.5) !important;\n}\n.text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.text-decoration-none {\n  text-decoration: none !important;\n}\n.text-break {\n  word-break: break-word !important;\n  word-wrap: break-word !important;\n}\n.text-reset {\n  color: inherit !important;\n}\n.visible {\n  visibility: visible !important;\n}\n.invisible {\n  visibility: hidden !important;\n}\n@media print {\n*,\n  *::before,\n  *::after {\n    text-shadow: none !important;\n    box-shadow: none !important;\n}\na:not(.btn) {\n    text-decoration: underline;\n}\nabbr[title]::after {\n    content: \" (\" attr(title) \")\";\n}\npre {\n    white-space: pre-wrap !important;\n}\npre,\n  blockquote {\n    border: 1px solid #adb5bd;\n    page-break-inside: avoid;\n}\ntr,\n  img {\n    page-break-inside: avoid;\n}\np,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n}\nh2,\n  h3 {\n    page-break-after: avoid;\n}\n@page {\n    size: a3;\n}\nbody {\n    min-width: 992px !important;\n}\n.container {\n    min-width: 992px !important;\n}\n.navbar {\n    display: none;\n}\n.badge {\n    border: 1px solid #000;\n}\n.table {\n    border-collapse: collapse !important;\n}\n.table td,\n  .table th {\n    background-color: #fff !important;\n}\n.table-bordered th,\n  .table-bordered td {\n    border: 1px solid #dee2e6 !important;\n}\n.table-dark {\n    color: inherit;\n}\n.table-dark th,\n  .table-dark td,\n  .table-dark thead th,\n  .table-dark tbody + tbody {\n    border-color: #dee2e6;\n}\n.table .thead-dark th {\n    color: inherit;\n    border-color: #dee2e6;\n}\n}\n.margin-top {\n  padding-top: 80px;\n}", ""]);
-=======
-___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n/*!\n * Bootstrap v4.6.2 (https://getbootstrap.com/)\n * Copyright 2011-2022 The Bootstrap Authors\n * Copyright 2011-2022 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)\n */\n:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --primary: #007bff;\n  --secondary: #6c757d;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\nhtml {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\narticle, aside, figcaption, figure, footer, header, hgroup, main, nav, section {\n  display: block;\n}\nbody {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"]:focus:not(:focus-visible) {\n  outline: 0 !important;\n}\nhr {\n  box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title],\nabbr[data-original-title] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n  -webkit-text-decoration-skip-ink: none;\n          text-decoration-skip-ink: none;\n}\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\ndt {\n  font-weight: 700;\n}\ndd {\n  margin-bottom: 0.5rem;\n  margin-left: 0;\n}\nblockquote {\n  margin: 0 0 1rem;\n}\nb,\nstrong {\n  font-weight: bolder;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -0.25em;\n}\nsup {\n  top: -0.5em;\n}\na {\n  color: #007bff;\n  text-decoration: none;\n  background-color: transparent;\n}\na:hover {\n  color: #0056b3;\n  text-decoration: underline;\n}\na:not([href]):not([class]) {\n  color: inherit;\n  text-decoration: none;\n}\na:not([href]):not([class]):hover {\n  color: inherit;\n  text-decoration: none;\n}\npre,\ncode,\nkbd,\nsamp {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure {\n  margin: 0 0 1rem;\n}\nimg {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable {\n  border-collapse: collapse;\n}\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth {\n  text-align: inherit;\n  text-align: -webkit-match-parent;\n}\nlabel {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton {\n  border-radius: 0;\n}\nbutton:focus:not(:focus-visible) {\n  outline: 0;\n}\ninput,\nbutton,\nselect,\noptgroup,\ntextarea {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton,\ninput {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\n[role=button] {\n  cursor: pointer;\n}\nselect {\n  word-wrap: normal;\n}\nbutton,\n[type=button],\n[type=reset],\n[type=submit] {\n  -webkit-appearance: button;\n}\nbutton:not(:disabled),\n[type=button]:not(:disabled),\n[type=reset]:not(:disabled),\n[type=submit]:not(:disabled) {\n  cursor: pointer;\n}\nbutton::-moz-focus-inner,\n[type=button]::-moz-focus-inner,\n[type=reset]::-moz-focus-inner,\n[type=submit]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=radio],\ninput[type=checkbox] {\n  box-sizing: border-box;\n  padding: 0;\n}\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: 0.5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress {\n  vertical-align: baseline;\n}\n[type=number]::-webkit-inner-spin-button,\n[type=number]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=search] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=search]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput {\n  display: inline-block;\n}\nsummary {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate {\n  display: none;\n}\n[hidden] {\n  display: none !important;\n}\nh1, h2, h3, h4, h5, h6,\n.h1, .h2, .h3, .h4, .h5, .h6 {\n  margin-bottom: 0.5rem;\n  font-weight: 500;\n  line-height: 1.2;\n}\nh1, .h1 {\n  font-size: 2.5rem;\n}\nh2, .h2 {\n  font-size: 2rem;\n}\nh3, .h3 {\n  font-size: 1.75rem;\n}\nh4, .h4 {\n  font-size: 1.5rem;\n}\nh5, .h5 {\n  font-size: 1.25rem;\n}\nh6, .h6 {\n  font-size: 1rem;\n}\n.lead {\n  font-size: 1.25rem;\n  font-weight: 300;\n}\n.display-1 {\n  font-size: 6rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\n.display-2 {\n  font-size: 5.5rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\n.display-3 {\n  font-size: 4.5rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\n.display-4 {\n  font-size: 3.5rem;\n  font-weight: 300;\n  line-height: 1.2;\n}\nhr {\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n  border: 0;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\nsmall,\n.small {\n  font-size: 0.875em;\n  font-weight: 400;\n}\nmark,\n.mark {\n  padding: 0.2em;\n  background-color: #fcf8e3;\n}\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline-item {\n  display: inline-block;\n}\n.list-inline-item:not(:last-child) {\n  margin-right: 0.5rem;\n}\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\n.blockquote {\n  margin-bottom: 1rem;\n  font-size: 1.25rem;\n}\n.blockquote-footer {\n  display: block;\n  font-size: 0.875em;\n  color: #6c757d;\n}\n.blockquote-footer::before {\n  content: \"— \";\n}\n.img-fluid {\n  max-width: 100%;\n  height: auto;\n}\n.img-thumbnail {\n  padding: 0.25rem;\n  background-color: #fff;\n  border: 1px solid #dee2e6;\n  border-radius: 0.25rem;\n  max-width: 100%;\n  height: auto;\n}\n.figure {\n  display: inline-block;\n}\n.figure-img {\n  margin-bottom: 0.5rem;\n  line-height: 1;\n}\n.figure-caption {\n  font-size: 90%;\n  color: #6c757d;\n}\ncode {\n  font-size: 87.5%;\n  color: #e83e8c;\n  word-wrap: break-word;\n}\na > code {\n  color: inherit;\n}\nkbd {\n  padding: 0.2rem 0.4rem;\n  font-size: 87.5%;\n  color: #fff;\n  background-color: #212529;\n  border-radius: 0.2rem;\n}\nkbd kbd {\n  padding: 0;\n  font-size: 100%;\n  font-weight: 700;\n}\npre {\n  display: block;\n  font-size: 87.5%;\n  color: #212529;\n}\npre code {\n  font-size: inherit;\n  color: inherit;\n  word-break: normal;\n}\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n.container,\n.container-fluid,\n.container-xl,\n.container-lg,\n.container-md,\n.container-sm {\n  width: 100%;\n  padding-right: 15px;\n  padding-left: 15px;\n  margin-right: auto;\n  margin-left: auto;\n}\n@media (min-width: 576px) {\n.container-sm, .container {\n    max-width: 540px;\n}\n}\n@media (min-width: 768px) {\n.container-md, .container-sm, .container {\n    max-width: 720px;\n}\n}\n@media (min-width: 992px) {\n.container-lg, .container-md, .container-sm, .container {\n    max-width: 960px;\n}\n}\n@media (min-width: 1200px) {\n.container-xl, .container-lg, .container-md, .container-sm, .container {\n    max-width: 1140px;\n}\n}\n.row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n}\n.no-gutters {\n  margin-right: 0;\n  margin-left: 0;\n}\n.no-gutters > .col,\n.no-gutters > [class*=col-] {\n  padding-right: 0;\n  padding-left: 0;\n}\n.col-xl,\n.col-xl-auto, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-lg,\n.col-lg-auto, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md,\n.col-md-auto, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-sm,\n.col-sm-auto, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col,\n.col-auto, .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {\n  position: relative;\n  width: 100%;\n  padding-right: 15px;\n  padding-left: 15px;\n}\n.col {\n  flex-basis: 0;\n  flex-grow: 1;\n  max-width: 100%;\n}\n.row-cols-1 > * {\n  flex: 0 0 100%;\n  max-width: 100%;\n}\n.row-cols-2 > * {\n  flex: 0 0 50%;\n  max-width: 50%;\n}\n.row-cols-3 > * {\n  flex: 0 0 33.3333333333%;\n  max-width: 33.3333333333%;\n}\n.row-cols-4 > * {\n  flex: 0 0 25%;\n  max-width: 25%;\n}\n.row-cols-5 > * {\n  flex: 0 0 20%;\n  max-width: 20%;\n}\n.row-cols-6 > * {\n  flex: 0 0 16.6666666667%;\n  max-width: 16.6666666667%;\n}\n.col-auto {\n  flex: 0 0 auto;\n  width: auto;\n  max-width: 100%;\n}\n.col-1 {\n  flex: 0 0 8.33333333%;\n  max-width: 8.33333333%;\n}\n.col-2 {\n  flex: 0 0 16.66666667%;\n  max-width: 16.66666667%;\n}\n.col-3 {\n  flex: 0 0 25%;\n  max-width: 25%;\n}\n.col-4 {\n  flex: 0 0 33.33333333%;\n  max-width: 33.33333333%;\n}\n.col-5 {\n  flex: 0 0 41.66666667%;\n  max-width: 41.66666667%;\n}\n.col-6 {\n  flex: 0 0 50%;\n  max-width: 50%;\n}\n.col-7 {\n  flex: 0 0 58.33333333%;\n  max-width: 58.33333333%;\n}\n.col-8 {\n  flex: 0 0 66.66666667%;\n  max-width: 66.66666667%;\n}\n.col-9 {\n  flex: 0 0 75%;\n  max-width: 75%;\n}\n.col-10 {\n  flex: 0 0 83.33333333%;\n  max-width: 83.33333333%;\n}\n.col-11 {\n  flex: 0 0 91.66666667%;\n  max-width: 91.66666667%;\n}\n.col-12 {\n  flex: 0 0 100%;\n  max-width: 100%;\n}\n.order-first {\n  order: -1;\n}\n.order-last {\n  order: 13;\n}\n.order-0 {\n  order: 0;\n}\n.order-1 {\n  order: 1;\n}\n.order-2 {\n  order: 2;\n}\n.order-3 {\n  order: 3;\n}\n.order-4 {\n  order: 4;\n}\n.order-5 {\n  order: 5;\n}\n.order-6 {\n  order: 6;\n}\n.order-7 {\n  order: 7;\n}\n.order-8 {\n  order: 8;\n}\n.order-9 {\n  order: 9;\n}\n.order-10 {\n  order: 10;\n}\n.order-11 {\n  order: 11;\n}\n.order-12 {\n  order: 12;\n}\n.offset-1 {\n  margin-left: 8.33333333%;\n}\n.offset-2 {\n  margin-left: 16.66666667%;\n}\n.offset-3 {\n  margin-left: 25%;\n}\n.offset-4 {\n  margin-left: 33.33333333%;\n}\n.offset-5 {\n  margin-left: 41.66666667%;\n}\n.offset-6 {\n  margin-left: 50%;\n}\n.offset-7 {\n  margin-left: 58.33333333%;\n}\n.offset-8 {\n  margin-left: 66.66666667%;\n}\n.offset-9 {\n  margin-left: 75%;\n}\n.offset-10 {\n  margin-left: 83.33333333%;\n}\n.offset-11 {\n  margin-left: 91.66666667%;\n}\n@media (min-width: 576px) {\n.col-sm {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-sm-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-sm-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-sm-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-sm-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-sm-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-sm-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-sm-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-sm-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-sm-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-sm-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-sm-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-sm-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-sm-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-sm-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-sm-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-sm-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-sm-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-sm-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-sm-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-sm-first {\n    order: -1;\n}\n.order-sm-last {\n    order: 13;\n}\n.order-sm-0 {\n    order: 0;\n}\n.order-sm-1 {\n    order: 1;\n}\n.order-sm-2 {\n    order: 2;\n}\n.order-sm-3 {\n    order: 3;\n}\n.order-sm-4 {\n    order: 4;\n}\n.order-sm-5 {\n    order: 5;\n}\n.order-sm-6 {\n    order: 6;\n}\n.order-sm-7 {\n    order: 7;\n}\n.order-sm-8 {\n    order: 8;\n}\n.order-sm-9 {\n    order: 9;\n}\n.order-sm-10 {\n    order: 10;\n}\n.order-sm-11 {\n    order: 11;\n}\n.order-sm-12 {\n    order: 12;\n}\n.offset-sm-0 {\n    margin-left: 0;\n}\n.offset-sm-1 {\n    margin-left: 8.33333333%;\n}\n.offset-sm-2 {\n    margin-left: 16.66666667%;\n}\n.offset-sm-3 {\n    margin-left: 25%;\n}\n.offset-sm-4 {\n    margin-left: 33.33333333%;\n}\n.offset-sm-5 {\n    margin-left: 41.66666667%;\n}\n.offset-sm-6 {\n    margin-left: 50%;\n}\n.offset-sm-7 {\n    margin-left: 58.33333333%;\n}\n.offset-sm-8 {\n    margin-left: 66.66666667%;\n}\n.offset-sm-9 {\n    margin-left: 75%;\n}\n.offset-sm-10 {\n    margin-left: 83.33333333%;\n}\n.offset-sm-11 {\n    margin-left: 91.66666667%;\n}\n}\n@media (min-width: 768px) {\n.col-md {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-md-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-md-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-md-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-md-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-md-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-md-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-md-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-md-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-md-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-md-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-md-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-md-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-md-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-md-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-md-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-md-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-md-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-md-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-md-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-md-first {\n    order: -1;\n}\n.order-md-last {\n    order: 13;\n}\n.order-md-0 {\n    order: 0;\n}\n.order-md-1 {\n    order: 1;\n}\n.order-md-2 {\n    order: 2;\n}\n.order-md-3 {\n    order: 3;\n}\n.order-md-4 {\n    order: 4;\n}\n.order-md-5 {\n    order: 5;\n}\n.order-md-6 {\n    order: 6;\n}\n.order-md-7 {\n    order: 7;\n}\n.order-md-8 {\n    order: 8;\n}\n.order-md-9 {\n    order: 9;\n}\n.order-md-10 {\n    order: 10;\n}\n.order-md-11 {\n    order: 11;\n}\n.order-md-12 {\n    order: 12;\n}\n.offset-md-0 {\n    margin-left: 0;\n}\n.offset-md-1 {\n    margin-left: 8.33333333%;\n}\n.offset-md-2 {\n    margin-left: 16.66666667%;\n}\n.offset-md-3 {\n    margin-left: 25%;\n}\n.offset-md-4 {\n    margin-left: 33.33333333%;\n}\n.offset-md-5 {\n    margin-left: 41.66666667%;\n}\n.offset-md-6 {\n    margin-left: 50%;\n}\n.offset-md-7 {\n    margin-left: 58.33333333%;\n}\n.offset-md-8 {\n    margin-left: 66.66666667%;\n}\n.offset-md-9 {\n    margin-left: 75%;\n}\n.offset-md-10 {\n    margin-left: 83.33333333%;\n}\n.offset-md-11 {\n    margin-left: 91.66666667%;\n}\n}\n@media (min-width: 992px) {\n.col-lg {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-lg-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-lg-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-lg-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-lg-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-lg-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-lg-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-lg-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-lg-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-lg-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-lg-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-lg-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-lg-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-lg-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-lg-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-lg-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-lg-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-lg-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-lg-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-lg-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-lg-first {\n    order: -1;\n}\n.order-lg-last {\n    order: 13;\n}\n.order-lg-0 {\n    order: 0;\n}\n.order-lg-1 {\n    order: 1;\n}\n.order-lg-2 {\n    order: 2;\n}\n.order-lg-3 {\n    order: 3;\n}\n.order-lg-4 {\n    order: 4;\n}\n.order-lg-5 {\n    order: 5;\n}\n.order-lg-6 {\n    order: 6;\n}\n.order-lg-7 {\n    order: 7;\n}\n.order-lg-8 {\n    order: 8;\n}\n.order-lg-9 {\n    order: 9;\n}\n.order-lg-10 {\n    order: 10;\n}\n.order-lg-11 {\n    order: 11;\n}\n.order-lg-12 {\n    order: 12;\n}\n.offset-lg-0 {\n    margin-left: 0;\n}\n.offset-lg-1 {\n    margin-left: 8.33333333%;\n}\n.offset-lg-2 {\n    margin-left: 16.66666667%;\n}\n.offset-lg-3 {\n    margin-left: 25%;\n}\n.offset-lg-4 {\n    margin-left: 33.33333333%;\n}\n.offset-lg-5 {\n    margin-left: 41.66666667%;\n}\n.offset-lg-6 {\n    margin-left: 50%;\n}\n.offset-lg-7 {\n    margin-left: 58.33333333%;\n}\n.offset-lg-8 {\n    margin-left: 66.66666667%;\n}\n.offset-lg-9 {\n    margin-left: 75%;\n}\n.offset-lg-10 {\n    margin-left: 83.33333333%;\n}\n.offset-lg-11 {\n    margin-left: 91.66666667%;\n}\n}\n@media (min-width: 1200px) {\n.col-xl {\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%;\n}\n.row-cols-xl-1 > * {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.row-cols-xl-2 > * {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.row-cols-xl-3 > * {\n    flex: 0 0 33.3333333333%;\n    max-width: 33.3333333333%;\n}\n.row-cols-xl-4 > * {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.row-cols-xl-5 > * {\n    flex: 0 0 20%;\n    max-width: 20%;\n}\n.row-cols-xl-6 > * {\n    flex: 0 0 16.6666666667%;\n    max-width: 16.6666666667%;\n}\n.col-xl-auto {\n    flex: 0 0 auto;\n    width: auto;\n    max-width: 100%;\n}\n.col-xl-1 {\n    flex: 0 0 8.33333333%;\n    max-width: 8.33333333%;\n}\n.col-xl-2 {\n    flex: 0 0 16.66666667%;\n    max-width: 16.66666667%;\n}\n.col-xl-3 {\n    flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-xl-4 {\n    flex: 0 0 33.33333333%;\n    max-width: 33.33333333%;\n}\n.col-xl-5 {\n    flex: 0 0 41.66666667%;\n    max-width: 41.66666667%;\n}\n.col-xl-6 {\n    flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-xl-7 {\n    flex: 0 0 58.33333333%;\n    max-width: 58.33333333%;\n}\n.col-xl-8 {\n    flex: 0 0 66.66666667%;\n    max-width: 66.66666667%;\n}\n.col-xl-9 {\n    flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-xl-10 {\n    flex: 0 0 83.33333333%;\n    max-width: 83.33333333%;\n}\n.col-xl-11 {\n    flex: 0 0 91.66666667%;\n    max-width: 91.66666667%;\n}\n.col-xl-12 {\n    flex: 0 0 100%;\n    max-width: 100%;\n}\n.order-xl-first {\n    order: -1;\n}\n.order-xl-last {\n    order: 13;\n}\n.order-xl-0 {\n    order: 0;\n}\n.order-xl-1 {\n    order: 1;\n}\n.order-xl-2 {\n    order: 2;\n}\n.order-xl-3 {\n    order: 3;\n}\n.order-xl-4 {\n    order: 4;\n}\n.order-xl-5 {\n    order: 5;\n}\n.order-xl-6 {\n    order: 6;\n}\n.order-xl-7 {\n    order: 7;\n}\n.order-xl-8 {\n    order: 8;\n}\n.order-xl-9 {\n    order: 9;\n}\n.order-xl-10 {\n    order: 10;\n}\n.order-xl-11 {\n    order: 11;\n}\n.order-xl-12 {\n    order: 12;\n}\n.offset-xl-0 {\n    margin-left: 0;\n}\n.offset-xl-1 {\n    margin-left: 8.33333333%;\n}\n.offset-xl-2 {\n    margin-left: 16.66666667%;\n}\n.offset-xl-3 {\n    margin-left: 25%;\n}\n.offset-xl-4 {\n    margin-left: 33.33333333%;\n}\n.offset-xl-5 {\n    margin-left: 41.66666667%;\n}\n.offset-xl-6 {\n    margin-left: 50%;\n}\n.offset-xl-7 {\n    margin-left: 58.33333333%;\n}\n.offset-xl-8 {\n    margin-left: 66.66666667%;\n}\n.offset-xl-9 {\n    margin-left: 75%;\n}\n.offset-xl-10 {\n    margin-left: 83.33333333%;\n}\n.offset-xl-11 {\n    margin-left: 91.66666667%;\n}\n}\n.table {\n  width: 100%;\n  margin-bottom: 1rem;\n  color: #212529;\n}\n.table th,\n.table td {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n}\n.table thead th {\n  vertical-align: bottom;\n  border-bottom: 2px solid #dee2e6;\n}\n.table tbody + tbody {\n  border-top: 2px solid #dee2e6;\n}\n.table-sm th,\n.table-sm td {\n  padding: 0.3rem;\n}\n.table-bordered {\n  border: 1px solid #dee2e6;\n}\n.table-bordered th,\n.table-bordered td {\n  border: 1px solid #dee2e6;\n}\n.table-bordered thead th,\n.table-bordered thead td {\n  border-bottom-width: 2px;\n}\n.table-borderless th,\n.table-borderless td,\n.table-borderless thead th,\n.table-borderless tbody + tbody {\n  border: 0;\n}\n.table-striped tbody tr:nth-of-type(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.table-hover tbody tr:hover {\n  color: #212529;\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-primary,\n.table-primary > th,\n.table-primary > td {\n  background-color: #b8daff;\n}\n.table-primary th,\n.table-primary td,\n.table-primary thead th,\n.table-primary tbody + tbody {\n  border-color: #7abaff;\n}\n.table-hover .table-primary:hover {\n  background-color: #9fcdff;\n}\n.table-hover .table-primary:hover > td,\n.table-hover .table-primary:hover > th {\n  background-color: #9fcdff;\n}\n.table-secondary,\n.table-secondary > th,\n.table-secondary > td {\n  background-color: #d6d8db;\n}\n.table-secondary th,\n.table-secondary td,\n.table-secondary thead th,\n.table-secondary tbody + tbody {\n  border-color: #b3b7bb;\n}\n.table-hover .table-secondary:hover {\n  background-color: #c8cbcf;\n}\n.table-hover .table-secondary:hover > td,\n.table-hover .table-secondary:hover > th {\n  background-color: #c8cbcf;\n}\n.table-success,\n.table-success > th,\n.table-success > td {\n  background-color: #c3e6cb;\n}\n.table-success th,\n.table-success td,\n.table-success thead th,\n.table-success tbody + tbody {\n  border-color: #8fd19e;\n}\n.table-hover .table-success:hover {\n  background-color: #b1dfbb;\n}\n.table-hover .table-success:hover > td,\n.table-hover .table-success:hover > th {\n  background-color: #b1dfbb;\n}\n.table-info,\n.table-info > th,\n.table-info > td {\n  background-color: #bee5eb;\n}\n.table-info th,\n.table-info td,\n.table-info thead th,\n.table-info tbody + tbody {\n  border-color: #86cfda;\n}\n.table-hover .table-info:hover {\n  background-color: #abdde5;\n}\n.table-hover .table-info:hover > td,\n.table-hover .table-info:hover > th {\n  background-color: #abdde5;\n}\n.table-warning,\n.table-warning > th,\n.table-warning > td {\n  background-color: #ffeeba;\n}\n.table-warning th,\n.table-warning td,\n.table-warning thead th,\n.table-warning tbody + tbody {\n  border-color: #ffdf7e;\n}\n.table-hover .table-warning:hover {\n  background-color: #ffe8a1;\n}\n.table-hover .table-warning:hover > td,\n.table-hover .table-warning:hover > th {\n  background-color: #ffe8a1;\n}\n.table-danger,\n.table-danger > th,\n.table-danger > td {\n  background-color: #f5c6cb;\n}\n.table-danger th,\n.table-danger td,\n.table-danger thead th,\n.table-danger tbody + tbody {\n  border-color: #ed969e;\n}\n.table-hover .table-danger:hover {\n  background-color: #f1b0b7;\n}\n.table-hover .table-danger:hover > td,\n.table-hover .table-danger:hover > th {\n  background-color: #f1b0b7;\n}\n.table-light,\n.table-light > th,\n.table-light > td {\n  background-color: #fdfdfe;\n}\n.table-light th,\n.table-light td,\n.table-light thead th,\n.table-light tbody + tbody {\n  border-color: #fbfcfc;\n}\n.table-hover .table-light:hover {\n  background-color: #ececf6;\n}\n.table-hover .table-light:hover > td,\n.table-hover .table-light:hover > th {\n  background-color: #ececf6;\n}\n.table-dark,\n.table-dark > th,\n.table-dark > td {\n  background-color: #c6c8ca;\n}\n.table-dark th,\n.table-dark td,\n.table-dark thead th,\n.table-dark tbody + tbody {\n  border-color: #95999c;\n}\n.table-hover .table-dark:hover {\n  background-color: #b9bbbe;\n}\n.table-hover .table-dark:hover > td,\n.table-hover .table-dark:hover > th {\n  background-color: #b9bbbe;\n}\n.table-active,\n.table-active > th,\n.table-active > td {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-hover .table-active:hover {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-hover .table-active:hover > td,\n.table-hover .table-active:hover > th {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table .thead-dark th {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #454d55;\n}\n.table .thead-light th {\n  color: #495057;\n  background-color: #e9ecef;\n  border-color: #dee2e6;\n}\n.table-dark {\n  color: #fff;\n  background-color: #343a40;\n}\n.table-dark th,\n.table-dark td,\n.table-dark thead th {\n  border-color: #454d55;\n}\n.table-dark.table-bordered {\n  border: 0;\n}\n.table-dark.table-striped tbody tr:nth-of-type(odd) {\n  background-color: rgba(255, 255, 255, 0.05);\n}\n.table-dark.table-hover tbody tr:hover {\n  color: #fff;\n  background-color: rgba(255, 255, 255, 0.075);\n}\n@media (max-width: 575.98px) {\n.table-responsive-sm {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-sm > .table-bordered {\n    border: 0;\n}\n}\n@media (max-width: 767.98px) {\n.table-responsive-md {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-md > .table-bordered {\n    border: 0;\n}\n}\n@media (max-width: 991.98px) {\n.table-responsive-lg {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-lg > .table-bordered {\n    border: 0;\n}\n}\n@media (max-width: 1199.98px) {\n.table-responsive-xl {\n    display: block;\n    width: 100%;\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n}\n.table-responsive-xl > .table-bordered {\n    border: 0;\n}\n}\n.table-responsive {\n  display: block;\n  width: 100%;\n  overflow-x: auto;\n  -webkit-overflow-scrolling: touch;\n}\n.table-responsive > .table-bordered {\n  border: 0;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.form-control {\n    transition: none;\n}\n}\n.form-control::-ms-expand {\n  background-color: transparent;\n  border: 0;\n}\n.form-control:focus {\n  color: #495057;\n  background-color: #fff;\n  border-color: #80bdff;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.form-control::-moz-placeholder {\n  color: #6c757d;\n  opacity: 1;\n}\n.form-control::placeholder {\n  color: #6c757d;\n  opacity: 1;\n}\n.form-control:disabled, .form-control[readonly] {\n  background-color: #e9ecef;\n  opacity: 1;\n}\ninput[type=date].form-control,\ninput[type=time].form-control,\ninput[type=datetime-local].form-control,\ninput[type=month].form-control {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\nselect.form-control:-moz-focusring {\n  color: transparent;\n  text-shadow: 0 0 0 #495057;\n}\nselect.form-control:focus::-ms-value {\n  color: #495057;\n  background-color: #fff;\n}\n.form-control-file,\n.form-control-range {\n  display: block;\n  width: 100%;\n}\n.col-form-label {\n  padding-top: calc(0.375rem + 1px);\n  padding-bottom: calc(0.375rem + 1px);\n  margin-bottom: 0;\n  font-size: inherit;\n  line-height: 1.5;\n}\n.col-form-label-lg {\n  padding-top: calc(0.5rem + 1px);\n  padding-bottom: calc(0.5rem + 1px);\n  font-size: 1.25rem;\n  line-height: 1.5;\n}\n.col-form-label-sm {\n  padding-top: calc(0.25rem + 1px);\n  padding-bottom: calc(0.25rem + 1px);\n  font-size: 0.875rem;\n  line-height: 1.5;\n}\n.form-control-plaintext {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0;\n  margin-bottom: 0;\n  font-size: 1rem;\n  line-height: 1.5;\n  color: #212529;\n  background-color: transparent;\n  border: solid transparent;\n  border-width: 1px 0;\n}\n.form-control-plaintext.form-control-sm, .form-control-plaintext.form-control-lg {\n  padding-right: 0;\n  padding-left: 0;\n}\n.form-control-sm {\n  height: calc(1.5em + 0.5rem + 2px);\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n.form-control-lg {\n  height: calc(1.5em + 1rem + 2px);\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\nselect.form-control[size], select.form-control[multiple] {\n  height: auto;\n}\ntextarea.form-control {\n  height: auto;\n}\n.form-group {\n  margin-bottom: 1rem;\n}\n.form-text {\n  display: block;\n  margin-top: 0.25rem;\n}\n.form-row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-right: -5px;\n  margin-left: -5px;\n}\n.form-row > .col,\n.form-row > [class*=col-] {\n  padding-right: 5px;\n  padding-left: 5px;\n}\n.form-check {\n  position: relative;\n  display: block;\n  padding-left: 1.25rem;\n}\n.form-check-input {\n  position: absolute;\n  margin-top: 0.3rem;\n  margin-left: -1.25rem;\n}\n.form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {\n  color: #6c757d;\n}\n.form-check-label {\n  margin-bottom: 0;\n}\n.form-check-inline {\n  display: inline-flex;\n  align-items: center;\n  padding-left: 0;\n  margin-right: 0.75rem;\n}\n.form-check-inline .form-check-input {\n  position: static;\n  margin-top: 0;\n  margin-right: 0.3125rem;\n  margin-left: 0;\n}\n.valid-feedback {\n  display: none;\n  width: 100%;\n  margin-top: 0.25rem;\n  font-size: 0.875em;\n  color: #28a745;\n}\n.valid-tooltip {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 5;\n  display: none;\n  max-width: 100%;\n  padding: 0.25rem 0.5rem;\n  margin-top: 0.1rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  color: #fff;\n  background-color: rgba(40, 167, 69, 0.9);\n  border-radius: 0.25rem;\n}\n.form-row > .col > .valid-tooltip, .form-row > [class*=col-] > .valid-tooltip {\n  left: 5px;\n}\n.was-validated :valid ~ .valid-feedback,\n.was-validated :valid ~ .valid-tooltip,\n.is-valid ~ .valid-feedback,\n.is-valid ~ .valid-tooltip {\n  display: block;\n}\n.was-validated .form-control:valid, .form-control.is-valid {\n  border-color: #28a745;\n  padding-right: calc(1.5em + 0.75rem) !important;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.was-validated .form-control:valid:focus, .form-control.is-valid:focus {\n  border-color: #28a745;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.was-validated select.form-control:valid, select.form-control.is-valid {\n  padding-right: 3rem !important;\n  background-position: right 1.5rem center;\n}\n.was-validated textarea.form-control:valid, textarea.form-control.is-valid {\n  padding-right: calc(1.5em + 0.75rem);\n  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);\n}\n.was-validated .custom-select:valid, .custom-select.is-valid {\n  border-color: #28a745;\n  padding-right: calc(0.75em + 2.3125rem) !important;\n  background: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e\") right 0.75rem center/8px 10px no-repeat, #fff url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e\") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;\n}\n.was-validated .custom-select:valid:focus, .custom-select.is-valid:focus {\n  border-color: #28a745;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {\n  color: #28a745;\n}\n.was-validated .form-check-input:valid ~ .valid-feedback,\n.was-validated .form-check-input:valid ~ .valid-tooltip, .form-check-input.is-valid ~ .valid-feedback,\n.form-check-input.is-valid ~ .valid-tooltip {\n  display: block;\n}\n.was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {\n  color: #28a745;\n}\n.was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {\n  border-color: #28a745;\n}\n.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {\n  border-color: #34ce57;\n  background-color: #34ce57;\n}\n.was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before {\n  border-color: #28a745;\n}\n.was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {\n  border-color: #28a745;\n}\n.was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {\n  border-color: #28a745;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);\n}\n.invalid-feedback {\n  display: none;\n  width: 100%;\n  margin-top: 0.25rem;\n  font-size: 0.875em;\n  color: #dc3545;\n}\n.invalid-tooltip {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 5;\n  display: none;\n  max-width: 100%;\n  padding: 0.25rem 0.5rem;\n  margin-top: 0.1rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  color: #fff;\n  background-color: rgba(220, 53, 69, 0.9);\n  border-radius: 0.25rem;\n}\n.form-row > .col > .invalid-tooltip, .form-row > [class*=col-] > .invalid-tooltip {\n  left: 5px;\n}\n.was-validated :invalid ~ .invalid-feedback,\n.was-validated :invalid ~ .invalid-tooltip,\n.is-invalid ~ .invalid-feedback,\n.is-invalid ~ .invalid-tooltip {\n  display: block;\n}\n.was-validated .form-control:invalid, .form-control.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(1.5em + 0.75rem) !important;\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {\n  border-color: #dc3545;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.was-validated select.form-control:invalid, select.form-control.is-invalid {\n  padding-right: 3rem !important;\n  background-position: right 1.5rem center;\n}\n.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {\n  padding-right: calc(1.5em + 0.75rem);\n  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);\n}\n.was-validated .custom-select:invalid, .custom-select.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(0.75em + 2.3125rem) !important;\n  background: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e\") right 0.75rem center/8px 10px no-repeat, #fff url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\") center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) no-repeat;\n}\n.was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {\n  border-color: #dc3545;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {\n  color: #dc3545;\n}\n.was-validated .form-check-input:invalid ~ .invalid-feedback,\n.was-validated .form-check-input:invalid ~ .invalid-tooltip, .form-check-input.is-invalid ~ .invalid-feedback,\n.form-check-input.is-invalid ~ .invalid-tooltip {\n  display: block;\n}\n.was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {\n  color: #dc3545;\n}\n.was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before {\n  border-color: #dc3545;\n}\n.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before {\n  border-color: #e4606d;\n  background-color: #e4606d;\n}\n.was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before {\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before {\n  border-color: #dc3545;\n}\n.was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {\n  border-color: #dc3545;\n}\n.was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {\n  border-color: #dc3545;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);\n}\n.form-inline {\n  display: flex;\n  flex-flow: row wrap;\n  align-items: center;\n}\n.form-inline .form-check {\n  width: 100%;\n}\n@media (min-width: 576px) {\n.form-inline label {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-bottom: 0;\n}\n.form-inline .form-group {\n    display: flex;\n    flex: 0 0 auto;\n    flex-flow: row wrap;\n    align-items: center;\n    margin-bottom: 0;\n}\n.form-inline .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n}\n.form-inline .form-control-plaintext {\n    display: inline-block;\n}\n.form-inline .input-group,\n  .form-inline .custom-select {\n    width: auto;\n}\n.form-inline .form-check {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: auto;\n    padding-left: 0;\n}\n.form-inline .form-check-input {\n    position: relative;\n    flex-shrink: 0;\n    margin-top: 0;\n    margin-right: 0.25rem;\n    margin-left: 0;\n}\n.form-inline .custom-control {\n    align-items: center;\n    justify-content: center;\n}\n.form-inline .custom-control-label {\n    margin-bottom: 0;\n}\n}\n.btn {\n  display: inline-block;\n  font-weight: 400;\n  color: #212529;\n  text-align: center;\n  vertical-align: middle;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n  background-color: transparent;\n  border: 1px solid transparent;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.25rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.btn {\n    transition: none;\n}\n}\n.btn:hover {\n  color: #212529;\n  text-decoration: none;\n}\n.btn:focus, .btn.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.btn.disabled, .btn:disabled {\n  opacity: 0.65;\n}\n.btn:not(:disabled):not(.disabled) {\n  cursor: pointer;\n}\na.btn.disabled,\nfieldset:disabled a.btn {\n  pointer-events: none;\n}\n.btn-primary {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-primary:hover {\n  color: #fff;\n  background-color: #0069d9;\n  border-color: #0062cc;\n}\n.btn-primary:focus, .btn-primary.focus {\n  color: #fff;\n  background-color: #0069d9;\n  border-color: #0062cc;\n  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);\n}\n.btn-primary.disabled, .btn-primary:disabled {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {\n  color: #fff;\n  background-color: #0062cc;\n  border-color: #005cbf;\n}\n.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);\n}\n.btn-secondary {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-secondary:hover {\n  color: #fff;\n  background-color: #5a6268;\n  border-color: #545b62;\n}\n.btn-secondary:focus, .btn-secondary.focus {\n  color: #fff;\n  background-color: #5a6268;\n  border-color: #545b62;\n  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);\n}\n.btn-secondary.disabled, .btn-secondary:disabled {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {\n  color: #fff;\n  background-color: #545b62;\n  border-color: #4e555b;\n}\n.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);\n}\n.btn-success {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-success:hover {\n  color: #fff;\n  background-color: #218838;\n  border-color: #1e7e34;\n}\n.btn-success:focus, .btn-success.focus {\n  color: #fff;\n  background-color: #218838;\n  border-color: #1e7e34;\n  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);\n}\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, .show > .btn-success.dropdown-toggle {\n  color: #fff;\n  background-color: #1e7e34;\n  border-color: #1c7430;\n}\n.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus, .show > .btn-success.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);\n}\n.btn-info {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-info:hover {\n  color: #fff;\n  background-color: #138496;\n  border-color: #117a8b;\n}\n.btn-info:focus, .btn-info.focus {\n  color: #fff;\n  background-color: #138496;\n  border-color: #117a8b;\n  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);\n}\n.btn-info.disabled, .btn-info:disabled {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active, .show > .btn-info.dropdown-toggle {\n  color: #fff;\n  background-color: #117a8b;\n  border-color: #10707f;\n}\n.btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus, .show > .btn-info.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);\n}\n.btn-warning {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-warning:hover {\n  color: #212529;\n  background-color: #e0a800;\n  border-color: #d39e00;\n}\n.btn-warning:focus, .btn-warning.focus {\n  color: #212529;\n  background-color: #e0a800;\n  border-color: #d39e00;\n  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);\n}\n.btn-warning.disabled, .btn-warning:disabled {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active, .show > .btn-warning.dropdown-toggle {\n  color: #212529;\n  background-color: #d39e00;\n  border-color: #c69500;\n}\n.btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus, .show > .btn-warning.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);\n}\n.btn-danger {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-danger:hover {\n  color: #fff;\n  background-color: #c82333;\n  border-color: #bd2130;\n}\n.btn-danger:focus, .btn-danger.focus {\n  color: #fff;\n  background-color: #c82333;\n  border-color: #bd2130;\n  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);\n}\n.btn-danger.disabled, .btn-danger:disabled {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active, .show > .btn-danger.dropdown-toggle {\n  color: #fff;\n  background-color: #bd2130;\n  border-color: #b21f2d;\n}\n.btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus, .show > .btn-danger.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);\n}\n.btn-light {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-light:hover {\n  color: #212529;\n  background-color: #e2e6ea;\n  border-color: #dae0e5;\n}\n.btn-light:focus, .btn-light.focus {\n  color: #212529;\n  background-color: #e2e6ea;\n  border-color: #dae0e5;\n  box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);\n}\n.btn-light.disabled, .btn-light:disabled {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active, .show > .btn-light.dropdown-toggle {\n  color: #212529;\n  background-color: #dae0e5;\n  border-color: #d3d9df;\n}\n.btn-light:not(:disabled):not(.disabled):active:focus, .btn-light:not(:disabled):not(.disabled).active:focus, .show > .btn-light.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);\n}\n.btn-dark {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-dark:hover {\n  color: #fff;\n  background-color: #23272b;\n  border-color: #1d2124;\n}\n.btn-dark:focus, .btn-dark.focus {\n  color: #fff;\n  background-color: #23272b;\n  border-color: #1d2124;\n  box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);\n}\n.btn-dark.disabled, .btn-dark:disabled {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active, .show > .btn-dark.dropdown-toggle {\n  color: #fff;\n  background-color: #1d2124;\n  border-color: #171a1d;\n}\n.btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus, .show > .btn-dark.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);\n}\n.btn-outline-primary {\n  color: #007bff;\n  border-color: #007bff;\n}\n.btn-outline-primary:hover {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-outline-primary:focus, .btn-outline-primary.focus {\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);\n}\n.btn-outline-primary.disabled, .btn-outline-primary:disabled {\n  color: #007bff;\n  background-color: transparent;\n}\n.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);\n}\n.btn-outline-secondary {\n  color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-outline-secondary:hover {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-outline-secondary:focus, .btn-outline-secondary.focus {\n  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);\n}\n.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {\n  color: #6c757d;\n  background-color: transparent;\n}\n.btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active, .show > .btn-outline-secondary.dropdown-toggle {\n  color: #fff;\n  background-color: #6c757d;\n  border-color: #6c757d;\n}\n.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-secondary.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);\n}\n.btn-outline-success {\n  color: #28a745;\n  border-color: #28a745;\n}\n.btn-outline-success:hover {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-outline-success:focus, .btn-outline-success.focus {\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n.btn-outline-success.disabled, .btn-outline-success:disabled {\n  color: #28a745;\n  background-color: transparent;\n}\n.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active, .show > .btn-outline-success.dropdown-toggle {\n  color: #fff;\n  background-color: #28a745;\n  border-color: #28a745;\n}\n.btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-success.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n.btn-outline-info {\n  color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-outline-info:hover {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-outline-info:focus, .btn-outline-info.focus {\n  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);\n}\n.btn-outline-info.disabled, .btn-outline-info:disabled {\n  color: #17a2b8;\n  background-color: transparent;\n}\n.btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active, .show > .btn-outline-info.dropdown-toggle {\n  color: #fff;\n  background-color: #17a2b8;\n  border-color: #17a2b8;\n}\n.btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-info.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);\n}\n.btn-outline-warning {\n  color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-outline-warning:hover {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-outline-warning:focus, .btn-outline-warning.focus {\n  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);\n}\n.btn-outline-warning.disabled, .btn-outline-warning:disabled {\n  color: #ffc107;\n  background-color: transparent;\n}\n.btn-outline-warning:not(:disabled):not(.disabled):active, .btn-outline-warning:not(:disabled):not(.disabled).active, .show > .btn-outline-warning.dropdown-toggle {\n  color: #212529;\n  background-color: #ffc107;\n  border-color: #ffc107;\n}\n.btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-warning.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);\n}\n.btn-outline-danger {\n  color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-outline-danger:hover {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-outline-danger:focus, .btn-outline-danger.focus {\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);\n}\n.btn-outline-danger.disabled, .btn-outline-danger:disabled {\n  color: #dc3545;\n  background-color: transparent;\n}\n.btn-outline-danger:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active, .show > .btn-outline-danger.dropdown-toggle {\n  color: #fff;\n  background-color: #dc3545;\n  border-color: #dc3545;\n}\n.btn-outline-danger:not(:disabled):not(.disabled):active:focus, .btn-outline-danger:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-danger.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);\n}\n.btn-outline-light {\n  color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-outline-light:hover {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-outline-light:focus, .btn-outline-light.focus {\n  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);\n}\n.btn-outline-light.disabled, .btn-outline-light:disabled {\n  color: #f8f9fa;\n  background-color: transparent;\n}\n.btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .show > .btn-outline-light.dropdown-toggle {\n  color: #212529;\n  background-color: #f8f9fa;\n  border-color: #f8f9fa;\n}\n.btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-light.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);\n}\n.btn-outline-dark {\n  color: #343a40;\n  border-color: #343a40;\n}\n.btn-outline-dark:hover {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-outline-dark:focus, .btn-outline-dark.focus {\n  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);\n}\n.btn-outline-dark.disabled, .btn-outline-dark:disabled {\n  color: #343a40;\n  background-color: transparent;\n}\n.btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active, .show > .btn-outline-dark.dropdown-toggle {\n  color: #fff;\n  background-color: #343a40;\n  border-color: #343a40;\n}\n.btn-outline-dark:not(:disabled):not(.disabled):active:focus, .btn-outline-dark:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-dark.dropdown-toggle:focus {\n  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);\n}\n.btn-link {\n  font-weight: 400;\n  color: #007bff;\n  text-decoration: none;\n}\n.btn-link:hover {\n  color: #0056b3;\n  text-decoration: underline;\n}\n.btn-link:focus, .btn-link.focus {\n  text-decoration: underline;\n}\n.btn-link:disabled, .btn-link.disabled {\n  color: #6c757d;\n  pointer-events: none;\n}\n.btn-lg, .btn-group-lg > .btn {\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\n.btn-sm, .btn-group-sm > .btn {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n.btn-block {\n  display: block;\n  width: 100%;\n}\n.btn-block + .btn-block {\n  margin-top: 0.5rem;\n}\ninput[type=submit].btn-block,\ninput[type=reset].btn-block,\ninput[type=button].btn-block {\n  width: 100%;\n}\n.fade {\n  transition: opacity 0.15s linear;\n}\n@media (prefers-reduced-motion: reduce) {\n.fade {\n    transition: none;\n}\n}\n.fade:not(.show) {\n  opacity: 0;\n}\n.collapse:not(.show) {\n  display: none;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  transition: height 0.35s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.collapsing {\n    transition: none;\n}\n}\n.collapsing.width {\n  width: 0;\n  height: auto;\n  transition: width 0.35s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.collapsing.width {\n    transition: none;\n}\n}\n.dropup,\n.dropright,\n.dropdown,\n.dropleft {\n  position: relative;\n}\n.dropdown-toggle {\n  white-space: nowrap;\n}\n.dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0.3em solid;\n  border-right: 0.3em solid transparent;\n  border-bottom: 0;\n  border-left: 0.3em solid transparent;\n}\n.dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 10rem;\n  padding: 0.5rem 0;\n  margin: 0.125rem 0 0;\n  font-size: 1rem;\n  color: #212529;\n  text-align: left;\n  list-style: none;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 0.25rem;\n}\n.dropdown-menu-left {\n  right: auto;\n  left: 0;\n}\n.dropdown-menu-right {\n  right: 0;\n  left: auto;\n}\n@media (min-width: 576px) {\n.dropdown-menu-sm-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-sm-right {\n    right: 0;\n    left: auto;\n}\n}\n@media (min-width: 768px) {\n.dropdown-menu-md-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-md-right {\n    right: 0;\n    left: auto;\n}\n}\n@media (min-width: 992px) {\n.dropdown-menu-lg-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-lg-right {\n    right: 0;\n    left: auto;\n}\n}\n@media (min-width: 1200px) {\n.dropdown-menu-xl-left {\n    right: auto;\n    left: 0;\n}\n.dropdown-menu-xl-right {\n    right: 0;\n    left: auto;\n}\n}\n.dropup .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-top: 0;\n  margin-bottom: 0.125rem;\n}\n.dropup .dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0;\n  border-right: 0.3em solid transparent;\n  border-bottom: 0.3em solid;\n  border-left: 0.3em solid transparent;\n}\n.dropup .dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropright .dropdown-menu {\n  top: 0;\n  right: auto;\n  left: 100%;\n  margin-top: 0;\n  margin-left: 0.125rem;\n}\n.dropright .dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0.3em solid transparent;\n  border-right: 0;\n  border-bottom: 0.3em solid transparent;\n  border-left: 0.3em solid;\n}\n.dropright .dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropright .dropdown-toggle::after {\n  vertical-align: 0;\n}\n.dropleft .dropdown-menu {\n  top: 0;\n  right: 100%;\n  left: auto;\n  margin-top: 0;\n  margin-right: 0.125rem;\n}\n.dropleft .dropdown-toggle::after {\n  display: inline-block;\n  margin-left: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n}\n.dropleft .dropdown-toggle::after {\n  display: none;\n}\n.dropleft .dropdown-toggle::before {\n  display: inline-block;\n  margin-right: 0.255em;\n  vertical-align: 0.255em;\n  content: \"\";\n  border-top: 0.3em solid transparent;\n  border-right: 0.3em solid;\n  border-bottom: 0.3em solid transparent;\n}\n.dropleft .dropdown-toggle:empty::after {\n  margin-left: 0;\n}\n.dropleft .dropdown-toggle::before {\n  vertical-align: 0;\n}\n.dropdown-menu[x-placement^=top], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left] {\n  right: auto;\n  bottom: auto;\n}\n.dropdown-divider {\n  height: 0;\n  margin: 0.5rem 0;\n  overflow: hidden;\n  border-top: 1px solid #e9ecef;\n}\n.dropdown-item {\n  display: block;\n  width: 100%;\n  padding: 0.25rem 1.5rem;\n  clear: both;\n  font-weight: 400;\n  color: #212529;\n  text-align: inherit;\n  white-space: nowrap;\n  background-color: transparent;\n  border: 0;\n}\n.dropdown-item:hover, .dropdown-item:focus {\n  color: #16181b;\n  text-decoration: none;\n  background-color: #e9ecef;\n}\n.dropdown-item.active, .dropdown-item:active {\n  color: #fff;\n  text-decoration: none;\n  background-color: #007bff;\n}\n.dropdown-item.disabled, .dropdown-item:disabled {\n  color: #adb5bd;\n  pointer-events: none;\n  background-color: transparent;\n}\n.dropdown-menu.show {\n  display: block;\n}\n.dropdown-header {\n  display: block;\n  padding: 0.5rem 1.5rem;\n  margin-bottom: 0;\n  font-size: 0.875rem;\n  color: #6c757d;\n  white-space: nowrap;\n}\n.dropdown-item-text {\n  display: block;\n  padding: 0.25rem 1.5rem;\n  color: #212529;\n}\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: inline-flex;\n  vertical-align: middle;\n}\n.btn-group > .btn,\n.btn-group-vertical > .btn {\n  position: relative;\n  flex: 1 1 auto;\n}\n.btn-group > .btn:hover,\n.btn-group-vertical > .btn:hover {\n  z-index: 1;\n}\n.btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,\n.btn-group-vertical > .btn:focus,\n.btn-group-vertical > .btn:active,\n.btn-group-vertical > .btn.active {\n  z-index: 1;\n}\n.btn-toolbar {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n}\n.btn-toolbar .input-group {\n  width: auto;\n}\n.btn-group > .btn:not(:first-child),\n.btn-group > .btn-group:not(:first-child) {\n  margin-left: -1px;\n}\n.btn-group > .btn:not(:last-child):not(.dropdown-toggle),\n.btn-group > .btn-group:not(:last-child) > .btn {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.btn-group > .btn:not(:first-child),\n.btn-group > .btn-group:not(:first-child) > .btn {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.dropdown-toggle-split {\n  padding-right: 0.5625rem;\n  padding-left: 0.5625rem;\n}\n.dropdown-toggle-split::after, .dropup .dropdown-toggle-split::after, .dropright .dropdown-toggle-split::after {\n  margin-left: 0;\n}\n.dropleft .dropdown-toggle-split::before {\n  margin-right: 0;\n}\n.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {\n  padding-right: 0.375rem;\n  padding-left: 0.375rem;\n}\n.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {\n  padding-right: 0.75rem;\n  padding-left: 0.75rem;\n}\n.btn-group-vertical {\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n}\n.btn-group-vertical > .btn,\n.btn-group-vertical > .btn-group {\n  width: 100%;\n}\n.btn-group-vertical > .btn:not(:first-child),\n.btn-group-vertical > .btn-group:not(:first-child) {\n  margin-top: -1px;\n}\n.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),\n.btn-group-vertical > .btn-group:not(:last-child) > .btn {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn:not(:first-child),\n.btn-group-vertical > .btn-group:not(:first-child) > .btn {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group-toggle > .btn,\n.btn-group-toggle > .btn-group > .btn {\n  margin-bottom: 0;\n}\n.btn-group-toggle > .btn input[type=radio],\n.btn-group-toggle > .btn input[type=checkbox],\n.btn-group-toggle > .btn-group > .btn input[type=radio],\n.btn-group-toggle > .btn-group > .btn input[type=checkbox] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n.input-group {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: stretch;\n  width: 100%;\n}\n.input-group > .form-control,\n.input-group > .form-control-plaintext,\n.input-group > .custom-select,\n.input-group > .custom-file {\n  position: relative;\n  flex: 1 1 auto;\n  width: 1%;\n  min-width: 0;\n  margin-bottom: 0;\n}\n.input-group > .form-control + .form-control,\n.input-group > .form-control + .custom-select,\n.input-group > .form-control + .custom-file,\n.input-group > .form-control-plaintext + .form-control,\n.input-group > .form-control-plaintext + .custom-select,\n.input-group > .form-control-plaintext + .custom-file,\n.input-group > .custom-select + .form-control,\n.input-group > .custom-select + .custom-select,\n.input-group > .custom-select + .custom-file,\n.input-group > .custom-file + .form-control,\n.input-group > .custom-file + .custom-select,\n.input-group > .custom-file + .custom-file {\n  margin-left: -1px;\n}\n.input-group > .form-control:focus,\n.input-group > .custom-select:focus,\n.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {\n  z-index: 3;\n}\n.input-group > .custom-file .custom-file-input:focus {\n  z-index: 4;\n}\n.input-group > .form-control:not(:first-child),\n.input-group > .custom-select:not(:first-child) {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.input-group > .custom-file {\n  display: flex;\n  align-items: center;\n}\n.input-group > .custom-file:not(:last-child) .custom-file-label, .input-group > .custom-file:not(:last-child) .custom-file-label::after {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group > .custom-file:not(:first-child) .custom-file-label {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.input-group:not(.has-validation) > .form-control:not(:last-child),\n.input-group:not(.has-validation) > .custom-select:not(:last-child),\n.input-group:not(.has-validation) > .custom-file:not(:last-child) .custom-file-label,\n.input-group:not(.has-validation) > .custom-file:not(:last-child) .custom-file-label::after {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group.has-validation > .form-control:nth-last-child(n+3),\n.input-group.has-validation > .custom-select:nth-last-child(n+3),\n.input-group.has-validation > .custom-file:nth-last-child(n+3) .custom-file-label,\n.input-group.has-validation > .custom-file:nth-last-child(n+3) .custom-file-label::after {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group-prepend,\n.input-group-append {\n  display: flex;\n}\n.input-group-prepend .btn,\n.input-group-append .btn {\n  position: relative;\n  z-index: 2;\n}\n.input-group-prepend .btn:focus,\n.input-group-append .btn:focus {\n  z-index: 3;\n}\n.input-group-prepend .btn + .btn,\n.input-group-prepend .btn + .input-group-text,\n.input-group-prepend .input-group-text + .input-group-text,\n.input-group-prepend .input-group-text + .btn,\n.input-group-append .btn + .btn,\n.input-group-append .btn + .input-group-text,\n.input-group-append .input-group-text + .input-group-text,\n.input-group-append .input-group-text + .btn {\n  margin-left: -1px;\n}\n.input-group-prepend {\n  margin-right: -1px;\n}\n.input-group-append {\n  margin-left: -1px;\n}\n.input-group-text {\n  display: flex;\n  align-items: center;\n  padding: 0.375rem 0.75rem;\n  margin-bottom: 0;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  text-align: center;\n  white-space: nowrap;\n  background-color: #e9ecef;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n}\n.input-group-text input[type=radio],\n.input-group-text input[type=checkbox] {\n  margin-top: 0;\n}\n.input-group-lg > .form-control:not(textarea),\n.input-group-lg > .custom-select {\n  height: calc(1.5em + 1rem + 2px);\n}\n.input-group-lg > .form-control,\n.input-group-lg > .custom-select,\n.input-group-lg > .input-group-prepend > .input-group-text,\n.input-group-lg > .input-group-append > .input-group-text,\n.input-group-lg > .input-group-prepend > .btn,\n.input-group-lg > .input-group-append > .btn {\n  padding: 0.5rem 1rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n  border-radius: 0.3rem;\n}\n.input-group-sm > .form-control:not(textarea),\n.input-group-sm > .custom-select {\n  height: calc(1.5em + 0.5rem + 2px);\n}\n.input-group-sm > .form-control,\n.input-group-sm > .custom-select,\n.input-group-sm > .input-group-prepend > .input-group-text,\n.input-group-sm > .input-group-append > .input-group-text,\n.input-group-sm > .input-group-prepend > .btn,\n.input-group-sm > .input-group-append > .btn {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n.input-group-lg > .custom-select,\n.input-group-sm > .custom-select {\n  padding-right: 1.75rem;\n}\n.input-group > .input-group-prepend > .btn,\n.input-group > .input-group-prepend > .input-group-text,\n.input-group:not(.has-validation) > .input-group-append:not(:last-child) > .btn,\n.input-group:not(.has-validation) > .input-group-append:not(:last-child) > .input-group-text,\n.input-group.has-validation > .input-group-append:nth-last-child(n+3) > .btn,\n.input-group.has-validation > .input-group-append:nth-last-child(n+3) > .input-group-text,\n.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.input-group > .input-group-append > .btn,\n.input-group > .input-group-append > .input-group-text,\n.input-group > .input-group-prepend:not(:first-child) > .btn,\n.input-group > .input-group-prepend:not(:first-child) > .input-group-text,\n.input-group > .input-group-prepend:first-child > .btn:not(:first-child),\n.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.custom-control {\n  position: relative;\n  z-index: 1;\n  display: block;\n  min-height: 1.5rem;\n  padding-left: 1.5rem;\n  -webkit-print-color-adjust: exact;\n          print-color-adjust: exact;\n}\n.custom-control-inline {\n  display: inline-flex;\n  margin-right: 1rem;\n}\n.custom-control-input {\n  position: absolute;\n  left: 0;\n  z-index: -1;\n  width: 1rem;\n  height: 1.25rem;\n  opacity: 0;\n}\n.custom-control-input:checked ~ .custom-control-label::before {\n  color: #fff;\n  border-color: #007bff;\n  background-color: #007bff;\n}\n.custom-control-input:focus ~ .custom-control-label::before {\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {\n  border-color: #80bdff;\n}\n.custom-control-input:not(:disabled):active ~ .custom-control-label::before {\n  color: #fff;\n  background-color: #b3d7ff;\n  border-color: #b3d7ff;\n}\n.custom-control-input[disabled] ~ .custom-control-label, .custom-control-input:disabled ~ .custom-control-label {\n  color: #6c757d;\n}\n.custom-control-input[disabled] ~ .custom-control-label::before, .custom-control-input:disabled ~ .custom-control-label::before {\n  background-color: #e9ecef;\n}\n.custom-control-label {\n  position: relative;\n  margin-bottom: 0;\n  vertical-align: top;\n}\n.custom-control-label::before {\n  position: absolute;\n  top: 0.25rem;\n  left: -1.5rem;\n  display: block;\n  width: 1rem;\n  height: 1rem;\n  pointer-events: none;\n  content: \"\";\n  background-color: #fff;\n  border: 1px solid #adb5bd;\n}\n.custom-control-label::after {\n  position: absolute;\n  top: 0.25rem;\n  left: -1.5rem;\n  display: block;\n  width: 1rem;\n  height: 1rem;\n  content: \"\";\n  background: 50%/50% 50% no-repeat;\n}\n.custom-checkbox .custom-control-label::before {\n  border-radius: 0.25rem;\n}\n.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e\");\n}\n.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {\n  border-color: #007bff;\n  background-color: #007bff;\n}\n.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e\");\n}\n.custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-radio .custom-control-label::before {\n  border-radius: 50%;\n}\n.custom-radio .custom-control-input:checked ~ .custom-control-label::after {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e\");\n}\n.custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-switch {\n  padding-left: 2.25rem;\n}\n.custom-switch .custom-control-label::before {\n  left: -2.25rem;\n  width: 1.75rem;\n  pointer-events: all;\n  border-radius: 0.5rem;\n}\n.custom-switch .custom-control-label::after {\n  top: calc(0.25rem + 2px);\n  left: calc(-2.25rem + 2px);\n  width: calc(1rem - 4px);\n  height: calc(1rem - 4px);\n  background-color: #adb5bd;\n  border-radius: 0.5rem;\n  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-switch .custom-control-label::after {\n    transition: none;\n}\n}\n.custom-switch .custom-control-input:checked ~ .custom-control-label::after {\n  background-color: #fff;\n  transform: translateX(0.75rem);\n}\n.custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {\n  background-color: rgba(0, 123, 255, 0.5);\n}\n.custom-select {\n  display: inline-block;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  padding: 0.375rem 1.75rem 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  vertical-align: middle;\n  background: #fff url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e\") right 0.75rem center/8px 10px no-repeat;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\n.custom-select:focus {\n  border-color: #80bdff;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-select:focus::-ms-value {\n  color: #495057;\n  background-color: #fff;\n}\n.custom-select[multiple], .custom-select[size]:not([size=\"1\"]) {\n  height: auto;\n  padding-right: 0.75rem;\n  background-image: none;\n}\n.custom-select:disabled {\n  color: #6c757d;\n  background-color: #e9ecef;\n}\n.custom-select::-ms-expand {\n  display: none;\n}\n.custom-select:-moz-focusring {\n  color: transparent;\n  text-shadow: 0 0 0 #495057;\n}\n.custom-select-sm {\n  height: calc(1.5em + 0.5rem + 2px);\n  padding-top: 0.25rem;\n  padding-bottom: 0.25rem;\n  padding-left: 0.5rem;\n  font-size: 0.875rem;\n}\n.custom-select-lg {\n  height: calc(1.5em + 1rem + 2px);\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  padding-left: 1rem;\n  font-size: 1.25rem;\n}\n.custom-file {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  margin-bottom: 0;\n}\n.custom-file-input {\n  position: relative;\n  z-index: 2;\n  width: 100%;\n  height: calc(1.5em + 0.75rem + 2px);\n  margin: 0;\n  overflow: hidden;\n  opacity: 0;\n}\n.custom-file-input:focus ~ .custom-file-label {\n  border-color: #80bdff;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-file-input[disabled] ~ .custom-file-label, .custom-file-input:disabled ~ .custom-file-label {\n  background-color: #e9ecef;\n}\n.custom-file-input:lang(en) ~ .custom-file-label::after {\n  content: \"Browse\";\n}\n.custom-file-input ~ .custom-file-label[data-browse]::after {\n  content: attr(data-browse);\n}\n.custom-file-label {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 1;\n  height: calc(1.5em + 0.75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  overflow: hidden;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  background-color: #fff;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n}\n.custom-file-label::after {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 3;\n  display: block;\n  height: calc(1.5em + 0.75rem);\n  padding: 0.375rem 0.75rem;\n  line-height: 1.5;\n  color: #495057;\n  content: \"Browse\";\n  background-color: #e9ecef;\n  border-left: inherit;\n  border-radius: 0 0.25rem 0.25rem 0;\n}\n.custom-range {\n  width: 100%;\n  height: 1.4rem;\n  padding: 0;\n  background-color: transparent;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n}\n.custom-range:focus {\n  outline: 0;\n}\n.custom-range:focus::-webkit-slider-thumb {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-range:focus::-moz-range-thumb {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-range:focus::-ms-thumb {\n  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.custom-range::-moz-focus-outer {\n  border: 0;\n}\n.custom-range::-webkit-slider-thumb {\n  width: 1rem;\n  height: 1rem;\n  margin-top: -0.25rem;\n  background-color: #007bff;\n  border: 0;\n  border-radius: 1rem;\n  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -webkit-appearance: none;\n          appearance: none;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-range::-webkit-slider-thumb {\n    -webkit-transition: none;\n    transition: none;\n}\n}\n.custom-range::-webkit-slider-thumb:active {\n  background-color: #b3d7ff;\n}\n.custom-range::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 0.5rem;\n  color: transparent;\n  cursor: pointer;\n  background-color: #dee2e6;\n  border-color: transparent;\n  border-radius: 1rem;\n}\n.custom-range::-moz-range-thumb {\n  width: 1rem;\n  height: 1rem;\n  background-color: #007bff;\n  border: 0;\n  border-radius: 1rem;\n  -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  -moz-appearance: none;\n       appearance: none;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-range::-moz-range-thumb {\n    -moz-transition: none;\n    transition: none;\n}\n}\n.custom-range::-moz-range-thumb:active {\n  background-color: #b3d7ff;\n}\n.custom-range::-moz-range-track {\n  width: 100%;\n  height: 0.5rem;\n  color: transparent;\n  cursor: pointer;\n  background-color: #dee2e6;\n  border-color: transparent;\n  border-radius: 1rem;\n}\n.custom-range::-ms-thumb {\n  width: 1rem;\n  height: 1rem;\n  margin-top: 0;\n  margin-right: 0.2rem;\n  margin-left: 0.2rem;\n  background-color: #007bff;\n  border: 0;\n  border-radius: 1rem;\n  -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  appearance: none;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-range::-ms-thumb {\n    -ms-transition: none;\n    transition: none;\n}\n}\n.custom-range::-ms-thumb:active {\n  background-color: #b3d7ff;\n}\n.custom-range::-ms-track {\n  width: 100%;\n  height: 0.5rem;\n  color: transparent;\n  cursor: pointer;\n  background-color: transparent;\n  border-color: transparent;\n  border-width: 0.5rem;\n}\n.custom-range::-ms-fill-lower {\n  background-color: #dee2e6;\n  border-radius: 1rem;\n}\n.custom-range::-ms-fill-upper {\n  margin-right: 15px;\n  background-color: #dee2e6;\n  border-radius: 1rem;\n}\n.custom-range:disabled::-webkit-slider-thumb {\n  background-color: #adb5bd;\n}\n.custom-range:disabled::-webkit-slider-runnable-track {\n  cursor: default;\n}\n.custom-range:disabled::-moz-range-thumb {\n  background-color: #adb5bd;\n}\n.custom-range:disabled::-moz-range-track {\n  cursor: default;\n}\n.custom-range:disabled::-ms-thumb {\n  background-color: #adb5bd;\n}\n.custom-control-label::before,\n.custom-file-label,\n.custom-select {\n  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.custom-control-label::before,\n  .custom-file-label,\n  .custom-select {\n    transition: none;\n}\n}\n.nav {\n  display: flex;\n  flex-wrap: wrap;\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.nav-link {\n  display: block;\n  padding: 0.5rem 1rem;\n}\n.nav-link:hover, .nav-link:focus {\n  text-decoration: none;\n}\n.nav-link.disabled {\n  color: #6c757d;\n  pointer-events: none;\n  cursor: default;\n}\n.nav-tabs {\n  border-bottom: 1px solid #dee2e6;\n}\n.nav-tabs .nav-link {\n  margin-bottom: -1px;\n  background-color: transparent;\n  border: 1px solid transparent;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {\n  isolation: isolate;\n  border-color: #e9ecef #e9ecef #dee2e6;\n}\n.nav-tabs .nav-link.disabled {\n  color: #6c757d;\n  background-color: transparent;\n  border-color: transparent;\n}\n.nav-tabs .nav-link.active,\n.nav-tabs .nav-item.show .nav-link {\n  color: #495057;\n  background-color: #fff;\n  border-color: #dee2e6 #dee2e6 #fff;\n}\n.nav-tabs .dropdown-menu {\n  margin-top: -1px;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.nav-pills .nav-link {\n  background: none;\n  border: 0;\n  border-radius: 0.25rem;\n}\n.nav-pills .nav-link.active,\n.nav-pills .show > .nav-link {\n  color: #fff;\n  background-color: #007bff;\n}\n.nav-fill > .nav-link,\n.nav-fill .nav-item {\n  flex: 1 1 auto;\n  text-align: center;\n}\n.nav-justified > .nav-link,\n.nav-justified .nav-item {\n  flex-basis: 0;\n  flex-grow: 1;\n  text-align: center;\n}\n.tab-content > .tab-pane {\n  display: none;\n}\n.tab-content > .active {\n  display: block;\n}\n.navbar {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem 1rem;\n}\n.navbar .container,\n.navbar .container-fluid,\n.navbar .container-sm,\n.navbar .container-md,\n.navbar .container-lg,\n.navbar .container-xl {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n}\n.navbar-brand {\n  display: inline-block;\n  padding-top: 0.3125rem;\n  padding-bottom: 0.3125rem;\n  margin-right: 1rem;\n  font-size: 1.25rem;\n  line-height: inherit;\n  white-space: nowrap;\n}\n.navbar-brand:hover, .navbar-brand:focus {\n  text-decoration: none;\n}\n.navbar-nav {\n  display: flex;\n  flex-direction: column;\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.navbar-nav .nav-link {\n  padding-right: 0;\n  padding-left: 0;\n}\n.navbar-nav .dropdown-menu {\n  position: static;\n  float: none;\n}\n.navbar-text {\n  display: inline-block;\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n}\n.navbar-collapse {\n  flex-basis: 100%;\n  flex-grow: 1;\n  align-items: center;\n}\n.navbar-toggler {\n  padding: 0.25rem 0.75rem;\n  font-size: 1.25rem;\n  line-height: 1;\n  background-color: transparent;\n  border: 1px solid transparent;\n  border-radius: 0.25rem;\n}\n.navbar-toggler:hover, .navbar-toggler:focus {\n  text-decoration: none;\n}\n.navbar-toggler-icon {\n  display: inline-block;\n  width: 1.5em;\n  height: 1.5em;\n  vertical-align: middle;\n  content: \"\";\n  background: 50%/100% 100% no-repeat;\n}\n.navbar-nav-scroll {\n  max-height: 75vh;\n  overflow-y: auto;\n}\n@media (max-width: 575.98px) {\n.navbar-expand-sm > .container,\n  .navbar-expand-sm > .container-fluid,\n  .navbar-expand-sm > .container-sm,\n  .navbar-expand-sm > .container-md,\n  .navbar-expand-sm > .container-lg,\n  .navbar-expand-sm > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 576px) {\n.navbar-expand-sm {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-sm .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-sm .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-sm .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-sm > .container,\n  .navbar-expand-sm > .container-fluid,\n  .navbar-expand-sm > .container-sm,\n  .navbar-expand-sm > .container-md,\n  .navbar-expand-sm > .container-lg,\n  .navbar-expand-sm > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-sm .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-sm .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-sm .navbar-toggler {\n    display: none;\n}\n}\n@media (max-width: 767.98px) {\n.navbar-expand-md > .container,\n  .navbar-expand-md > .container-fluid,\n  .navbar-expand-md > .container-sm,\n  .navbar-expand-md > .container-md,\n  .navbar-expand-md > .container-lg,\n  .navbar-expand-md > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 768px) {\n.navbar-expand-md {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-md .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-md .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-md .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-md > .container,\n  .navbar-expand-md > .container-fluid,\n  .navbar-expand-md > .container-sm,\n  .navbar-expand-md > .container-md,\n  .navbar-expand-md > .container-lg,\n  .navbar-expand-md > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-md .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-md .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-md .navbar-toggler {\n    display: none;\n}\n}\n@media (max-width: 991.98px) {\n.navbar-expand-lg > .container,\n  .navbar-expand-lg > .container-fluid,\n  .navbar-expand-lg > .container-sm,\n  .navbar-expand-lg > .container-md,\n  .navbar-expand-lg > .container-lg,\n  .navbar-expand-lg > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) {\n.navbar-expand-lg {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-lg .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-lg .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-lg .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-lg > .container,\n  .navbar-expand-lg > .container-fluid,\n  .navbar-expand-lg > .container-sm,\n  .navbar-expand-lg > .container-md,\n  .navbar-expand-lg > .container-lg,\n  .navbar-expand-lg > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-lg .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-lg .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-lg .navbar-toggler {\n    display: none;\n}\n}\n@media (max-width: 1199.98px) {\n.navbar-expand-xl > .container,\n  .navbar-expand-xl > .container-fluid,\n  .navbar-expand-xl > .container-sm,\n  .navbar-expand-xl > .container-md,\n  .navbar-expand-xl > .container-lg,\n  .navbar-expand-xl > .container-xl {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 1200px) {\n.navbar-expand-xl {\n    flex-flow: row nowrap;\n    justify-content: flex-start;\n}\n.navbar-expand-xl .navbar-nav {\n    flex-direction: row;\n}\n.navbar-expand-xl .navbar-nav .dropdown-menu {\n    position: absolute;\n}\n.navbar-expand-xl .navbar-nav .nav-link {\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n}\n.navbar-expand-xl > .container,\n  .navbar-expand-xl > .container-fluid,\n  .navbar-expand-xl > .container-sm,\n  .navbar-expand-xl > .container-md,\n  .navbar-expand-xl > .container-lg,\n  .navbar-expand-xl > .container-xl {\n    flex-wrap: nowrap;\n}\n.navbar-expand-xl .navbar-nav-scroll {\n    overflow: visible;\n}\n.navbar-expand-xl .navbar-collapse {\n    display: flex !important;\n    flex-basis: auto;\n}\n.navbar-expand-xl .navbar-toggler {\n    display: none;\n}\n}\n.navbar-expand {\n  flex-flow: row nowrap;\n  justify-content: flex-start;\n}\n.navbar-expand > .container,\n.navbar-expand > .container-fluid,\n.navbar-expand > .container-sm,\n.navbar-expand > .container-md,\n.navbar-expand > .container-lg,\n.navbar-expand > .container-xl {\n  padding-right: 0;\n  padding-left: 0;\n}\n.navbar-expand .navbar-nav {\n  flex-direction: row;\n}\n.navbar-expand .navbar-nav .dropdown-menu {\n  position: absolute;\n}\n.navbar-expand .navbar-nav .nav-link {\n  padding-right: 0.5rem;\n  padding-left: 0.5rem;\n}\n.navbar-expand > .container,\n.navbar-expand > .container-fluid,\n.navbar-expand > .container-sm,\n.navbar-expand > .container-md,\n.navbar-expand > .container-lg,\n.navbar-expand > .container-xl {\n  flex-wrap: nowrap;\n}\n.navbar-expand .navbar-nav-scroll {\n  overflow: visible;\n}\n.navbar-expand .navbar-collapse {\n  display: flex !important;\n  flex-basis: auto;\n}\n.navbar-expand .navbar-toggler {\n  display: none;\n}\n.navbar-light .navbar-brand {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-nav .nav-link {\n  color: rgba(0, 0, 0, 0.5);\n}\n.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {\n  color: rgba(0, 0, 0, 0.7);\n}\n.navbar-light .navbar-nav .nav-link.disabled {\n  color: rgba(0, 0, 0, 0.3);\n}\n.navbar-light .navbar-nav .show > .nav-link,\n.navbar-light .navbar-nav .active > .nav-link,\n.navbar-light .navbar-nav .nav-link.show,\n.navbar-light .navbar-nav .nav-link.active {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-toggler {\n  color: rgba(0, 0, 0, 0.5);\n  border-color: rgba(0, 0, 0, 0.1);\n}\n.navbar-light .navbar-toggler-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\");\n}\n.navbar-light .navbar-text {\n  color: rgba(0, 0, 0, 0.5);\n}\n.navbar-light .navbar-text a {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-dark .navbar-brand {\n  color: #fff;\n}\n.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {\n  color: #fff;\n}\n.navbar-dark .navbar-nav .nav-link {\n  color: rgba(255, 255, 255, 0.5);\n}\n.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {\n  color: rgba(255, 255, 255, 0.75);\n}\n.navbar-dark .navbar-nav .nav-link.disabled {\n  color: rgba(255, 255, 255, 0.25);\n}\n.navbar-dark .navbar-nav .show > .nav-link,\n.navbar-dark .navbar-nav .active > .nav-link,\n.navbar-dark .navbar-nav .nav-link.show,\n.navbar-dark .navbar-nav .nav-link.active {\n  color: #fff;\n}\n.navbar-dark .navbar-toggler {\n  color: rgba(255, 255, 255, 0.5);\n  border-color: rgba(255, 255, 255, 0.1);\n}\n.navbar-dark .navbar-toggler-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\");\n}\n.navbar-dark .navbar-text {\n  color: rgba(255, 255, 255, 0.5);\n}\n.navbar-dark .navbar-text a {\n  color: #fff;\n}\n.navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {\n  color: #fff;\n}\n.card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n  word-wrap: break-word;\n  background-color: #fff;\n  background-clip: border-box;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n}\n.card > hr {\n  margin-right: 0;\n  margin-left: 0;\n}\n.card > .list-group {\n  border-top: inherit;\n  border-bottom: inherit;\n}\n.card > .list-group:first-child {\n  border-top-width: 0;\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.card > .list-group:last-child {\n  border-bottom-width: 0;\n  border-bottom-right-radius: calc(0.25rem - 1px);\n  border-bottom-left-radius: calc(0.25rem - 1px);\n}\n.card > .card-header + .list-group,\n.card > .list-group + .card-footer {\n  border-top: 0;\n}\n.card-body {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 1.25rem;\n}\n.card-title {\n  margin-bottom: 0.75rem;\n}\n.card-subtitle {\n  margin-top: -0.375rem;\n  margin-bottom: 0;\n}\n.card-text:last-child {\n  margin-bottom: 0;\n}\n.card-link:hover {\n  text-decoration: none;\n}\n.card-link + .card-link {\n  margin-left: 1.25rem;\n}\n.card-header {\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 0;\n  background-color: rgba(0, 0, 0, 0.03);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.125);\n}\n.card-header:first-child {\n  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;\n}\n.card-footer {\n  padding: 0.75rem 1.25rem;\n  background-color: rgba(0, 0, 0, 0.03);\n  border-top: 1px solid rgba(0, 0, 0, 0.125);\n}\n.card-footer:last-child {\n  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);\n}\n.card-header-tabs {\n  margin-right: -0.625rem;\n  margin-bottom: -0.75rem;\n  margin-left: -0.625rem;\n  border-bottom: 0;\n}\n.card-header-pills {\n  margin-right: -0.625rem;\n  margin-left: -0.625rem;\n}\n.card-img-overlay {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 1.25rem;\n  border-radius: calc(0.25rem - 1px);\n}\n.card-img,\n.card-img-top,\n.card-img-bottom {\n  flex-shrink: 0;\n  width: 100%;\n}\n.card-img,\n.card-img-top {\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.card-img,\n.card-img-bottom {\n  border-bottom-right-radius: calc(0.25rem - 1px);\n  border-bottom-left-radius: calc(0.25rem - 1px);\n}\n.card-deck .card {\n  margin-bottom: 15px;\n}\n@media (min-width: 576px) {\n.card-deck {\n    display: flex;\n    flex-flow: row wrap;\n    margin-right: -15px;\n    margin-left: -15px;\n}\n.card-deck .card {\n    flex: 1 0 0%;\n    margin-right: 15px;\n    margin-bottom: 0;\n    margin-left: 15px;\n}\n}\n.card-group > .card {\n  margin-bottom: 15px;\n}\n@media (min-width: 576px) {\n.card-group {\n    display: flex;\n    flex-flow: row wrap;\n}\n.card-group > .card {\n    flex: 1 0 0%;\n    margin-bottom: 0;\n}\n.card-group > .card + .card {\n    margin-left: 0;\n    border-left: 0;\n}\n.card-group > .card:not(:last-child) {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n}\n.card-group > .card:not(:last-child) .card-img-top,\n  .card-group > .card:not(:last-child) .card-header {\n    border-top-right-radius: 0;\n}\n.card-group > .card:not(:last-child) .card-img-bottom,\n  .card-group > .card:not(:last-child) .card-footer {\n    border-bottom-right-radius: 0;\n}\n.card-group > .card:not(:first-child) {\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n.card-group > .card:not(:first-child) .card-img-top,\n  .card-group > .card:not(:first-child) .card-header {\n    border-top-left-radius: 0;\n}\n.card-group > .card:not(:first-child) .card-img-bottom,\n  .card-group > .card:not(:first-child) .card-footer {\n    border-bottom-left-radius: 0;\n}\n}\n.card-columns .card {\n  margin-bottom: 0.75rem;\n}\n@media (min-width: 576px) {\n.card-columns {\n    -moz-column-count: 3;\n         column-count: 3;\n    -moz-column-gap: 1.25rem;\n         column-gap: 1.25rem;\n    orphans: 1;\n    widows: 1;\n}\n.card-columns .card {\n    display: inline-block;\n    width: 100%;\n}\n}\n.accordion {\n  overflow-anchor: none;\n}\n.accordion > .card {\n  overflow: hidden;\n}\n.accordion > .card:not(:last-of-type) {\n  border-bottom: 0;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.accordion > .card:not(:first-of-type) {\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n}\n.accordion > .card > .card-header {\n  border-radius: 0;\n  margin-bottom: -1px;\n}\n.breadcrumb {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0.75rem 1rem;\n  margin-bottom: 1rem;\n  list-style: none;\n  background-color: #e9ecef;\n  border-radius: 0.25rem;\n}\n.breadcrumb-item + .breadcrumb-item {\n  padding-left: 0.5rem;\n}\n.breadcrumb-item + .breadcrumb-item::before {\n  float: left;\n  padding-right: 0.5rem;\n  color: #6c757d;\n  content: \"/\";\n}\n.breadcrumb-item + .breadcrumb-item:hover::before {\n  text-decoration: underline;\n}\n.breadcrumb-item + .breadcrumb-item:hover::before {\n  text-decoration: none;\n}\n.breadcrumb-item.active {\n  color: #6c757d;\n}\n.pagination {\n  display: flex;\n  padding-left: 0;\n  list-style: none;\n  border-radius: 0.25rem;\n}\n.page-link {\n  position: relative;\n  display: block;\n  padding: 0.5rem 0.75rem;\n  margin-left: -1px;\n  line-height: 1.25;\n  color: #007bff;\n  background-color: #fff;\n  border: 1px solid #dee2e6;\n}\n.page-link:hover {\n  z-index: 2;\n  color: #0056b3;\n  text-decoration: none;\n  background-color: #e9ecef;\n  border-color: #dee2e6;\n}\n.page-link:focus {\n  z-index: 3;\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);\n}\n.page-item:first-child .page-link {\n  margin-left: 0;\n  border-top-left-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n}\n.page-item:last-child .page-link {\n  border-top-right-radius: 0.25rem;\n  border-bottom-right-radius: 0.25rem;\n}\n.page-item.active .page-link {\n  z-index: 3;\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.page-item.disabled .page-link {\n  color: #6c757d;\n  pointer-events: none;\n  cursor: auto;\n  background-color: #fff;\n  border-color: #dee2e6;\n}\n.pagination-lg .page-link {\n  padding: 0.75rem 1.5rem;\n  font-size: 1.25rem;\n  line-height: 1.5;\n}\n.pagination-lg .page-item:first-child .page-link {\n  border-top-left-radius: 0.3rem;\n  border-bottom-left-radius: 0.3rem;\n}\n.pagination-lg .page-item:last-child .page-link {\n  border-top-right-radius: 0.3rem;\n  border-bottom-right-radius: 0.3rem;\n}\n.pagination-sm .page-link {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n}\n.pagination-sm .page-item:first-child .page-link {\n  border-top-left-radius: 0.2rem;\n  border-bottom-left-radius: 0.2rem;\n}\n.pagination-sm .page-item:last-child .page-link {\n  border-top-right-radius: 0.2rem;\n  border-bottom-right-radius: 0.2rem;\n}\n.badge {\n  display: inline-block;\n  padding: 0.25em 0.4em;\n  font-size: 75%;\n  font-weight: 700;\n  line-height: 1;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: 0.25rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.badge {\n    transition: none;\n}\n}\na.badge:hover, a.badge:focus {\n  text-decoration: none;\n}\n.badge:empty {\n  display: none;\n}\n.btn .badge {\n  position: relative;\n  top: -1px;\n}\n.badge-pill {\n  padding-right: 0.6em;\n  padding-left: 0.6em;\n  border-radius: 10rem;\n}\n.badge-primary {\n  color: #fff;\n  background-color: #007bff;\n}\na.badge-primary:hover, a.badge-primary:focus {\n  color: #fff;\n  background-color: #0062cc;\n}\na.badge-primary:focus, a.badge-primary.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);\n}\n.badge-secondary {\n  color: #fff;\n  background-color: #6c757d;\n}\na.badge-secondary:hover, a.badge-secondary:focus {\n  color: #fff;\n  background-color: #545b62;\n}\na.badge-secondary:focus, a.badge-secondary.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);\n}\n.badge-success {\n  color: #fff;\n  background-color: #28a745;\n}\na.badge-success:hover, a.badge-success:focus {\n  color: #fff;\n  background-color: #1e7e34;\n}\na.badge-success:focus, a.badge-success.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);\n}\n.badge-info {\n  color: #fff;\n  background-color: #17a2b8;\n}\na.badge-info:hover, a.badge-info:focus {\n  color: #fff;\n  background-color: #117a8b;\n}\na.badge-info:focus, a.badge-info.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);\n}\n.badge-warning {\n  color: #212529;\n  background-color: #ffc107;\n}\na.badge-warning:hover, a.badge-warning:focus {\n  color: #212529;\n  background-color: #d39e00;\n}\na.badge-warning:focus, a.badge-warning.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);\n}\n.badge-danger {\n  color: #fff;\n  background-color: #dc3545;\n}\na.badge-danger:hover, a.badge-danger:focus {\n  color: #fff;\n  background-color: #bd2130;\n}\na.badge-danger:focus, a.badge-danger.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);\n}\n.badge-light {\n  color: #212529;\n  background-color: #f8f9fa;\n}\na.badge-light:hover, a.badge-light:focus {\n  color: #212529;\n  background-color: #dae0e5;\n}\na.badge-light:focus, a.badge-light.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);\n}\n.badge-dark {\n  color: #fff;\n  background-color: #343a40;\n}\na.badge-dark:hover, a.badge-dark:focus {\n  color: #fff;\n  background-color: #1d2124;\n}\na.badge-dark:focus, a.badge-dark.focus {\n  outline: 0;\n  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);\n}\n.jumbotron {\n  padding: 2rem 1rem;\n  margin-bottom: 2rem;\n  background-color: #e9ecef;\n  border-radius: 0.3rem;\n}\n@media (min-width: 576px) {\n.jumbotron {\n    padding: 4rem 2rem;\n}\n}\n.jumbotron-fluid {\n  padding-right: 0;\n  padding-left: 0;\n  border-radius: 0;\n}\n.alert {\n  position: relative;\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 1rem;\n  border: 1px solid transparent;\n  border-radius: 0.25rem;\n}\n.alert-heading {\n  color: inherit;\n}\n.alert-link {\n  font-weight: 700;\n}\n.alert-dismissible {\n  padding-right: 4rem;\n}\n.alert-dismissible .close {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  padding: 0.75rem 1.25rem;\n  color: inherit;\n}\n.alert-primary {\n  color: #004085;\n  background-color: #cce5ff;\n  border-color: #b8daff;\n}\n.alert-primary hr {\n  border-top-color: #9fcdff;\n}\n.alert-primary .alert-link {\n  color: #002752;\n}\n.alert-secondary {\n  color: #383d41;\n  background-color: #e2e3e5;\n  border-color: #d6d8db;\n}\n.alert-secondary hr {\n  border-top-color: #c8cbcf;\n}\n.alert-secondary .alert-link {\n  color: #202326;\n}\n.alert-success {\n  color: #155724;\n  background-color: #d4edda;\n  border-color: #c3e6cb;\n}\n.alert-success hr {\n  border-top-color: #b1dfbb;\n}\n.alert-success .alert-link {\n  color: #0b2e13;\n}\n.alert-info {\n  color: #0c5460;\n  background-color: #d1ecf1;\n  border-color: #bee5eb;\n}\n.alert-info hr {\n  border-top-color: #abdde5;\n}\n.alert-info .alert-link {\n  color: #062c33;\n}\n.alert-warning {\n  color: #856404;\n  background-color: #fff3cd;\n  border-color: #ffeeba;\n}\n.alert-warning hr {\n  border-top-color: #ffe8a1;\n}\n.alert-warning .alert-link {\n  color: #533f03;\n}\n.alert-danger {\n  color: #721c24;\n  background-color: #f8d7da;\n  border-color: #f5c6cb;\n}\n.alert-danger hr {\n  border-top-color: #f1b0b7;\n}\n.alert-danger .alert-link {\n  color: #491217;\n}\n.alert-light {\n  color: #818182;\n  background-color: #fefefe;\n  border-color: #fdfdfe;\n}\n.alert-light hr {\n  border-top-color: #ececf6;\n}\n.alert-light .alert-link {\n  color: #686868;\n}\n.alert-dark {\n  color: #1b1e21;\n  background-color: #d6d8d9;\n  border-color: #c6c8ca;\n}\n.alert-dark hr {\n  border-top-color: #b9bbbe;\n}\n.alert-dark .alert-link {\n  color: #040505;\n}\n@keyframes progress-bar-stripes {\nfrom {\n    background-position: 1rem 0;\n}\nto {\n    background-position: 0 0;\n}\n}\n.progress {\n  display: flex;\n  height: 1rem;\n  overflow: hidden;\n  line-height: 0;\n  font-size: 0.75rem;\n  background-color: #e9ecef;\n  border-radius: 0.25rem;\n}\n.progress-bar {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  overflow: hidden;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  background-color: #007bff;\n  transition: width 0.6s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.progress-bar {\n    transition: none;\n}\n}\n.progress-bar-striped {\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 1rem 1rem;\n}\n.progress-bar-animated {\n  animation: 1s linear infinite progress-bar-stripes;\n}\n@media (prefers-reduced-motion: reduce) {\n.progress-bar-animated {\n    animation: none;\n}\n}\n.media {\n  display: flex;\n  align-items: flex-start;\n}\n.media-body {\n  flex: 1;\n}\n.list-group {\n  display: flex;\n  flex-direction: column;\n  padding-left: 0;\n  margin-bottom: 0;\n  border-radius: 0.25rem;\n}\n.list-group-item-action {\n  width: 100%;\n  color: #495057;\n  text-align: inherit;\n}\n.list-group-item-action:hover, .list-group-item-action:focus {\n  z-index: 1;\n  color: #495057;\n  text-decoration: none;\n  background-color: #f8f9fa;\n}\n.list-group-item-action:active {\n  color: #212529;\n  background-color: #e9ecef;\n}\n.list-group-item {\n  position: relative;\n  display: block;\n  padding: 0.75rem 1.25rem;\n  background-color: #fff;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n}\n.list-group-item:first-child {\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n}\n.list-group-item:last-child {\n  border-bottom-right-radius: inherit;\n  border-bottom-left-radius: inherit;\n}\n.list-group-item.disabled, .list-group-item:disabled {\n  color: #6c757d;\n  pointer-events: none;\n  background-color: #fff;\n}\n.list-group-item.active {\n  z-index: 2;\n  color: #fff;\n  background-color: #007bff;\n  border-color: #007bff;\n}\n.list-group-item + .list-group-item {\n  border-top-width: 0;\n}\n.list-group-item + .list-group-item.active {\n  margin-top: -1px;\n  border-top-width: 1px;\n}\n.list-group-horizontal {\n  flex-direction: row;\n}\n.list-group-horizontal > .list-group-item:first-child {\n  border-bottom-left-radius: 0.25rem;\n  border-top-right-radius: 0;\n}\n.list-group-horizontal > .list-group-item:last-child {\n  border-top-right-radius: 0.25rem;\n  border-bottom-left-radius: 0;\n}\n.list-group-horizontal > .list-group-item.active {\n  margin-top: 0;\n}\n.list-group-horizontal > .list-group-item + .list-group-item {\n  border-top-width: 1px;\n  border-left-width: 0;\n}\n.list-group-horizontal > .list-group-item + .list-group-item.active {\n  margin-left: -1px;\n  border-left-width: 1px;\n}\n@media (min-width: 576px) {\n.list-group-horizontal-sm {\n    flex-direction: row;\n}\n.list-group-horizontal-sm > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-sm > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-sm > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-sm > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-sm > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n@media (min-width: 768px) {\n.list-group-horizontal-md {\n    flex-direction: row;\n}\n.list-group-horizontal-md > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-md > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-md > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-md > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-md > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n@media (min-width: 992px) {\n.list-group-horizontal-lg {\n    flex-direction: row;\n}\n.list-group-horizontal-lg > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-lg > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-lg > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-lg > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-lg > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n@media (min-width: 1200px) {\n.list-group-horizontal-xl {\n    flex-direction: row;\n}\n.list-group-horizontal-xl > .list-group-item:first-child {\n    border-bottom-left-radius: 0.25rem;\n    border-top-right-radius: 0;\n}\n.list-group-horizontal-xl > .list-group-item:last-child {\n    border-top-right-radius: 0.25rem;\n    border-bottom-left-radius: 0;\n}\n.list-group-horizontal-xl > .list-group-item.active {\n    margin-top: 0;\n}\n.list-group-horizontal-xl > .list-group-item + .list-group-item {\n    border-top-width: 1px;\n    border-left-width: 0;\n}\n.list-group-horizontal-xl > .list-group-item + .list-group-item.active {\n    margin-left: -1px;\n    border-left-width: 1px;\n}\n}\n.list-group-flush {\n  border-radius: 0;\n}\n.list-group-flush > .list-group-item {\n  border-width: 0 0 1px;\n}\n.list-group-flush > .list-group-item:last-child {\n  border-bottom-width: 0;\n}\n.list-group-item-primary {\n  color: #004085;\n  background-color: #b8daff;\n}\n.list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {\n  color: #004085;\n  background-color: #9fcdff;\n}\n.list-group-item-primary.list-group-item-action.active {\n  color: #fff;\n  background-color: #004085;\n  border-color: #004085;\n}\n.list-group-item-secondary {\n  color: #383d41;\n  background-color: #d6d8db;\n}\n.list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {\n  color: #383d41;\n  background-color: #c8cbcf;\n}\n.list-group-item-secondary.list-group-item-action.active {\n  color: #fff;\n  background-color: #383d41;\n  border-color: #383d41;\n}\n.list-group-item-success {\n  color: #155724;\n  background-color: #c3e6cb;\n}\n.list-group-item-success.list-group-item-action:hover, .list-group-item-success.list-group-item-action:focus {\n  color: #155724;\n  background-color: #b1dfbb;\n}\n.list-group-item-success.list-group-item-action.active {\n  color: #fff;\n  background-color: #155724;\n  border-color: #155724;\n}\n.list-group-item-info {\n  color: #0c5460;\n  background-color: #bee5eb;\n}\n.list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {\n  color: #0c5460;\n  background-color: #abdde5;\n}\n.list-group-item-info.list-group-item-action.active {\n  color: #fff;\n  background-color: #0c5460;\n  border-color: #0c5460;\n}\n.list-group-item-warning {\n  color: #856404;\n  background-color: #ffeeba;\n}\n.list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {\n  color: #856404;\n  background-color: #ffe8a1;\n}\n.list-group-item-warning.list-group-item-action.active {\n  color: #fff;\n  background-color: #856404;\n  border-color: #856404;\n}\n.list-group-item-danger {\n  color: #721c24;\n  background-color: #f5c6cb;\n}\n.list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {\n  color: #721c24;\n  background-color: #f1b0b7;\n}\n.list-group-item-danger.list-group-item-action.active {\n  color: #fff;\n  background-color: #721c24;\n  border-color: #721c24;\n}\n.list-group-item-light {\n  color: #818182;\n  background-color: #fdfdfe;\n}\n.list-group-item-light.list-group-item-action:hover, .list-group-item-light.list-group-item-action:focus {\n  color: #818182;\n  background-color: #ececf6;\n}\n.list-group-item-light.list-group-item-action.active {\n  color: #fff;\n  background-color: #818182;\n  border-color: #818182;\n}\n.list-group-item-dark {\n  color: #1b1e21;\n  background-color: #c6c8ca;\n}\n.list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {\n  color: #1b1e21;\n  background-color: #b9bbbe;\n}\n.list-group-item-dark.list-group-item-action.active {\n  color: #fff;\n  background-color: #1b1e21;\n  border-color: #1b1e21;\n}\n.close {\n  float: right;\n  font-size: 1.5rem;\n  font-weight: 700;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  opacity: 0.5;\n}\n.close:hover {\n  color: #000;\n  text-decoration: none;\n}\n.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {\n  opacity: 0.75;\n}\nbutton.close {\n  padding: 0;\n  background-color: transparent;\n  border: 0;\n}\na.close.disabled {\n  pointer-events: none;\n}\n.toast {\n  flex-basis: 350px;\n  max-width: 350px;\n  font-size: 0.875rem;\n  background-color: rgba(255, 255, 255, 0.85);\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  border-radius: 0.25rem;\n}\n.toast:not(:last-child) {\n  margin-bottom: 0.75rem;\n}\n.toast.showing {\n  opacity: 1;\n}\n.toast.show {\n  display: block;\n  opacity: 1;\n}\n.toast.hide {\n  display: none;\n}\n.toast-header {\n  display: flex;\n  align-items: center;\n  padding: 0.25rem 0.75rem;\n  color: #6c757d;\n  background-color: rgba(255, 255, 255, 0.85);\n  background-clip: padding-box;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.toast-body {\n  padding: 0.75rem;\n}\n.modal-open {\n  overflow: hidden;\n}\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.modal {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  display: none;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  outline: 0;\n}\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 0.5rem;\n  pointer-events: none;\n}\n.modal.fade .modal-dialog {\n  transition: transform 0.3s ease-out;\n  transform: translate(0, -50px);\n}\n@media (prefers-reduced-motion: reduce) {\n.modal.fade .modal-dialog {\n    transition: none;\n}\n}\n.modal.show .modal-dialog {\n  transform: none;\n}\n.modal.modal-static .modal-dialog {\n  transform: scale(1.02);\n}\n.modal-dialog-scrollable {\n  display: flex;\n  max-height: calc(100% - 1rem);\n}\n.modal-dialog-scrollable .modal-content {\n  max-height: calc(100vh - 1rem);\n  overflow: hidden;\n}\n.modal-dialog-scrollable .modal-header,\n.modal-dialog-scrollable .modal-footer {\n  flex-shrink: 0;\n}\n.modal-dialog-scrollable .modal-body {\n  overflow-y: auto;\n}\n.modal-dialog-centered {\n  display: flex;\n  align-items: center;\n  min-height: calc(100% - 1rem);\n}\n.modal-dialog-centered::before {\n  display: block;\n  height: calc(100vh - 1rem);\n  height: -moz-min-content;\n  height: min-content;\n  content: \"\";\n}\n.modal-dialog-centered.modal-dialog-scrollable {\n  flex-direction: column;\n  justify-content: center;\n  height: 100%;\n}\n.modal-dialog-centered.modal-dialog-scrollable .modal-content {\n  max-height: none;\n}\n.modal-dialog-centered.modal-dialog-scrollable::before {\n  content: none;\n}\n.modal-content {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  pointer-events: auto;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n  outline: 0;\n}\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1040;\n  width: 100vw;\n  height: 100vh;\n  background-color: #000;\n}\n.modal-backdrop.fade {\n  opacity: 0;\n}\n.modal-backdrop.show {\n  opacity: 0.5;\n}\n.modal-header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  padding: 1rem 1rem;\n  border-bottom: 1px solid #dee2e6;\n  border-top-left-radius: calc(0.3rem - 1px);\n  border-top-right-radius: calc(0.3rem - 1px);\n}\n.modal-header .close {\n  padding: 1rem 1rem;\n  margin: -1rem -1rem -1rem auto;\n}\n.modal-title {\n  margin-bottom: 0;\n  line-height: 1.5;\n}\n.modal-body {\n  position: relative;\n  flex: 1 1 auto;\n  padding: 1rem;\n}\n.modal-footer {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-end;\n  padding: 0.75rem;\n  border-top: 1px solid #dee2e6;\n  border-bottom-right-radius: calc(0.3rem - 1px);\n  border-bottom-left-radius: calc(0.3rem - 1px);\n}\n.modal-footer > * {\n  margin: 0.25rem;\n}\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n@media (min-width: 576px) {\n.modal-dialog {\n    max-width: 500px;\n    margin: 1.75rem auto;\n}\n.modal-dialog-scrollable {\n    max-height: calc(100% - 3.5rem);\n}\n.modal-dialog-scrollable .modal-content {\n    max-height: calc(100vh - 3.5rem);\n}\n.modal-dialog-centered {\n    min-height: calc(100% - 3.5rem);\n}\n.modal-dialog-centered::before {\n    height: calc(100vh - 3.5rem);\n    height: -moz-min-content;\n    height: min-content;\n}\n.modal-sm {\n    max-width: 300px;\n}\n}\n@media (min-width: 992px) {\n.modal-lg,\n  .modal-xl {\n    max-width: 800px;\n}\n}\n@media (min-width: 1200px) {\n.modal-xl {\n    max-width: 1140px;\n}\n}\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-style: normal;\n  font-weight: 400;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  white-space: normal;\n  word-spacing: normal;\n  line-break: auto;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  opacity: 0;\n}\n.tooltip.show {\n  opacity: 0.9;\n}\n.tooltip .arrow {\n  position: absolute;\n  display: block;\n  width: 0.8rem;\n  height: 0.4rem;\n}\n.tooltip .arrow::before {\n  position: absolute;\n  content: \"\";\n  border-color: transparent;\n  border-style: solid;\n}\n.bs-tooltip-top, .bs-tooltip-auto[x-placement^=top] {\n  padding: 0.4rem 0;\n}\n.bs-tooltip-top .arrow, .bs-tooltip-auto[x-placement^=top] .arrow {\n  bottom: 0;\n}\n.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^=top] .arrow::before {\n  top: 0;\n  border-width: 0.4rem 0.4rem 0;\n  border-top-color: #000;\n}\n.bs-tooltip-right, .bs-tooltip-auto[x-placement^=right] {\n  padding: 0 0.4rem;\n}\n.bs-tooltip-right .arrow, .bs-tooltip-auto[x-placement^=right] .arrow {\n  left: 0;\n  width: 0.4rem;\n  height: 0.8rem;\n}\n.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^=right] .arrow::before {\n  right: 0;\n  border-width: 0.4rem 0.4rem 0.4rem 0;\n  border-right-color: #000;\n}\n.bs-tooltip-bottom, .bs-tooltip-auto[x-placement^=bottom] {\n  padding: 0.4rem 0;\n}\n.bs-tooltip-bottom .arrow, .bs-tooltip-auto[x-placement^=bottom] .arrow {\n  top: 0;\n}\n.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^=bottom] .arrow::before {\n  bottom: 0;\n  border-width: 0 0.4rem 0.4rem;\n  border-bottom-color: #000;\n}\n.bs-tooltip-left, .bs-tooltip-auto[x-placement^=left] {\n  padding: 0 0.4rem;\n}\n.bs-tooltip-left .arrow, .bs-tooltip-auto[x-placement^=left] .arrow {\n  right: 0;\n  width: 0.4rem;\n  height: 0.8rem;\n}\n.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^=left] .arrow::before {\n  left: 0;\n  border-width: 0.4rem 0 0.4rem 0.4rem;\n  border-left-color: #000;\n}\n.tooltip-inner {\n  max-width: 200px;\n  padding: 0.25rem 0.5rem;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 0.25rem;\n}\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: block;\n  max-width: 276px;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-style: normal;\n  font-weight: 400;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  white-space: normal;\n  word-spacing: normal;\n  line-break: auto;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n}\n.popover .arrow {\n  position: absolute;\n  display: block;\n  width: 1rem;\n  height: 0.5rem;\n  margin: 0 0.3rem;\n}\n.popover .arrow::before, .popover .arrow::after {\n  position: absolute;\n  display: block;\n  content: \"\";\n  border-color: transparent;\n  border-style: solid;\n}\n.bs-popover-top, .bs-popover-auto[x-placement^=top] {\n  margin-bottom: 0.5rem;\n}\n.bs-popover-top > .arrow, .bs-popover-auto[x-placement^=top] > .arrow {\n  bottom: calc(-0.5rem - 1px);\n}\n.bs-popover-top > .arrow::before, .bs-popover-auto[x-placement^=top] > .arrow::before {\n  bottom: 0;\n  border-width: 0.5rem 0.5rem 0;\n  border-top-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-top > .arrow::after, .bs-popover-auto[x-placement^=top] > .arrow::after {\n  bottom: 1px;\n  border-width: 0.5rem 0.5rem 0;\n  border-top-color: #fff;\n}\n.bs-popover-right, .bs-popover-auto[x-placement^=right] {\n  margin-left: 0.5rem;\n}\n.bs-popover-right > .arrow, .bs-popover-auto[x-placement^=right] > .arrow {\n  left: calc(-0.5rem - 1px);\n  width: 0.5rem;\n  height: 1rem;\n  margin: 0.3rem 0;\n}\n.bs-popover-right > .arrow::before, .bs-popover-auto[x-placement^=right] > .arrow::before {\n  left: 0;\n  border-width: 0.5rem 0.5rem 0.5rem 0;\n  border-right-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-right > .arrow::after, .bs-popover-auto[x-placement^=right] > .arrow::after {\n  left: 1px;\n  border-width: 0.5rem 0.5rem 0.5rem 0;\n  border-right-color: #fff;\n}\n.bs-popover-bottom, .bs-popover-auto[x-placement^=bottom] {\n  margin-top: 0.5rem;\n}\n.bs-popover-bottom > .arrow, .bs-popover-auto[x-placement^=bottom] > .arrow {\n  top: calc(-0.5rem - 1px);\n}\n.bs-popover-bottom > .arrow::before, .bs-popover-auto[x-placement^=bottom] > .arrow::before {\n  top: 0;\n  border-width: 0 0.5rem 0.5rem 0.5rem;\n  border-bottom-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-bottom > .arrow::after, .bs-popover-auto[x-placement^=bottom] > .arrow::after {\n  top: 1px;\n  border-width: 0 0.5rem 0.5rem 0.5rem;\n  border-bottom-color: #fff;\n}\n.bs-popover-bottom .popover-header::before, .bs-popover-auto[x-placement^=bottom] .popover-header::before {\n  position: absolute;\n  top: 0;\n  left: 50%;\n  display: block;\n  width: 1rem;\n  margin-left: -0.5rem;\n  content: \"\";\n  border-bottom: 1px solid #f7f7f7;\n}\n.bs-popover-left, .bs-popover-auto[x-placement^=left] {\n  margin-right: 0.5rem;\n}\n.bs-popover-left > .arrow, .bs-popover-auto[x-placement^=left] > .arrow {\n  right: calc(-0.5rem - 1px);\n  width: 0.5rem;\n  height: 1rem;\n  margin: 0.3rem 0;\n}\n.bs-popover-left > .arrow::before, .bs-popover-auto[x-placement^=left] > .arrow::before {\n  right: 0;\n  border-width: 0.5rem 0 0.5rem 0.5rem;\n  border-left-color: rgba(0, 0, 0, 0.25);\n}\n.bs-popover-left > .arrow::after, .bs-popover-auto[x-placement^=left] > .arrow::after {\n  right: 1px;\n  border-width: 0.5rem 0 0.5rem 0.5rem;\n  border-left-color: #fff;\n}\n.popover-header {\n  padding: 0.5rem 0.75rem;\n  margin-bottom: 0;\n  font-size: 1rem;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-top-left-radius: calc(0.3rem - 1px);\n  border-top-right-radius: calc(0.3rem - 1px);\n}\n.popover-header:empty {\n  display: none;\n}\n.popover-body {\n  padding: 0.5rem 0.75rem;\n  color: #212529;\n}\n.carousel {\n  position: relative;\n}\n.carousel.pointer-event {\n  touch-action: pan-y;\n}\n.carousel-inner {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.carousel-inner::after {\n  display: block;\n  clear: both;\n  content: \"\";\n}\n.carousel-item {\n  position: relative;\n  display: none;\n  float: left;\n  width: 100%;\n  margin-right: -100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.6s ease-in-out;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-item {\n    transition: none;\n}\n}\n.carousel-item.active,\n.carousel-item-next,\n.carousel-item-prev {\n  display: block;\n}\n.carousel-item-next:not(.carousel-item-left),\n.active.carousel-item-right {\n  transform: translateX(100%);\n}\n.carousel-item-prev:not(.carousel-item-right),\n.active.carousel-item-left {\n  transform: translateX(-100%);\n}\n.carousel-fade .carousel-item {\n  opacity: 0;\n  transition-property: opacity;\n  transform: none;\n}\n.carousel-fade .carousel-item.active,\n.carousel-fade .carousel-item-next.carousel-item-left,\n.carousel-fade .carousel-item-prev.carousel-item-right {\n  z-index: 1;\n  opacity: 1;\n}\n.carousel-fade .active.carousel-item-left,\n.carousel-fade .active.carousel-item-right {\n  z-index: 0;\n  opacity: 0;\n  transition: opacity 0s 0.6s;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-fade .active.carousel-item-left,\n  .carousel-fade .active.carousel-item-right {\n    transition: none;\n}\n}\n.carousel-control-prev,\n.carousel-control-next {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 15%;\n  padding: 0;\n  color: #fff;\n  text-align: center;\n  background: none;\n  border: 0;\n  opacity: 0.5;\n  transition: opacity 0.15s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-control-prev,\n  .carousel-control-next {\n    transition: none;\n}\n}\n.carousel-control-prev:hover, .carousel-control-prev:focus,\n.carousel-control-next:hover,\n.carousel-control-next:focus {\n  color: #fff;\n  text-decoration: none;\n  outline: 0;\n  opacity: 0.9;\n}\n.carousel-control-prev {\n  left: 0;\n}\n.carousel-control-next {\n  right: 0;\n}\n.carousel-control-prev-icon,\n.carousel-control-next-icon {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  background: 50%/100% 100% no-repeat;\n}\n.carousel-control-prev-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e\");\n}\n.carousel-control-next-icon {\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e\");\n}\n.carousel-indicators {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 15;\n  display: flex;\n  justify-content: center;\n  padding-left: 0;\n  margin-right: 15%;\n  margin-left: 15%;\n  list-style: none;\n}\n.carousel-indicators li {\n  box-sizing: content-box;\n  flex: 0 1 auto;\n  width: 30px;\n  height: 3px;\n  margin-right: 3px;\n  margin-left: 3px;\n  text-indent: -999px;\n  cursor: pointer;\n  background-color: #fff;\n  background-clip: padding-box;\n  border-top: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n  opacity: 0.5;\n  transition: opacity 0.6s ease;\n}\n@media (prefers-reduced-motion: reduce) {\n.carousel-indicators li {\n    transition: none;\n}\n}\n.carousel-indicators .active {\n  opacity: 1;\n}\n.carousel-caption {\n  position: absolute;\n  right: 15%;\n  bottom: 20px;\n  left: 15%;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n}\n@keyframes spinner-border {\nto {\n    transform: rotate(360deg);\n}\n}\n.spinner-border {\n  display: inline-block;\n  width: 2rem;\n  height: 2rem;\n  vertical-align: -0.125em;\n  border: 0.25em solid currentcolor;\n  border-right-color: transparent;\n  border-radius: 50%;\n  animation: 0.75s linear infinite spinner-border;\n}\n.spinner-border-sm {\n  width: 1rem;\n  height: 1rem;\n  border-width: 0.2em;\n}\n@keyframes spinner-grow {\n0% {\n    transform: scale(0);\n}\n50% {\n    opacity: 1;\n    transform: none;\n}\n}\n.spinner-grow {\n  display: inline-block;\n  width: 2rem;\n  height: 2rem;\n  vertical-align: -0.125em;\n  background-color: currentcolor;\n  border-radius: 50%;\n  opacity: 0;\n  animation: 0.75s linear infinite spinner-grow;\n}\n.spinner-grow-sm {\n  width: 1rem;\n  height: 1rem;\n}\n@media (prefers-reduced-motion: reduce) {\n.spinner-border,\n  .spinner-grow {\n    animation-duration: 1.5s;\n}\n}\n.align-baseline {\n  vertical-align: baseline !important;\n}\n.align-top {\n  vertical-align: top !important;\n}\n.align-middle {\n  vertical-align: middle !important;\n}\n.align-bottom {\n  vertical-align: bottom !important;\n}\n.align-text-bottom {\n  vertical-align: text-bottom !important;\n}\n.align-text-top {\n  vertical-align: text-top !important;\n}\n.bg-primary {\n  background-color: #007bff !important;\n}\na.bg-primary:hover, a.bg-primary:focus,\nbutton.bg-primary:hover,\nbutton.bg-primary:focus {\n  background-color: #0062cc !important;\n}\n.bg-secondary {\n  background-color: #6c757d !important;\n}\na.bg-secondary:hover, a.bg-secondary:focus,\nbutton.bg-secondary:hover,\nbutton.bg-secondary:focus {\n  background-color: #545b62 !important;\n}\n.bg-success {\n  background-color: #28a745 !important;\n}\na.bg-success:hover, a.bg-success:focus,\nbutton.bg-success:hover,\nbutton.bg-success:focus {\n  background-color: #1e7e34 !important;\n}\n.bg-info {\n  background-color: #17a2b8 !important;\n}\na.bg-info:hover, a.bg-info:focus,\nbutton.bg-info:hover,\nbutton.bg-info:focus {\n  background-color: #117a8b !important;\n}\n.bg-warning {\n  background-color: #ffc107 !important;\n}\na.bg-warning:hover, a.bg-warning:focus,\nbutton.bg-warning:hover,\nbutton.bg-warning:focus {\n  background-color: #d39e00 !important;\n}\n.bg-danger {\n  background-color: #dc3545 !important;\n}\na.bg-danger:hover, a.bg-danger:focus,\nbutton.bg-danger:hover,\nbutton.bg-danger:focus {\n  background-color: #bd2130 !important;\n}\n.bg-light {\n  background-color: #f8f9fa !important;\n}\na.bg-light:hover, a.bg-light:focus,\nbutton.bg-light:hover,\nbutton.bg-light:focus {\n  background-color: #dae0e5 !important;\n}\n.bg-dark {\n  background-color: #343a40 !important;\n}\na.bg-dark:hover, a.bg-dark:focus,\nbutton.bg-dark:hover,\nbutton.bg-dark:focus {\n  background-color: #1d2124 !important;\n}\n.bg-white {\n  background-color: #fff !important;\n}\n.bg-transparent {\n  background-color: transparent !important;\n}\n.border {\n  border: 1px solid #dee2e6 !important;\n}\n.border-top {\n  border-top: 1px solid #dee2e6 !important;\n}\n.border-right {\n  border-right: 1px solid #dee2e6 !important;\n}\n.border-bottom {\n  border-bottom: 1px solid #dee2e6 !important;\n}\n.border-left {\n  border-left: 1px solid #dee2e6 !important;\n}\n.border-0 {\n  border: 0 !important;\n}\n.border-top-0 {\n  border-top: 0 !important;\n}\n.border-right-0 {\n  border-right: 0 !important;\n}\n.border-bottom-0 {\n  border-bottom: 0 !important;\n}\n.border-left-0 {\n  border-left: 0 !important;\n}\n.border-primary {\n  border-color: #007bff !important;\n}\n.border-secondary {\n  border-color: #6c757d !important;\n}\n.border-success {\n  border-color: #28a745 !important;\n}\n.border-info {\n  border-color: #17a2b8 !important;\n}\n.border-warning {\n  border-color: #ffc107 !important;\n}\n.border-danger {\n  border-color: #dc3545 !important;\n}\n.border-light {\n  border-color: #f8f9fa !important;\n}\n.border-dark {\n  border-color: #343a40 !important;\n}\n.border-white {\n  border-color: #fff !important;\n}\n.rounded-sm {\n  border-radius: 0.2rem !important;\n}\n.rounded {\n  border-radius: 0.25rem !important;\n}\n.rounded-top {\n  border-top-left-radius: 0.25rem !important;\n  border-top-right-radius: 0.25rem !important;\n}\n.rounded-right {\n  border-top-right-radius: 0.25rem !important;\n  border-bottom-right-radius: 0.25rem !important;\n}\n.rounded-bottom {\n  border-bottom-right-radius: 0.25rem !important;\n  border-bottom-left-radius: 0.25rem !important;\n}\n.rounded-left {\n  border-top-left-radius: 0.25rem !important;\n  border-bottom-left-radius: 0.25rem !important;\n}\n.rounded-lg {\n  border-radius: 0.3rem !important;\n}\n.rounded-circle {\n  border-radius: 50% !important;\n}\n.rounded-pill {\n  border-radius: 50rem !important;\n}\n.rounded-0 {\n  border-radius: 0 !important;\n}\n.clearfix::after {\n  display: block;\n  clear: both;\n  content: \"\";\n}\n.d-none {\n  display: none !important;\n}\n.d-inline {\n  display: inline !important;\n}\n.d-inline-block {\n  display: inline-block !important;\n}\n.d-block {\n  display: block !important;\n}\n.d-table {\n  display: table !important;\n}\n.d-table-row {\n  display: table-row !important;\n}\n.d-table-cell {\n  display: table-cell !important;\n}\n.d-flex {\n  display: flex !important;\n}\n.d-inline-flex {\n  display: inline-flex !important;\n}\n@media (min-width: 576px) {\n.d-sm-none {\n    display: none !important;\n}\n.d-sm-inline {\n    display: inline !important;\n}\n.d-sm-inline-block {\n    display: inline-block !important;\n}\n.d-sm-block {\n    display: block !important;\n}\n.d-sm-table {\n    display: table !important;\n}\n.d-sm-table-row {\n    display: table-row !important;\n}\n.d-sm-table-cell {\n    display: table-cell !important;\n}\n.d-sm-flex {\n    display: flex !important;\n}\n.d-sm-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media (min-width: 768px) {\n.d-md-none {\n    display: none !important;\n}\n.d-md-inline {\n    display: inline !important;\n}\n.d-md-inline-block {\n    display: inline-block !important;\n}\n.d-md-block {\n    display: block !important;\n}\n.d-md-table {\n    display: table !important;\n}\n.d-md-table-row {\n    display: table-row !important;\n}\n.d-md-table-cell {\n    display: table-cell !important;\n}\n.d-md-flex {\n    display: flex !important;\n}\n.d-md-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media (min-width: 992px) {\n.d-lg-none {\n    display: none !important;\n}\n.d-lg-inline {\n    display: inline !important;\n}\n.d-lg-inline-block {\n    display: inline-block !important;\n}\n.d-lg-block {\n    display: block !important;\n}\n.d-lg-table {\n    display: table !important;\n}\n.d-lg-table-row {\n    display: table-row !important;\n}\n.d-lg-table-cell {\n    display: table-cell !important;\n}\n.d-lg-flex {\n    display: flex !important;\n}\n.d-lg-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media (min-width: 1200px) {\n.d-xl-none {\n    display: none !important;\n}\n.d-xl-inline {\n    display: inline !important;\n}\n.d-xl-inline-block {\n    display: inline-block !important;\n}\n.d-xl-block {\n    display: block !important;\n}\n.d-xl-table {\n    display: table !important;\n}\n.d-xl-table-row {\n    display: table-row !important;\n}\n.d-xl-table-cell {\n    display: table-cell !important;\n}\n.d-xl-flex {\n    display: flex !important;\n}\n.d-xl-inline-flex {\n    display: inline-flex !important;\n}\n}\n@media print {\n.d-print-none {\n    display: none !important;\n}\n.d-print-inline {\n    display: inline !important;\n}\n.d-print-inline-block {\n    display: inline-block !important;\n}\n.d-print-block {\n    display: block !important;\n}\n.d-print-table {\n    display: table !important;\n}\n.d-print-table-row {\n    display: table-row !important;\n}\n.d-print-table-cell {\n    display: table-cell !important;\n}\n.d-print-flex {\n    display: flex !important;\n}\n.d-print-inline-flex {\n    display: inline-flex !important;\n}\n}\n.embed-responsive {\n  position: relative;\n  display: block;\n  width: 100%;\n  padding: 0;\n  overflow: hidden;\n}\n.embed-responsive::before {\n  display: block;\n  content: \"\";\n}\n.embed-responsive .embed-responsive-item,\n.embed-responsive iframe,\n.embed-responsive embed,\n.embed-responsive object,\n.embed-responsive video {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 0;\n}\n.embed-responsive-21by9::before {\n  padding-top: 42.85714286%;\n}\n.embed-responsive-16by9::before {\n  padding-top: 56.25%;\n}\n.embed-responsive-4by3::before {\n  padding-top: 75%;\n}\n.embed-responsive-1by1::before {\n  padding-top: 100%;\n}\n.flex-row {\n  flex-direction: row !important;\n}\n.flex-column {\n  flex-direction: column !important;\n}\n.flex-row-reverse {\n  flex-direction: row-reverse !important;\n}\n.flex-column-reverse {\n  flex-direction: column-reverse !important;\n}\n.flex-wrap {\n  flex-wrap: wrap !important;\n}\n.flex-nowrap {\n  flex-wrap: nowrap !important;\n}\n.flex-wrap-reverse {\n  flex-wrap: wrap-reverse !important;\n}\n.flex-fill {\n  flex: 1 1 auto !important;\n}\n.flex-grow-0 {\n  flex-grow: 0 !important;\n}\n.flex-grow-1 {\n  flex-grow: 1 !important;\n}\n.flex-shrink-0 {\n  flex-shrink: 0 !important;\n}\n.flex-shrink-1 {\n  flex-shrink: 1 !important;\n}\n.justify-content-start {\n  justify-content: flex-start !important;\n}\n.justify-content-end {\n  justify-content: flex-end !important;\n}\n.justify-content-center {\n  justify-content: center !important;\n}\n.justify-content-between {\n  justify-content: space-between !important;\n}\n.justify-content-around {\n  justify-content: space-around !important;\n}\n.align-items-start {\n  align-items: flex-start !important;\n}\n.align-items-end {\n  align-items: flex-end !important;\n}\n.align-items-center {\n  align-items: center !important;\n}\n.align-items-baseline {\n  align-items: baseline !important;\n}\n.align-items-stretch {\n  align-items: stretch !important;\n}\n.align-content-start {\n  align-content: flex-start !important;\n}\n.align-content-end {\n  align-content: flex-end !important;\n}\n.align-content-center {\n  align-content: center !important;\n}\n.align-content-between {\n  align-content: space-between !important;\n}\n.align-content-around {\n  align-content: space-around !important;\n}\n.align-content-stretch {\n  align-content: stretch !important;\n}\n.align-self-auto {\n  align-self: auto !important;\n}\n.align-self-start {\n  align-self: flex-start !important;\n}\n.align-self-end {\n  align-self: flex-end !important;\n}\n.align-self-center {\n  align-self: center !important;\n}\n.align-self-baseline {\n  align-self: baseline !important;\n}\n.align-self-stretch {\n  align-self: stretch !important;\n}\n@media (min-width: 576px) {\n.flex-sm-row {\n    flex-direction: row !important;\n}\n.flex-sm-column {\n    flex-direction: column !important;\n}\n.flex-sm-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-sm-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-sm-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-sm-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-sm-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-sm-fill {\n    flex: 1 1 auto !important;\n}\n.flex-sm-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-sm-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-sm-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-sm-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-sm-start {\n    justify-content: flex-start !important;\n}\n.justify-content-sm-end {\n    justify-content: flex-end !important;\n}\n.justify-content-sm-center {\n    justify-content: center !important;\n}\n.justify-content-sm-between {\n    justify-content: space-between !important;\n}\n.justify-content-sm-around {\n    justify-content: space-around !important;\n}\n.align-items-sm-start {\n    align-items: flex-start !important;\n}\n.align-items-sm-end {\n    align-items: flex-end !important;\n}\n.align-items-sm-center {\n    align-items: center !important;\n}\n.align-items-sm-baseline {\n    align-items: baseline !important;\n}\n.align-items-sm-stretch {\n    align-items: stretch !important;\n}\n.align-content-sm-start {\n    align-content: flex-start !important;\n}\n.align-content-sm-end {\n    align-content: flex-end !important;\n}\n.align-content-sm-center {\n    align-content: center !important;\n}\n.align-content-sm-between {\n    align-content: space-between !important;\n}\n.align-content-sm-around {\n    align-content: space-around !important;\n}\n.align-content-sm-stretch {\n    align-content: stretch !important;\n}\n.align-self-sm-auto {\n    align-self: auto !important;\n}\n.align-self-sm-start {\n    align-self: flex-start !important;\n}\n.align-self-sm-end {\n    align-self: flex-end !important;\n}\n.align-self-sm-center {\n    align-self: center !important;\n}\n.align-self-sm-baseline {\n    align-self: baseline !important;\n}\n.align-self-sm-stretch {\n    align-self: stretch !important;\n}\n}\n@media (min-width: 768px) {\n.flex-md-row {\n    flex-direction: row !important;\n}\n.flex-md-column {\n    flex-direction: column !important;\n}\n.flex-md-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-md-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-md-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-md-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-md-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-md-fill {\n    flex: 1 1 auto !important;\n}\n.flex-md-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-md-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-md-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-md-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-md-start {\n    justify-content: flex-start !important;\n}\n.justify-content-md-end {\n    justify-content: flex-end !important;\n}\n.justify-content-md-center {\n    justify-content: center !important;\n}\n.justify-content-md-between {\n    justify-content: space-between !important;\n}\n.justify-content-md-around {\n    justify-content: space-around !important;\n}\n.align-items-md-start {\n    align-items: flex-start !important;\n}\n.align-items-md-end {\n    align-items: flex-end !important;\n}\n.align-items-md-center {\n    align-items: center !important;\n}\n.align-items-md-baseline {\n    align-items: baseline !important;\n}\n.align-items-md-stretch {\n    align-items: stretch !important;\n}\n.align-content-md-start {\n    align-content: flex-start !important;\n}\n.align-content-md-end {\n    align-content: flex-end !important;\n}\n.align-content-md-center {\n    align-content: center !important;\n}\n.align-content-md-between {\n    align-content: space-between !important;\n}\n.align-content-md-around {\n    align-content: space-around !important;\n}\n.align-content-md-stretch {\n    align-content: stretch !important;\n}\n.align-self-md-auto {\n    align-self: auto !important;\n}\n.align-self-md-start {\n    align-self: flex-start !important;\n}\n.align-self-md-end {\n    align-self: flex-end !important;\n}\n.align-self-md-center {\n    align-self: center !important;\n}\n.align-self-md-baseline {\n    align-self: baseline !important;\n}\n.align-self-md-stretch {\n    align-self: stretch !important;\n}\n}\n@media (min-width: 992px) {\n.flex-lg-row {\n    flex-direction: row !important;\n}\n.flex-lg-column {\n    flex-direction: column !important;\n}\n.flex-lg-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-lg-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-lg-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-lg-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-lg-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-lg-fill {\n    flex: 1 1 auto !important;\n}\n.flex-lg-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-lg-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-lg-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-lg-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-lg-start {\n    justify-content: flex-start !important;\n}\n.justify-content-lg-end {\n    justify-content: flex-end !important;\n}\n.justify-content-lg-center {\n    justify-content: center !important;\n}\n.justify-content-lg-between {\n    justify-content: space-between !important;\n}\n.justify-content-lg-around {\n    justify-content: space-around !important;\n}\n.align-items-lg-start {\n    align-items: flex-start !important;\n}\n.align-items-lg-end {\n    align-items: flex-end !important;\n}\n.align-items-lg-center {\n    align-items: center !important;\n}\n.align-items-lg-baseline {\n    align-items: baseline !important;\n}\n.align-items-lg-stretch {\n    align-items: stretch !important;\n}\n.align-content-lg-start {\n    align-content: flex-start !important;\n}\n.align-content-lg-end {\n    align-content: flex-end !important;\n}\n.align-content-lg-center {\n    align-content: center !important;\n}\n.align-content-lg-between {\n    align-content: space-between !important;\n}\n.align-content-lg-around {\n    align-content: space-around !important;\n}\n.align-content-lg-stretch {\n    align-content: stretch !important;\n}\n.align-self-lg-auto {\n    align-self: auto !important;\n}\n.align-self-lg-start {\n    align-self: flex-start !important;\n}\n.align-self-lg-end {\n    align-self: flex-end !important;\n}\n.align-self-lg-center {\n    align-self: center !important;\n}\n.align-self-lg-baseline {\n    align-self: baseline !important;\n}\n.align-self-lg-stretch {\n    align-self: stretch !important;\n}\n}\n@media (min-width: 1200px) {\n.flex-xl-row {\n    flex-direction: row !important;\n}\n.flex-xl-column {\n    flex-direction: column !important;\n}\n.flex-xl-row-reverse {\n    flex-direction: row-reverse !important;\n}\n.flex-xl-column-reverse {\n    flex-direction: column-reverse !important;\n}\n.flex-xl-wrap {\n    flex-wrap: wrap !important;\n}\n.flex-xl-nowrap {\n    flex-wrap: nowrap !important;\n}\n.flex-xl-wrap-reverse {\n    flex-wrap: wrap-reverse !important;\n}\n.flex-xl-fill {\n    flex: 1 1 auto !important;\n}\n.flex-xl-grow-0 {\n    flex-grow: 0 !important;\n}\n.flex-xl-grow-1 {\n    flex-grow: 1 !important;\n}\n.flex-xl-shrink-0 {\n    flex-shrink: 0 !important;\n}\n.flex-xl-shrink-1 {\n    flex-shrink: 1 !important;\n}\n.justify-content-xl-start {\n    justify-content: flex-start !important;\n}\n.justify-content-xl-end {\n    justify-content: flex-end !important;\n}\n.justify-content-xl-center {\n    justify-content: center !important;\n}\n.justify-content-xl-between {\n    justify-content: space-between !important;\n}\n.justify-content-xl-around {\n    justify-content: space-around !important;\n}\n.align-items-xl-start {\n    align-items: flex-start !important;\n}\n.align-items-xl-end {\n    align-items: flex-end !important;\n}\n.align-items-xl-center {\n    align-items: center !important;\n}\n.align-items-xl-baseline {\n    align-items: baseline !important;\n}\n.align-items-xl-stretch {\n    align-items: stretch !important;\n}\n.align-content-xl-start {\n    align-content: flex-start !important;\n}\n.align-content-xl-end {\n    align-content: flex-end !important;\n}\n.align-content-xl-center {\n    align-content: center !important;\n}\n.align-content-xl-between {\n    align-content: space-between !important;\n}\n.align-content-xl-around {\n    align-content: space-around !important;\n}\n.align-content-xl-stretch {\n    align-content: stretch !important;\n}\n.align-self-xl-auto {\n    align-self: auto !important;\n}\n.align-self-xl-start {\n    align-self: flex-start !important;\n}\n.align-self-xl-end {\n    align-self: flex-end !important;\n}\n.align-self-xl-center {\n    align-self: center !important;\n}\n.align-self-xl-baseline {\n    align-self: baseline !important;\n}\n.align-self-xl-stretch {\n    align-self: stretch !important;\n}\n}\n.float-left {\n  float: left !important;\n}\n.float-right {\n  float: right !important;\n}\n.float-none {\n  float: none !important;\n}\n@media (min-width: 576px) {\n.float-sm-left {\n    float: left !important;\n}\n.float-sm-right {\n    float: right !important;\n}\n.float-sm-none {\n    float: none !important;\n}\n}\n@media (min-width: 768px) {\n.float-md-left {\n    float: left !important;\n}\n.float-md-right {\n    float: right !important;\n}\n.float-md-none {\n    float: none !important;\n}\n}\n@media (min-width: 992px) {\n.float-lg-left {\n    float: left !important;\n}\n.float-lg-right {\n    float: right !important;\n}\n.float-lg-none {\n    float: none !important;\n}\n}\n@media (min-width: 1200px) {\n.float-xl-left {\n    float: left !important;\n}\n.float-xl-right {\n    float: right !important;\n}\n.float-xl-none {\n    float: none !important;\n}\n}\n.user-select-all {\n  -webkit-user-select: all !important;\n     -moz-user-select: all !important;\n          user-select: all !important;\n}\n.user-select-auto {\n  -webkit-user-select: auto !important;\n     -moz-user-select: auto !important;\n          user-select: auto !important;\n}\n.user-select-none {\n  -webkit-user-select: none !important;\n     -moz-user-select: none !important;\n          user-select: none !important;\n}\n.overflow-auto {\n  overflow: auto !important;\n}\n.overflow-hidden {\n  overflow: hidden !important;\n}\n.position-static {\n  position: static !important;\n}\n.position-relative {\n  position: relative !important;\n}\n.position-absolute {\n  position: absolute !important;\n}\n.position-fixed {\n  position: fixed !important;\n}\n.position-sticky {\n  position: sticky !important;\n}\n.fixed-top {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n.fixed-bottom {\n  position: fixed;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1030;\n}\n@supports (position: sticky) {\n.sticky-top {\n    position: sticky;\n    top: 0;\n    z-index: 1020;\n}\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border: 0;\n}\n.sr-only-focusable:active, .sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  overflow: visible;\n  clip: auto;\n  white-space: normal;\n}\n.shadow-sm {\n  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;\n}\n.shadow {\n  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;\n}\n.shadow-lg {\n  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;\n}\n.shadow-none {\n  box-shadow: none !important;\n}\n.w-25 {\n  width: 25% !important;\n}\n.w-50 {\n  width: 50% !important;\n}\n.w-75 {\n  width: 75% !important;\n}\n.w-100 {\n  width: 100% !important;\n}\n.w-auto {\n  width: auto !important;\n}\n.h-25 {\n  height: 25% !important;\n}\n.h-50 {\n  height: 50% !important;\n}\n.h-75 {\n  height: 75% !important;\n}\n.h-100 {\n  height: 100% !important;\n}\n.h-auto {\n  height: auto !important;\n}\n.mw-100 {\n  max-width: 100% !important;\n}\n.mh-100 {\n  max-height: 100% !important;\n}\n.min-vw-100 {\n  min-width: 100vw !important;\n}\n.min-vh-100 {\n  min-height: 100vh !important;\n}\n.vw-100 {\n  width: 100vw !important;\n}\n.vh-100 {\n  height: 100vh !important;\n}\n.m-0 {\n  margin: 0 !important;\n}\n.mt-0,\n.my-0 {\n  margin-top: 0 !important;\n}\n.mr-0,\n.mx-0 {\n  margin-right: 0 !important;\n}\n.mb-0,\n.my-0 {\n  margin-bottom: 0 !important;\n}\n.ml-0,\n.mx-0 {\n  margin-left: 0 !important;\n}\n.m-1 {\n  margin: 0.25rem !important;\n}\n.mt-1,\n.my-1 {\n  margin-top: 0.25rem !important;\n}\n.mr-1,\n.mx-1 {\n  margin-right: 0.25rem !important;\n}\n.mb-1,\n.my-1 {\n  margin-bottom: 0.25rem !important;\n}\n.ml-1,\n.mx-1 {\n  margin-left: 0.25rem !important;\n}\n.m-2 {\n  margin: 0.5rem !important;\n}\n.mt-2,\n.my-2 {\n  margin-top: 0.5rem !important;\n}\n.mr-2,\n.mx-2 {\n  margin-right: 0.5rem !important;\n}\n.mb-2,\n.my-2 {\n  margin-bottom: 0.5rem !important;\n}\n.ml-2,\n.mx-2 {\n  margin-left: 0.5rem !important;\n}\n.m-3 {\n  margin: 1rem !important;\n}\n.mt-3,\n.my-3 {\n  margin-top: 1rem !important;\n}\n.mr-3,\n.mx-3 {\n  margin-right: 1rem !important;\n}\n.mb-3,\n.my-3 {\n  margin-bottom: 1rem !important;\n}\n.ml-3,\n.mx-3 {\n  margin-left: 1rem !important;\n}\n.m-4 {\n  margin: 1.5rem !important;\n}\n.mt-4,\n.my-4 {\n  margin-top: 1.5rem !important;\n}\n.mr-4,\n.mx-4 {\n  margin-right: 1.5rem !important;\n}\n.mb-4,\n.my-4 {\n  margin-bottom: 1.5rem !important;\n}\n.ml-4,\n.mx-4 {\n  margin-left: 1.5rem !important;\n}\n.m-5 {\n  margin: 3rem !important;\n}\n.mt-5,\n.my-5 {\n  margin-top: 3rem !important;\n}\n.mr-5,\n.mx-5 {\n  margin-right: 3rem !important;\n}\n.mb-5,\n.my-5 {\n  margin-bottom: 3rem !important;\n}\n.ml-5,\n.mx-5 {\n  margin-left: 3rem !important;\n}\n.p-0 {\n  padding: 0 !important;\n}\n.pt-0,\n.py-0 {\n  padding-top: 0 !important;\n}\n.pr-0,\n.px-0 {\n  padding-right: 0 !important;\n}\n.pb-0,\n.py-0 {\n  padding-bottom: 0 !important;\n}\n.pl-0,\n.px-0 {\n  padding-left: 0 !important;\n}\n.p-1 {\n  padding: 0.25rem !important;\n}\n.pt-1,\n.py-1 {\n  padding-top: 0.25rem !important;\n}\n.pr-1,\n.px-1 {\n  padding-right: 0.25rem !important;\n}\n.pb-1,\n.py-1 {\n  padding-bottom: 0.25rem !important;\n}\n.pl-1,\n.px-1 {\n  padding-left: 0.25rem !important;\n}\n.p-2 {\n  padding: 0.5rem !important;\n}\n.pt-2,\n.py-2 {\n  padding-top: 0.5rem !important;\n}\n.pr-2,\n.px-2 {\n  padding-right: 0.5rem !important;\n}\n.pb-2,\n.py-2 {\n  padding-bottom: 0.5rem !important;\n}\n.pl-2,\n.px-2 {\n  padding-left: 0.5rem !important;\n}\n.p-3 {\n  padding: 1rem !important;\n}\n.pt-3,\n.py-3 {\n  padding-top: 1rem !important;\n}\n.pr-3,\n.px-3 {\n  padding-right: 1rem !important;\n}\n.pb-3,\n.py-3 {\n  padding-bottom: 1rem !important;\n}\n.pl-3,\n.px-3 {\n  padding-left: 1rem !important;\n}\n.p-4 {\n  padding: 1.5rem !important;\n}\n.pt-4,\n.py-4 {\n  padding-top: 1.5rem !important;\n}\n.pr-4,\n.px-4 {\n  padding-right: 1.5rem !important;\n}\n.pb-4,\n.py-4 {\n  padding-bottom: 1.5rem !important;\n}\n.pl-4,\n.px-4 {\n  padding-left: 1.5rem !important;\n}\n.p-5 {\n  padding: 3rem !important;\n}\n.pt-5,\n.py-5 {\n  padding-top: 3rem !important;\n}\n.pr-5,\n.px-5 {\n  padding-right: 3rem !important;\n}\n.pb-5,\n.py-5 {\n  padding-bottom: 3rem !important;\n}\n.pl-5,\n.px-5 {\n  padding-left: 3rem !important;\n}\n.m-n1 {\n  margin: -0.25rem !important;\n}\n.mt-n1,\n.my-n1 {\n  margin-top: -0.25rem !important;\n}\n.mr-n1,\n.mx-n1 {\n  margin-right: -0.25rem !important;\n}\n.mb-n1,\n.my-n1 {\n  margin-bottom: -0.25rem !important;\n}\n.ml-n1,\n.mx-n1 {\n  margin-left: -0.25rem !important;\n}\n.m-n2 {\n  margin: -0.5rem !important;\n}\n.mt-n2,\n.my-n2 {\n  margin-top: -0.5rem !important;\n}\n.mr-n2,\n.mx-n2 {\n  margin-right: -0.5rem !important;\n}\n.mb-n2,\n.my-n2 {\n  margin-bottom: -0.5rem !important;\n}\n.ml-n2,\n.mx-n2 {\n  margin-left: -0.5rem !important;\n}\n.m-n3 {\n  margin: -1rem !important;\n}\n.mt-n3,\n.my-n3 {\n  margin-top: -1rem !important;\n}\n.mr-n3,\n.mx-n3 {\n  margin-right: -1rem !important;\n}\n.mb-n3,\n.my-n3 {\n  margin-bottom: -1rem !important;\n}\n.ml-n3,\n.mx-n3 {\n  margin-left: -1rem !important;\n}\n.m-n4 {\n  margin: -1.5rem !important;\n}\n.mt-n4,\n.my-n4 {\n  margin-top: -1.5rem !important;\n}\n.mr-n4,\n.mx-n4 {\n  margin-right: -1.5rem !important;\n}\n.mb-n4,\n.my-n4 {\n  margin-bottom: -1.5rem !important;\n}\n.ml-n4,\n.mx-n4 {\n  margin-left: -1.5rem !important;\n}\n.m-n5 {\n  margin: -3rem !important;\n}\n.mt-n5,\n.my-n5 {\n  margin-top: -3rem !important;\n}\n.mr-n5,\n.mx-n5 {\n  margin-right: -3rem !important;\n}\n.mb-n5,\n.my-n5 {\n  margin-bottom: -3rem !important;\n}\n.ml-n5,\n.mx-n5 {\n  margin-left: -3rem !important;\n}\n.m-auto {\n  margin: auto !important;\n}\n.mt-auto,\n.my-auto {\n  margin-top: auto !important;\n}\n.mr-auto,\n.mx-auto {\n  margin-right: auto !important;\n}\n.mb-auto,\n.my-auto {\n  margin-bottom: auto !important;\n}\n.ml-auto,\n.mx-auto {\n  margin-left: auto !important;\n}\n@media (min-width: 576px) {\n.m-sm-0 {\n    margin: 0 !important;\n}\n.mt-sm-0,\n  .my-sm-0 {\n    margin-top: 0 !important;\n}\n.mr-sm-0,\n  .mx-sm-0 {\n    margin-right: 0 !important;\n}\n.mb-sm-0,\n  .my-sm-0 {\n    margin-bottom: 0 !important;\n}\n.ml-sm-0,\n  .mx-sm-0 {\n    margin-left: 0 !important;\n}\n.m-sm-1 {\n    margin: 0.25rem !important;\n}\n.mt-sm-1,\n  .my-sm-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-sm-1,\n  .mx-sm-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-sm-1,\n  .my-sm-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-sm-1,\n  .mx-sm-1 {\n    margin-left: 0.25rem !important;\n}\n.m-sm-2 {\n    margin: 0.5rem !important;\n}\n.mt-sm-2,\n  .my-sm-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-sm-2,\n  .mx-sm-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-sm-2,\n  .my-sm-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-sm-2,\n  .mx-sm-2 {\n    margin-left: 0.5rem !important;\n}\n.m-sm-3 {\n    margin: 1rem !important;\n}\n.mt-sm-3,\n  .my-sm-3 {\n    margin-top: 1rem !important;\n}\n.mr-sm-3,\n  .mx-sm-3 {\n    margin-right: 1rem !important;\n}\n.mb-sm-3,\n  .my-sm-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-sm-3,\n  .mx-sm-3 {\n    margin-left: 1rem !important;\n}\n.m-sm-4 {\n    margin: 1.5rem !important;\n}\n.mt-sm-4,\n  .my-sm-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-sm-4,\n  .mx-sm-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-sm-4,\n  .my-sm-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-sm-4,\n  .mx-sm-4 {\n    margin-left: 1.5rem !important;\n}\n.m-sm-5 {\n    margin: 3rem !important;\n}\n.mt-sm-5,\n  .my-sm-5 {\n    margin-top: 3rem !important;\n}\n.mr-sm-5,\n  .mx-sm-5 {\n    margin-right: 3rem !important;\n}\n.mb-sm-5,\n  .my-sm-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-sm-5,\n  .mx-sm-5 {\n    margin-left: 3rem !important;\n}\n.p-sm-0 {\n    padding: 0 !important;\n}\n.pt-sm-0,\n  .py-sm-0 {\n    padding-top: 0 !important;\n}\n.pr-sm-0,\n  .px-sm-0 {\n    padding-right: 0 !important;\n}\n.pb-sm-0,\n  .py-sm-0 {\n    padding-bottom: 0 !important;\n}\n.pl-sm-0,\n  .px-sm-0 {\n    padding-left: 0 !important;\n}\n.p-sm-1 {\n    padding: 0.25rem !important;\n}\n.pt-sm-1,\n  .py-sm-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-sm-1,\n  .px-sm-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-sm-1,\n  .py-sm-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-sm-1,\n  .px-sm-1 {\n    padding-left: 0.25rem !important;\n}\n.p-sm-2 {\n    padding: 0.5rem !important;\n}\n.pt-sm-2,\n  .py-sm-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-sm-2,\n  .px-sm-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-sm-2,\n  .py-sm-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-sm-2,\n  .px-sm-2 {\n    padding-left: 0.5rem !important;\n}\n.p-sm-3 {\n    padding: 1rem !important;\n}\n.pt-sm-3,\n  .py-sm-3 {\n    padding-top: 1rem !important;\n}\n.pr-sm-3,\n  .px-sm-3 {\n    padding-right: 1rem !important;\n}\n.pb-sm-3,\n  .py-sm-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-sm-3,\n  .px-sm-3 {\n    padding-left: 1rem !important;\n}\n.p-sm-4 {\n    padding: 1.5rem !important;\n}\n.pt-sm-4,\n  .py-sm-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-sm-4,\n  .px-sm-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-sm-4,\n  .py-sm-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-sm-4,\n  .px-sm-4 {\n    padding-left: 1.5rem !important;\n}\n.p-sm-5 {\n    padding: 3rem !important;\n}\n.pt-sm-5,\n  .py-sm-5 {\n    padding-top: 3rem !important;\n}\n.pr-sm-5,\n  .px-sm-5 {\n    padding-right: 3rem !important;\n}\n.pb-sm-5,\n  .py-sm-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-sm-5,\n  .px-sm-5 {\n    padding-left: 3rem !important;\n}\n.m-sm-n1 {\n    margin: -0.25rem !important;\n}\n.mt-sm-n1,\n  .my-sm-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-sm-n1,\n  .mx-sm-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-sm-n1,\n  .my-sm-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-sm-n1,\n  .mx-sm-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-sm-n2 {\n    margin: -0.5rem !important;\n}\n.mt-sm-n2,\n  .my-sm-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-sm-n2,\n  .mx-sm-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-sm-n2,\n  .my-sm-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-sm-n2,\n  .mx-sm-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-sm-n3 {\n    margin: -1rem !important;\n}\n.mt-sm-n3,\n  .my-sm-n3 {\n    margin-top: -1rem !important;\n}\n.mr-sm-n3,\n  .mx-sm-n3 {\n    margin-right: -1rem !important;\n}\n.mb-sm-n3,\n  .my-sm-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-sm-n3,\n  .mx-sm-n3 {\n    margin-left: -1rem !important;\n}\n.m-sm-n4 {\n    margin: -1.5rem !important;\n}\n.mt-sm-n4,\n  .my-sm-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-sm-n4,\n  .mx-sm-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-sm-n4,\n  .my-sm-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-sm-n4,\n  .mx-sm-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-sm-n5 {\n    margin: -3rem !important;\n}\n.mt-sm-n5,\n  .my-sm-n5 {\n    margin-top: -3rem !important;\n}\n.mr-sm-n5,\n  .mx-sm-n5 {\n    margin-right: -3rem !important;\n}\n.mb-sm-n5,\n  .my-sm-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-sm-n5,\n  .mx-sm-n5 {\n    margin-left: -3rem !important;\n}\n.m-sm-auto {\n    margin: auto !important;\n}\n.mt-sm-auto,\n  .my-sm-auto {\n    margin-top: auto !important;\n}\n.mr-sm-auto,\n  .mx-sm-auto {\n    margin-right: auto !important;\n}\n.mb-sm-auto,\n  .my-sm-auto {\n    margin-bottom: auto !important;\n}\n.ml-sm-auto,\n  .mx-sm-auto {\n    margin-left: auto !important;\n}\n}\n@media (min-width: 768px) {\n.m-md-0 {\n    margin: 0 !important;\n}\n.mt-md-0,\n  .my-md-0 {\n    margin-top: 0 !important;\n}\n.mr-md-0,\n  .mx-md-0 {\n    margin-right: 0 !important;\n}\n.mb-md-0,\n  .my-md-0 {\n    margin-bottom: 0 !important;\n}\n.ml-md-0,\n  .mx-md-0 {\n    margin-left: 0 !important;\n}\n.m-md-1 {\n    margin: 0.25rem !important;\n}\n.mt-md-1,\n  .my-md-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-md-1,\n  .mx-md-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-md-1,\n  .my-md-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-md-1,\n  .mx-md-1 {\n    margin-left: 0.25rem !important;\n}\n.m-md-2 {\n    margin: 0.5rem !important;\n}\n.mt-md-2,\n  .my-md-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-md-2,\n  .mx-md-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-md-2,\n  .my-md-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-md-2,\n  .mx-md-2 {\n    margin-left: 0.5rem !important;\n}\n.m-md-3 {\n    margin: 1rem !important;\n}\n.mt-md-3,\n  .my-md-3 {\n    margin-top: 1rem !important;\n}\n.mr-md-3,\n  .mx-md-3 {\n    margin-right: 1rem !important;\n}\n.mb-md-3,\n  .my-md-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-md-3,\n  .mx-md-3 {\n    margin-left: 1rem !important;\n}\n.m-md-4 {\n    margin: 1.5rem !important;\n}\n.mt-md-4,\n  .my-md-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-md-4,\n  .mx-md-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-md-4,\n  .my-md-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-md-4,\n  .mx-md-4 {\n    margin-left: 1.5rem !important;\n}\n.m-md-5 {\n    margin: 3rem !important;\n}\n.mt-md-5,\n  .my-md-5 {\n    margin-top: 3rem !important;\n}\n.mr-md-5,\n  .mx-md-5 {\n    margin-right: 3rem !important;\n}\n.mb-md-5,\n  .my-md-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-md-5,\n  .mx-md-5 {\n    margin-left: 3rem !important;\n}\n.p-md-0 {\n    padding: 0 !important;\n}\n.pt-md-0,\n  .py-md-0 {\n    padding-top: 0 !important;\n}\n.pr-md-0,\n  .px-md-0 {\n    padding-right: 0 !important;\n}\n.pb-md-0,\n  .py-md-0 {\n    padding-bottom: 0 !important;\n}\n.pl-md-0,\n  .px-md-0 {\n    padding-left: 0 !important;\n}\n.p-md-1 {\n    padding: 0.25rem !important;\n}\n.pt-md-1,\n  .py-md-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-md-1,\n  .px-md-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-md-1,\n  .py-md-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-md-1,\n  .px-md-1 {\n    padding-left: 0.25rem !important;\n}\n.p-md-2 {\n    padding: 0.5rem !important;\n}\n.pt-md-2,\n  .py-md-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-md-2,\n  .px-md-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-md-2,\n  .py-md-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-md-2,\n  .px-md-2 {\n    padding-left: 0.5rem !important;\n}\n.p-md-3 {\n    padding: 1rem !important;\n}\n.pt-md-3,\n  .py-md-3 {\n    padding-top: 1rem !important;\n}\n.pr-md-3,\n  .px-md-3 {\n    padding-right: 1rem !important;\n}\n.pb-md-3,\n  .py-md-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-md-3,\n  .px-md-3 {\n    padding-left: 1rem !important;\n}\n.p-md-4 {\n    padding: 1.5rem !important;\n}\n.pt-md-4,\n  .py-md-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-md-4,\n  .px-md-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-md-4,\n  .py-md-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-md-4,\n  .px-md-4 {\n    padding-left: 1.5rem !important;\n}\n.p-md-5 {\n    padding: 3rem !important;\n}\n.pt-md-5,\n  .py-md-5 {\n    padding-top: 3rem !important;\n}\n.pr-md-5,\n  .px-md-5 {\n    padding-right: 3rem !important;\n}\n.pb-md-5,\n  .py-md-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-md-5,\n  .px-md-5 {\n    padding-left: 3rem !important;\n}\n.m-md-n1 {\n    margin: -0.25rem !important;\n}\n.mt-md-n1,\n  .my-md-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-md-n1,\n  .mx-md-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-md-n1,\n  .my-md-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-md-n1,\n  .mx-md-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-md-n2 {\n    margin: -0.5rem !important;\n}\n.mt-md-n2,\n  .my-md-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-md-n2,\n  .mx-md-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-md-n2,\n  .my-md-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-md-n2,\n  .mx-md-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-md-n3 {\n    margin: -1rem !important;\n}\n.mt-md-n3,\n  .my-md-n3 {\n    margin-top: -1rem !important;\n}\n.mr-md-n3,\n  .mx-md-n3 {\n    margin-right: -1rem !important;\n}\n.mb-md-n3,\n  .my-md-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-md-n3,\n  .mx-md-n3 {\n    margin-left: -1rem !important;\n}\n.m-md-n4 {\n    margin: -1.5rem !important;\n}\n.mt-md-n4,\n  .my-md-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-md-n4,\n  .mx-md-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-md-n4,\n  .my-md-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-md-n4,\n  .mx-md-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-md-n5 {\n    margin: -3rem !important;\n}\n.mt-md-n5,\n  .my-md-n5 {\n    margin-top: -3rem !important;\n}\n.mr-md-n5,\n  .mx-md-n5 {\n    margin-right: -3rem !important;\n}\n.mb-md-n5,\n  .my-md-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-md-n5,\n  .mx-md-n5 {\n    margin-left: -3rem !important;\n}\n.m-md-auto {\n    margin: auto !important;\n}\n.mt-md-auto,\n  .my-md-auto {\n    margin-top: auto !important;\n}\n.mr-md-auto,\n  .mx-md-auto {\n    margin-right: auto !important;\n}\n.mb-md-auto,\n  .my-md-auto {\n    margin-bottom: auto !important;\n}\n.ml-md-auto,\n  .mx-md-auto {\n    margin-left: auto !important;\n}\n}\n@media (min-width: 992px) {\n.m-lg-0 {\n    margin: 0 !important;\n}\n.mt-lg-0,\n  .my-lg-0 {\n    margin-top: 0 !important;\n}\n.mr-lg-0,\n  .mx-lg-0 {\n    margin-right: 0 !important;\n}\n.mb-lg-0,\n  .my-lg-0 {\n    margin-bottom: 0 !important;\n}\n.ml-lg-0,\n  .mx-lg-0 {\n    margin-left: 0 !important;\n}\n.m-lg-1 {\n    margin: 0.25rem !important;\n}\n.mt-lg-1,\n  .my-lg-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-lg-1,\n  .mx-lg-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-lg-1,\n  .my-lg-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-lg-1,\n  .mx-lg-1 {\n    margin-left: 0.25rem !important;\n}\n.m-lg-2 {\n    margin: 0.5rem !important;\n}\n.mt-lg-2,\n  .my-lg-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-lg-2,\n  .mx-lg-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-lg-2,\n  .my-lg-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-lg-2,\n  .mx-lg-2 {\n    margin-left: 0.5rem !important;\n}\n.m-lg-3 {\n    margin: 1rem !important;\n}\n.mt-lg-3,\n  .my-lg-3 {\n    margin-top: 1rem !important;\n}\n.mr-lg-3,\n  .mx-lg-3 {\n    margin-right: 1rem !important;\n}\n.mb-lg-3,\n  .my-lg-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-lg-3,\n  .mx-lg-3 {\n    margin-left: 1rem !important;\n}\n.m-lg-4 {\n    margin: 1.5rem !important;\n}\n.mt-lg-4,\n  .my-lg-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-lg-4,\n  .mx-lg-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-lg-4,\n  .my-lg-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-lg-4,\n  .mx-lg-4 {\n    margin-left: 1.5rem !important;\n}\n.m-lg-5 {\n    margin: 3rem !important;\n}\n.mt-lg-5,\n  .my-lg-5 {\n    margin-top: 3rem !important;\n}\n.mr-lg-5,\n  .mx-lg-5 {\n    margin-right: 3rem !important;\n}\n.mb-lg-5,\n  .my-lg-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-lg-5,\n  .mx-lg-5 {\n    margin-left: 3rem !important;\n}\n.p-lg-0 {\n    padding: 0 !important;\n}\n.pt-lg-0,\n  .py-lg-0 {\n    padding-top: 0 !important;\n}\n.pr-lg-0,\n  .px-lg-0 {\n    padding-right: 0 !important;\n}\n.pb-lg-0,\n  .py-lg-0 {\n    padding-bottom: 0 !important;\n}\n.pl-lg-0,\n  .px-lg-0 {\n    padding-left: 0 !important;\n}\n.p-lg-1 {\n    padding: 0.25rem !important;\n}\n.pt-lg-1,\n  .py-lg-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-lg-1,\n  .px-lg-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-lg-1,\n  .py-lg-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-lg-1,\n  .px-lg-1 {\n    padding-left: 0.25rem !important;\n}\n.p-lg-2 {\n    padding: 0.5rem !important;\n}\n.pt-lg-2,\n  .py-lg-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-lg-2,\n  .px-lg-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-lg-2,\n  .py-lg-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-lg-2,\n  .px-lg-2 {\n    padding-left: 0.5rem !important;\n}\n.p-lg-3 {\n    padding: 1rem !important;\n}\n.pt-lg-3,\n  .py-lg-3 {\n    padding-top: 1rem !important;\n}\n.pr-lg-3,\n  .px-lg-3 {\n    padding-right: 1rem !important;\n}\n.pb-lg-3,\n  .py-lg-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-lg-3,\n  .px-lg-3 {\n    padding-left: 1rem !important;\n}\n.p-lg-4 {\n    padding: 1.5rem !important;\n}\n.pt-lg-4,\n  .py-lg-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-lg-4,\n  .px-lg-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-lg-4,\n  .py-lg-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-lg-4,\n  .px-lg-4 {\n    padding-left: 1.5rem !important;\n}\n.p-lg-5 {\n    padding: 3rem !important;\n}\n.pt-lg-5,\n  .py-lg-5 {\n    padding-top: 3rem !important;\n}\n.pr-lg-5,\n  .px-lg-5 {\n    padding-right: 3rem !important;\n}\n.pb-lg-5,\n  .py-lg-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-lg-5,\n  .px-lg-5 {\n    padding-left: 3rem !important;\n}\n.m-lg-n1 {\n    margin: -0.25rem !important;\n}\n.mt-lg-n1,\n  .my-lg-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-lg-n1,\n  .mx-lg-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-lg-n1,\n  .my-lg-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-lg-n1,\n  .mx-lg-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-lg-n2 {\n    margin: -0.5rem !important;\n}\n.mt-lg-n2,\n  .my-lg-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-lg-n2,\n  .mx-lg-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-lg-n2,\n  .my-lg-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-lg-n2,\n  .mx-lg-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-lg-n3 {\n    margin: -1rem !important;\n}\n.mt-lg-n3,\n  .my-lg-n3 {\n    margin-top: -1rem !important;\n}\n.mr-lg-n3,\n  .mx-lg-n3 {\n    margin-right: -1rem !important;\n}\n.mb-lg-n3,\n  .my-lg-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-lg-n3,\n  .mx-lg-n3 {\n    margin-left: -1rem !important;\n}\n.m-lg-n4 {\n    margin: -1.5rem !important;\n}\n.mt-lg-n4,\n  .my-lg-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-lg-n4,\n  .mx-lg-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-lg-n4,\n  .my-lg-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-lg-n4,\n  .mx-lg-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-lg-n5 {\n    margin: -3rem !important;\n}\n.mt-lg-n5,\n  .my-lg-n5 {\n    margin-top: -3rem !important;\n}\n.mr-lg-n5,\n  .mx-lg-n5 {\n    margin-right: -3rem !important;\n}\n.mb-lg-n5,\n  .my-lg-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-lg-n5,\n  .mx-lg-n5 {\n    margin-left: -3rem !important;\n}\n.m-lg-auto {\n    margin: auto !important;\n}\n.mt-lg-auto,\n  .my-lg-auto {\n    margin-top: auto !important;\n}\n.mr-lg-auto,\n  .mx-lg-auto {\n    margin-right: auto !important;\n}\n.mb-lg-auto,\n  .my-lg-auto {\n    margin-bottom: auto !important;\n}\n.ml-lg-auto,\n  .mx-lg-auto {\n    margin-left: auto !important;\n}\n}\n@media (min-width: 1200px) {\n.m-xl-0 {\n    margin: 0 !important;\n}\n.mt-xl-0,\n  .my-xl-0 {\n    margin-top: 0 !important;\n}\n.mr-xl-0,\n  .mx-xl-0 {\n    margin-right: 0 !important;\n}\n.mb-xl-0,\n  .my-xl-0 {\n    margin-bottom: 0 !important;\n}\n.ml-xl-0,\n  .mx-xl-0 {\n    margin-left: 0 !important;\n}\n.m-xl-1 {\n    margin: 0.25rem !important;\n}\n.mt-xl-1,\n  .my-xl-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-xl-1,\n  .mx-xl-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-xl-1,\n  .my-xl-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-xl-1,\n  .mx-xl-1 {\n    margin-left: 0.25rem !important;\n}\n.m-xl-2 {\n    margin: 0.5rem !important;\n}\n.mt-xl-2,\n  .my-xl-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-xl-2,\n  .mx-xl-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-xl-2,\n  .my-xl-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-xl-2,\n  .mx-xl-2 {\n    margin-left: 0.5rem !important;\n}\n.m-xl-3 {\n    margin: 1rem !important;\n}\n.mt-xl-3,\n  .my-xl-3 {\n    margin-top: 1rem !important;\n}\n.mr-xl-3,\n  .mx-xl-3 {\n    margin-right: 1rem !important;\n}\n.mb-xl-3,\n  .my-xl-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-xl-3,\n  .mx-xl-3 {\n    margin-left: 1rem !important;\n}\n.m-xl-4 {\n    margin: 1.5rem !important;\n}\n.mt-xl-4,\n  .my-xl-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-xl-4,\n  .mx-xl-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-xl-4,\n  .my-xl-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-xl-4,\n  .mx-xl-4 {\n    margin-left: 1.5rem !important;\n}\n.m-xl-5 {\n    margin: 3rem !important;\n}\n.mt-xl-5,\n  .my-xl-5 {\n    margin-top: 3rem !important;\n}\n.mr-xl-5,\n  .mx-xl-5 {\n    margin-right: 3rem !important;\n}\n.mb-xl-5,\n  .my-xl-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-xl-5,\n  .mx-xl-5 {\n    margin-left: 3rem !important;\n}\n.p-xl-0 {\n    padding: 0 !important;\n}\n.pt-xl-0,\n  .py-xl-0 {\n    padding-top: 0 !important;\n}\n.pr-xl-0,\n  .px-xl-0 {\n    padding-right: 0 !important;\n}\n.pb-xl-0,\n  .py-xl-0 {\n    padding-bottom: 0 !important;\n}\n.pl-xl-0,\n  .px-xl-0 {\n    padding-left: 0 !important;\n}\n.p-xl-1 {\n    padding: 0.25rem !important;\n}\n.pt-xl-1,\n  .py-xl-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-xl-1,\n  .px-xl-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-xl-1,\n  .py-xl-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-xl-1,\n  .px-xl-1 {\n    padding-left: 0.25rem !important;\n}\n.p-xl-2 {\n    padding: 0.5rem !important;\n}\n.pt-xl-2,\n  .py-xl-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-xl-2,\n  .px-xl-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-xl-2,\n  .py-xl-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-xl-2,\n  .px-xl-2 {\n    padding-left: 0.5rem !important;\n}\n.p-xl-3 {\n    padding: 1rem !important;\n}\n.pt-xl-3,\n  .py-xl-3 {\n    padding-top: 1rem !important;\n}\n.pr-xl-3,\n  .px-xl-3 {\n    padding-right: 1rem !important;\n}\n.pb-xl-3,\n  .py-xl-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-xl-3,\n  .px-xl-3 {\n    padding-left: 1rem !important;\n}\n.p-xl-4 {\n    padding: 1.5rem !important;\n}\n.pt-xl-4,\n  .py-xl-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-xl-4,\n  .px-xl-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-xl-4,\n  .py-xl-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-xl-4,\n  .px-xl-4 {\n    padding-left: 1.5rem !important;\n}\n.p-xl-5 {\n    padding: 3rem !important;\n}\n.pt-xl-5,\n  .py-xl-5 {\n    padding-top: 3rem !important;\n}\n.pr-xl-5,\n  .px-xl-5 {\n    padding-right: 3rem !important;\n}\n.pb-xl-5,\n  .py-xl-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-xl-5,\n  .px-xl-5 {\n    padding-left: 3rem !important;\n}\n.m-xl-n1 {\n    margin: -0.25rem !important;\n}\n.mt-xl-n1,\n  .my-xl-n1 {\n    margin-top: -0.25rem !important;\n}\n.mr-xl-n1,\n  .mx-xl-n1 {\n    margin-right: -0.25rem !important;\n}\n.mb-xl-n1,\n  .my-xl-n1 {\n    margin-bottom: -0.25rem !important;\n}\n.ml-xl-n1,\n  .mx-xl-n1 {\n    margin-left: -0.25rem !important;\n}\n.m-xl-n2 {\n    margin: -0.5rem !important;\n}\n.mt-xl-n2,\n  .my-xl-n2 {\n    margin-top: -0.5rem !important;\n}\n.mr-xl-n2,\n  .mx-xl-n2 {\n    margin-right: -0.5rem !important;\n}\n.mb-xl-n2,\n  .my-xl-n2 {\n    margin-bottom: -0.5rem !important;\n}\n.ml-xl-n2,\n  .mx-xl-n2 {\n    margin-left: -0.5rem !important;\n}\n.m-xl-n3 {\n    margin: -1rem !important;\n}\n.mt-xl-n3,\n  .my-xl-n3 {\n    margin-top: -1rem !important;\n}\n.mr-xl-n3,\n  .mx-xl-n3 {\n    margin-right: -1rem !important;\n}\n.mb-xl-n3,\n  .my-xl-n3 {\n    margin-bottom: -1rem !important;\n}\n.ml-xl-n3,\n  .mx-xl-n3 {\n    margin-left: -1rem !important;\n}\n.m-xl-n4 {\n    margin: -1.5rem !important;\n}\n.mt-xl-n4,\n  .my-xl-n4 {\n    margin-top: -1.5rem !important;\n}\n.mr-xl-n4,\n  .mx-xl-n4 {\n    margin-right: -1.5rem !important;\n}\n.mb-xl-n4,\n  .my-xl-n4 {\n    margin-bottom: -1.5rem !important;\n}\n.ml-xl-n4,\n  .mx-xl-n4 {\n    margin-left: -1.5rem !important;\n}\n.m-xl-n5 {\n    margin: -3rem !important;\n}\n.mt-xl-n5,\n  .my-xl-n5 {\n    margin-top: -3rem !important;\n}\n.mr-xl-n5,\n  .mx-xl-n5 {\n    margin-right: -3rem !important;\n}\n.mb-xl-n5,\n  .my-xl-n5 {\n    margin-bottom: -3rem !important;\n}\n.ml-xl-n5,\n  .mx-xl-n5 {\n    margin-left: -3rem !important;\n}\n.m-xl-auto {\n    margin: auto !important;\n}\n.mt-xl-auto,\n  .my-xl-auto {\n    margin-top: auto !important;\n}\n.mr-xl-auto,\n  .mx-xl-auto {\n    margin-right: auto !important;\n}\n.mb-xl-auto,\n  .my-xl-auto {\n    margin-bottom: auto !important;\n}\n.ml-xl-auto,\n  .mx-xl-auto {\n    margin-left: auto !important;\n}\n}\n.stretched-link::after {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1;\n  pointer-events: auto;\n  content: \"\";\n  background-color: rgba(0, 0, 0, 0);\n}\n.text-monospace {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace !important;\n}\n.text-justify {\n  text-align: justify !important;\n}\n.text-wrap {\n  white-space: normal !important;\n}\n.text-nowrap {\n  white-space: nowrap !important;\n}\n.text-truncate {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.text-left {\n  text-align: left !important;\n}\n.text-right {\n  text-align: right !important;\n}\n.text-center {\n  text-align: center !important;\n}\n@media (min-width: 576px) {\n.text-sm-left {\n    text-align: left !important;\n}\n.text-sm-right {\n    text-align: right !important;\n}\n.text-sm-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 768px) {\n.text-md-left {\n    text-align: left !important;\n}\n.text-md-right {\n    text-align: right !important;\n}\n.text-md-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 992px) {\n.text-lg-left {\n    text-align: left !important;\n}\n.text-lg-right {\n    text-align: right !important;\n}\n.text-lg-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 1200px) {\n.text-xl-left {\n    text-align: left !important;\n}\n.text-xl-right {\n    text-align: right !important;\n}\n.text-xl-center {\n    text-align: center !important;\n}\n}\n.text-lowercase {\n  text-transform: lowercase !important;\n}\n.text-uppercase {\n  text-transform: uppercase !important;\n}\n.text-capitalize {\n  text-transform: capitalize !important;\n}\n.font-weight-light {\n  font-weight: 300 !important;\n}\n.font-weight-lighter {\n  font-weight: lighter !important;\n}\n.font-weight-normal {\n  font-weight: 400 !important;\n}\n.font-weight-bold {\n  font-weight: 700 !important;\n}\n.font-weight-bolder {\n  font-weight: bolder !important;\n}\n.font-italic {\n  font-style: italic !important;\n}\n.text-white {\n  color: #fff !important;\n}\n.text-primary {\n  color: #007bff !important;\n}\na.text-primary:hover, a.text-primary:focus {\n  color: #0056b3 !important;\n}\n.text-secondary {\n  color: #6c757d !important;\n}\na.text-secondary:hover, a.text-secondary:focus {\n  color: #494f54 !important;\n}\n.text-success {\n  color: #28a745 !important;\n}\na.text-success:hover, a.text-success:focus {\n  color: #19692c !important;\n}\n.text-info {\n  color: #17a2b8 !important;\n}\na.text-info:hover, a.text-info:focus {\n  color: #0f6674 !important;\n}\n.text-warning {\n  color: #ffc107 !important;\n}\na.text-warning:hover, a.text-warning:focus {\n  color: #ba8b00 !important;\n}\n.text-danger {\n  color: #dc3545 !important;\n}\na.text-danger:hover, a.text-danger:focus {\n  color: #a71d2a !important;\n}\n.text-light {\n  color: #f8f9fa !important;\n}\na.text-light:hover, a.text-light:focus {\n  color: #cbd3da !important;\n}\n.text-dark {\n  color: #343a40 !important;\n}\na.text-dark:hover, a.text-dark:focus {\n  color: #121416 !important;\n}\n.text-body {\n  color: #212529 !important;\n}\n.text-muted {\n  color: #6c757d !important;\n}\n.text-black-50 {\n  color: rgba(0, 0, 0, 0.5) !important;\n}\n.text-white-50 {\n  color: rgba(255, 255, 255, 0.5) !important;\n}\n.text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.text-decoration-none {\n  text-decoration: none !important;\n}\n.text-break {\n  word-break: break-word !important;\n  word-wrap: break-word !important;\n}\n.text-reset {\n  color: inherit !important;\n}\n.visible {\n  visibility: visible !important;\n}\n.invisible {\n  visibility: hidden !important;\n}\n@media print {\n*,\n  *::before,\n  *::after {\n    text-shadow: none !important;\n    box-shadow: none !important;\n}\na:not(.btn) {\n    text-decoration: underline;\n}\nabbr[title]::after {\n    content: \" (\" attr(title) \")\";\n}\npre {\n    white-space: pre-wrap !important;\n}\npre,\n  blockquote {\n    border: 1px solid #adb5bd;\n    page-break-inside: avoid;\n}\ntr,\n  img {\n    page-break-inside: avoid;\n}\np,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n}\nh2,\n  h3 {\n    page-break-after: avoid;\n}\n@page {\n    size: a3;\n}\nbody {\n    min-width: 992px !important;\n}\n.container {\n    min-width: 992px !important;\n}\n.navbar {\n    display: none;\n}\n.badge {\n    border: 1px solid #000;\n}\n.table {\n    border-collapse: collapse !important;\n}\n.table td,\n  .table th {\n    background-color: #fff !important;\n}\n.table-bordered th,\n  .table-bordered td {\n    border: 1px solid #dee2e6 !important;\n}\n.table-dark {\n    color: inherit;\n}\n.table-dark th,\n  .table-dark td,\n  .table-dark thead th,\n  .table-dark tbody + tbody {\n    border-color: #dee2e6;\n}\n.table .thead-dark th {\n    color: inherit;\n    border-color: #dee2e6;\n}\n}", ""]);
->>>>>>> 9a8ba2a4588cd8778e6040b85fc166ac3e4c76db
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7347,7 +7598,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".background[data-v-6bdaa404] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.4);\n  display: none;\n  justify-content: center;\n  align-items: center;\n}\n.background .popup[data-v-6bdaa404] {\n  z-index: 999;\n  padding: 5rem;\n  background-color: whitesmoke;\n  border: 2px solid grey;\n  border-radius: 10px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#card-element[data-v-6bdaa404] {\n  height: 40px;\n  padding: 10px 12px;\n  border-radius: 4px;\n  border: 1px solid #ccc;\n  background-color: #fff;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  margin-bottom: 15px;\n}\n#card-element--invalid[data-v-6bdaa404] {\n  border-color: #fa755a;\n}\n.card-errors[data-v-6bdaa404] {\n  color: #fa755a;\n  font-size: 14px;\n  font-weight: 500;\n  margin-top: 5px;\n}\n.loading-spinner[data-v-6bdaa404] {\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #777;\n  border-radius: 50%;\n  width: 1.5rem;\n  height: 1.5rem;\n  animation: spin-6bdaa404 1s linear infinite;\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 5px;\n}\n@keyframes spin-6bdaa404 {\nto {\n    transform: rotate(360deg);\n}\n}\n.background[data-v-6bdaa404] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.4);\n  display: none;\n  justify-content: center;\n  align-items: center;\n}\n.background .popup[data-v-6bdaa404] {\n  z-index: 999;\n  padding: 5rem;\n  background-color: whitesmoke;\n  border: 2px solid grey;\n  border-radius: 10px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7427,6 +7678,533 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./node_modules/function-bind/implementation.js":
+/*!******************************************************!*\
+  !*** ./node_modules/function-bind/implementation.js ***!
+  \******************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* eslint no-invalid-this: 1 */
+
+var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+var slice = Array.prototype.slice;
+var toStr = Object.prototype.toString;
+var funcType = '[object Function]';
+
+module.exports = function bind(that) {
+    var target = this;
+    if (typeof target !== 'function' || toStr.call(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
+    }
+    var args = slice.call(arguments, 1);
+
+    var bound;
+    var binder = function () {
+        if (this instanceof bound) {
+            var result = target.apply(
+                this,
+                args.concat(slice.call(arguments))
+            );
+            if (Object(result) === result) {
+                return result;
+            }
+            return this;
+        } else {
+            return target.apply(
+                that,
+                args.concat(slice.call(arguments))
+            );
+        }
+    };
+
+    var boundLength = Math.max(0, target.length - args.length);
+    var boundArgs = [];
+    for (var i = 0; i < boundLength; i++) {
+        boundArgs.push('$' + i);
+    }
+
+    bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
+
+    if (target.prototype) {
+        var Empty = function Empty() {};
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+    }
+
+    return bound;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/function-bind/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/function-bind/index.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var implementation = __webpack_require__(/*! ./implementation */ "./node_modules/function-bind/implementation.js");
+
+module.exports = Function.prototype.bind || implementation;
+
+
+/***/ }),
+
+/***/ "./node_modules/get-intrinsic/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/get-intrinsic/index.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var undefined;
+
+var $SyntaxError = SyntaxError;
+var $Function = Function;
+var $TypeError = TypeError;
+
+// eslint-disable-next-line consistent-return
+var getEvalledConstructor = function (expressionSyntax) {
+	try {
+		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
+	} catch (e) {}
+};
+
+var $gOPD = Object.getOwnPropertyDescriptor;
+if ($gOPD) {
+	try {
+		$gOPD({}, '');
+	} catch (e) {
+		$gOPD = null; // this is IE 8, which has a broken gOPD
+	}
+}
+
+var throwTypeError = function () {
+	throw new $TypeError();
+};
+var ThrowTypeError = $gOPD
+	? (function () {
+		try {
+			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
+			arguments.callee; // IE 8 does not throw here
+			return throwTypeError;
+		} catch (calleeThrows) {
+			try {
+				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
+				return $gOPD(arguments, 'callee').get;
+			} catch (gOPDthrows) {
+				return throwTypeError;
+			}
+		}
+	}())
+	: throwTypeError;
+
+var hasSymbols = __webpack_require__(/*! has-symbols */ "./node_modules/has-symbols/index.js")();
+
+var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
+
+var needsEval = {};
+
+var TypedArray = typeof Uint8Array === 'undefined' ? undefined : getProto(Uint8Array);
+
+var INTRINSICS = {
+	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined : AggregateError,
+	'%Array%': Array,
+	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined : ArrayBuffer,
+	'%ArrayIteratorPrototype%': hasSymbols ? getProto([][Symbol.iterator]()) : undefined,
+	'%AsyncFromSyncIteratorPrototype%': undefined,
+	'%AsyncFunction%': needsEval,
+	'%AsyncGenerator%': needsEval,
+	'%AsyncGeneratorFunction%': needsEval,
+	'%AsyncIteratorPrototype%': needsEval,
+	'%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
+	'%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
+	'%BigInt64Array%': typeof BigInt64Array === 'undefined' ? undefined : BigInt64Array,
+	'%BigUint64Array%': typeof BigUint64Array === 'undefined' ? undefined : BigUint64Array,
+	'%Boolean%': Boolean,
+	'%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
+	'%Date%': Date,
+	'%decodeURI%': decodeURI,
+	'%decodeURIComponent%': decodeURIComponent,
+	'%encodeURI%': encodeURI,
+	'%encodeURIComponent%': encodeURIComponent,
+	'%Error%': Error,
+	'%eval%': eval, // eslint-disable-line no-eval
+	'%EvalError%': EvalError,
+	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined : Float32Array,
+	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined : Float64Array,
+	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined : FinalizationRegistry,
+	'%Function%': $Function,
+	'%GeneratorFunction%': needsEval,
+	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined : Int8Array,
+	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined : Int16Array,
+	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined : Int32Array,
+	'%isFinite%': isFinite,
+	'%isNaN%': isNaN,
+	'%IteratorPrototype%': hasSymbols ? getProto(getProto([][Symbol.iterator]())) : undefined,
+	'%JSON%': typeof JSON === 'object' ? JSON : undefined,
+	'%Map%': typeof Map === 'undefined' ? undefined : Map,
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols ? undefined : getProto(new Map()[Symbol.iterator]()),
+	'%Math%': Math,
+	'%Number%': Number,
+	'%Object%': Object,
+	'%parseFloat%': parseFloat,
+	'%parseInt%': parseInt,
+	'%Promise%': typeof Promise === 'undefined' ? undefined : Promise,
+	'%Proxy%': typeof Proxy === 'undefined' ? undefined : Proxy,
+	'%RangeError%': RangeError,
+	'%ReferenceError%': ReferenceError,
+	'%Reflect%': typeof Reflect === 'undefined' ? undefined : Reflect,
+	'%RegExp%': RegExp,
+	'%Set%': typeof Set === 'undefined' ? undefined : Set,
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols ? undefined : getProto(new Set()[Symbol.iterator]()),
+	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined : SharedArrayBuffer,
+	'%String%': String,
+	'%StringIteratorPrototype%': hasSymbols ? getProto(''[Symbol.iterator]()) : undefined,
+	'%Symbol%': hasSymbols ? Symbol : undefined,
+	'%SyntaxError%': $SyntaxError,
+	'%ThrowTypeError%': ThrowTypeError,
+	'%TypedArray%': TypedArray,
+	'%TypeError%': $TypeError,
+	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined : Uint8Array,
+	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined : Uint8ClampedArray,
+	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined : Uint16Array,
+	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined : Uint32Array,
+	'%URIError%': URIError,
+	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined : WeakMap,
+	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
+	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet
+};
+
+try {
+	null.error; // eslint-disable-line no-unused-expressions
+} catch (e) {
+	// https://github.com/tc39/proposal-shadowrealm/pull/384#issuecomment-1364264229
+	var errorProto = getProto(getProto(e));
+	INTRINSICS['%Error.prototype%'] = errorProto;
+}
+
+var doEval = function doEval(name) {
+	var value;
+	if (name === '%AsyncFunction%') {
+		value = getEvalledConstructor('async function () {}');
+	} else if (name === '%GeneratorFunction%') {
+		value = getEvalledConstructor('function* () {}');
+	} else if (name === '%AsyncGeneratorFunction%') {
+		value = getEvalledConstructor('async function* () {}');
+	} else if (name === '%AsyncGenerator%') {
+		var fn = doEval('%AsyncGeneratorFunction%');
+		if (fn) {
+			value = fn.prototype;
+		}
+	} else if (name === '%AsyncIteratorPrototype%') {
+		var gen = doEval('%AsyncGenerator%');
+		if (gen) {
+			value = getProto(gen.prototype);
+		}
+	}
+
+	INTRINSICS[name] = value;
+
+	return value;
+};
+
+var LEGACY_ALIASES = {
+	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
+	'%ArrayPrototype%': ['Array', 'prototype'],
+	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
+	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
+	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
+	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
+	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
+	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
+	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
+	'%BooleanPrototype%': ['Boolean', 'prototype'],
+	'%DataViewPrototype%': ['DataView', 'prototype'],
+	'%DatePrototype%': ['Date', 'prototype'],
+	'%ErrorPrototype%': ['Error', 'prototype'],
+	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
+	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
+	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
+	'%FunctionPrototype%': ['Function', 'prototype'],
+	'%Generator%': ['GeneratorFunction', 'prototype'],
+	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
+	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
+	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
+	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
+	'%JSONParse%': ['JSON', 'parse'],
+	'%JSONStringify%': ['JSON', 'stringify'],
+	'%MapPrototype%': ['Map', 'prototype'],
+	'%NumberPrototype%': ['Number', 'prototype'],
+	'%ObjectPrototype%': ['Object', 'prototype'],
+	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
+	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
+	'%PromisePrototype%': ['Promise', 'prototype'],
+	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
+	'%Promise_all%': ['Promise', 'all'],
+	'%Promise_reject%': ['Promise', 'reject'],
+	'%Promise_resolve%': ['Promise', 'resolve'],
+	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
+	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
+	'%RegExpPrototype%': ['RegExp', 'prototype'],
+	'%SetPrototype%': ['Set', 'prototype'],
+	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
+	'%StringPrototype%': ['String', 'prototype'],
+	'%SymbolPrototype%': ['Symbol', 'prototype'],
+	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
+	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
+	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
+	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
+	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
+	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
+	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
+	'%URIErrorPrototype%': ['URIError', 'prototype'],
+	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
+	'%WeakSetPrototype%': ['WeakSet', 'prototype']
+};
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+var hasOwn = __webpack_require__(/*! has */ "./node_modules/has/src/index.js");
+var $concat = bind.call(Function.call, Array.prototype.concat);
+var $spliceApply = bind.call(Function.apply, Array.prototype.splice);
+var $replace = bind.call(Function.call, String.prototype.replace);
+var $strSlice = bind.call(Function.call, String.prototype.slice);
+var $exec = bind.call(Function.call, RegExp.prototype.exec);
+
+/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
+var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
+var stringToPath = function stringToPath(string) {
+	var first = $strSlice(string, 0, 1);
+	var last = $strSlice(string, -1);
+	if (first === '%' && last !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
+	} else if (last === '%' && first !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
+	}
+	var result = [];
+	$replace(string, rePropName, function (match, number, quote, subString) {
+		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
+	});
+	return result;
+};
+/* end adaptation */
+
+var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
+	var intrinsicName = name;
+	var alias;
+	if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
+		alias = LEGACY_ALIASES[intrinsicName];
+		intrinsicName = '%' + alias[0] + '%';
+	}
+
+	if (hasOwn(INTRINSICS, intrinsicName)) {
+		var value = INTRINSICS[intrinsicName];
+		if (value === needsEval) {
+			value = doEval(intrinsicName);
+		}
+		if (typeof value === 'undefined' && !allowMissing) {
+			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
+		}
+
+		return {
+			alias: alias,
+			name: intrinsicName,
+			value: value
+		};
+	}
+
+	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
+};
+
+module.exports = function GetIntrinsic(name, allowMissing) {
+	if (typeof name !== 'string' || name.length === 0) {
+		throw new $TypeError('intrinsic name must be a non-empty string');
+	}
+	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
+		throw new $TypeError('"allowMissing" argument must be a boolean');
+	}
+
+	if ($exec(/^%?[^%]*%?$/, name) === null) {
+		throw new $SyntaxError('`%` may not be present anywhere but at the beginning and end of the intrinsic name');
+	}
+	var parts = stringToPath(name);
+	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
+
+	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
+	var intrinsicRealName = intrinsic.name;
+	var value = intrinsic.value;
+	var skipFurtherCaching = false;
+
+	var alias = intrinsic.alias;
+	if (alias) {
+		intrinsicBaseName = alias[0];
+		$spliceApply(parts, $concat([0, 1], alias));
+	}
+
+	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
+		var part = parts[i];
+		var first = $strSlice(part, 0, 1);
+		var last = $strSlice(part, -1);
+		if (
+			(
+				(first === '"' || first === "'" || first === '`')
+				|| (last === '"' || last === "'" || last === '`')
+			)
+			&& first !== last
+		) {
+			throw new $SyntaxError('property names with quotes must have matching quotes');
+		}
+		if (part === 'constructor' || !isOwn) {
+			skipFurtherCaching = true;
+		}
+
+		intrinsicBaseName += '.' + part;
+		intrinsicRealName = '%' + intrinsicBaseName + '%';
+
+		if (hasOwn(INTRINSICS, intrinsicRealName)) {
+			value = INTRINSICS[intrinsicRealName];
+		} else if (value != null) {
+			if (!(part in value)) {
+				if (!allowMissing) {
+					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
+				}
+				return void undefined;
+			}
+			if ($gOPD && (i + 1) >= parts.length) {
+				var desc = $gOPD(value, part);
+				isOwn = !!desc;
+
+				// By convention, when a data property is converted to an accessor
+				// property to emulate a data property that does not suffer from
+				// the override mistake, that accessor's getter is marked with
+				// an `originalValue` property. Here, when we detect this, we
+				// uphold the illusion by pretending to see that original data
+				// property, i.e., returning the value rather than the getter
+				// itself.
+				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
+					value = desc.get;
+				} else {
+					value = value[part];
+				}
+			} else {
+				isOwn = hasOwn(value, part);
+				value = value[part];
+			}
+
+			if (isOwn && !skipFurtherCaching) {
+				INTRINSICS[intrinsicRealName] = value;
+			}
+		}
+	}
+	return value;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/has-symbols/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/has-symbols/index.js ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var origSymbol = typeof Symbol !== 'undefined' && Symbol;
+var hasSymbolSham = __webpack_require__(/*! ./shams */ "./node_modules/has-symbols/shams.js");
+
+module.exports = function hasNativeSymbols() {
+	if (typeof origSymbol !== 'function') { return false; }
+	if (typeof Symbol !== 'function') { return false; }
+	if (typeof origSymbol('foo') !== 'symbol') { return false; }
+	if (typeof Symbol('bar') !== 'symbol') { return false; }
+
+	return hasSymbolSham();
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/has-symbols/shams.js":
+/*!*******************************************!*\
+  !*** ./node_modules/has-symbols/shams.js ***!
+  \*******************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* eslint complexity: [2, 18], max-statements: [2, 33] */
+module.exports = function hasSymbols() {
+	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
+	if (typeof Symbol.iterator === 'symbol') { return true; }
+
+	var obj = {};
+	var sym = Symbol('test');
+	var symObj = Object(sym);
+	if (typeof sym === 'string') { return false; }
+
+	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
+	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
+
+	// temp disabled per https://github.com/ljharb/object.assign/issues/17
+	// if (sym instanceof Symbol) { return false; }
+	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
+	// if (!(symObj instanceof Symbol)) { return false; }
+
+	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
+	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
+
+	var symVal = 42;
+	obj[sym] = symVal;
+	for (sym in obj) { return false; } // eslint-disable-line no-restricted-syntax, no-unreachable-loop
+	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
+
+	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
+
+	var syms = Object.getOwnPropertySymbols(obj);
+	if (syms.length !== 1 || syms[0] !== sym) { return false; }
+
+	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
+
+	if (typeof Object.getOwnPropertyDescriptor === 'function') {
+		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
+		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
+	}
+
+	return true;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/has/src/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/has/src/index.js ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+
+module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
+
 
 /***/ }),
 
@@ -18434,6 +19212,532 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./node_modules/object-inspect/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/object-inspect/index.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var hasMap = typeof Map === 'function' && Map.prototype;
+var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, 'size') : null;
+var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === 'function' ? mapSizeDescriptor.get : null;
+var mapForEach = hasMap && Map.prototype.forEach;
+var hasSet = typeof Set === 'function' && Set.prototype;
+var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, 'size') : null;
+var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === 'function' ? setSizeDescriptor.get : null;
+var setForEach = hasSet && Set.prototype.forEach;
+var hasWeakMap = typeof WeakMap === 'function' && WeakMap.prototype;
+var weakMapHas = hasWeakMap ? WeakMap.prototype.has : null;
+var hasWeakSet = typeof WeakSet === 'function' && WeakSet.prototype;
+var weakSetHas = hasWeakSet ? WeakSet.prototype.has : null;
+var hasWeakRef = typeof WeakRef === 'function' && WeakRef.prototype;
+var weakRefDeref = hasWeakRef ? WeakRef.prototype.deref : null;
+var booleanValueOf = Boolean.prototype.valueOf;
+var objectToString = Object.prototype.toString;
+var functionToString = Function.prototype.toString;
+var $match = String.prototype.match;
+var $slice = String.prototype.slice;
+var $replace = String.prototype.replace;
+var $toUpperCase = String.prototype.toUpperCase;
+var $toLowerCase = String.prototype.toLowerCase;
+var $test = RegExp.prototype.test;
+var $concat = Array.prototype.concat;
+var $join = Array.prototype.join;
+var $arrSlice = Array.prototype.slice;
+var $floor = Math.floor;
+var bigIntValueOf = typeof BigInt === 'function' ? BigInt.prototype.valueOf : null;
+var gOPS = Object.getOwnPropertySymbols;
+var symToString = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? Symbol.prototype.toString : null;
+var hasShammedSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'object';
+// ie, `has-tostringtag/shams
+var toStringTag = typeof Symbol === 'function' && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? 'object' : 'symbol')
+    ? Symbol.toStringTag
+    : null;
+var isEnumerable = Object.prototype.propertyIsEnumerable;
+
+var gPO = (typeof Reflect === 'function' ? Reflect.getPrototypeOf : Object.getPrototypeOf) || (
+    [].__proto__ === Array.prototype // eslint-disable-line no-proto
+        ? function (O) {
+            return O.__proto__; // eslint-disable-line no-proto
+        }
+        : null
+);
+
+function addNumericSeparator(num, str) {
+    if (
+        num === Infinity
+        || num === -Infinity
+        || num !== num
+        || (num && num > -1000 && num < 1000)
+        || $test.call(/e/, str)
+    ) {
+        return str;
+    }
+    var sepRegex = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
+    if (typeof num === 'number') {
+        var int = num < 0 ? -$floor(-num) : $floor(num); // trunc(num)
+        if (int !== num) {
+            var intStr = String(int);
+            var dec = $slice.call(str, intStr.length + 1);
+            return $replace.call(intStr, sepRegex, '$&_') + '.' + $replace.call($replace.call(dec, /([0-9]{3})/g, '$&_'), /_$/, '');
+        }
+    }
+    return $replace.call(str, sepRegex, '$&_');
+}
+
+var utilInspect = __webpack_require__(/*! ./util.inspect */ "?2128");
+var inspectCustom = utilInspect.custom;
+var inspectSymbol = isSymbol(inspectCustom) ? inspectCustom : null;
+
+module.exports = function inspect_(obj, options, depth, seen) {
+    var opts = options || {};
+
+    if (has(opts, 'quoteStyle') && (opts.quoteStyle !== 'single' && opts.quoteStyle !== 'double')) {
+        throw new TypeError('option "quoteStyle" must be "single" or "double"');
+    }
+    if (
+        has(opts, 'maxStringLength') && (typeof opts.maxStringLength === 'number'
+            ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity
+            : opts.maxStringLength !== null
+        )
+    ) {
+        throw new TypeError('option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`');
+    }
+    var customInspect = has(opts, 'customInspect') ? opts.customInspect : true;
+    if (typeof customInspect !== 'boolean' && customInspect !== 'symbol') {
+        throw new TypeError('option "customInspect", if provided, must be `true`, `false`, or `\'symbol\'`');
+    }
+
+    if (
+        has(opts, 'indent')
+        && opts.indent !== null
+        && opts.indent !== '\t'
+        && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)
+    ) {
+        throw new TypeError('option "indent" must be "\\t", an integer > 0, or `null`');
+    }
+    if (has(opts, 'numericSeparator') && typeof opts.numericSeparator !== 'boolean') {
+        throw new TypeError('option "numericSeparator", if provided, must be `true` or `false`');
+    }
+    var numericSeparator = opts.numericSeparator;
+
+    if (typeof obj === 'undefined') {
+        return 'undefined';
+    }
+    if (obj === null) {
+        return 'null';
+    }
+    if (typeof obj === 'boolean') {
+        return obj ? 'true' : 'false';
+    }
+
+    if (typeof obj === 'string') {
+        return inspectString(obj, opts);
+    }
+    if (typeof obj === 'number') {
+        if (obj === 0) {
+            return Infinity / obj > 0 ? '0' : '-0';
+        }
+        var str = String(obj);
+        return numericSeparator ? addNumericSeparator(obj, str) : str;
+    }
+    if (typeof obj === 'bigint') {
+        var bigIntStr = String(obj) + 'n';
+        return numericSeparator ? addNumericSeparator(obj, bigIntStr) : bigIntStr;
+    }
+
+    var maxDepth = typeof opts.depth === 'undefined' ? 5 : opts.depth;
+    if (typeof depth === 'undefined') { depth = 0; }
+    if (depth >= maxDepth && maxDepth > 0 && typeof obj === 'object') {
+        return isArray(obj) ? '[Array]' : '[Object]';
+    }
+
+    var indent = getIndent(opts, depth);
+
+    if (typeof seen === 'undefined') {
+        seen = [];
+    } else if (indexOf(seen, obj) >= 0) {
+        return '[Circular]';
+    }
+
+    function inspect(value, from, noIndent) {
+        if (from) {
+            seen = $arrSlice.call(seen);
+            seen.push(from);
+        }
+        if (noIndent) {
+            var newOpts = {
+                depth: opts.depth
+            };
+            if (has(opts, 'quoteStyle')) {
+                newOpts.quoteStyle = opts.quoteStyle;
+            }
+            return inspect_(value, newOpts, depth + 1, seen);
+        }
+        return inspect_(value, opts, depth + 1, seen);
+    }
+
+    if (typeof obj === 'function' && !isRegExp(obj)) { // in older engines, regexes are callable
+        var name = nameOf(obj);
+        var keys = arrObjKeys(obj, inspect);
+        return '[Function' + (name ? ': ' + name : ' (anonymous)') + ']' + (keys.length > 0 ? ' { ' + $join.call(keys, ', ') + ' }' : '');
+    }
+    if (isSymbol(obj)) {
+        var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, '$1') : symToString.call(obj);
+        return typeof obj === 'object' && !hasShammedSymbols ? markBoxed(symString) : symString;
+    }
+    if (isElement(obj)) {
+        var s = '<' + $toLowerCase.call(String(obj.nodeName));
+        var attrs = obj.attributes || [];
+        for (var i = 0; i < attrs.length; i++) {
+            s += ' ' + attrs[i].name + '=' + wrapQuotes(quote(attrs[i].value), 'double', opts);
+        }
+        s += '>';
+        if (obj.childNodes && obj.childNodes.length) { s += '...'; }
+        s += '</' + $toLowerCase.call(String(obj.nodeName)) + '>';
+        return s;
+    }
+    if (isArray(obj)) {
+        if (obj.length === 0) { return '[]'; }
+        var xs = arrObjKeys(obj, inspect);
+        if (indent && !singleLineValues(xs)) {
+            return '[' + indentedJoin(xs, indent) + ']';
+        }
+        return '[ ' + $join.call(xs, ', ') + ' ]';
+    }
+    if (isError(obj)) {
+        var parts = arrObjKeys(obj, inspect);
+        if (!('cause' in Error.prototype) && 'cause' in obj && !isEnumerable.call(obj, 'cause')) {
+            return '{ [' + String(obj) + '] ' + $join.call($concat.call('[cause]: ' + inspect(obj.cause), parts), ', ') + ' }';
+        }
+        if (parts.length === 0) { return '[' + String(obj) + ']'; }
+        return '{ [' + String(obj) + '] ' + $join.call(parts, ', ') + ' }';
+    }
+    if (typeof obj === 'object' && customInspect) {
+        if (inspectSymbol && typeof obj[inspectSymbol] === 'function' && utilInspect) {
+            return utilInspect(obj, { depth: maxDepth - depth });
+        } else if (customInspect !== 'symbol' && typeof obj.inspect === 'function') {
+            return obj.inspect();
+        }
+    }
+    if (isMap(obj)) {
+        var mapParts = [];
+        if (mapForEach) {
+            mapForEach.call(obj, function (value, key) {
+                mapParts.push(inspect(key, obj, true) + ' => ' + inspect(value, obj));
+            });
+        }
+        return collectionOf('Map', mapSize.call(obj), mapParts, indent);
+    }
+    if (isSet(obj)) {
+        var setParts = [];
+        if (setForEach) {
+            setForEach.call(obj, function (value) {
+                setParts.push(inspect(value, obj));
+            });
+        }
+        return collectionOf('Set', setSize.call(obj), setParts, indent);
+    }
+    if (isWeakMap(obj)) {
+        return weakCollectionOf('WeakMap');
+    }
+    if (isWeakSet(obj)) {
+        return weakCollectionOf('WeakSet');
+    }
+    if (isWeakRef(obj)) {
+        return weakCollectionOf('WeakRef');
+    }
+    if (isNumber(obj)) {
+        return markBoxed(inspect(Number(obj)));
+    }
+    if (isBigInt(obj)) {
+        return markBoxed(inspect(bigIntValueOf.call(obj)));
+    }
+    if (isBoolean(obj)) {
+        return markBoxed(booleanValueOf.call(obj));
+    }
+    if (isString(obj)) {
+        return markBoxed(inspect(String(obj)));
+    }
+    if (!isDate(obj) && !isRegExp(obj)) {
+        var ys = arrObjKeys(obj, inspect);
+        var isPlainObject = gPO ? gPO(obj) === Object.prototype : obj instanceof Object || obj.constructor === Object;
+        var protoTag = obj instanceof Object ? '' : 'null prototype';
+        var stringTag = !isPlainObject && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? 'Object' : '';
+        var constructorTag = isPlainObject || typeof obj.constructor !== 'function' ? '' : obj.constructor.name ? obj.constructor.name + ' ' : '';
+        var tag = constructorTag + (stringTag || protoTag ? '[' + $join.call($concat.call([], stringTag || [], protoTag || []), ': ') + '] ' : '');
+        if (ys.length === 0) { return tag + '{}'; }
+        if (indent) {
+            return tag + '{' + indentedJoin(ys, indent) + '}';
+        }
+        return tag + '{ ' + $join.call(ys, ', ') + ' }';
+    }
+    return String(obj);
+};
+
+function wrapQuotes(s, defaultStyle, opts) {
+    var quoteChar = (opts.quoteStyle || defaultStyle) === 'double' ? '"' : "'";
+    return quoteChar + s + quoteChar;
+}
+
+function quote(s) {
+    return $replace.call(String(s), /"/g, '&quot;');
+}
+
+function isArray(obj) { return toStr(obj) === '[object Array]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+function isDate(obj) { return toStr(obj) === '[object Date]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+function isRegExp(obj) { return toStr(obj) === '[object RegExp]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+function isError(obj) { return toStr(obj) === '[object Error]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+function isString(obj) { return toStr(obj) === '[object String]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+function isNumber(obj) { return toStr(obj) === '[object Number]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+function isBoolean(obj) { return toStr(obj) === '[object Boolean]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
+
+// Symbol and BigInt do have Symbol.toStringTag by spec, so that can't be used to eliminate false positives
+function isSymbol(obj) {
+    if (hasShammedSymbols) {
+        return obj && typeof obj === 'object' && obj instanceof Symbol;
+    }
+    if (typeof obj === 'symbol') {
+        return true;
+    }
+    if (!obj || typeof obj !== 'object' || !symToString) {
+        return false;
+    }
+    try {
+        symToString.call(obj);
+        return true;
+    } catch (e) {}
+    return false;
+}
+
+function isBigInt(obj) {
+    if (!obj || typeof obj !== 'object' || !bigIntValueOf) {
+        return false;
+    }
+    try {
+        bigIntValueOf.call(obj);
+        return true;
+    } catch (e) {}
+    return false;
+}
+
+var hasOwn = Object.prototype.hasOwnProperty || function (key) { return key in this; };
+function has(obj, key) {
+    return hasOwn.call(obj, key);
+}
+
+function toStr(obj) {
+    return objectToString.call(obj);
+}
+
+function nameOf(f) {
+    if (f.name) { return f.name; }
+    var m = $match.call(functionToString.call(f), /^function\s*([\w$]+)/);
+    if (m) { return m[1]; }
+    return null;
+}
+
+function indexOf(xs, x) {
+    if (xs.indexOf) { return xs.indexOf(x); }
+    for (var i = 0, l = xs.length; i < l; i++) {
+        if (xs[i] === x) { return i; }
+    }
+    return -1;
+}
+
+function isMap(x) {
+    if (!mapSize || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        mapSize.call(x);
+        try {
+            setSize.call(x);
+        } catch (s) {
+            return true;
+        }
+        return x instanceof Map; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isWeakMap(x) {
+    if (!weakMapHas || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        weakMapHas.call(x, weakMapHas);
+        try {
+            weakSetHas.call(x, weakSetHas);
+        } catch (s) {
+            return true;
+        }
+        return x instanceof WeakMap; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isWeakRef(x) {
+    if (!weakRefDeref || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        weakRefDeref.call(x);
+        return true;
+    } catch (e) {}
+    return false;
+}
+
+function isSet(x) {
+    if (!setSize || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        setSize.call(x);
+        try {
+            mapSize.call(x);
+        } catch (m) {
+            return true;
+        }
+        return x instanceof Set; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isWeakSet(x) {
+    if (!weakSetHas || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        weakSetHas.call(x, weakSetHas);
+        try {
+            weakMapHas.call(x, weakMapHas);
+        } catch (s) {
+            return true;
+        }
+        return x instanceof WeakSet; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isElement(x) {
+    if (!x || typeof x !== 'object') { return false; }
+    if (typeof HTMLElement !== 'undefined' && x instanceof HTMLElement) {
+        return true;
+    }
+    return typeof x.nodeName === 'string' && typeof x.getAttribute === 'function';
+}
+
+function inspectString(str, opts) {
+    if (str.length > opts.maxStringLength) {
+        var remaining = str.length - opts.maxStringLength;
+        var trailer = '... ' + remaining + ' more character' + (remaining > 1 ? 's' : '');
+        return inspectString($slice.call(str, 0, opts.maxStringLength), opts) + trailer;
+    }
+    // eslint-disable-next-line no-control-regex
+    var s = $replace.call($replace.call(str, /(['\\])/g, '\\$1'), /[\x00-\x1f]/g, lowbyte);
+    return wrapQuotes(s, 'single', opts);
+}
+
+function lowbyte(c) {
+    var n = c.charCodeAt(0);
+    var x = {
+        8: 'b',
+        9: 't',
+        10: 'n',
+        12: 'f',
+        13: 'r'
+    }[n];
+    if (x) { return '\\' + x; }
+    return '\\x' + (n < 0x10 ? '0' : '') + $toUpperCase.call(n.toString(16));
+}
+
+function markBoxed(str) {
+    return 'Object(' + str + ')';
+}
+
+function weakCollectionOf(type) {
+    return type + ' { ? }';
+}
+
+function collectionOf(type, size, entries, indent) {
+    var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ', ');
+    return type + ' (' + size + ') {' + joinedEntries + '}';
+}
+
+function singleLineValues(xs) {
+    for (var i = 0; i < xs.length; i++) {
+        if (indexOf(xs[i], '\n') >= 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function getIndent(opts, depth) {
+    var baseIndent;
+    if (opts.indent === '\t') {
+        baseIndent = '\t';
+    } else if (typeof opts.indent === 'number' && opts.indent > 0) {
+        baseIndent = $join.call(Array(opts.indent + 1), ' ');
+    } else {
+        return null;
+    }
+    return {
+        base: baseIndent,
+        prev: $join.call(Array(depth + 1), baseIndent)
+    };
+}
+
+function indentedJoin(xs, indent) {
+    if (xs.length === 0) { return ''; }
+    var lineJoiner = '\n' + indent.prev + indent.base;
+    return lineJoiner + $join.call(xs, ',' + lineJoiner) + '\n' + indent.prev;
+}
+
+function arrObjKeys(obj, inspect) {
+    var isArr = isArray(obj);
+    var xs = [];
+    if (isArr) {
+        xs.length = obj.length;
+        for (var i = 0; i < obj.length; i++) {
+            xs[i] = has(obj, i) ? inspect(obj[i], obj) : '';
+        }
+    }
+    var syms = typeof gOPS === 'function' ? gOPS(obj) : [];
+    var symMap;
+    if (hasShammedSymbols) {
+        symMap = {};
+        for (var k = 0; k < syms.length; k++) {
+            symMap['$' + syms[k]] = syms[k];
+        }
+    }
+
+    for (var key in obj) { // eslint-disable-line no-restricted-syntax
+        if (!has(obj, key)) { continue; } // eslint-disable-line no-restricted-syntax, no-continue
+        if (isArr && String(Number(key)) === key && key < obj.length) { continue; } // eslint-disable-line no-restricted-syntax, no-continue
+        if (hasShammedSymbols && symMap['$' + key] instanceof Symbol) {
+            // this is to prevent shammed Symbols, which are stored as strings, from being included in the string key section
+            continue; // eslint-disable-line no-restricted-syntax, no-continue
+        } else if ($test.call(/[^\w$]/, key)) {
+            xs.push(inspect(key, obj) + ': ' + inspect(obj[key], obj));
+        } else {
+            xs.push(key + ': ' + inspect(obj[key], obj));
+        }
+    }
+    if (typeof gOPS === 'function') {
+        for (var j = 0; j < syms.length; j++) {
+            if (isEnumerable.call(obj, syms[j])) {
+                xs.push('[' + inspect(syms[j]) + ']: ' + inspect(obj[syms[j]], obj));
+            }
+        }
+    }
+    return xs;
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/popper.js/dist/esm/popper.js":
 /*!***************************************************!*\
   !*** ./node_modules/popper.js/dist/esm/popper.js ***!
@@ -21255,6 +22559,6936 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/formats.js":
+/*!****************************************!*\
+  !*** ./node_modules/qs/lib/formats.js ***!
+  \****************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var replace = String.prototype.replace;
+var percentTwenties = /%20/g;
+
+var Format = {
+    RFC1738: 'RFC1738',
+    RFC3986: 'RFC3986'
+};
+
+module.exports = {
+    'default': Format.RFC3986,
+    formatters: {
+        RFC1738: function (value) {
+            return replace.call(value, percentTwenties, '+');
+        },
+        RFC3986: function (value) {
+            return String(value);
+        }
+    },
+    RFC1738: Format.RFC1738,
+    RFC3986: Format.RFC3986
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/index.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var stringify = __webpack_require__(/*! ./stringify */ "./node_modules/qs/lib/stringify.js");
+var parse = __webpack_require__(/*! ./parse */ "./node_modules/qs/lib/parse.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+
+module.exports = {
+    formats: formats,
+    parse: parse,
+    stringify: stringify
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/parse.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/parse.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
+
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var defaults = {
+    allowDots: false,
+    allowPrototypes: false,
+    allowSparse: false,
+    arrayLimit: 20,
+    charset: 'utf-8',
+    charsetSentinel: false,
+    comma: false,
+    decoder: utils.decode,
+    delimiter: '&',
+    depth: 5,
+    ignoreQueryPrefix: false,
+    interpretNumericEntities: false,
+    parameterLimit: 1000,
+    parseArrays: true,
+    plainObjects: false,
+    strictNullHandling: false
+};
+
+var interpretNumericEntities = function (str) {
+    return str.replace(/&#(\d+);/g, function ($0, numberStr) {
+        return String.fromCharCode(parseInt(numberStr, 10));
+    });
+};
+
+var parseArrayValue = function (val, options) {
+    if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
+        return val.split(',');
+    }
+
+    return val;
+};
+
+// This is what browsers will submit when the ✓ character occurs in an
+// application/x-www-form-urlencoded body and the encoding of the page containing
+// the form is iso-8859-1, or when the submitted form has an accept-charset
+// attribute of iso-8859-1. Presumably also with other charsets that do not contain
+// the ✓ character, such as us-ascii.
+var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
+
+// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
+var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
+
+var parseValues = function parseQueryStringValues(str, options) {
+    var obj = {};
+    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
+    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
+    var parts = cleanStr.split(options.delimiter, limit);
+    var skipIndex = -1; // Keep track of where the utf8 sentinel was found
+    var i;
+
+    var charset = options.charset;
+    if (options.charsetSentinel) {
+        for (i = 0; i < parts.length; ++i) {
+            if (parts[i].indexOf('utf8=') === 0) {
+                if (parts[i] === charsetSentinel) {
+                    charset = 'utf-8';
+                } else if (parts[i] === isoSentinel) {
+                    charset = 'iso-8859-1';
+                }
+                skipIndex = i;
+                i = parts.length; // The eslint settings do not allow break;
+            }
+        }
+    }
+
+    for (i = 0; i < parts.length; ++i) {
+        if (i === skipIndex) {
+            continue;
+        }
+        var part = parts[i];
+
+        var bracketEqualsPos = part.indexOf(']=');
+        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
+
+        var key, val;
+        if (pos === -1) {
+            key = options.decoder(part, defaults.decoder, charset, 'key');
+            val = options.strictNullHandling ? null : '';
+        } else {
+            key = options.decoder(part.slice(0, pos), defaults.decoder, charset, 'key');
+            val = utils.maybeMap(
+                parseArrayValue(part.slice(pos + 1), options),
+                function (encodedVal) {
+                    return options.decoder(encodedVal, defaults.decoder, charset, 'value');
+                }
+            );
+        }
+
+        if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
+            val = interpretNumericEntities(val);
+        }
+
+        if (part.indexOf('[]=') > -1) {
+            val = isArray(val) ? [val] : val;
+        }
+
+        if (has.call(obj, key)) {
+            obj[key] = utils.combine(obj[key], val);
+        } else {
+            obj[key] = val;
+        }
+    }
+
+    return obj;
+};
+
+var parseObject = function (chain, val, options, valuesParsed) {
+    var leaf = valuesParsed ? val : parseArrayValue(val, options);
+
+    for (var i = chain.length - 1; i >= 0; --i) {
+        var obj;
+        var root = chain[i];
+
+        if (root === '[]' && options.parseArrays) {
+            obj = [].concat(leaf);
+        } else {
+            obj = options.plainObjects ? Object.create(null) : {};
+            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
+            var index = parseInt(cleanRoot, 10);
+            if (!options.parseArrays && cleanRoot === '') {
+                obj = { 0: leaf };
+            } else if (
+                !isNaN(index)
+                && root !== cleanRoot
+                && String(index) === cleanRoot
+                && index >= 0
+                && (options.parseArrays && index <= options.arrayLimit)
+            ) {
+                obj = [];
+                obj[index] = leaf;
+            } else if (cleanRoot !== '__proto__') {
+                obj[cleanRoot] = leaf;
+            }
+        }
+
+        leaf = obj;
+    }
+
+    return leaf;
+};
+
+var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
+    if (!givenKey) {
+        return;
+    }
+
+    // Transform dot notation to bracket notation
+    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
+
+    // The regex chunks
+
+    var brackets = /(\[[^[\]]*])/;
+    var child = /(\[[^[\]]*])/g;
+
+    // Get the parent
+
+    var segment = options.depth > 0 && brackets.exec(key);
+    var parent = segment ? key.slice(0, segment.index) : key;
+
+    // Stash the parent if it exists
+
+    var keys = [];
+    if (parent) {
+        // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
+        if (!options.plainObjects && has.call(Object.prototype, parent)) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+
+        keys.push(parent);
+    }
+
+    // Loop through children appending to the array until we hit depth
+
+    var i = 0;
+    while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
+        i += 1;
+        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+        keys.push(segment[1]);
+    }
+
+    // If there's a remainder, just add whatever is left
+
+    if (segment) {
+        keys.push('[' + key.slice(segment.index) + ']');
+    }
+
+    return parseObject(keys, val, options, valuesParsed);
+};
+
+var normalizeParseOptions = function normalizeParseOptions(opts) {
+    if (!opts) {
+        return defaults;
+    }
+
+    if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
+        throw new TypeError('Decoder has to be a function.');
+    }
+
+    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+    }
+    var charset = typeof opts.charset === 'undefined' ? defaults.charset : opts.charset;
+
+    return {
+        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
+        allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults.allowPrototypes,
+        allowSparse: typeof opts.allowSparse === 'boolean' ? opts.allowSparse : defaults.allowSparse,
+        arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults.arrayLimit,
+        charset: charset,
+        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
+        comma: typeof opts.comma === 'boolean' ? opts.comma : defaults.comma,
+        decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults.decoder,
+        delimiter: typeof opts.delimiter === 'string' || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
+        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
+        depth: (typeof opts.depth === 'number' || opts.depth === false) ? +opts.depth : defaults.depth,
+        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
+        interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
+        parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults.parameterLimit,
+        parseArrays: opts.parseArrays !== false,
+        plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults.plainObjects,
+        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
+    };
+};
+
+module.exports = function (str, opts) {
+    var options = normalizeParseOptions(opts);
+
+    if (str === '' || str === null || typeof str === 'undefined') {
+        return options.plainObjects ? Object.create(null) : {};
+    }
+
+    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
+    var obj = options.plainObjects ? Object.create(null) : {};
+
+    // Iterate over the keys and setup the new object
+
+    var keys = Object.keys(tempObj);
+    for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+        var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
+        obj = utils.merge(obj, newObj, options);
+    }
+
+    if (options.allowSparse === true) {
+        return obj;
+    }
+
+    return utils.compact(obj);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/stringify.js":
+/*!******************************************!*\
+  !*** ./node_modules/qs/lib/stringify.js ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var getSideChannel = __webpack_require__(/*! side-channel */ "./node_modules/side-channel/index.js");
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+var has = Object.prototype.hasOwnProperty;
+
+var arrayPrefixGenerators = {
+    brackets: function brackets(prefix) {
+        return prefix + '[]';
+    },
+    comma: 'comma',
+    indices: function indices(prefix, key) {
+        return prefix + '[' + key + ']';
+    },
+    repeat: function repeat(prefix) {
+        return prefix;
+    }
+};
+
+var isArray = Array.isArray;
+var split = String.prototype.split;
+var push = Array.prototype.push;
+var pushToArray = function (arr, valueOrArray) {
+    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
+};
+
+var toISO = Date.prototype.toISOString;
+
+var defaultFormat = formats['default'];
+var defaults = {
+    addQueryPrefix: false,
+    allowDots: false,
+    charset: 'utf-8',
+    charsetSentinel: false,
+    delimiter: '&',
+    encode: true,
+    encoder: utils.encode,
+    encodeValuesOnly: false,
+    format: defaultFormat,
+    formatter: formats.formatters[defaultFormat],
+    // deprecated
+    indices: false,
+    serializeDate: function serializeDate(date) {
+        return toISO.call(date);
+    },
+    skipNulls: false,
+    strictNullHandling: false
+};
+
+var isNonNullishPrimitive = function isNonNullishPrimitive(v) {
+    return typeof v === 'string'
+        || typeof v === 'number'
+        || typeof v === 'boolean'
+        || typeof v === 'symbol'
+        || typeof v === 'bigint';
+};
+
+var sentinel = {};
+
+var stringify = function stringify(
+    object,
+    prefix,
+    generateArrayPrefix,
+    commaRoundTrip,
+    strictNullHandling,
+    skipNulls,
+    encoder,
+    filter,
+    sort,
+    allowDots,
+    serializeDate,
+    format,
+    formatter,
+    encodeValuesOnly,
+    charset,
+    sideChannel
+) {
+    var obj = object;
+
+    var tmpSc = sideChannel;
+    var step = 0;
+    var findFlag = false;
+    while ((tmpSc = tmpSc.get(sentinel)) !== void undefined && !findFlag) {
+        // Where object last appeared in the ref tree
+        var pos = tmpSc.get(object);
+        step += 1;
+        if (typeof pos !== 'undefined') {
+            if (pos === step) {
+                throw new RangeError('Cyclic object value');
+            } else {
+                findFlag = true; // Break while
+            }
+        }
+        if (typeof tmpSc.get(sentinel) === 'undefined') {
+            step = 0;
+        }
+    }
+
+    if (typeof filter === 'function') {
+        obj = filter(prefix, obj);
+    } else if (obj instanceof Date) {
+        obj = serializeDate(obj);
+    } else if (generateArrayPrefix === 'comma' && isArray(obj)) {
+        obj = utils.maybeMap(obj, function (value) {
+            if (value instanceof Date) {
+                return serializeDate(value);
+            }
+            return value;
+        });
+    }
+
+    if (obj === null) {
+        if (strictNullHandling) {
+            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder, charset, 'key', format) : prefix;
+        }
+
+        obj = '';
+    }
+
+    if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
+        if (encoder) {
+            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder, charset, 'key', format);
+            if (generateArrayPrefix === 'comma' && encodeValuesOnly) {
+                var valuesArray = split.call(String(obj), ',');
+                var valuesJoined = '';
+                for (var i = 0; i < valuesArray.length; ++i) {
+                    valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
+                }
+                return [formatter(keyValue) + (commaRoundTrip && isArray(obj) && valuesArray.length === 1 ? '[]' : '') + '=' + valuesJoined];
+            }
+            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
+        }
+        return [formatter(prefix) + '=' + formatter(String(obj))];
+    }
+
+    var values = [];
+
+    if (typeof obj === 'undefined') {
+        return values;
+    }
+
+    var objKeys;
+    if (generateArrayPrefix === 'comma' && isArray(obj)) {
+        // we need to join elements in
+        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void undefined }];
+    } else if (isArray(filter)) {
+        objKeys = filter;
+    } else {
+        var keys = Object.keys(obj);
+        objKeys = sort ? keys.sort(sort) : keys;
+    }
+
+    var adjustedPrefix = commaRoundTrip && isArray(obj) && obj.length === 1 ? prefix + '[]' : prefix;
+
+    for (var j = 0; j < objKeys.length; ++j) {
+        var key = objKeys[j];
+        var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
+
+        if (skipNulls && value === null) {
+            continue;
+        }
+
+        var keyPrefix = isArray(obj)
+            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(adjustedPrefix, key) : adjustedPrefix
+            : adjustedPrefix + (allowDots ? '.' + key : '[' + key + ']');
+
+        sideChannel.set(object, step);
+        var valueSideChannel = getSideChannel();
+        valueSideChannel.set(sentinel, sideChannel);
+        pushToArray(values, stringify(
+            value,
+            keyPrefix,
+            generateArrayPrefix,
+            commaRoundTrip,
+            strictNullHandling,
+            skipNulls,
+            encoder,
+            filter,
+            sort,
+            allowDots,
+            serializeDate,
+            format,
+            formatter,
+            encodeValuesOnly,
+            charset,
+            valueSideChannel
+        ));
+    }
+
+    return values;
+};
+
+var normalizeStringifyOptions = function normalizeStringifyOptions(opts) {
+    if (!opts) {
+        return defaults;
+    }
+
+    if (opts.encoder !== null && typeof opts.encoder !== 'undefined' && typeof opts.encoder !== 'function') {
+        throw new TypeError('Encoder has to be a function.');
+    }
+
+    var charset = opts.charset || defaults.charset;
+    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+    }
+
+    var format = formats['default'];
+    if (typeof opts.format !== 'undefined') {
+        if (!has.call(formats.formatters, opts.format)) {
+            throw new TypeError('Unknown format option provided.');
+        }
+        format = opts.format;
+    }
+    var formatter = formats.formatters[format];
+
+    var filter = defaults.filter;
+    if (typeof opts.filter === 'function' || isArray(opts.filter)) {
+        filter = opts.filter;
+    }
+
+    return {
+        addQueryPrefix: typeof opts.addQueryPrefix === 'boolean' ? opts.addQueryPrefix : defaults.addQueryPrefix,
+        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
+        charset: charset,
+        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
+        delimiter: typeof opts.delimiter === 'undefined' ? defaults.delimiter : opts.delimiter,
+        encode: typeof opts.encode === 'boolean' ? opts.encode : defaults.encode,
+        encoder: typeof opts.encoder === 'function' ? opts.encoder : defaults.encoder,
+        encodeValuesOnly: typeof opts.encodeValuesOnly === 'boolean' ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
+        filter: filter,
+        format: format,
+        formatter: formatter,
+        serializeDate: typeof opts.serializeDate === 'function' ? opts.serializeDate : defaults.serializeDate,
+        skipNulls: typeof opts.skipNulls === 'boolean' ? opts.skipNulls : defaults.skipNulls,
+        sort: typeof opts.sort === 'function' ? opts.sort : null,
+        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
+    };
+};
+
+module.exports = function (object, opts) {
+    var obj = object;
+    var options = normalizeStringifyOptions(opts);
+
+    var objKeys;
+    var filter;
+
+    if (typeof options.filter === 'function') {
+        filter = options.filter;
+        obj = filter('', obj);
+    } else if (isArray(options.filter)) {
+        filter = options.filter;
+        objKeys = filter;
+    }
+
+    var keys = [];
+
+    if (typeof obj !== 'object' || obj === null) {
+        return '';
+    }
+
+    var arrayFormat;
+    if (opts && opts.arrayFormat in arrayPrefixGenerators) {
+        arrayFormat = opts.arrayFormat;
+    } else if (opts && 'indices' in opts) {
+        arrayFormat = opts.indices ? 'indices' : 'repeat';
+    } else {
+        arrayFormat = 'indices';
+    }
+
+    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
+    if (opts && 'commaRoundTrip' in opts && typeof opts.commaRoundTrip !== 'boolean') {
+        throw new TypeError('`commaRoundTrip` must be a boolean, or absent');
+    }
+    var commaRoundTrip = generateArrayPrefix === 'comma' && opts && opts.commaRoundTrip;
+
+    if (!objKeys) {
+        objKeys = Object.keys(obj);
+    }
+
+    if (options.sort) {
+        objKeys.sort(options.sort);
+    }
+
+    var sideChannel = getSideChannel();
+    for (var i = 0; i < objKeys.length; ++i) {
+        var key = objKeys[i];
+
+        if (options.skipNulls && obj[key] === null) {
+            continue;
+        }
+        pushToArray(keys, stringify(
+            obj[key],
+            key,
+            generateArrayPrefix,
+            commaRoundTrip,
+            options.strictNullHandling,
+            options.skipNulls,
+            options.encode ? options.encoder : null,
+            options.filter,
+            options.sort,
+            options.allowDots,
+            options.serializeDate,
+            options.format,
+            options.formatter,
+            options.encodeValuesOnly,
+            options.charset,
+            sideChannel
+        ));
+    }
+
+    var joined = keys.join(options.delimiter);
+    var prefix = options.addQueryPrefix === true ? '?' : '';
+
+    if (options.charsetSentinel) {
+        if (options.charset === 'iso-8859-1') {
+            // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
+            prefix += 'utf8=%26%2310003%3B&';
+        } else {
+            // encodeURIComponent('✓')
+            prefix += 'utf8=%E2%9C%93&';
+        }
+    }
+
+    return joined.length > 0 ? prefix + joined : '';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/utils.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/utils.js ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var hexTable = (function () {
+    var array = [];
+    for (var i = 0; i < 256; ++i) {
+        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
+    }
+
+    return array;
+}());
+
+var compactQueue = function compactQueue(queue) {
+    while (queue.length > 1) {
+        var item = queue.pop();
+        var obj = item.obj[item.prop];
+
+        if (isArray(obj)) {
+            var compacted = [];
+
+            for (var j = 0; j < obj.length; ++j) {
+                if (typeof obj[j] !== 'undefined') {
+                    compacted.push(obj[j]);
+                }
+            }
+
+            item.obj[item.prop] = compacted;
+        }
+    }
+};
+
+var arrayToObject = function arrayToObject(source, options) {
+    var obj = options && options.plainObjects ? Object.create(null) : {};
+    for (var i = 0; i < source.length; ++i) {
+        if (typeof source[i] !== 'undefined') {
+            obj[i] = source[i];
+        }
+    }
+
+    return obj;
+};
+
+var merge = function merge(target, source, options) {
+    /* eslint no-param-reassign: 0 */
+    if (!source) {
+        return target;
+    }
+
+    if (typeof source !== 'object') {
+        if (isArray(target)) {
+            target.push(source);
+        } else if (target && typeof target === 'object') {
+            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
+                target[source] = true;
+            }
+        } else {
+            return [target, source];
+        }
+
+        return target;
+    }
+
+    if (!target || typeof target !== 'object') {
+        return [target].concat(source);
+    }
+
+    var mergeTarget = target;
+    if (isArray(target) && !isArray(source)) {
+        mergeTarget = arrayToObject(target, options);
+    }
+
+    if (isArray(target) && isArray(source)) {
+        source.forEach(function (item, i) {
+            if (has.call(target, i)) {
+                var targetItem = target[i];
+                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
+                    target[i] = merge(targetItem, item, options);
+                } else {
+                    target.push(item);
+                }
+            } else {
+                target[i] = item;
+            }
+        });
+        return target;
+    }
+
+    return Object.keys(source).reduce(function (acc, key) {
+        var value = source[key];
+
+        if (has.call(acc, key)) {
+            acc[key] = merge(acc[key], value, options);
+        } else {
+            acc[key] = value;
+        }
+        return acc;
+    }, mergeTarget);
+};
+
+var assign = function assignSingleSource(target, source) {
+    return Object.keys(source).reduce(function (acc, key) {
+        acc[key] = source[key];
+        return acc;
+    }, target);
+};
+
+var decode = function (str, decoder, charset) {
+    var strWithoutPlus = str.replace(/\+/g, ' ');
+    if (charset === 'iso-8859-1') {
+        // unescape never throws, no try...catch needed:
+        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
+    }
+    // utf-8
+    try {
+        return decodeURIComponent(strWithoutPlus);
+    } catch (e) {
+        return strWithoutPlus;
+    }
+};
+
+var encode = function encode(str, defaultEncoder, charset, kind, format) {
+    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
+    // It has been adapted here for stricter adherence to RFC 3986
+    if (str.length === 0) {
+        return str;
+    }
+
+    var string = str;
+    if (typeof str === 'symbol') {
+        string = Symbol.prototype.toString.call(str);
+    } else if (typeof str !== 'string') {
+        string = String(str);
+    }
+
+    if (charset === 'iso-8859-1') {
+        return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
+            return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
+        });
+    }
+
+    var out = '';
+    for (var i = 0; i < string.length; ++i) {
+        var c = string.charCodeAt(i);
+
+        if (
+            c === 0x2D // -
+            || c === 0x2E // .
+            || c === 0x5F // _
+            || c === 0x7E // ~
+            || (c >= 0x30 && c <= 0x39) // 0-9
+            || (c >= 0x41 && c <= 0x5A) // a-z
+            || (c >= 0x61 && c <= 0x7A) // A-Z
+            || (format === formats.RFC1738 && (c === 0x28 || c === 0x29)) // ( )
+        ) {
+            out += string.charAt(i);
+            continue;
+        }
+
+        if (c < 0x80) {
+            out = out + hexTable[c];
+            continue;
+        }
+
+        if (c < 0x800) {
+            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        if (c < 0xD800 || c >= 0xE000) {
+            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        i += 1;
+        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
+        /* eslint operator-linebreak: [2, "before"] */
+        out += hexTable[0xF0 | (c >> 18)]
+            + hexTable[0x80 | ((c >> 12) & 0x3F)]
+            + hexTable[0x80 | ((c >> 6) & 0x3F)]
+            + hexTable[0x80 | (c & 0x3F)];
+    }
+
+    return out;
+};
+
+var compact = function compact(value) {
+    var queue = [{ obj: { o: value }, prop: 'o' }];
+    var refs = [];
+
+    for (var i = 0; i < queue.length; ++i) {
+        var item = queue[i];
+        var obj = item.obj[item.prop];
+
+        var keys = Object.keys(obj);
+        for (var j = 0; j < keys.length; ++j) {
+            var key = keys[j];
+            var val = obj[key];
+            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
+                queue.push({ obj: obj, prop: key });
+                refs.push(val);
+            }
+        }
+    }
+
+    compactQueue(queue);
+
+    return value;
+};
+
+var isRegExp = function isRegExp(obj) {
+    return Object.prototype.toString.call(obj) === '[object RegExp]';
+};
+
+var isBuffer = function isBuffer(obj) {
+    if (!obj || typeof obj !== 'object') {
+        return false;
+    }
+
+    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
+};
+
+var combine = function combine(a, b) {
+    return [].concat(a, b);
+};
+
+var maybeMap = function maybeMap(val, fn) {
+    if (isArray(val)) {
+        var mapped = [];
+        for (var i = 0; i < val.length; i += 1) {
+            mapped.push(fn(val[i]));
+        }
+        return mapped;
+    }
+    return fn(val);
+};
+
+module.exports = {
+    arrayToObject: arrayToObject,
+    assign: assign,
+    combine: combine,
+    compact: compact,
+    decode: decode,
+    encode: encode,
+    isBuffer: isBuffer,
+    isRegExp: isRegExp,
+    maybeMap: maybeMap,
+    merge: merge
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/side-channel/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/side-channel/index.js ***!
+  \********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var GetIntrinsic = __webpack_require__(/*! get-intrinsic */ "./node_modules/get-intrinsic/index.js");
+var callBound = __webpack_require__(/*! call-bind/callBound */ "./node_modules/call-bind/callBound.js");
+var inspect = __webpack_require__(/*! object-inspect */ "./node_modules/object-inspect/index.js");
+
+var $TypeError = GetIntrinsic('%TypeError%');
+var $WeakMap = GetIntrinsic('%WeakMap%', true);
+var $Map = GetIntrinsic('%Map%', true);
+
+var $weakMapGet = callBound('WeakMap.prototype.get', true);
+var $weakMapSet = callBound('WeakMap.prototype.set', true);
+var $weakMapHas = callBound('WeakMap.prototype.has', true);
+var $mapGet = callBound('Map.prototype.get', true);
+var $mapSet = callBound('Map.prototype.set', true);
+var $mapHas = callBound('Map.prototype.has', true);
+
+/*
+ * This function traverses the list returning the node corresponding to the
+ * given key.
+ *
+ * That node is also moved to the head of the list, so that if it's accessed
+ * again we don't need to traverse the whole list. By doing so, all the recently
+ * used nodes can be accessed relatively quickly.
+ */
+var listGetNode = function (list, key) { // eslint-disable-line consistent-return
+	for (var prev = list, curr; (curr = prev.next) !== null; prev = curr) {
+		if (curr.key === key) {
+			prev.next = curr.next;
+			curr.next = list.next;
+			list.next = curr; // eslint-disable-line no-param-reassign
+			return curr;
+		}
+	}
+};
+
+var listGet = function (objects, key) {
+	var node = listGetNode(objects, key);
+	return node && node.value;
+};
+var listSet = function (objects, key, value) {
+	var node = listGetNode(objects, key);
+	if (node) {
+		node.value = value;
+	} else {
+		// Prepend the new node to the beginning of the list
+		objects.next = { // eslint-disable-line no-param-reassign
+			key: key,
+			next: objects.next,
+			value: value
+		};
+	}
+};
+var listHas = function (objects, key) {
+	return !!listGetNode(objects, key);
+};
+
+module.exports = function getSideChannel() {
+	var $wm;
+	var $m;
+	var $o;
+	var channel = {
+		assert: function (key) {
+			if (!channel.has(key)) {
+				throw new $TypeError('Side channel does not contain ' + inspect(key));
+			}
+		},
+		get: function (key) { // eslint-disable-line consistent-return
+			if ($WeakMap && key && (typeof key === 'object' || typeof key === 'function')) {
+				if ($wm) {
+					return $weakMapGet($wm, key);
+				}
+			} else if ($Map) {
+				if ($m) {
+					return $mapGet($m, key);
+				}
+			} else {
+				if ($o) { // eslint-disable-line no-lonely-if
+					return listGet($o, key);
+				}
+			}
+		},
+		has: function (key) {
+			if ($WeakMap && key && (typeof key === 'object' || typeof key === 'function')) {
+				if ($wm) {
+					return $weakMapHas($wm, key);
+				}
+			} else if ($Map) {
+				if ($m) {
+					return $mapHas($m, key);
+				}
+			} else {
+				if ($o) { // eslint-disable-line no-lonely-if
+					return listHas($o, key);
+				}
+			}
+			return false;
+		},
+		set: function (key, value) {
+			if ($WeakMap && key && (typeof key === 'object' || typeof key === 'function')) {
+				if (!$wm) {
+					$wm = new $WeakMap();
+				}
+				$weakMapSet($wm, key, value);
+			} else if ($Map) {
+				if (!$m) {
+					$m = new $Map();
+				}
+				$mapSet($m, key, value);
+			} else {
+				if (!$o) {
+					/*
+					 * Initialize the linked list as an empty node, so that we don't have
+					 * to special-case handling of the first node: we can always refer to
+					 * it as (previous node).next, instead of something like (list).head
+					 */
+					$o = { key: {}, next: null };
+				}
+				listSet($o, key, value);
+			}
+		}
+	};
+	return channel;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/Error.js":
+/*!******************************************!*\
+  !*** ./node_modules/stripe/lib/Error.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+/* eslint-disable camelcase */
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.StripeUnknownError = exports.StripeInvalidGrantError = exports.StripeIdempotencyError = exports.StripeSignatureVerificationError = exports.StripeConnectionError = exports.StripeRateLimitError = exports.StripePermissionError = exports.StripeAuthenticationError = exports.StripeAPIError = exports.StripeInvalidRequestError = exports.StripeCardError = exports.StripeError = exports.generate = void 0;
+const generate = (rawStripeError) => {
+    switch (rawStripeError.type) {
+        case 'card_error':
+            return new StripeCardError(rawStripeError);
+        case 'invalid_request_error':
+            return new StripeInvalidRequestError(rawStripeError);
+        case 'api_error':
+            return new StripeAPIError(rawStripeError);
+        case 'authentication_error':
+            return new StripeAuthenticationError(rawStripeError);
+        case 'rate_limit_error':
+            return new StripeRateLimitError(rawStripeError);
+        case 'idempotency_error':
+            return new StripeIdempotencyError(rawStripeError);
+        case 'invalid_grant':
+            return new StripeInvalidGrantError(rawStripeError);
+        default:
+            return new StripeUnknownError(rawStripeError);
+    }
+};
+exports.generate = generate;
+/**
+ * StripeError is the base error from which all other more specific Stripe errors derive.
+ * Specifically for errors returned from Stripe's REST API.
+ */
+class StripeError extends Error {
+    constructor(raw = {}) {
+        super(raw.message);
+        this.type = this.constructor.name;
+        this.raw = raw;
+        this.rawType = raw.type;
+        this.code = raw.code;
+        this.doc_url = raw.doc_url;
+        this.param = raw.param;
+        this.detail = raw.detail;
+        this.headers = raw.headers;
+        this.requestId = raw.requestId;
+        this.statusCode = raw.statusCode;
+        // @ts-ignore
+        this.message = raw.message;
+        this.charge = raw.charge;
+        this.decline_code = raw.decline_code;
+        this.payment_intent = raw.payment_intent;
+        this.payment_method = raw.payment_method;
+        this.payment_method_type = raw.payment_method_type;
+        this.setup_intent = raw.setup_intent;
+        this.source = raw.source;
+    }
+}
+exports.StripeError = StripeError;
+/**
+ * Helper factory which takes raw stripe errors and outputs wrapping instances
+ */
+StripeError.generate = exports.generate;
+// Specific Stripe Error types:
+/**
+ * CardError is raised when a user enters a card that can't be charged for
+ * some reason.
+ */
+class StripeCardError extends StripeError {
+}
+exports.StripeCardError = StripeCardError;
+/**
+ * InvalidRequestError is raised when a request is initiated with invalid
+ * parameters.
+ */
+class StripeInvalidRequestError extends StripeError {
+}
+exports.StripeInvalidRequestError = StripeInvalidRequestError;
+/**
+ * APIError is a generic error that may be raised in cases where none of the
+ * other named errors cover the problem. It could also be raised in the case
+ * that a new error has been introduced in the API, but this version of the
+ * Node.JS SDK doesn't know how to handle it.
+ */
+class StripeAPIError extends StripeError {
+}
+exports.StripeAPIError = StripeAPIError;
+/**
+ * AuthenticationError is raised when invalid credentials are used to connect
+ * to Stripe's servers.
+ */
+class StripeAuthenticationError extends StripeError {
+}
+exports.StripeAuthenticationError = StripeAuthenticationError;
+/**
+ * PermissionError is raised in cases where access was attempted on a resource
+ * that wasn't allowed.
+ */
+class StripePermissionError extends StripeError {
+}
+exports.StripePermissionError = StripePermissionError;
+/**
+ * RateLimitError is raised in cases where an account is putting too much load
+ * on Stripe's API servers (usually by performing too many requests). Please
+ * back off on request rate.
+ */
+class StripeRateLimitError extends StripeError {
+}
+exports.StripeRateLimitError = StripeRateLimitError;
+/**
+ * StripeConnectionError is raised in the event that the SDK can't connect to
+ * Stripe's servers. That can be for a variety of different reasons from a
+ * downed network to a bad TLS certificate.
+ */
+class StripeConnectionError extends StripeError {
+}
+exports.StripeConnectionError = StripeConnectionError;
+/**
+ * SignatureVerificationError is raised when the signature verification for a
+ * webhook fails
+ */
+class StripeSignatureVerificationError extends StripeError {
+    constructor(header, payload, raw = {}) {
+        super(raw);
+        this.header = header;
+        this.payload = payload;
+    }
+}
+exports.StripeSignatureVerificationError = StripeSignatureVerificationError;
+/**
+ * IdempotencyError is raised in cases where an idempotency key was used
+ * improperly.
+ */
+class StripeIdempotencyError extends StripeError {
+}
+exports.StripeIdempotencyError = StripeIdempotencyError;
+/**
+ * InvalidGrantError is raised when a specified code doesn't exist, is
+ * expired, has been used, or doesn't belong to you; a refresh token doesn't
+ * exist, or doesn't belong to you; or if an API key's mode (live or test)
+ * doesn't match the mode of a code or refresh token.
+ */
+class StripeInvalidGrantError extends StripeError {
+}
+exports.StripeInvalidGrantError = StripeInvalidGrantError;
+/**
+ * Any other error from Stripe not specifically captured above
+ */
+class StripeUnknownError extends StripeError {
+}
+exports.StripeUnknownError = StripeUnknownError;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/RequestSender.js":
+/*!**************************************************!*\
+  !*** ./node_modules/stripe/lib/RequestSender.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.RequestSender = void 0;
+const Error_1 = __webpack_require__(/*! ./Error */ "./node_modules/stripe/lib/Error.js");
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/stripe/lib/utils.js");
+const HttpClient_1 = __webpack_require__(/*! ./net/HttpClient */ "./node_modules/stripe/lib/net/HttpClient.js");
+const MAX_RETRY_AFTER_WAIT = 60;
+class RequestSender {
+    constructor(stripe, maxBufferedRequestMetric) {
+        this._stripe = stripe;
+        this._maxBufferedRequestMetric = maxBufferedRequestMetric;
+    }
+    _addHeadersDirectlyToObject(obj, headers) {
+        // For convenience, make some headers easily accessible on
+        // lastResponse.
+        // NOTE: Stripe responds with lowercase header names/keys.
+        obj.requestId = headers['request-id'];
+        obj.stripeAccount = obj.stripeAccount || headers['stripe-account'];
+        obj.apiVersion = obj.apiVersion || headers['stripe-version'];
+        obj.idempotencyKey = obj.idempotencyKey || headers['idempotency-key'];
+    }
+    _makeResponseEvent(requestEvent, statusCode, headers) {
+        const requestEndTime = Date.now();
+        const requestDurationMs = requestEndTime - requestEvent.request_start_time;
+        return (0, utils_1.removeNullish)({
+            api_version: headers['stripe-version'],
+            account: headers['stripe-account'],
+            idempotency_key: headers['idempotency-key'],
+            method: requestEvent.method,
+            path: requestEvent.path,
+            status: statusCode,
+            request_id: this._getRequestId(headers),
+            elapsed: requestDurationMs,
+            request_start_time: requestEvent.request_start_time,
+            request_end_time: requestEndTime,
+        });
+    }
+    _getRequestId(headers) {
+        return headers['request-id'];
+    }
+    /**
+     * Used by methods with spec.streaming === true. For these methods, we do not
+     * buffer successful responses into memory or do parse them into stripe
+     * objects, we delegate that all of that to the user and pass back the raw
+     * http.Response object to the callback.
+     *
+     * (Unsuccessful responses shouldn't make it here, they should
+     * still be buffered/parsed and handled by _jsonResponseHandler -- see
+     * makeRequest)
+     */
+    _streamingResponseHandler(requestEvent, callback) {
+        return (res) => {
+            const headers = res.getHeaders();
+            const streamCompleteCallback = () => {
+                const responseEvent = this._makeResponseEvent(requestEvent, res.getStatusCode(), headers);
+                this._stripe._emitter.emit('response', responseEvent);
+                this._recordRequestMetrics(this._getRequestId(headers), responseEvent.elapsed);
+            };
+            const stream = res.toStream(streamCompleteCallback);
+            // This is here for backwards compatibility, as the stream is a raw
+            // HTTP response in Node and the legacy behavior was to mutate this
+            // response.
+            this._addHeadersDirectlyToObject(stream, headers);
+            return callback(null, stream);
+        };
+    }
+    /**
+     * Default handler for Stripe responses. Buffers the response into memory,
+     * parses the JSON and returns it (i.e. passes it to the callback) if there
+     * is no "error" field. Otherwise constructs/passes an appropriate Error.
+     */
+    _jsonResponseHandler(requestEvent, callback) {
+        return (res) => {
+            const headers = res.getHeaders();
+            const requestId = this._getRequestId(headers);
+            const statusCode = res.getStatusCode();
+            const responseEvent = this._makeResponseEvent(requestEvent, statusCode, headers);
+            this._stripe._emitter.emit('response', responseEvent);
+            res
+                .toJSON()
+                .then((jsonResponse) => {
+                if (jsonResponse.error) {
+                    let err;
+                    // Convert OAuth error responses into a standard format
+                    // so that the rest of the error logic can be shared
+                    if (typeof jsonResponse.error === 'string') {
+                        jsonResponse.error = {
+                            type: jsonResponse.error,
+                            message: jsonResponse.error_description,
+                        };
+                    }
+                    jsonResponse.error.headers = headers;
+                    jsonResponse.error.statusCode = statusCode;
+                    jsonResponse.error.requestId = requestId;
+                    if (statusCode === 401) {
+                        err = new Error_1.StripeAuthenticationError(jsonResponse.error);
+                    }
+                    else if (statusCode === 403) {
+                        err = new Error_1.StripePermissionError(jsonResponse.error);
+                    }
+                    else if (statusCode === 429) {
+                        err = new Error_1.StripeRateLimitError(jsonResponse.error);
+                    }
+                    else {
+                        err = Error_1.StripeError.generate(jsonResponse.error);
+                    }
+                    throw err;
+                }
+                return jsonResponse;
+            }, (e) => {
+                throw new Error_1.StripeAPIError({
+                    message: 'Invalid JSON received from the Stripe API',
+                    exception: e,
+                    requestId: headers['request-id'],
+                });
+            })
+                .then((jsonResponse) => {
+                this._recordRequestMetrics(requestId, responseEvent.elapsed);
+                // Expose raw response object.
+                const rawResponse = res.getRawResponse();
+                this._addHeadersDirectlyToObject(rawResponse, headers);
+                Object.defineProperty(jsonResponse, 'lastResponse', {
+                    enumerable: false,
+                    writable: false,
+                    value: rawResponse,
+                });
+                callback(null, jsonResponse);
+            }, (e) => callback(e, null));
+        };
+    }
+    static _generateConnectionErrorMessage(requestRetries) {
+        return `An error occurred with our connection to Stripe.${requestRetries > 0 ? ` Request was retried ${requestRetries} times.` : ''}`;
+    }
+    // For more on when and how to retry API requests, see https://stripe.com/docs/error-handling#safely-retrying-requests-with-idempotency
+    static _shouldRetry(res, numRetries, maxRetries, error) {
+        if (error &&
+            numRetries === 0 &&
+            HttpClient_1.HttpClient.CONNECTION_CLOSED_ERROR_CODES.includes(error.code)) {
+            return true;
+        }
+        // Do not retry if we are out of retries.
+        if (numRetries >= maxRetries) {
+            return false;
+        }
+        // Retry on connection error.
+        if (!res) {
+            return true;
+        }
+        // The API may ask us not to retry (e.g., if doing so would be a no-op)
+        // or advise us to retry (e.g., in cases of lock timeouts); we defer to that.
+        if (res.getHeaders()['stripe-should-retry'] === 'false') {
+            return false;
+        }
+        if (res.getHeaders()['stripe-should-retry'] === 'true') {
+            return true;
+        }
+        // Retry on conflict errors.
+        if (res.getStatusCode() === 409) {
+            return true;
+        }
+        // Retry on 500, 503, and other internal errors.
+        //
+        // Note that we expect the stripe-should-retry header to be false
+        // in most cases when a 500 is returned, since our idempotency framework
+        // would typically replay it anyway.
+        if (res.getStatusCode() >= 500) {
+            return true;
+        }
+        return false;
+    }
+    _getSleepTimeInMS(numRetries, retryAfter = null) {
+        const initialNetworkRetryDelay = this._stripe.getInitialNetworkRetryDelay();
+        const maxNetworkRetryDelay = this._stripe.getMaxNetworkRetryDelay();
+        // Apply exponential backoff with initialNetworkRetryDelay on the
+        // number of numRetries so far as inputs. Do not allow the number to exceed
+        // maxNetworkRetryDelay.
+        let sleepSeconds = Math.min(initialNetworkRetryDelay * Math.pow(numRetries - 1, 2), maxNetworkRetryDelay);
+        // Apply some jitter by randomizing the value in the range of
+        // (sleepSeconds / 2) to (sleepSeconds).
+        sleepSeconds *= 0.5 * (1 + Math.random());
+        // But never sleep less than the base sleep seconds.
+        sleepSeconds = Math.max(initialNetworkRetryDelay, sleepSeconds);
+        // And never sleep less than the time the API asks us to wait, assuming it's a reasonable ask.
+        if (Number.isInteger(retryAfter) && retryAfter <= MAX_RETRY_AFTER_WAIT) {
+            sleepSeconds = Math.max(sleepSeconds, retryAfter);
+        }
+        return sleepSeconds * 1000;
+    }
+    // Max retries can be set on a per request basis. Favor those over the global setting
+    _getMaxNetworkRetries(settings = {}) {
+        return settings.maxNetworkRetries &&
+            Number.isInteger(settings.maxNetworkRetries)
+            ? settings.maxNetworkRetries
+            : this._stripe.getMaxNetworkRetries();
+    }
+    _defaultIdempotencyKey(method, settings) {
+        // If this is a POST and we allow multiple retries, ensure an idempotency key.
+        const maxRetries = this._getMaxNetworkRetries(settings);
+        if (method === 'POST' && maxRetries > 0) {
+            return `stripe-node-retry-${this._stripe._platformFunctions.uuid4()}`;
+        }
+        return null;
+    }
+    _makeHeaders(auth, contentLength, apiVersion, clientUserAgent, method, userSuppliedHeaders, userSuppliedSettings) {
+        const defaultHeaders = {
+            // Use specified auth token or use default from this stripe instance:
+            Authorization: auth ? `Bearer ${auth}` : this._stripe.getApiField('auth'),
+            Accept: 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': this._getUserAgentString(),
+            'X-Stripe-Client-User-Agent': clientUserAgent,
+            'X-Stripe-Client-Telemetry': this._getTelemetryHeader(),
+            'Stripe-Version': apiVersion,
+            'Stripe-Account': this._stripe.getApiField('stripeAccount'),
+            'Idempotency-Key': this._defaultIdempotencyKey(method, userSuppliedSettings),
+        };
+        // As per https://datatracker.ietf.org/doc/html/rfc7230#section-3.3.2:
+        //   A user agent SHOULD send a Content-Length in a request message when
+        //   no Transfer-Encoding is sent and the request method defines a meaning
+        //   for an enclosed payload body.  For example, a Content-Length header
+        //   field is normally sent in a POST request even when the value is 0
+        //   (indicating an empty payload body).  A user agent SHOULD NOT send a
+        //   Content-Length header field when the request message does not contain
+        //   a payload body and the method semantics do not anticipate such a
+        //   body.
+        //
+        // These method types are expected to have bodies and so we should always
+        // include a Content-Length.
+        const methodHasPayload = method == 'POST' || method == 'PUT' || method == 'PATCH';
+        // If a content length was specified, we always include it regardless of
+        // whether the method semantics anticipate such a body. This keeps us
+        // consistent with historical behavior. We do however want to warn on this
+        // and fix these cases as they are semantically incorrect.
+        if (methodHasPayload || contentLength) {
+            if (!methodHasPayload) {
+                (0, utils_1.emitWarning)(`${method} method had non-zero contentLength but no payload is expected for this verb`);
+            }
+            defaultHeaders['Content-Length'] = contentLength;
+        }
+        return Object.assign((0, utils_1.removeNullish)(defaultHeaders), 
+        // If the user supplied, say 'idempotency-key', override instead of appending by ensuring caps are the same.
+        (0, utils_1.normalizeHeaders)(userSuppliedHeaders));
+    }
+    _getUserAgentString() {
+        const packageVersion = this._stripe.getConstant('PACKAGE_VERSION');
+        const appInfo = this._stripe._appInfo
+            ? this._stripe.getAppInfoAsString()
+            : '';
+        return `Stripe/v1 NodeBindings/${packageVersion} ${appInfo}`.trim();
+    }
+    _getTelemetryHeader() {
+        if (this._stripe.getTelemetryEnabled() &&
+            this._stripe._prevRequestMetrics.length > 0) {
+            const metrics = this._stripe._prevRequestMetrics.shift();
+            return JSON.stringify({
+                last_request_metrics: metrics,
+            });
+        }
+    }
+    _recordRequestMetrics(requestId, requestDurationMs) {
+        if (this._stripe.getTelemetryEnabled() && requestId) {
+            if (this._stripe._prevRequestMetrics.length > this._maxBufferedRequestMetric) {
+                (0, utils_1.emitWarning)('Request metrics buffer is full, dropping telemetry message.');
+            }
+            else {
+                this._stripe._prevRequestMetrics.push({
+                    request_id: requestId,
+                    request_duration_ms: requestDurationMs,
+                });
+            }
+        }
+    }
+    _request(method, host, path, data, auth, options = {}, callback, requestDataProcessor = null) {
+        let requestData;
+        const retryRequest = (requestFn, apiVersion, headers, requestRetries, retryAfter) => {
+            return setTimeout(requestFn, this._getSleepTimeInMS(requestRetries, retryAfter), apiVersion, headers, requestRetries + 1);
+        };
+        const makeRequest = (apiVersion, headers, numRetries) => {
+            // timeout can be set on a per-request basis. Favor that over the global setting
+            const timeout = options.settings &&
+                options.settings.timeout &&
+                Number.isInteger(options.settings.timeout) &&
+                options.settings.timeout >= 0
+                ? options.settings.timeout
+                : this._stripe.getApiField('timeout');
+            const req = this._stripe
+                .getApiField('httpClient')
+                .makeRequest(host || this._stripe.getApiField('host'), this._stripe.getApiField('port'), path, method, headers, requestData, this._stripe.getApiField('protocol'), timeout);
+            const requestStartTime = Date.now();
+            // @ts-ignore
+            const requestEvent = (0, utils_1.removeNullish)({
+                api_version: apiVersion,
+                account: headers['Stripe-Account'],
+                idempotency_key: headers['Idempotency-Key'],
+                method,
+                path,
+                request_start_time: requestStartTime,
+            });
+            const requestRetries = numRetries || 0;
+            const maxRetries = this._getMaxNetworkRetries(options.settings || {});
+            this._stripe._emitter.emit('request', requestEvent);
+            req
+                .then((res) => {
+                if (RequestSender._shouldRetry(res, requestRetries, maxRetries)) {
+                    return retryRequest(makeRequest, apiVersion, headers, requestRetries, 
+                    // @ts-ignore
+                    res.getHeaders()['retry-after']);
+                }
+                else if (options.streaming && res.getStatusCode() < 400) {
+                    return this._streamingResponseHandler(requestEvent, callback)(res);
+                }
+                else {
+                    return this._jsonResponseHandler(requestEvent, callback)(res);
+                }
+            })
+                .catch((error) => {
+                if (RequestSender._shouldRetry(null, requestRetries, maxRetries, error)) {
+                    return retryRequest(makeRequest, apiVersion, headers, requestRetries, null);
+                }
+                else {
+                    const isTimeoutError = error.code && error.code === HttpClient_1.HttpClient.TIMEOUT_ERROR_CODE;
+                    return callback(new Error_1.StripeConnectionError({
+                        message: isTimeoutError
+                            ? `Request aborted due to timeout being reached (${timeout}ms)`
+                            : RequestSender._generateConnectionErrorMessage(requestRetries),
+                        // @ts-ignore
+                        detail: error,
+                    }));
+                }
+            });
+        };
+        const prepareAndMakeRequest = (error, data) => {
+            if (error) {
+                return callback(error);
+            }
+            requestData = data;
+            this._stripe.getClientUserAgent((clientUserAgent) => {
+                var _a, _b;
+                const apiVersion = this._stripe.getApiField('version');
+                const headers = this._makeHeaders(auth, requestData.length, apiVersion, clientUserAgent, method, (_a = options.headers) !== null && _a !== void 0 ? _a : null, (_b = options.settings) !== null && _b !== void 0 ? _b : {});
+                makeRequest(apiVersion, headers, 0);
+            });
+        };
+        if (requestDataProcessor) {
+            requestDataProcessor(method, data, options.headers, prepareAndMakeRequest);
+        }
+        else {
+            prepareAndMakeRequest(null, (0, utils_1.stringifyRequestData)(data || {}));
+        }
+    }
+}
+exports.RequestSender = RequestSender;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/ResourceNamespace.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/ResourceNamespace.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.resourceNamespace = void 0;
+// ResourceNamespace allows you to create nested resources, i.e. `stripe.issuing.cards`.
+// It also works recursively, so you could do i.e. `stripe.billing.invoicing.pay`.
+function ResourceNamespace(stripe, resources) {
+    for (const name in resources) {
+        const camelCaseName = name[0].toLowerCase() + name.substring(1);
+        const resource = new resources[name](stripe);
+        this[camelCaseName] = resource;
+    }
+}
+function resourceNamespace(namespace, resources) {
+    return function (stripe) {
+        return new ResourceNamespace(stripe, resources);
+    };
+}
+exports.resourceNamespace = resourceNamespace;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/StripeEmitter.js":
+/*!**************************************************!*\
+  !*** ./node_modules/stripe/lib/StripeEmitter.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.StripeEmitter = void 0;
+/**
+ * @private
+ * (For internal use in stripe-node.)
+ * Wrapper around the Event Web API.
+ */
+class _StripeEvent extends Event {
+    constructor(eventName, data) {
+        super(eventName);
+        this.data = data;
+    }
+}
+/** Minimal EventEmitter wrapper around EventTarget. */
+class StripeEmitter {
+    constructor() {
+        this.eventTarget = new EventTarget();
+        this.listenerMapping = new Map();
+    }
+    on(eventName, listener) {
+        const listenerWrapper = (event) => {
+            listener(event.data);
+        };
+        this.listenerMapping.set(listener, listenerWrapper);
+        return this.eventTarget.addEventListener(eventName, listenerWrapper);
+    }
+    removeListener(eventName, listener) {
+        const listenerWrapper = this.listenerMapping.get(listener);
+        this.listenerMapping.delete(listener);
+        return this.eventTarget.removeEventListener(eventName, listenerWrapper);
+    }
+    once(eventName, listener) {
+        const listenerWrapper = (event) => {
+            listener(event.data);
+        };
+        this.listenerMapping.set(listener, listenerWrapper);
+        return this.eventTarget.addEventListener(eventName, listenerWrapper, {
+            once: true,
+        });
+    }
+    emit(eventName, data) {
+        return this.eventTarget.dispatchEvent(new _StripeEvent(eventName, data));
+    }
+}
+exports.StripeEmitter = StripeEmitter;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/StripeMethod.js":
+/*!*************************************************!*\
+  !*** ./node_modules/stripe/lib/StripeMethod.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.stripeMethod = void 0;
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/stripe/lib/utils.js");
+const autoPagination_1 = __webpack_require__(/*! ./autoPagination */ "./node_modules/stripe/lib/autoPagination.js");
+/**
+ * Create an API method from the declared spec.
+ *
+ * @param [spec.method='GET'] Request Method (POST, GET, DELETE, PUT)
+ * @param [spec.path=''] Path to be appended to the API BASE_PATH, joined with
+ *  the instance's path (e.g. 'charges' or 'customers')
+ * @param [spec.fullPath=''] Fully qualified path to the method (eg. /v1/a/b/c).
+ *  If this is specified, path should not be specified.
+ * @param [spec.urlParams=[]] Array of required arguments in the order that they
+ *  must be passed by the consumer of the API. Subsequent optional arguments are
+ *  optionally passed through a hash (Object) as the penultimate argument
+ *  (preceding the also-optional callback argument
+ * @param [spec.encode] Function for mutating input parameters to a method.
+ *  Usefully for applying transforms to data on a per-method basis.
+ * @param [spec.host] Hostname for the request.
+ *
+ * <!-- Public API accessible via Stripe.StripeResource.method -->
+ */
+function stripeMethod(spec) {
+    if (spec.path !== undefined && spec.fullPath !== undefined) {
+        throw new Error(`Method spec specified both a 'path' (${spec.path}) and a 'fullPath' (${spec.fullPath}).`);
+    }
+    return function (...args) {
+        const callback = typeof args[args.length - 1] == 'function' && args.pop();
+        spec.urlParams = (0, utils_1.extractUrlParams)(spec.fullPath || this.createResourcePathWithSymbols(spec.path || ''));
+        const requestPromise = (0, utils_1.callbackifyPromiseWithTimeout)(this._makeRequest(args, spec, {}), callback);
+        // Please note `spec.methodType === 'search'` is beta functionality and this
+        // interface is subject to change/removal at any time.
+        if (spec.methodType === 'list' || spec.methodType === 'search') {
+            const autoPaginationMethods = (0, autoPagination_1.makeAutoPaginationMethods)(this, args, spec, requestPromise);
+            Object.assign(requestPromise, autoPaginationMethods);
+        }
+        return requestPromise;
+    };
+}
+exports.stripeMethod = stripeMethod;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/StripeResource.js":
+/*!***************************************************!*\
+  !*** ./node_modules/stripe/lib/StripeResource.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.StripeResource = void 0;
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/stripe/lib/utils.js");
+const StripeMethod_1 = __webpack_require__(/*! ./StripeMethod */ "./node_modules/stripe/lib/StripeMethod.js");
+// Provide extension mechanism for Stripe Resource Sub-Classes
+StripeResource.extend = utils_1.protoExtend;
+// Expose method-creator
+StripeResource.method = StripeMethod_1.stripeMethod;
+StripeResource.MAX_BUFFERED_REQUEST_METRICS = 100;
+/**
+ * Encapsulates request logic for a Stripe Resource
+ */
+function StripeResource(stripe, deprecatedUrlData) {
+    this._stripe = stripe;
+    if (deprecatedUrlData) {
+        throw new Error('Support for curried url params was dropped in stripe-node v7.0.0. Instead, pass two ids.');
+    }
+    this.basePath = (0, utils_1.makeURLInterpolator)(
+    // @ts-ignore changing type of basePath
+    this.basePath || stripe.getApiField('basePath'));
+    // @ts-ignore changing type of path
+    this.resourcePath = this.path;
+    // @ts-ignore changing type of path
+    this.path = (0, utils_1.makeURLInterpolator)(this.path);
+    this.initialize(...arguments);
+}
+exports.StripeResource = StripeResource;
+StripeResource.prototype = {
+    _stripe: null,
+    // @ts-ignore the type of path changes in ctor
+    path: '',
+    resourcePath: '',
+    // Methods that don't use the API's default '/v1' path can override it with this setting.
+    basePath: null,
+    initialize() { },
+    // Function to override the default data processor. This allows full control
+    // over how a StripeResource's request data will get converted into an HTTP
+    // body. This is useful for non-standard HTTP requests. The function should
+    // take method name, data, and headers as arguments.
+    requestDataProcessor: null,
+    // Function to add a validation checks before sending the request, errors should
+    // be thrown, and they will be passed to the callback/promise.
+    validateRequest: null,
+    createFullPath(commandPath, urlData) {
+        const urlParts = [this.basePath(urlData), this.path(urlData)];
+        if (typeof commandPath === 'function') {
+            const computedCommandPath = commandPath(urlData);
+            // If we have no actual command path, we just omit it to avoid adding a
+            // trailing slash. This is important for top-level listing requests, which
+            // do not have a command path.
+            if (computedCommandPath) {
+                urlParts.push(computedCommandPath);
+            }
+        }
+        else {
+            urlParts.push(commandPath);
+        }
+        return this._joinUrlParts(urlParts);
+    },
+    // Creates a relative resource path with symbols left in (unlike
+    // createFullPath which takes some data to replace them with). For example it
+    // might produce: /invoices/{id}
+    createResourcePathWithSymbols(pathWithSymbols) {
+        // If there is no path beyond the resource path, we want to produce just
+        // /<resource path> rather than /<resource path>/.
+        if (pathWithSymbols) {
+            return `/${this._joinUrlParts([this.resourcePath, pathWithSymbols])}`;
+        }
+        else {
+            return `/${this.resourcePath}`;
+        }
+    },
+    _joinUrlParts(parts) {
+        // Replace any accidentally doubled up slashes. This previously used
+        // path.join, which would do this as well. Unfortunately we need to do this
+        // as the functions for creating paths are technically part of the public
+        // interface and so we need to preserve backwards compatibility.
+        return parts.join('/').replace(/\/{2,}/g, '/');
+    },
+    _getRequestOpts(requestArgs, spec, overrideData) {
+        // Extract spec values with defaults.
+        const requestMethod = (spec.method || 'GET').toUpperCase();
+        const urlParams = spec.urlParams || [];
+        const encode = spec.encode || ((data) => data);
+        const isUsingFullPath = !!spec.fullPath;
+        const commandPath = (0, utils_1.makeURLInterpolator)(isUsingFullPath ? spec.fullPath : spec.path || '');
+        // When using fullPath, we ignore the resource path as it should already be
+        // fully qualified.
+        const path = isUsingFullPath
+            ? spec.fullPath
+            : this.createResourcePathWithSymbols(spec.path);
+        // Don't mutate args externally.
+        const args = [].slice.call(requestArgs);
+        // Generate and validate url params.
+        const urlData = urlParams.reduce((urlData, param) => {
+            const arg = args.shift();
+            if (typeof arg !== 'string') {
+                throw new Error(`Stripe: Argument "${param}" must be a string, but got: ${arg} (on API request to \`${requestMethod} ${path}\`)`);
+            }
+            urlData[param] = arg;
+            return urlData;
+        }, {});
+        // Pull request data and options (headers, auth) from args.
+        const dataFromArgs = (0, utils_1.getDataFromArgs)(args);
+        const data = encode(Object.assign({}, dataFromArgs, overrideData));
+        const options = (0, utils_1.getOptionsFromArgs)(args);
+        const host = options.host || spec.host;
+        const streaming = !!spec.streaming;
+        // Validate that there are no more args.
+        if (args.filter((x) => x != null).length) {
+            throw new Error(`Stripe: Unknown arguments (${args}). Did you mean to pass an options object? See https://github.com/stripe/stripe-node/wiki/Passing-Options. (on API request to ${requestMethod} \`${path}\`)`);
+        }
+        // When using full path, we can just invoke the URL interpolator directly
+        // as we don't need to use the resource to create a full path.
+        const requestPath = isUsingFullPath
+            ? commandPath(urlData)
+            : this.createFullPath(commandPath, urlData);
+        const headers = Object.assign(options.headers, spec.headers);
+        if (spec.validator) {
+            spec.validator(data, { headers });
+        }
+        const dataInQuery = spec.method === 'GET' || spec.method === 'DELETE';
+        const bodyData = dataInQuery ? {} : data;
+        const queryData = dataInQuery ? data : {};
+        return {
+            requestMethod,
+            requestPath,
+            bodyData,
+            queryData,
+            auth: options.auth,
+            headers,
+            host: host !== null && host !== void 0 ? host : null,
+            streaming,
+            settings: options.settings,
+        };
+    },
+    _makeRequest(requestArgs, spec, overrideData) {
+        return new Promise((resolve, reject) => {
+            var _a;
+            let opts;
+            try {
+                opts = this._getRequestOpts(requestArgs, spec, overrideData);
+            }
+            catch (err) {
+                reject(err);
+                return;
+            }
+            function requestCallback(err, response) {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(spec.transformResponseData
+                        ? spec.transformResponseData(response)
+                        : response);
+                }
+            }
+            const emptyQuery = Object.keys(opts.queryData).length === 0;
+            const path = [
+                opts.requestPath,
+                emptyQuery ? '' : '?',
+                (0, utils_1.stringifyRequestData)(opts.queryData),
+            ].join('');
+            const { headers, settings } = opts;
+            this._stripe._requestSender._request(opts.requestMethod, opts.host, path, opts.bodyData, opts.auth, { headers, settings, streaming: opts.streaming }, requestCallback, (_a = this.requestDataProcessor) === null || _a === void 0 ? void 0 : _a.bind(this));
+        });
+    },
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/Webhooks.js":
+/*!*********************************************!*\
+  !*** ./node_modules/stripe/lib/Webhooks.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.createWebhooks = void 0;
+const Error_1 = __webpack_require__(/*! ./Error */ "./node_modules/stripe/lib/Error.js");
+function createWebhooks(platformFunctions) {
+    const Webhook = {
+        DEFAULT_TOLERANCE: 300,
+        // @ts-ignore
+        signature: null,
+        constructEvent(payload, header, secret, tolerance, cryptoProvider) {
+            this.signature.verifyHeader(payload, header, secret, tolerance || Webhook.DEFAULT_TOLERANCE, cryptoProvider);
+            const jsonPayload = payload instanceof Uint8Array
+                ? JSON.parse(new TextDecoder('utf8').decode(payload))
+                : JSON.parse(payload);
+            return jsonPayload;
+        },
+        async constructEventAsync(payload, header, secret, tolerance, cryptoProvider) {
+            await this.signature.verifyHeaderAsync(payload, header, secret, tolerance || Webhook.DEFAULT_TOLERANCE, cryptoProvider);
+            const jsonPayload = payload instanceof Uint8Array
+                ? JSON.parse(new TextDecoder('utf8').decode(payload))
+                : JSON.parse(payload);
+            return jsonPayload;
+        },
+        /**
+         * Generates a header to be used for webhook mocking
+         *
+         * @typedef {object} opts
+         * @property {number} timestamp - Timestamp of the header. Defaults to Date.now()
+         * @property {string} payload - JSON stringified payload object, containing the 'id' and 'object' parameters
+         * @property {string} secret - Stripe webhook secret 'whsec_...'
+         * @property {string} scheme - Version of API to hit. Defaults to 'v1'.
+         * @property {string} signature - Computed webhook signature
+         * @property {CryptoProvider} cryptoProvider - Crypto provider to use for computing the signature if none was provided. Defaults to NodeCryptoProvider.
+         */
+        generateTestHeaderString: function (opts) {
+            if (!opts) {
+                throw new Error_1.StripeError({
+                    message: 'Options are required',
+                });
+            }
+            opts.timestamp =
+                Math.floor(opts.timestamp) || Math.floor(Date.now() / 1000);
+            opts.scheme = opts.scheme || signature.EXPECTED_SCHEME;
+            opts.cryptoProvider = opts.cryptoProvider || getCryptoProvider();
+            opts.signature =
+                opts.signature ||
+                    opts.cryptoProvider.computeHMACSignature(opts.timestamp + '.' + opts.payload, opts.secret);
+            const generatedHeader = [
+                't=' + opts.timestamp,
+                opts.scheme + '=' + opts.signature,
+            ].join(',');
+            return generatedHeader;
+        },
+    };
+    const signature = {
+        EXPECTED_SCHEME: 'v1',
+        verifyHeader(encodedPayload, encodedHeader, secret, tolerance, cryptoProvider) {
+            const { decodedHeader: header, decodedPayload: payload, details, suspectPayloadType, } = parseEventDetails(encodedPayload, encodedHeader, this.EXPECTED_SCHEME);
+            cryptoProvider = cryptoProvider || getCryptoProvider();
+            const expectedSignature = cryptoProvider.computeHMACSignature(makeHMACContent(payload, details), secret);
+            validateComputedSignature(payload, header, details, expectedSignature, tolerance, suspectPayloadType);
+            return true;
+        },
+        async verifyHeaderAsync(encodedPayload, encodedHeader, secret, tolerance, cryptoProvider) {
+            const { decodedHeader: header, decodedPayload: payload, details, suspectPayloadType, } = parseEventDetails(encodedPayload, encodedHeader, this.EXPECTED_SCHEME);
+            cryptoProvider = cryptoProvider || getCryptoProvider();
+            const expectedSignature = await cryptoProvider.computeHMACSignatureAsync(makeHMACContent(payload, details), secret);
+            return validateComputedSignature(payload, header, details, expectedSignature, tolerance, suspectPayloadType);
+        },
+    };
+    function makeHMACContent(payload, details) {
+        return `${details.timestamp}.${payload}`;
+    }
+    function parseEventDetails(encodedPayload, encodedHeader, expectedScheme) {
+        if (!encodedPayload) {
+            throw new Error_1.StripeSignatureVerificationError(encodedHeader, encodedPayload, {
+                message: 'No webhook payload was provided.',
+            });
+        }
+        const suspectPayloadType = typeof encodedPayload != 'string' &&
+            !(encodedPayload instanceof Uint8Array);
+        const textDecoder = new TextDecoder('utf8');
+        const decodedPayload = encodedPayload instanceof Uint8Array
+            ? textDecoder.decode(encodedPayload)
+            : encodedPayload;
+        // Express's type for `Request#headers` is `string | []string`
+        // which is because the `set-cookie` header is an array,
+        // but no other headers are an array (docs: https://nodejs.org/api/http.html#http_message_headers)
+        // (Express's Request class is an extension of http.IncomingMessage, and doesn't appear to be relevantly modified: https://github.com/expressjs/express/blob/master/lib/request.js#L31)
+        if (Array.isArray(encodedHeader)) {
+            throw new Error('Unexpected: An array was passed as a header, which should not be possible for the stripe-signature header.');
+        }
+        if (encodedHeader == null || encodedHeader == '') {
+            throw new Error_1.StripeSignatureVerificationError(encodedHeader, encodedPayload, {
+                message: 'No stripe-signature header value was provided.',
+            });
+        }
+        const decodedHeader = encodedHeader instanceof Uint8Array
+            ? textDecoder.decode(encodedHeader)
+            : encodedHeader;
+        const details = parseHeader(decodedHeader, expectedScheme);
+        if (!details || details.timestamp === -1) {
+            throw new Error_1.StripeSignatureVerificationError(decodedHeader, decodedPayload, {
+                message: 'Unable to extract timestamp and signatures from header',
+            });
+        }
+        if (!details.signatures.length) {
+            throw new Error_1.StripeSignatureVerificationError(decodedHeader, decodedPayload, {
+                message: 'No signatures found with expected scheme',
+            });
+        }
+        return {
+            decodedPayload,
+            decodedHeader,
+            details,
+            suspectPayloadType,
+        };
+    }
+    function validateComputedSignature(payload, header, details, expectedSignature, tolerance, suspectPayloadType) {
+        const signatureFound = !!details.signatures.filter(platformFunctions.secureCompare.bind(platformFunctions, expectedSignature)).length;
+        if (!signatureFound) {
+            if (suspectPayloadType) {
+                throw new Error_1.StripeSignatureVerificationError(header, payload, {
+                    message: 'Webhook payload must be provided as a string or a Buffer (https://nodejs.org/api/buffer.html) instance representing the _raw_ request body.' +
+                        'Payload was provided as a parsed JavaScript object instead. \n' +
+                        'Signature verification is impossible without access to the original signed material. \n' +
+                        'Learn more about webhook signing and explore webhook integration examples for various frameworks at ' +
+                        'https://github.com/stripe/stripe-node#webhook-signing',
+                });
+            }
+            throw new Error_1.StripeSignatureVerificationError(header, payload, {
+                message: 'No signatures found matching the expected signature for payload.' +
+                    ' Are you passing the raw request body you received from Stripe? \n' +
+                    'Learn more about webhook signing and explore webhook integration examples for various frameworks at ' +
+                    'https://github.com/stripe/stripe-node#webhook-signing',
+            });
+        }
+        const timestampAge = Math.floor(Date.now() / 1000) - details.timestamp;
+        if (tolerance > 0 && timestampAge > tolerance) {
+            // @ts-ignore
+            throw new Error_1.StripeSignatureVerificationError(header, payload, {
+                message: 'Timestamp outside the tolerance zone',
+            });
+        }
+        return true;
+    }
+    function parseHeader(header, scheme) {
+        if (typeof header !== 'string') {
+            return null;
+        }
+        return header.split(',').reduce((accum, item) => {
+            const kv = item.split('=');
+            if (kv[0] === 't') {
+                accum.timestamp = parseInt(kv[1], 10);
+            }
+            if (kv[0] === scheme) {
+                accum.signatures.push(kv[1]);
+            }
+            return accum;
+        }, {
+            timestamp: -1,
+            signatures: [],
+        });
+    }
+    let webhooksCryptoProviderInstance = null;
+    /**
+     * Lazily instantiate a CryptoProvider instance. This is a stateless object
+     * so a singleton can be used here.
+     */
+    function getCryptoProvider() {
+        if (!webhooksCryptoProviderInstance) {
+            webhooksCryptoProviderInstance = platformFunctions.createDefaultCryptoProvider();
+        }
+        return webhooksCryptoProviderInstance;
+    }
+    Webhook.signature = signature;
+    return Webhook;
+}
+exports.createWebhooks = createWebhooks;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/autoPagination.js":
+/*!***************************************************!*\
+  !*** ./node_modules/stripe/lib/autoPagination.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.makeAutoPaginationMethods = void 0;
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/stripe/lib/utils.js");
+function makeAutoPaginationMethods(self, requestArgs, spec, firstPagePromise) {
+    const promiseCache = { currentPromise: null };
+    const reverseIteration = isReverseIteration(requestArgs);
+    let pagePromise = firstPagePromise;
+    let i = 0;
+    // Search and List methods iterate differently.
+    // Search relies on a `next_page` token and can only iterate in one direction.
+    // List relies on either an `ending_before` or `starting_after` field with
+    // an item ID to paginate and is bi-directional.
+    //
+    // Please note: spec.methodType === 'search' is beta functionality and is
+    // subject to change/removal at any time.
+    let getNextPagePromise;
+    if (spec.methodType === 'search') {
+        getNextPagePromise = (pageResult) => {
+            if (!pageResult.next_page) {
+                throw Error('Unexpected: Stripe API response does not have a well-formed `next_page` field, but `has_more` was true.');
+            }
+            return self._makeRequest(requestArgs, spec, {
+                page: pageResult.next_page,
+            });
+        };
+    }
+    else {
+        getNextPagePromise = (pageResult) => {
+            const lastId = getLastId(pageResult, reverseIteration);
+            return self._makeRequest(requestArgs, spec, {
+                [reverseIteration ? 'ending_before' : 'starting_after']: lastId,
+            });
+        };
+    }
+    function iterate(pageResult) {
+        if (!(pageResult &&
+            pageResult.data &&
+            typeof pageResult.data.length === 'number')) {
+            throw Error('Unexpected: Stripe API response does not have a well-formed `data` array.');
+        }
+        if (i < pageResult.data.length) {
+            const idx = reverseIteration ? pageResult.data.length - 1 - i : i;
+            const value = pageResult.data[idx];
+            i += 1;
+            return { value, done: false };
+        }
+        else if (pageResult.has_more) {
+            // Reset counter, request next page, and recurse.
+            i = 0;
+            pagePromise = getNextPagePromise(pageResult);
+            return pagePromise.then(iterate);
+        }
+        return { value: undefined, done: true };
+    }
+    function asyncIteratorNext() {
+        return memoizedPromise(promiseCache, (resolve, reject) => {
+            return pagePromise
+                .then(iterate)
+                .then(resolve)
+                .catch(reject);
+        });
+    }
+    const autoPagingEach = makeAutoPagingEach(asyncIteratorNext);
+    const autoPagingToArray = makeAutoPagingToArray(autoPagingEach);
+    const autoPaginationMethods = {
+        autoPagingEach,
+        autoPagingToArray,
+        // Async iterator functions:
+        next: asyncIteratorNext,
+        return: () => {
+            // This is required for `break`.
+            return {};
+        },
+        [getAsyncIteratorSymbol()]: () => {
+            return autoPaginationMethods;
+        },
+    };
+    return autoPaginationMethods;
+}
+exports.makeAutoPaginationMethods = makeAutoPaginationMethods;
+/**
+ * ----------------
+ * Private Helpers:
+ * ----------------
+ */
+function getAsyncIteratorSymbol() {
+    if (typeof Symbol !== 'undefined' && Symbol.asyncIterator) {
+        return Symbol.asyncIterator;
+    }
+    // Follow the convention from libraries like iterall: https://github.com/leebyron/iterall#asynciterator-1
+    return '@@asyncIterator';
+}
+function getDoneCallback(args) {
+    if (args.length < 2) {
+        return null;
+    }
+    const onDone = args[1];
+    if (typeof onDone !== 'function') {
+        throw Error(`The second argument to autoPagingEach, if present, must be a callback function; received ${typeof onDone}`);
+    }
+    return onDone;
+}
+/**
+ * We allow four forms of the `onItem` callback (the middle two being equivalent),
+ *
+ *   1. `.autoPagingEach((item) => { doSomething(item); return false; });`
+ *   2. `.autoPagingEach(async (item) => { await doSomething(item); return false; });`
+ *   3. `.autoPagingEach((item) => doSomething(item).then(() => false));`
+ *   4. `.autoPagingEach((item, next) => { doSomething(item); next(false); });`
+ *
+ * In addition to standard validation, this helper
+ * coalesces the former forms into the latter form.
+ */
+function getItemCallback(args) {
+    if (args.length === 0) {
+        return undefined;
+    }
+    const onItem = args[0];
+    if (typeof onItem !== 'function') {
+        throw Error(`The first argument to autoPagingEach, if present, must be a callback function; received ${typeof onItem}`);
+    }
+    // 4. `.autoPagingEach((item, next) => { doSomething(item); next(false); });`
+    if (onItem.length === 2) {
+        return onItem;
+    }
+    if (onItem.length > 2) {
+        throw Error(`The \`onItem\` callback function passed to autoPagingEach must accept at most two arguments; got ${onItem}`);
+    }
+    // This magically handles all three of these usecases (the latter two being functionally identical):
+    // 1. `.autoPagingEach((item) => { doSomething(item); return false; });`
+    // 2. `.autoPagingEach(async (item) => { await doSomething(item); return false; });`
+    // 3. `.autoPagingEach((item) => doSomething(item).then(() => false));`
+    return function _onItem(item, next) {
+        const shouldContinue = onItem(item);
+        next(shouldContinue);
+    };
+}
+function getLastId(listResult, reverseIteration) {
+    const lastIdx = reverseIteration ? 0 : listResult.data.length - 1;
+    const lastItem = listResult.data[lastIdx];
+    const lastId = lastItem && lastItem.id;
+    if (!lastId) {
+        throw Error('Unexpected: No `id` found on the last item while auto-paging a list.');
+    }
+    return lastId;
+}
+/**
+ * If a user calls `.next()` multiple times in parallel,
+ * return the same result until something has resolved
+ * to prevent page-turning race conditions.
+ */
+function memoizedPromise(promiseCache, cb) {
+    if (promiseCache.currentPromise) {
+        return promiseCache.currentPromise;
+    }
+    promiseCache.currentPromise = new Promise(cb).then((ret) => {
+        promiseCache.currentPromise = undefined;
+        return ret;
+    });
+    return promiseCache.currentPromise;
+}
+function makeAutoPagingEach(asyncIteratorNext) {
+    return function autoPagingEach( /* onItem?, onDone? */) {
+        const args = [].slice.call(arguments);
+        const onItem = getItemCallback(args);
+        const onDone = getDoneCallback(args);
+        if (args.length > 2) {
+            throw Error(`autoPagingEach takes up to two arguments; received ${args}`);
+        }
+        const autoPagePromise = wrapAsyncIteratorWithCallback(asyncIteratorNext, 
+        // @ts-ignore we might need a null check
+        onItem);
+        return (0, utils_1.callbackifyPromiseWithTimeout)(autoPagePromise, onDone);
+    };
+}
+function makeAutoPagingToArray(autoPagingEach) {
+    return function autoPagingToArray(opts, onDone) {
+        const limit = opts && opts.limit;
+        if (!limit) {
+            throw Error('You must pass a `limit` option to autoPagingToArray, e.g., `autoPagingToArray({limit: 1000});`.');
+        }
+        if (limit > 10000) {
+            throw Error('You cannot specify a limit of more than 10,000 items to fetch in `autoPagingToArray`; use `autoPagingEach` to iterate through longer lists.');
+        }
+        const promise = new Promise((resolve, reject) => {
+            const items = [];
+            autoPagingEach((item) => {
+                items.push(item);
+                if (items.length >= limit) {
+                    return false;
+                }
+            })
+                .then(() => {
+                resolve(items);
+            })
+                .catch(reject);
+        });
+        // @ts-ignore
+        return (0, utils_1.callbackifyPromiseWithTimeout)(promise, onDone);
+    };
+}
+function wrapAsyncIteratorWithCallback(asyncIteratorNext, onItem) {
+    return new Promise((resolve, reject) => {
+        function handleIteration(iterResult) {
+            if (iterResult.done) {
+                resolve();
+                return;
+            }
+            const item = iterResult.value;
+            return new Promise((next) => {
+                // Bit confusing, perhaps; we pass a `resolve` fn
+                // to the user, so they can decide when and if to continue.
+                // They can return false, or a promise which resolves to false, to break.
+                onItem(item, next);
+            }).then((shouldContinue) => {
+                if (shouldContinue === false) {
+                    return handleIteration({ done: true });
+                }
+                else {
+                    return asyncIteratorNext().then(handleIteration);
+                }
+            });
+        }
+        asyncIteratorNext()
+            .then(handleIteration)
+            .catch(reject);
+    });
+}
+function isReverseIteration(requestArgs) {
+    const args = [].slice.call(requestArgs);
+    const dataFromArgs = (0, utils_1.getDataFromArgs)(args);
+    return !!dataFromArgs.ending_before;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/crypto/CryptoProvider.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/stripe/lib/crypto/CryptoProvider.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CryptoProvider = void 0;
+/**
+ * Interface encapsulating the various crypto computations used by the library,
+ * allowing pluggable underlying crypto implementations.
+ */
+class CryptoProvider {
+    /**
+     * Computes a SHA-256 HMAC given a secret and a payload (encoded in UTF-8).
+     * The output HMAC should be encoded in hexadecimal.
+     *
+     * Sample values for implementations:
+     * - computeHMACSignature('', 'test_secret') => 'f7f9bd47fb987337b5796fdc1fdb9ba221d0d5396814bfcaf9521f43fd8927fd'
+     * - computeHMACSignature('\ud83d\ude00', 'test_secret') => '837da296d05c4fe31f61d5d7ead035099d9585a5bcde87de952012a78f0b0c43
+     */
+    computeHMACSignature(payload, secret) {
+        throw new Error('computeHMACSignature not implemented.');
+    }
+    /**
+     * Asynchronous version of `computeHMACSignature`. Some implementations may
+     * only allow support async signature computation.
+     *
+     * Computes a SHA-256 HMAC given a secret and a payload (encoded in UTF-8).
+     * The output HMAC should be encoded in hexadecimal.
+     *
+     * Sample values for implementations:
+     * - computeHMACSignature('', 'test_secret') => 'f7f9bd47fb987337b5796fdc1fdb9ba221d0d5396814bfcaf9521f43fd8927fd'
+     * - computeHMACSignature('\ud83d\ude00', 'test_secret') => '837da296d05c4fe31f61d5d7ead035099d9585a5bcde87de952012a78f0b0c43
+     */
+    computeHMACSignatureAsync(payload, secret) {
+        throw new Error('computeHMACSignatureAsync not implemented.');
+    }
+}
+exports.CryptoProvider = CryptoProvider;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/crypto/SubtleCryptoProvider.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/stripe/lib/crypto/SubtleCryptoProvider.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.SubtleCryptoProvider = void 0;
+const CryptoProvider_1 = __webpack_require__(/*! ./CryptoProvider */ "./node_modules/stripe/lib/crypto/CryptoProvider.js");
+/**
+ * `CryptoProvider which uses the SubtleCrypto interface of the Web Crypto API.
+ *
+ * This only supports asynchronous operations.
+ */
+class SubtleCryptoProvider extends CryptoProvider_1.CryptoProvider {
+    constructor(subtleCrypto) {
+        super();
+        // If no subtle crypto is interface, default to the global namespace. This
+        // is to allow custom interfaces (eg. using the Node webcrypto interface in
+        // tests).
+        this.subtleCrypto = subtleCrypto || crypto.subtle;
+    }
+    /** @override */
+    computeHMACSignature(payload, secret) {
+        throw new Error('SubtleCryptoProvider cannot be used in a synchronous context.');
+    }
+    /** @override */
+    async computeHMACSignatureAsync(payload, secret) {
+        const encoder = new TextEncoder();
+        const key = await this.subtleCrypto.importKey('raw', encoder.encode(secret), {
+            name: 'HMAC',
+            hash: { name: 'SHA-256' },
+        }, false, ['sign']);
+        const signatureBuffer = await this.subtleCrypto.sign('hmac', key, encoder.encode(payload));
+        // crypto.subtle returns the signature in base64 format. This must be
+        // encoded in hex to match the CryptoProvider contract. We map each byte in
+        // the buffer to its corresponding hex octet and then combine into a string.
+        const signatureBytes = new Uint8Array(signatureBuffer);
+        const signatureHexCodes = new Array(signatureBytes.length);
+        for (let i = 0; i < signatureBytes.length; i++) {
+            signatureHexCodes[i] = byteHexMapping[signatureBytes[i]];
+        }
+        return signatureHexCodes.join('');
+    }
+}
+exports.SubtleCryptoProvider = SubtleCryptoProvider;
+// Cached mapping of byte to hex representation. We do this once to avoid re-
+// computing every time we need to convert the result of a signature to hex.
+const byteHexMapping = new Array(256);
+for (let i = 0; i < byteHexMapping.length; i++) {
+    byteHexMapping[i] = i.toString(16).padStart(2, '0');
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/multipart.js":
+/*!**********************************************!*\
+  !*** ./node_modules/stripe/lib/multipart.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/stripe/lib/utils.js");
+// Method for formatting HTTP body for the multipart/form-data specification
+// Mostly taken from Fermata.js
+// https://github.com/natevw/fermata/blob/5d9732a33d776ce925013a265935facd1626cc88/fermata.js#L315-L343
+const multipartDataGenerator = (method, data, headers) => {
+    const segno = (Math.round(Math.random() * 1e16) + Math.round(Math.random() * 1e16)).toString();
+    headers['Content-Type'] = `multipart/form-data; boundary=${segno}`;
+    const textEncoder = new TextEncoder();
+    let buffer = new Uint8Array(0);
+    const endBuffer = textEncoder.encode('\r\n');
+    function push(l) {
+        const prevBuffer = buffer;
+        const newBuffer = l instanceof Uint8Array ? l : new Uint8Array(textEncoder.encode(l));
+        buffer = new Uint8Array(prevBuffer.length + newBuffer.length + 2);
+        buffer.set(prevBuffer);
+        buffer.set(newBuffer, prevBuffer.length);
+        buffer.set(endBuffer, buffer.length - 2);
+    }
+    function q(s) {
+        return `"${s.replace(/"|"/g, '%22').replace(/\r\n|\r|\n/g, ' ')}"`;
+    }
+    const flattenedData = (0, utils_1.flattenAndStringify)(data);
+    for (const k in flattenedData) {
+        const v = flattenedData[k];
+        push(`--${segno}`);
+        if (Object.prototype.hasOwnProperty.call(v, 'data')) {
+            const typedEntry = v;
+            push(`Content-Disposition: form-data; name=${q(k)}; filename=${q(typedEntry.name || 'blob')}`);
+            push(`Content-Type: ${typedEntry.type || 'application/octet-stream'}`);
+            push('');
+            push(typedEntry.data);
+        }
+        else {
+            push(`Content-Disposition: form-data; name=${q(k)}`);
+            push('');
+            push(v);
+        }
+    }
+    push(`--${segno}--`);
+    return buffer;
+};
+function multipartRequestDataProcessor(method, data, headers, callback) {
+    data = data || {};
+    if (method !== 'POST') {
+        return callback(null, (0, utils_1.stringifyRequestData)(data));
+    }
+    this._stripe._platformFunctions
+        .tryBufferData(data)
+        .then((bufferedData) => {
+        const buffer = multipartDataGenerator(method, bufferedData, headers);
+        return callback(null, buffer);
+    })
+        .catch((err) => callback(err, null));
+}
+module.exports = {
+    multipartRequestDataProcessor: multipartRequestDataProcessor,
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/net/FetchHttpClient.js":
+/*!********************************************************!*\
+  !*** ./node_modules/stripe/lib/net/FetchHttpClient.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.FetchHttpClientResponse = exports.FetchHttpClient = void 0;
+const HttpClient_1 = __webpack_require__(/*! ./HttpClient */ "./node_modules/stripe/lib/net/HttpClient.js");
+/**
+ * HTTP client which uses a `fetch` function to issue requests.
+ *
+ * By default relies on the global `fetch` function, but an optional function
+ * can be passed in. If passing in a function, it is expected to match the Web
+ * Fetch API. As an example, this could be the function provided by the
+ * node-fetch package (https://github.com/node-fetch/node-fetch).
+ */
+class FetchHttpClient extends HttpClient_1.HttpClient {
+    constructor(fetchFn) {
+        super();
+        this._fetchFn = fetchFn;
+    }
+    /** @override. */
+    getClientName() {
+        return 'fetch';
+    }
+    makeRequest(host, port, path, method, headers, requestData, protocol, timeout) {
+        const isInsecureConnection = protocol === 'http';
+        const url = new URL(path, `${isInsecureConnection ? 'http' : 'https'}://${host}`);
+        url.port = port;
+        // For methods which expect payloads, we should always pass a body value
+        // even when it is empty. Without this, some JS runtimes (eg. Deno) will
+        // inject a second Content-Length header. See https://github.com/stripe/stripe-node/issues/1519
+        // for more details.
+        const methodHasPayload = method == 'POST' || method == 'PUT' || method == 'PATCH';
+        const body = requestData || (methodHasPayload ? '' : undefined);
+        const fetchFn = this._fetchFn || fetch;
+        const fetchPromise = fetchFn(url.toString(), {
+            method,
+            // @ts-ignore
+            headers,
+            // @ts-ignore
+            body,
+        });
+        // The Fetch API does not support passing in a timeout natively, so a
+        // timeout promise is constructed to race against the fetch and preempt the
+        // request, simulating a timeout.
+        //
+        // This timeout behavior differs from Node:
+        // - Fetch uses a single timeout for the entire length of the request.
+        // - Node is more fine-grained and resets the timeout after each stage of
+        //   the request.
+        //
+        // As an example, if the timeout is set to 30s and the connection takes 20s
+        // to be established followed by 20s for the body, Fetch would timeout but
+        // Node would not. The more fine-grained timeout cannot be implemented with
+        // fetch.
+        let pendingTimeoutId;
+        const timeoutPromise = new Promise((_, reject) => {
+            pendingTimeoutId = setTimeout(() => {
+                pendingTimeoutId = null;
+                reject(HttpClient_1.HttpClient.makeTimeoutError());
+            }, timeout);
+        });
+        return Promise.race([fetchPromise, timeoutPromise])
+            .then((res) => {
+            return new FetchHttpClientResponse(res);
+        })
+            .finally(() => {
+            if (pendingTimeoutId) {
+                clearTimeout(pendingTimeoutId);
+            }
+        });
+    }
+}
+exports.FetchHttpClient = FetchHttpClient;
+class FetchHttpClientResponse extends HttpClient_1.HttpClientResponse {
+    constructor(res) {
+        super(res.status, FetchHttpClientResponse._transformHeadersToObject(res.headers));
+        this._res = res;
+    }
+    getRawResponse() {
+        return this._res;
+    }
+    toStream(streamCompleteCallback) {
+        // Unfortunately `fetch` does not have event handlers for when the stream is
+        // completely read. We therefore invoke the streamCompleteCallback right
+        // away. This callback emits a response event with metadata and completes
+        // metrics, so it's ok to do this without waiting for the stream to be
+        // completely read.
+        streamCompleteCallback();
+        // Fetch's `body` property is expected to be a readable stream of the body.
+        return this._res.body;
+    }
+    toJSON() {
+        return this._res.json();
+    }
+    static _transformHeadersToObject(headers) {
+        // Fetch uses a Headers instance so this must be converted to a barebones
+        // JS object to meet the HttpClient interface.
+        const headersObj = {};
+        for (const entry of headers) {
+            if (!Array.isArray(entry) || entry.length != 2) {
+                throw new Error('Response objects produced by the fetch function given to FetchHttpClient do not have an iterable headers map. Response#headers should be an iterable object.');
+            }
+            headersObj[entry[0]] = entry[1];
+        }
+        return headersObj;
+    }
+}
+exports.FetchHttpClientResponse = FetchHttpClientResponse;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/net/HttpClient.js":
+/*!***************************************************!*\
+  !*** ./node_modules/stripe/lib/net/HttpClient.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.HttpClientResponse = exports.HttpClient = void 0;
+/**
+ * Encapsulates the logic for issuing a request to the Stripe API.
+ *
+ * A custom HTTP client should should implement:
+ * 1. A response class which extends HttpClientResponse and wraps around their
+ *    own internal representation of a response.
+ * 2. A client class which extends HttpClient and implements all methods,
+ *    returning their own response class when making requests.
+ */
+class HttpClient {
+    /** The client name used for diagnostics. */
+    getClientName() {
+        throw new Error('getClientName not implemented.');
+    }
+    makeRequest(host, port, path, method, headers, requestData, protocol, timeout) {
+        throw new Error('makeRequest not implemented.');
+    }
+    /** Helper to make a consistent timeout error across implementations. */
+    static makeTimeoutError() {
+        const timeoutErr = new TypeError(HttpClient.TIMEOUT_ERROR_CODE);
+        timeoutErr.code = HttpClient.TIMEOUT_ERROR_CODE;
+        return timeoutErr;
+    }
+}
+exports.HttpClient = HttpClient;
+// Public API accessible via Stripe.HttpClient
+HttpClient.CONNECTION_CLOSED_ERROR_CODES = ['ECONNRESET', 'EPIPE'];
+HttpClient.TIMEOUT_ERROR_CODE = 'ETIMEDOUT';
+class HttpClientResponse {
+    constructor(statusCode, headers) {
+        this._statusCode = statusCode;
+        this._headers = headers;
+    }
+    getStatusCode() {
+        return this._statusCode;
+    }
+    getHeaders() {
+        return this._headers;
+    }
+    getRawResponse() {
+        throw new Error('getRawResponse not implemented.');
+    }
+    toStream(streamCompleteCallback) {
+        throw new Error('toStream not implemented.');
+    }
+    toJSON() {
+        throw new Error('toJSON not implemented.');
+    }
+}
+exports.HttpClientResponse = HttpClientResponse;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/platform/PlatformFunctions.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/stripe/lib/platform/PlatformFunctions.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.PlatformFunctions = void 0;
+const FetchHttpClient_1 = __webpack_require__(/*! ../net/FetchHttpClient */ "./node_modules/stripe/lib/net/FetchHttpClient.js");
+const SubtleCryptoProvider_1 = __webpack_require__(/*! ../crypto/SubtleCryptoProvider */ "./node_modules/stripe/lib/crypto/SubtleCryptoProvider.js");
+/**
+ * Interface encapsulating various utility functions whose
+ * implementations depend on the platform / JS runtime.
+ */
+class PlatformFunctions {
+    constructor() {
+        this._fetchFn = null;
+        this._agent = null;
+    }
+    /**
+     * Gets uname with Node's built-in `exec` function, if available.
+     */
+    getUname() {
+        throw new Error('getUname not implemented.');
+    }
+    /**
+     * Generates a v4 UUID. See https://stackoverflow.com/a/2117523
+     */
+    uuid4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+            const r = (Math.random() * 16) | 0;
+            const v = c === 'x' ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        });
+    }
+    /**
+     * Compares strings in constant time.
+     */
+    secureCompare(a, b) {
+        // return early here if buffer lengths are not equal
+        if (a.length !== b.length) {
+            return false;
+        }
+        const len = a.length;
+        let result = 0;
+        for (let i = 0; i < len; ++i) {
+            result |= a.charCodeAt(i) ^ b.charCodeAt(i);
+        }
+        return result === 0;
+    }
+    /**
+     * Creates an event emitter.
+     */
+    createEmitter() {
+        throw new Error('createEmitter not implemented.');
+    }
+    /**
+     * Checks if the request data is a stream. If so, read the entire stream
+     * to a buffer and return the buffer.
+     */
+    tryBufferData(data) {
+        throw new Error('tryBufferData not implemented.');
+    }
+    /**
+     * Creates an HTTP client which uses the Node `http` and `https` packages
+     * to issue requests.
+     */
+    createNodeHttpClient(agent) {
+        throw new Error('createNodeHttpClient not implemented.');
+    }
+    /**
+     * Creates an HTTP client for issuing Stripe API requests which uses the Web
+     * Fetch API.
+     *
+     * A fetch function can optionally be passed in as a parameter. If none is
+     * passed, will default to the default `fetch` function in the global scope.
+     */
+    createFetchHttpClient(fetchFn) {
+        return new FetchHttpClient_1.FetchHttpClient(fetchFn);
+    }
+    /**
+     * Creates an HTTP client using runtime-specific APIs.
+     */
+    createDefaultHttpClient() {
+        throw new Error('createDefaultHttpClient not implemented.');
+    }
+    /**
+     * Creates a CryptoProvider which uses the Node `crypto` package for its computations.
+     */
+    createNodeCryptoProvider() {
+        throw new Error('createNodeCryptoProvider not implemented.');
+    }
+    /**
+     * Creates a CryptoProvider which uses the SubtleCrypto interface of the Web Crypto API.
+     */
+    createSubtleCryptoProvider(subtleCrypto) {
+        return new SubtleCryptoProvider_1.SubtleCryptoProvider(subtleCrypto);
+    }
+    createDefaultCryptoProvider() {
+        throw new Error('createDefaultCryptoProvider not implemented.');
+    }
+}
+exports.PlatformFunctions = PlatformFunctions;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/platform/WebPlatformFunctions.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stripe/lib/platform/WebPlatformFunctions.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.WebPlatformFunctions = void 0;
+const PlatformFunctions_1 = __webpack_require__(/*! ./PlatformFunctions */ "./node_modules/stripe/lib/platform/PlatformFunctions.js");
+const StripeEmitter_1 = __webpack_require__(/*! ../StripeEmitter */ "./node_modules/stripe/lib/StripeEmitter.js");
+/**
+ * Specializes WebPlatformFunctions using APIs available in Web workers.
+ */
+class WebPlatformFunctions extends PlatformFunctions_1.PlatformFunctions {
+    /** @override */
+    getUname() {
+        return Promise.resolve(null);
+    }
+    /** @override */
+    createEmitter() {
+        return new StripeEmitter_1.StripeEmitter();
+    }
+    /** @override */
+    tryBufferData(data) {
+        if (data.file.data instanceof ReadableStream) {
+            throw new Error('Uploading a file as a stream is not supported in non-Node environments. Please open or upvote an issue at github.com/stripe/stripe-node if you use this, detailing your use-case.');
+        }
+        return Promise.resolve(data);
+    }
+    /** @override */
+    createNodeHttpClient() {
+        throw new Error('Stripe: `createNodeHttpClient()` is not available in non-Node environments. Please use `createFetchHttpClient()` instead.');
+    }
+    /** @override */
+    createDefaultHttpClient() {
+        return super.createFetchHttpClient();
+    }
+    /** @override */
+    createNodeCryptoProvider() {
+        throw new Error('Stripe: `createNodeCryptoProvider()` is not available in non-Node environments. Please use `createSubtleCryptoProvider()` instead.');
+    }
+    /** @override */
+    createDefaultCryptoProvider() {
+        return this.createSubtleCryptoProvider();
+    }
+}
+exports.WebPlatformFunctions = WebPlatformFunctions;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources.js":
+/*!**********************************************!*\
+  !*** ./node_modules/stripe/lib/resources.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { resourceNamespace } = __webpack_require__(/*! ./ResourceNamespace */ "./node_modules/stripe/lib/ResourceNamespace.js");
+module.exports = {
+    // Support Accounts for consistency, Account for backwards compatibility
+    Account: __webpack_require__(/*! ./resources/Accounts */ "./node_modules/stripe/lib/resources/Accounts.js"),
+    AccountLinks: __webpack_require__(/*! ./resources/AccountLinks */ "./node_modules/stripe/lib/resources/AccountLinks.js"),
+    Accounts: __webpack_require__(/*! ./resources/Accounts */ "./node_modules/stripe/lib/resources/Accounts.js"),
+    ApplePayDomains: __webpack_require__(/*! ./resources/ApplePayDomains */ "./node_modules/stripe/lib/resources/ApplePayDomains.js"),
+    ApplicationFees: __webpack_require__(/*! ./resources/ApplicationFees */ "./node_modules/stripe/lib/resources/ApplicationFees.js"),
+    Balance: __webpack_require__(/*! ./resources/Balance */ "./node_modules/stripe/lib/resources/Balance.js"),
+    BalanceTransactions: __webpack_require__(/*! ./resources/BalanceTransactions */ "./node_modules/stripe/lib/resources/BalanceTransactions.js"),
+    Charges: __webpack_require__(/*! ./resources/Charges */ "./node_modules/stripe/lib/resources/Charges.js"),
+    CountrySpecs: __webpack_require__(/*! ./resources/CountrySpecs */ "./node_modules/stripe/lib/resources/CountrySpecs.js"),
+    Coupons: __webpack_require__(/*! ./resources/Coupons */ "./node_modules/stripe/lib/resources/Coupons.js"),
+    CreditNotes: __webpack_require__(/*! ./resources/CreditNotes */ "./node_modules/stripe/lib/resources/CreditNotes.js"),
+    Customers: __webpack_require__(/*! ./resources/Customers */ "./node_modules/stripe/lib/resources/Customers.js"),
+    Disputes: __webpack_require__(/*! ./resources/Disputes */ "./node_modules/stripe/lib/resources/Disputes.js"),
+    EphemeralKeys: __webpack_require__(/*! ./resources/EphemeralKeys */ "./node_modules/stripe/lib/resources/EphemeralKeys.js"),
+    Events: __webpack_require__(/*! ./resources/Events */ "./node_modules/stripe/lib/resources/Events.js"),
+    ExchangeRates: __webpack_require__(/*! ./resources/ExchangeRates */ "./node_modules/stripe/lib/resources/ExchangeRates.js"),
+    FileLinks: __webpack_require__(/*! ./resources/FileLinks */ "./node_modules/stripe/lib/resources/FileLinks.js"),
+    Files: __webpack_require__(/*! ./resources/Files */ "./node_modules/stripe/lib/resources/Files.js"),
+    InvoiceItems: __webpack_require__(/*! ./resources/InvoiceItems */ "./node_modules/stripe/lib/resources/InvoiceItems.js"),
+    Invoices: __webpack_require__(/*! ./resources/Invoices */ "./node_modules/stripe/lib/resources/Invoices.js"),
+    Mandates: __webpack_require__(/*! ./resources/Mandates */ "./node_modules/stripe/lib/resources/Mandates.js"),
+    OAuth: __webpack_require__(/*! ./resources/OAuth */ "./node_modules/stripe/lib/resources/OAuth.js"),
+    PaymentIntents: __webpack_require__(/*! ./resources/PaymentIntents */ "./node_modules/stripe/lib/resources/PaymentIntents.js"),
+    PaymentLinks: __webpack_require__(/*! ./resources/PaymentLinks */ "./node_modules/stripe/lib/resources/PaymentLinks.js"),
+    PaymentMethods: __webpack_require__(/*! ./resources/PaymentMethods */ "./node_modules/stripe/lib/resources/PaymentMethods.js"),
+    Payouts: __webpack_require__(/*! ./resources/Payouts */ "./node_modules/stripe/lib/resources/Payouts.js"),
+    Plans: __webpack_require__(/*! ./resources/Plans */ "./node_modules/stripe/lib/resources/Plans.js"),
+    Prices: __webpack_require__(/*! ./resources/Prices */ "./node_modules/stripe/lib/resources/Prices.js"),
+    Products: __webpack_require__(/*! ./resources/Products */ "./node_modules/stripe/lib/resources/Products.js"),
+    PromotionCodes: __webpack_require__(/*! ./resources/PromotionCodes */ "./node_modules/stripe/lib/resources/PromotionCodes.js"),
+    Quotes: __webpack_require__(/*! ./resources/Quotes */ "./node_modules/stripe/lib/resources/Quotes.js"),
+    Refunds: __webpack_require__(/*! ./resources/Refunds */ "./node_modules/stripe/lib/resources/Refunds.js"),
+    Reviews: __webpack_require__(/*! ./resources/Reviews */ "./node_modules/stripe/lib/resources/Reviews.js"),
+    SetupAttempts: __webpack_require__(/*! ./resources/SetupAttempts */ "./node_modules/stripe/lib/resources/SetupAttempts.js"),
+    SetupIntents: __webpack_require__(/*! ./resources/SetupIntents */ "./node_modules/stripe/lib/resources/SetupIntents.js"),
+    ShippingRates: __webpack_require__(/*! ./resources/ShippingRates */ "./node_modules/stripe/lib/resources/ShippingRates.js"),
+    Sources: __webpack_require__(/*! ./resources/Sources */ "./node_modules/stripe/lib/resources/Sources.js"),
+    SubscriptionItems: __webpack_require__(/*! ./resources/SubscriptionItems */ "./node_modules/stripe/lib/resources/SubscriptionItems.js"),
+    Subscriptions: __webpack_require__(/*! ./resources/Subscriptions */ "./node_modules/stripe/lib/resources/Subscriptions.js"),
+    SubscriptionSchedules: __webpack_require__(/*! ./resources/SubscriptionSchedules */ "./node_modules/stripe/lib/resources/SubscriptionSchedules.js"),
+    TaxCodes: __webpack_require__(/*! ./resources/TaxCodes */ "./node_modules/stripe/lib/resources/TaxCodes.js"),
+    TaxRates: __webpack_require__(/*! ./resources/TaxRates */ "./node_modules/stripe/lib/resources/TaxRates.js"),
+    Tokens: __webpack_require__(/*! ./resources/Tokens */ "./node_modules/stripe/lib/resources/Tokens.js"),
+    Topups: __webpack_require__(/*! ./resources/Topups */ "./node_modules/stripe/lib/resources/Topups.js"),
+    Transfers: __webpack_require__(/*! ./resources/Transfers */ "./node_modules/stripe/lib/resources/Transfers.js"),
+    WebhookEndpoints: __webpack_require__(/*! ./resources/WebhookEndpoints */ "./node_modules/stripe/lib/resources/WebhookEndpoints.js"),
+    Apps: resourceNamespace('apps', {
+        Secrets: __webpack_require__(/*! ./resources/Apps/Secrets */ "./node_modules/stripe/lib/resources/Apps/Secrets.js"),
+    }),
+    BillingPortal: resourceNamespace('billingPortal', {
+        Configurations: __webpack_require__(/*! ./resources/BillingPortal/Configurations */ "./node_modules/stripe/lib/resources/BillingPortal/Configurations.js"),
+        Sessions: __webpack_require__(/*! ./resources/BillingPortal/Sessions */ "./node_modules/stripe/lib/resources/BillingPortal/Sessions.js"),
+    }),
+    Checkout: resourceNamespace('checkout', {
+        Sessions: __webpack_require__(/*! ./resources/Checkout/Sessions */ "./node_modules/stripe/lib/resources/Checkout/Sessions.js"),
+    }),
+    FinancialConnections: resourceNamespace('financialConnections', {
+        Accounts: __webpack_require__(/*! ./resources/FinancialConnections/Accounts */ "./node_modules/stripe/lib/resources/FinancialConnections/Accounts.js"),
+        Sessions: __webpack_require__(/*! ./resources/FinancialConnections/Sessions */ "./node_modules/stripe/lib/resources/FinancialConnections/Sessions.js"),
+    }),
+    Identity: resourceNamespace('identity', {
+        VerificationReports: __webpack_require__(/*! ./resources/Identity/VerificationReports */ "./node_modules/stripe/lib/resources/Identity/VerificationReports.js"),
+        VerificationSessions: __webpack_require__(/*! ./resources/Identity/VerificationSessions */ "./node_modules/stripe/lib/resources/Identity/VerificationSessions.js"),
+    }),
+    Issuing: resourceNamespace('issuing', {
+        Authorizations: __webpack_require__(/*! ./resources/Issuing/Authorizations */ "./node_modules/stripe/lib/resources/Issuing/Authorizations.js"),
+        Cardholders: __webpack_require__(/*! ./resources/Issuing/Cardholders */ "./node_modules/stripe/lib/resources/Issuing/Cardholders.js"),
+        Cards: __webpack_require__(/*! ./resources/Issuing/Cards */ "./node_modules/stripe/lib/resources/Issuing/Cards.js"),
+        Disputes: __webpack_require__(/*! ./resources/Issuing/Disputes */ "./node_modules/stripe/lib/resources/Issuing/Disputes.js"),
+        Transactions: __webpack_require__(/*! ./resources/Issuing/Transactions */ "./node_modules/stripe/lib/resources/Issuing/Transactions.js"),
+    }),
+    Radar: resourceNamespace('radar', {
+        EarlyFraudWarnings: __webpack_require__(/*! ./resources/Radar/EarlyFraudWarnings */ "./node_modules/stripe/lib/resources/Radar/EarlyFraudWarnings.js"),
+        ValueListItems: __webpack_require__(/*! ./resources/Radar/ValueListItems */ "./node_modules/stripe/lib/resources/Radar/ValueListItems.js"),
+        ValueLists: __webpack_require__(/*! ./resources/Radar/ValueLists */ "./node_modules/stripe/lib/resources/Radar/ValueLists.js"),
+    }),
+    Reporting: resourceNamespace('reporting', {
+        ReportRuns: __webpack_require__(/*! ./resources/Reporting/ReportRuns */ "./node_modules/stripe/lib/resources/Reporting/ReportRuns.js"),
+        ReportTypes: __webpack_require__(/*! ./resources/Reporting/ReportTypes */ "./node_modules/stripe/lib/resources/Reporting/ReportTypes.js"),
+    }),
+    Sigma: resourceNamespace('sigma', {
+        ScheduledQueryRuns: __webpack_require__(/*! ./resources/Sigma/ScheduledQueryRuns */ "./node_modules/stripe/lib/resources/Sigma/ScheduledQueryRuns.js"),
+    }),
+    Terminal: resourceNamespace('terminal', {
+        Configurations: __webpack_require__(/*! ./resources/Terminal/Configurations */ "./node_modules/stripe/lib/resources/Terminal/Configurations.js"),
+        ConnectionTokens: __webpack_require__(/*! ./resources/Terminal/ConnectionTokens */ "./node_modules/stripe/lib/resources/Terminal/ConnectionTokens.js"),
+        Locations: __webpack_require__(/*! ./resources/Terminal/Locations */ "./node_modules/stripe/lib/resources/Terminal/Locations.js"),
+        Readers: __webpack_require__(/*! ./resources/Terminal/Readers */ "./node_modules/stripe/lib/resources/Terminal/Readers.js"),
+    }),
+    TestHelpers: resourceNamespace('testHelpers', {
+        Customers: __webpack_require__(/*! ./resources/TestHelpers/Customers */ "./node_modules/stripe/lib/resources/TestHelpers/Customers.js"),
+        Refunds: __webpack_require__(/*! ./resources/TestHelpers/Refunds */ "./node_modules/stripe/lib/resources/TestHelpers/Refunds.js"),
+        TestClocks: __webpack_require__(/*! ./resources/TestHelpers/TestClocks */ "./node_modules/stripe/lib/resources/TestHelpers/TestClocks.js"),
+        Issuing: resourceNamespace('issuing', {
+            Cards: __webpack_require__(/*! ./resources/TestHelpers/Issuing/Cards */ "./node_modules/stripe/lib/resources/TestHelpers/Issuing/Cards.js"),
+        }),
+        Terminal: resourceNamespace('terminal', {
+            Readers: __webpack_require__(/*! ./resources/TestHelpers/Terminal/Readers */ "./node_modules/stripe/lib/resources/TestHelpers/Terminal/Readers.js"),
+        }),
+        Treasury: resourceNamespace('treasury', {
+            InboundTransfers: __webpack_require__(/*! ./resources/TestHelpers/Treasury/InboundTransfers */ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/InboundTransfers.js"),
+            OutboundPayments: __webpack_require__(/*! ./resources/TestHelpers/Treasury/OutboundPayments */ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/OutboundPayments.js"),
+            OutboundTransfers: __webpack_require__(/*! ./resources/TestHelpers/Treasury/OutboundTransfers */ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/OutboundTransfers.js"),
+            ReceivedCredits: __webpack_require__(/*! ./resources/TestHelpers/Treasury/ReceivedCredits */ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/ReceivedCredits.js"),
+            ReceivedDebits: __webpack_require__(/*! ./resources/TestHelpers/Treasury/ReceivedDebits */ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/ReceivedDebits.js"),
+        }),
+    }),
+    Treasury: resourceNamespace('treasury', {
+        CreditReversals: __webpack_require__(/*! ./resources/Treasury/CreditReversals */ "./node_modules/stripe/lib/resources/Treasury/CreditReversals.js"),
+        DebitReversals: __webpack_require__(/*! ./resources/Treasury/DebitReversals */ "./node_modules/stripe/lib/resources/Treasury/DebitReversals.js"),
+        FinancialAccounts: __webpack_require__(/*! ./resources/Treasury/FinancialAccounts */ "./node_modules/stripe/lib/resources/Treasury/FinancialAccounts.js"),
+        InboundTransfers: __webpack_require__(/*! ./resources/Treasury/InboundTransfers */ "./node_modules/stripe/lib/resources/Treasury/InboundTransfers.js"),
+        OutboundPayments: __webpack_require__(/*! ./resources/Treasury/OutboundPayments */ "./node_modules/stripe/lib/resources/Treasury/OutboundPayments.js"),
+        OutboundTransfers: __webpack_require__(/*! ./resources/Treasury/OutboundTransfers */ "./node_modules/stripe/lib/resources/Treasury/OutboundTransfers.js"),
+        ReceivedCredits: __webpack_require__(/*! ./resources/Treasury/ReceivedCredits */ "./node_modules/stripe/lib/resources/Treasury/ReceivedCredits.js"),
+        ReceivedDebits: __webpack_require__(/*! ./resources/Treasury/ReceivedDebits */ "./node_modules/stripe/lib/resources/Treasury/ReceivedDebits.js"),
+        TransactionEntries: __webpack_require__(/*! ./resources/Treasury/TransactionEntries */ "./node_modules/stripe/lib/resources/Treasury/TransactionEntries.js"),
+        Transactions: __webpack_require__(/*! ./resources/Treasury/Transactions */ "./node_modules/stripe/lib/resources/Treasury/Transactions.js"),
+    }),
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/AccountLinks.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/AccountLinks.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/account_links',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Accounts.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Accounts.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+// Since path can either be `account` or `accounts`, support both through stripeMethod path;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts',
+    }),
+    retrieve(id) {
+        // No longer allow an api key to be passed as the first string to this function due to ambiguity between
+        // old account ids and api keys. To request the account for an api key, send null as the id
+        if (typeof id === 'string') {
+            return stripeMethod({
+                method: 'GET',
+                fullPath: '/v1/accounts/{id}',
+            }).apply(this, arguments);
+        }
+        else {
+            if (id === null || id === undefined) {
+                // Remove id as stripeMethod would complain of unexpected argument
+                [].shift.apply(arguments);
+            }
+            return stripeMethod({
+                method: 'GET',
+                fullPath: '/v1/account',
+            }).apply(this, arguments);
+        }
+    },
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/accounts/{account}',
+    }),
+    createExternalAccount: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/external_accounts',
+    }),
+    createLoginLink: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/login_links',
+    }),
+    createPerson: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/persons',
+    }),
+    deleteExternalAccount: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/accounts/{account}/external_accounts/{id}',
+    }),
+    deletePerson: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/accounts/{account}/persons/{person}',
+    }),
+    listCapabilities: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts/{account}/capabilities',
+        methodType: 'list',
+    }),
+    listExternalAccounts: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts/{account}/external_accounts',
+        methodType: 'list',
+    }),
+    listPersons: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts/{account}/persons',
+        methodType: 'list',
+    }),
+    reject: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/reject',
+    }),
+    retrieveCapability: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts/{account}/capabilities/{capability}',
+    }),
+    retrieveExternalAccount: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts/{account}/external_accounts/{id}',
+    }),
+    retrievePerson: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/accounts/{account}/persons/{person}',
+    }),
+    updateCapability: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/capabilities/{capability}',
+    }),
+    updateExternalAccount: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/external_accounts/{id}',
+    }),
+    updatePerson: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/accounts/{account}/persons/{person}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/ApplePayDomains.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/ApplePayDomains.js ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/apple_pay/domains',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/apple_pay/domains/{domain}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/apple_pay/domains',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/apple_pay/domains/{domain}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/ApplicationFees.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/ApplicationFees.js ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/application_fees/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/application_fees',
+        methodType: 'list',
+    }),
+    createRefund: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/application_fees/{id}/refunds',
+    }),
+    listRefunds: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/application_fees/{id}/refunds',
+        methodType: 'list',
+    }),
+    retrieveRefund: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/application_fees/{fee}/refunds/{id}',
+    }),
+    updateRefund: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/application_fees/{fee}/refunds/{id}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Apps/Secrets.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Apps/Secrets.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/apps/secrets',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/apps/secrets',
+        methodType: 'list',
+    }),
+    deleteWhere: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/apps/secrets/delete',
+    }),
+    find: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/apps/secrets/find',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Balance.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Balance.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/balance',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/BalanceTransactions.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/BalanceTransactions.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/balance_transactions/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/balance_transactions',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/BillingPortal/Configurations.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/BillingPortal/Configurations.js ***!
+  \***************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/billing_portal/configurations',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/billing_portal/configurations/{configuration}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/billing_portal/configurations/{configuration}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/billing_portal/configurations',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/BillingPortal/Sessions.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/BillingPortal/Sessions.js ***!
+  \*********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/billing_portal/sessions',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Charges.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Charges.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/charges',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/charges/{charge}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/charges/{charge}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/charges',
+        methodType: 'list',
+    }),
+    capture: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/charges/{charge}/capture',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/charges/search',
+        methodType: 'search',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Checkout/Sessions.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Checkout/Sessions.js ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/checkout/sessions',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/checkout/sessions/{session}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/checkout/sessions',
+        methodType: 'list',
+    }),
+    expire: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/checkout/sessions/{session}/expire',
+    }),
+    listLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/checkout/sessions/{session}/line_items',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/CountrySpecs.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/CountrySpecs.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/country_specs/{country}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/country_specs',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Coupons.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Coupons.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/coupons',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/coupons/{coupon}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/coupons/{coupon}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/coupons',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/coupons/{coupon}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/CreditNotes.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/CreditNotes.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/credit_notes',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/credit_notes/{id}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/credit_notes/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/credit_notes',
+        methodType: 'list',
+    }),
+    listLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/credit_notes/{credit_note}/lines',
+        methodType: 'list',
+    }),
+    listPreviewLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/credit_notes/preview/lines',
+        methodType: 'list',
+    }),
+    preview: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/credit_notes/preview',
+    }),
+    voidCreditNote: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/credit_notes/{id}/void',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Customers.js":
+/*!********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Customers.js ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/customers/{customer}',
+    }),
+    createFundingInstructions: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/funding_instructions',
+    }),
+    createBalanceTransaction: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/balance_transactions',
+    }),
+    createSource: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/sources',
+    }),
+    createTaxId: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/tax_ids',
+    }),
+    deleteDiscount: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/customers/{customer}/discount',
+    }),
+    deleteSource: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/customers/{customer}/sources/{id}',
+    }),
+    deleteTaxId: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/customers/{customer}/tax_ids/{id}',
+    }),
+    listPaymentMethods: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/payment_methods',
+        methodType: 'list',
+    }),
+    listBalanceTransactions: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/balance_transactions',
+        methodType: 'list',
+    }),
+    listCashBalanceTransactions: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/cash_balance_transactions',
+        methodType: 'list',
+    }),
+    listSources: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/sources',
+        methodType: 'list',
+    }),
+    listTaxIds: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/tax_ids',
+        methodType: 'list',
+    }),
+    retrievePaymentMethod: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/payment_methods/{payment_method}',
+    }),
+    retrieveBalanceTransaction: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/balance_transactions/{transaction}',
+    }),
+    retrieveCashBalance: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/cash_balance',
+    }),
+    retrieveCashBalanceTransaction: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/cash_balance_transactions/{transaction}',
+    }),
+    retrieveSource: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/sources/{id}',
+    }),
+    retrieveTaxId: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/{customer}/tax_ids/{id}',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/customers/search',
+        methodType: 'search',
+    }),
+    updateBalanceTransaction: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/balance_transactions/{transaction}',
+    }),
+    updateCashBalance: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/cash_balance',
+    }),
+    updateSource: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/sources/{id}',
+    }),
+    verifySource: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/customers/{customer}/sources/{id}/verify',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Disputes.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Disputes.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/disputes/{dispute}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/disputes/{dispute}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/disputes',
+        methodType: 'list',
+    }),
+    close: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/disputes/{dispute}/close',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/EphemeralKeys.js":
+/*!************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/EphemeralKeys.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/ephemeral_keys',
+        validator: (data, options) => {
+            if (!options.headers || !options.headers['Stripe-Version']) {
+                throw new Error('Passing apiVersion in a separate options hash is required to create an ephemeral key. See https://stripe.com/docs/api/versioning?lang=node');
+            }
+        },
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/ephemeral_keys/{key}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Events.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Events.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/events/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/events',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/ExchangeRates.js":
+/*!************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/ExchangeRates.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/exchange_rates/{rate_id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/exchange_rates',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/FileLinks.js":
+/*!********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/FileLinks.js ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/file_links',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/file_links/{link}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/file_links/{link}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/file_links',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Files.js":
+/*!****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Files.js ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { multipartRequestDataProcessor } = __webpack_require__(/*! ../multipart */ "./node_modules/stripe/lib/multipart.js");
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/files',
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+        host: 'files.stripe.com',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/files/{file}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/files',
+        methodType: 'list',
+    }),
+    requestDataProcessor: multipartRequestDataProcessor,
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/FinancialConnections/Accounts.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/FinancialConnections/Accounts.js ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/financial_connections/accounts/{account}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/financial_connections/accounts',
+        methodType: 'list',
+    }),
+    disconnect: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/financial_connections/accounts/{account}/disconnect',
+    }),
+    listOwners: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/financial_connections/accounts/{account}/owners',
+        methodType: 'list',
+    }),
+    refresh: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/financial_connections/accounts/{account}/refresh',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/FinancialConnections/Sessions.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/FinancialConnections/Sessions.js ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/financial_connections/sessions',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/financial_connections/sessions/{session}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Identity/VerificationReports.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Identity/VerificationReports.js ***!
+  \***************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/identity/verification_reports/{report}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/identity/verification_reports',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Identity/VerificationSessions.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Identity/VerificationSessions.js ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/identity/verification_sessions',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/identity/verification_sessions/{session}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/identity/verification_sessions/{session}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/identity/verification_sessions',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/identity/verification_sessions/{session}/cancel',
+    }),
+    redact: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/identity/verification_sessions/{session}/redact',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/InvoiceItems.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/InvoiceItems.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoiceitems',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoiceitems/{invoiceitem}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoiceitems/{invoiceitem}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoiceitems',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/invoiceitems/{invoiceitem}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Invoices.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Invoices.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoices/{invoice}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices/{invoice}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoices',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/invoices/{invoice}',
+    }),
+    finalizeInvoice: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices/{invoice}/finalize',
+    }),
+    listLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoices/{invoice}/lines',
+        methodType: 'list',
+    }),
+    listUpcomingLines: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoices/upcoming/lines',
+        methodType: 'list',
+    }),
+    markUncollectible: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices/{invoice}/mark_uncollectible',
+    }),
+    pay: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices/{invoice}/pay',
+    }),
+    retrieveUpcoming: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoices/upcoming',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/invoices/search',
+        methodType: 'search',
+    }),
+    sendInvoice: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices/{invoice}/send',
+    }),
+    voidInvoice: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/invoices/{invoice}/void',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Issuing/Authorizations.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Issuing/Authorizations.js ***!
+  \*********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/authorizations/{authorization}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/authorizations/{authorization}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/authorizations',
+        methodType: 'list',
+    }),
+    approve: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/authorizations/{authorization}/approve',
+    }),
+    decline: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/authorizations/{authorization}/decline',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Issuing/Cardholders.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Issuing/Cardholders.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/cardholders',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/cardholders/{cardholder}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/cardholders/{cardholder}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/cardholders',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Issuing/Cards.js":
+/*!************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Issuing/Cards.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/cards',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/cards/{card}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/cards/{card}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/cards',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Issuing/Disputes.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Issuing/Disputes.js ***!
+  \***************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/disputes',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/disputes/{dispute}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/disputes/{dispute}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/disputes',
+        methodType: 'list',
+    }),
+    submit: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/disputes/{dispute}/submit',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Issuing/Transactions.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Issuing/Transactions.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/transactions/{transaction}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/issuing/transactions/{transaction}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/issuing/transactions',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Mandates.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Mandates.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/mandates/{mandate}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/OAuth.js":
+/*!****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/OAuth.js ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+const { stringifyRequestData } = __webpack_require__(/*! ../utils */ "./node_modules/stripe/lib/utils.js");
+const oAuthHost = 'connect.stripe.com';
+module.exports = StripeResource.extend({
+    basePath: '/',
+    authorizeUrl(params, options) {
+        params = params || {};
+        options = options || {};
+        let path = 'oauth/authorize';
+        // For Express accounts, the path changes
+        if (options.express) {
+            path = `express/${path}`;
+        }
+        if (!params.response_type) {
+            params.response_type = 'code';
+        }
+        if (!params.client_id) {
+            params.client_id = this._stripe.getClientId();
+        }
+        if (!params.scope) {
+            params.scope = 'read_write';
+        }
+        return `https://${oAuthHost}/${path}?${stringifyRequestData(params)}`;
+    },
+    token: stripeMethod({
+        method: 'POST',
+        path: 'oauth/token',
+        host: oAuthHost,
+    }),
+    deauthorize(spec) {
+        if (!spec.client_id) {
+            spec.client_id = this._stripe.getClientId();
+        }
+        return stripeMethod({
+            method: 'POST',
+            path: 'oauth/deauthorize',
+            host: oAuthHost,
+        }).apply(this, arguments);
+    },
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/PaymentIntents.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/PaymentIntents.js ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_intents/{intent}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_intents',
+        methodType: 'list',
+    }),
+    applyCustomerBalance: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}/apply_customer_balance',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}/cancel',
+    }),
+    capture: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}/capture',
+    }),
+    confirm: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}/confirm',
+    }),
+    incrementAuthorization: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}/increment_authorization',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_intents/search',
+        methodType: 'search',
+    }),
+    verifyMicrodeposits: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_intents/{intent}/verify_microdeposits',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/PaymentLinks.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/PaymentLinks.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_links',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_links/{payment_link}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_links/{payment_link}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_links',
+        methodType: 'list',
+    }),
+    listLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_links/{payment_link}/line_items',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/PaymentMethods.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/PaymentMethods.js ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_methods',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_methods/{payment_method}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_methods/{payment_method}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payment_methods',
+        methodType: 'list',
+    }),
+    attach: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_methods/{payment_method}/attach',
+    }),
+    detach: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payment_methods/{payment_method}/detach',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Payouts.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Payouts.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payouts',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payouts/{payout}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payouts/{payout}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/payouts',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payouts/{payout}/cancel',
+    }),
+    reverse: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/payouts/{payout}/reverse',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Plans.js":
+/*!****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Plans.js ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/plans',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/plans/{plan}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/plans/{plan}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/plans',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/plans/{plan}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Prices.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Prices.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/prices',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/prices/{price}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/prices/{price}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/prices',
+        methodType: 'list',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/prices/search',
+        methodType: 'search',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Products.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Products.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/products',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/products/{id}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/products/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/products',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/products/{id}',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/products/search',
+        methodType: 'search',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/PromotionCodes.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/PromotionCodes.js ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/promotion_codes',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/promotion_codes/{promotion_code}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/promotion_codes/{promotion_code}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/promotion_codes',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Quotes.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Quotes.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/quotes',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/quotes/{quote}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/quotes/{quote}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/quotes',
+        methodType: 'list',
+    }),
+    accept: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/quotes/{quote}/accept',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/quotes/{quote}/cancel',
+    }),
+    finalizeQuote: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/quotes/{quote}/finalize',
+    }),
+    listComputedUpfrontLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/quotes/{quote}/computed_upfront_line_items',
+        methodType: 'list',
+    }),
+    listLineItems: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/quotes/{quote}/line_items',
+        methodType: 'list',
+    }),
+    pdf: stripeMethod({
+        host: 'files.stripe.com',
+        method: 'GET',
+        fullPath: '/v1/quotes/{quote}/pdf',
+        streaming: true,
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Radar/EarlyFraudWarnings.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Radar/EarlyFraudWarnings.js ***!
+  \***********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/radar/early_fraud_warnings/{early_fraud_warning}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/radar/early_fraud_warnings',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Radar/ValueListItems.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Radar/ValueListItems.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/radar/value_list_items',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/radar/value_list_items/{item}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/radar/value_list_items',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/radar/value_list_items/{item}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Radar/ValueLists.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Radar/ValueLists.js ***!
+  \***************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/radar/value_lists',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/radar/value_lists/{value_list}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/radar/value_lists/{value_list}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/radar/value_lists',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/radar/value_lists/{value_list}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Refunds.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Refunds.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/refunds',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/refunds/{refund}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/refunds/{refund}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/refunds',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/refunds/{refund}/cancel',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Reporting/ReportRuns.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Reporting/ReportRuns.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/reporting/report_runs',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/reporting/report_runs/{report_run}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/reporting/report_runs',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Reporting/ReportTypes.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Reporting/ReportTypes.js ***!
+  \********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/reporting/report_types/{report_type}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/reporting/report_types',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Reviews.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Reviews.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/reviews/{review}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/reviews',
+        methodType: 'list',
+    }),
+    approve: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/reviews/{review}/approve',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/SetupAttempts.js":
+/*!************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/SetupAttempts.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/setup_attempts',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/SetupIntents.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/SetupIntents.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/setup_intents',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/setup_intents/{intent}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/setup_intents/{intent}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/setup_intents',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/setup_intents/{intent}/cancel',
+    }),
+    confirm: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/setup_intents/{intent}/confirm',
+    }),
+    verifyMicrodeposits: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/setup_intents/{intent}/verify_microdeposits',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/ShippingRates.js":
+/*!************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/ShippingRates.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/shipping_rates',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/shipping_rates/{shipping_rate_token}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/shipping_rates/{shipping_rate_token}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/shipping_rates',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Sigma/ScheduledQueryRuns.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Sigma/ScheduledQueryRuns.js ***!
+  \***********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/sigma/scheduled_query_runs/{scheduled_query_run}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/sigma/scheduled_query_runs',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Sources.js":
+/*!******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Sources.js ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/sources',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/sources/{source}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/sources/{source}',
+    }),
+    listSourceTransactions: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/sources/{source}/source_transactions',
+        methodType: 'list',
+    }),
+    verify: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/sources/{source}/verify',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/SubscriptionItems.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/SubscriptionItems.js ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_items',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscription_items/{item}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_items/{item}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscription_items',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/subscription_items/{item}',
+    }),
+    createUsageRecord: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_items/{subscription_item}/usage_records',
+    }),
+    listUsageRecordSummaries: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscription_items/{subscription_item}/usage_record_summaries',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/SubscriptionSchedules.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/SubscriptionSchedules.js ***!
+  \********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_schedules',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscription_schedules/{schedule}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_schedules/{schedule}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscription_schedules',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_schedules/{schedule}/cancel',
+    }),
+    release: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscription_schedules/{schedule}/release',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Subscriptions.js":
+/*!************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Subscriptions.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscriptions',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscriptions/{subscription_exposed_id}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscriptions/{subscription_exposed_id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscriptions',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/subscriptions/{subscription_exposed_id}',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/subscriptions/{subscription_exposed_id}',
+    }),
+    deleteDiscount: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/subscriptions/{subscription_exposed_id}/discount',
+    }),
+    resume: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/subscriptions/{subscription}/resume',
+    }),
+    search: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/subscriptions/search',
+        methodType: 'search',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TaxCodes.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TaxCodes.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/tax_codes/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/tax_codes',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TaxRates.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TaxRates.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/tax_rates',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/tax_rates/{tax_rate}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/tax_rates/{tax_rate}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/tax_rates',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Terminal/Configurations.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Terminal/Configurations.js ***!
+  \**********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/configurations',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/terminal/configurations/{configuration}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/configurations/{configuration}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/terminal/configurations',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/terminal/configurations/{configuration}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Terminal/ConnectionTokens.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Terminal/ConnectionTokens.js ***!
+  \************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/connection_tokens',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Terminal/Locations.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Terminal/Locations.js ***!
+  \*****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/locations',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/terminal/locations/{location}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/locations/{location}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/terminal/locations',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/terminal/locations/{location}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Terminal/Readers.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Terminal/Readers.js ***!
+  \***************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/terminal/readers/{reader}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers/{reader}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/terminal/readers',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/terminal/readers/{reader}',
+    }),
+    cancelAction: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers/{reader}/cancel_action',
+    }),
+    processPaymentIntent: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers/{reader}/process_payment_intent',
+    }),
+    processSetupIntent: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers/{reader}/process_setup_intent',
+    }),
+    refundPayment: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers/{reader}/refund_payment',
+    }),
+    setReaderDisplay: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/terminal/readers/{reader}/set_reader_display',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Customers.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Customers.js ***!
+  \********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    fundCashBalance: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/customers/{customer}/fund_cash_balance',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Issuing/Cards.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Issuing/Cards.js ***!
+  \************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    deliverCard: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/issuing/cards/{card}/shipping/deliver',
+    }),
+    failCard: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/issuing/cards/{card}/shipping/fail',
+    }),
+    returnCard: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/issuing/cards/{card}/shipping/return',
+    }),
+    shipCard: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/issuing/cards/{card}/shipping/ship',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Refunds.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Refunds.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    expire: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/refunds/{refund}/expire',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Terminal/Readers.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Terminal/Readers.js ***!
+  \***************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    presentPaymentMethod: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/terminal/readers/{reader}/present_payment_method',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/TestClocks.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/TestClocks.js ***!
+  \*********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/test_clocks',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/test_helpers/test_clocks/{test_clock}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/test_helpers/test_clocks',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/test_helpers/test_clocks/{test_clock}',
+    }),
+    advance: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/test_clocks/{test_clock}/advance',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/InboundTransfers.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Treasury/InboundTransfers.js ***!
+  \************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    fail: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/inbound_transfers/{id}/fail',
+    }),
+    returnInboundTransfer: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/inbound_transfers/{id}/return',
+    }),
+    succeed: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/inbound_transfers/{id}/succeed',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/OutboundPayments.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Treasury/OutboundPayments.js ***!
+  \************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    fail: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/outbound_payments/{id}/fail',
+    }),
+    post: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/outbound_payments/{id}/post',
+    }),
+    returnOutboundPayment: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/outbound_payments/{id}/return',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/OutboundTransfers.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Treasury/OutboundTransfers.js ***!
+  \*************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    fail: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail',
+    }),
+    post: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post',
+    }),
+    returnOutboundTransfer: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/ReceivedCredits.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Treasury/ReceivedCredits.js ***!
+  \***********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/received_credits',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/TestHelpers/Treasury/ReceivedDebits.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/TestHelpers/Treasury/ReceivedDebits.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/test_helpers/treasury/received_debits',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Tokens.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Tokens.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/tokens',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/tokens/{token}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Topups.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Topups.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/topups',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/topups/{topup}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/topups/{topup}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/topups',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/topups/{topup}/cancel',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Transfers.js":
+/*!********************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Transfers.js ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/transfers',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/transfers/{transfer}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/transfers/{transfer}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/transfers',
+        methodType: 'list',
+    }),
+    createReversal: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/transfers/{id}/reversals',
+    }),
+    listReversals: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/transfers/{id}/reversals',
+        methodType: 'list',
+    }),
+    retrieveReversal: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/transfers/{transfer}/reversals/{id}',
+    }),
+    updateReversal: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/transfers/{transfer}/reversals/{id}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/CreditReversals.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/CreditReversals.js ***!
+  \***********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/credit_reversals',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/credit_reversals/{credit_reversal}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/credit_reversals',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/DebitReversals.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/DebitReversals.js ***!
+  \**********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/debit_reversals',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/debit_reversals/{debit_reversal}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/debit_reversals',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/FinancialAccounts.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/FinancialAccounts.js ***!
+  \*************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/financial_accounts',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/financial_accounts/{financial_account}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/financial_accounts/{financial_account}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/financial_accounts',
+        methodType: 'list',
+    }),
+    retrieveFeatures: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/financial_accounts/{financial_account}/features',
+    }),
+    updateFeatures: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/financial_accounts/{financial_account}/features',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/InboundTransfers.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/InboundTransfers.js ***!
+  \************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/inbound_transfers',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/inbound_transfers/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/inbound_transfers',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/inbound_transfers/{inbound_transfer}/cancel',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/OutboundPayments.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/OutboundPayments.js ***!
+  \************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/outbound_payments',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/outbound_payments/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/outbound_payments',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/outbound_payments/{id}/cancel',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/OutboundTransfers.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/OutboundTransfers.js ***!
+  \*************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/outbound_transfers',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/outbound_transfers/{outbound_transfer}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/outbound_transfers',
+        methodType: 'list',
+    }),
+    cancel: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/treasury/outbound_transfers/{outbound_transfer}/cancel',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/ReceivedCredits.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/ReceivedCredits.js ***!
+  \***********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/received_credits/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/received_credits',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/ReceivedDebits.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/ReceivedDebits.js ***!
+  \**********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/received_debits/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/received_debits',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/TransactionEntries.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/TransactionEntries.js ***!
+  \**************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/transaction_entries/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/transaction_entries',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/Treasury/Transactions.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/Treasury/Transactions.js ***!
+  \********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/transactions/{id}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/treasury/transactions',
+        methodType: 'list',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/resources/WebhookEndpoints.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/stripe/lib/resources/WebhookEndpoints.js ***!
+  \***************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+// File generated from our OpenAPI spec
+
+const { StripeResource } = __webpack_require__(/*! ../StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const stripeMethod = StripeResource.method;
+module.exports = StripeResource.extend({
+    create: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/webhook_endpoints',
+    }),
+    retrieve: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/webhook_endpoints/{webhook_endpoint}',
+    }),
+    update: stripeMethod({
+        method: 'POST',
+        fullPath: '/v1/webhook_endpoints/{webhook_endpoint}',
+    }),
+    list: stripeMethod({
+        method: 'GET',
+        fullPath: '/v1/webhook_endpoints',
+        methodType: 'list',
+    }),
+    del: stripeMethod({
+        method: 'DELETE',
+        fullPath: '/v1/webhook_endpoints/{webhook_endpoint}',
+    }),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/stripe.common.js":
+/*!**************************************************!*\
+  !*** ./node_modules/stripe/lib/stripe.common.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.createStripe = void 0;
+const _Error = __webpack_require__(/*! ./Error */ "./node_modules/stripe/lib/Error.js");
+const HttpClient_1 = __webpack_require__(/*! ./net/HttpClient */ "./node_modules/stripe/lib/net/HttpClient.js");
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/stripe/lib/utils.js");
+const CryptoProvider_1 = __webpack_require__(/*! ./crypto/CryptoProvider */ "./node_modules/stripe/lib/crypto/CryptoProvider.js");
+const RequestSender_1 = __webpack_require__(/*! ./RequestSender */ "./node_modules/stripe/lib/RequestSender.js");
+const StripeResource_1 = __webpack_require__(/*! ./StripeResource */ "./node_modules/stripe/lib/StripeResource.js");
+const Webhooks_1 = __webpack_require__(/*! ./Webhooks */ "./node_modules/stripe/lib/Webhooks.js");
+const resources = __webpack_require__(/*! ./resources */ "./node_modules/stripe/lib/resources.js");
+const DEFAULT_HOST = 'api.stripe.com';
+const DEFAULT_PORT = '443';
+const DEFAULT_BASE_PATH = '/v1/';
+const DEFAULT_API_VERSION = null;
+const DEFAULT_TIMEOUT = 80000;
+const MAX_NETWORK_RETRY_DELAY_SEC = 2;
+const INITIAL_NETWORK_RETRY_DELAY_SEC = 0.5;
+const APP_INFO_PROPERTIES = ['name', 'version', 'url', 'partner_id'];
+const ALLOWED_CONFIG_PROPERTIES = [
+    'apiVersion',
+    'typescript',
+    'maxNetworkRetries',
+    'httpAgent',
+    'httpClient',
+    'timeout',
+    'host',
+    'port',
+    'protocol',
+    'telemetry',
+    'appInfo',
+    'stripeAccount',
+];
+const defaultRequestSenderFactory = (stripe) => new RequestSender_1.RequestSender(stripe, StripeResource_1.StripeResource.MAX_BUFFERED_REQUEST_METRICS);
+function createStripe(platformFunctions, requestSender = defaultRequestSenderFactory) {
+    Stripe.PACKAGE_VERSION = (__webpack_require__(/*! ../package.json */ "./node_modules/stripe/package.json").version);
+    Stripe.USER_AGENT = Object.assign({ bindings_version: Stripe.PACKAGE_VERSION, lang: 'node', publisher: 'stripe', uname: null, typescript: false }, (0, utils_1.determineProcessUserAgentProperties)());
+    Stripe.StripeResource = StripeResource_1.StripeResource;
+    Stripe.resources = resources;
+    Stripe.HttpClient = HttpClient_1.HttpClient;
+    Stripe.HttpClientResponse = HttpClient_1.HttpClientResponse;
+    Stripe.CryptoProvider = CryptoProvider_1.CryptoProvider;
+    function Stripe(key, config = {}) {
+        if (!(this instanceof Stripe)) {
+            return new Stripe(key, config);
+        }
+        const props = this._getPropsFromConfig(config);
+        this._platformFunctions = platformFunctions;
+        Object.defineProperty(this, '_emitter', {
+            value: this._platformFunctions.createEmitter(),
+            enumerable: false,
+            configurable: false,
+            writable: false,
+        });
+        this.VERSION = Stripe.PACKAGE_VERSION;
+        this.on = this._emitter.on.bind(this._emitter);
+        this.once = this._emitter.once.bind(this._emitter);
+        this.off = this._emitter.removeListener.bind(this._emitter);
+        if (props.protocol &&
+            props.protocol !== 'https' &&
+            (!props.host || /\.stripe\.com$/.test(props.host))) {
+            throw new Error('The `https` protocol must be used when sending requests to `*.stripe.com`');
+        }
+        const agent = props.httpAgent || null;
+        this._api = {
+            auth: null,
+            host: props.host || DEFAULT_HOST,
+            port: props.port || DEFAULT_PORT,
+            protocol: props.protocol || 'https',
+            basePath: DEFAULT_BASE_PATH,
+            version: props.apiVersion || DEFAULT_API_VERSION,
+            timeout: (0, utils_1.validateInteger)('timeout', props.timeout, DEFAULT_TIMEOUT),
+            maxNetworkRetries: (0, utils_1.validateInteger)('maxNetworkRetries', props.maxNetworkRetries, 0),
+            agent: agent,
+            httpClient: props.httpClient ||
+                (agent
+                    ? this._platformFunctions.createNodeHttpClient(agent)
+                    : this._platformFunctions.createDefaultHttpClient()),
+            dev: false,
+            stripeAccount: props.stripeAccount || null,
+        };
+        const typescript = props.typescript || false;
+        if (typescript !== Stripe.USER_AGENT.typescript) {
+            // The mutation here is uncomfortable, but likely fastest;
+            // serializing the user agent involves shelling out to the system,
+            // and given some users may instantiate the library many times without switching between TS and non-TS,
+            // we only want to incur the performance hit when that actually happens.
+            Stripe.USER_AGENT.typescript = typescript;
+        }
+        if (props.appInfo) {
+            this._setAppInfo(props.appInfo);
+        }
+        this._prepResources();
+        this._setApiKey(key);
+        this.errors = _Error;
+        this.webhooks = (0, Webhooks_1.createWebhooks)(platformFunctions);
+        this._prevRequestMetrics = [];
+        this._enableTelemetry = props.telemetry !== false;
+        this._requestSender = requestSender(this);
+        // Expose StripeResource on the instance too
+        // @ts-ignore
+        this.StripeResource = Stripe.StripeResource;
+    }
+    Stripe.errors = _Error;
+    Stripe.webhooks = Webhooks_1.createWebhooks;
+    Stripe.createNodeHttpClient = platformFunctions.createNodeHttpClient;
+    /**
+     * Creates an HTTP client for issuing Stripe API requests which uses the Web
+     * Fetch API.
+     *
+     * A fetch function can optionally be passed in as a parameter. If none is
+     * passed, will default to the default `fetch` function in the global scope.
+     */
+    Stripe.createFetchHttpClient = platformFunctions.createFetchHttpClient;
+    /**
+     * Create a CryptoProvider which uses the built-in Node crypto libraries for
+     * its crypto operations.
+     */
+    Stripe.createNodeCryptoProvider = platformFunctions.createNodeCryptoProvider;
+    /**
+     * Creates a CryptoProvider which uses the Subtle Crypto API from the Web
+     * Crypto API spec for its crypto operations.
+     *
+     * A SubtleCrypto interface can optionally be passed in as a parameter. If none
+     * is passed, will default to the default `crypto.subtle` object in the global
+     * scope.
+     */
+    Stripe.createSubtleCryptoProvider =
+        platformFunctions.createSubtleCryptoProvider;
+    Stripe.prototype = {
+        // Properties are set in the constructor above
+        _appInfo: undefined,
+        on: null,
+        off: null,
+        once: null,
+        VERSION: null,
+        StripeResource: null,
+        webhooks: null,
+        errors: null,
+        _api: null,
+        _prevRequestMetrics: null,
+        _emitter: null,
+        _enableTelemetry: null,
+        _requestSender: null,
+        _platformFunctions: null,
+        /**
+         * @private
+         */
+        _setApiKey(key) {
+            if (key) {
+                this._setApiField('auth', `Bearer ${key}`);
+            }
+        },
+        /**
+         * @private
+         * This may be removed in the future.
+         */
+        _setAppInfo(info) {
+            if (info && typeof info !== 'object') {
+                throw new Error('AppInfo must be an object.');
+            }
+            if (info && !info.name) {
+                throw new Error('AppInfo.name is required');
+            }
+            info = info || {};
+            this._appInfo = APP_INFO_PROPERTIES.reduce((accum, prop) => {
+                if (typeof info[prop] == 'string') {
+                    accum = accum || {};
+                    accum[prop] = info[prop];
+                }
+                return accum;
+            }, 
+            // @ts-ignore
+            undefined);
+        },
+        /**
+         * @private
+         * This may be removed in the future.
+         */
+        _setApiField(key, value) {
+            this._api[key] = value;
+        },
+        /**
+         * @private
+         * Please open or upvote an issue at github.com/stripe/stripe-node
+         * if you use this, detailing your use-case.
+         *
+         * It may be deprecated and removed in the future.
+         */
+        getApiField(key) {
+            return this._api[key];
+        },
+        setClientId(clientId) {
+            this._clientId = clientId;
+        },
+        getClientId() {
+            return this._clientId;
+        },
+        /**
+         * @private
+         * Please open or upvote an issue at github.com/stripe/stripe-node
+         * if you use this, detailing your use-case.
+         *
+         * It may be deprecated and removed in the future.
+         */
+        getConstant: (c) => {
+            switch (c) {
+                case 'DEFAULT_HOST':
+                    return DEFAULT_HOST;
+                case 'DEFAULT_PORT':
+                    return DEFAULT_PORT;
+                case 'DEFAULT_BASE_PATH':
+                    return DEFAULT_BASE_PATH;
+                case 'DEFAULT_API_VERSION':
+                    return DEFAULT_API_VERSION;
+                case 'DEFAULT_TIMEOUT':
+                    return DEFAULT_TIMEOUT;
+                case 'MAX_NETWORK_RETRY_DELAY_SEC':
+                    return MAX_NETWORK_RETRY_DELAY_SEC;
+                case 'INITIAL_NETWORK_RETRY_DELAY_SEC':
+                    return INITIAL_NETWORK_RETRY_DELAY_SEC;
+            }
+            return Stripe[c];
+        },
+        getMaxNetworkRetries() {
+            return this.getApiField('maxNetworkRetries');
+        },
+        /**
+         * @private
+         * This may be removed in the future.
+         */
+        _setApiNumberField(prop, n, defaultVal) {
+            const val = (0, utils_1.validateInteger)(prop, n, defaultVal);
+            this._setApiField(prop, val);
+        },
+        getMaxNetworkRetryDelay() {
+            return MAX_NETWORK_RETRY_DELAY_SEC;
+        },
+        getInitialNetworkRetryDelay() {
+            return INITIAL_NETWORK_RETRY_DELAY_SEC;
+        },
+        /**
+         * @private
+         * Please open or upvote an issue at github.com/stripe/stripe-node
+         * if you use this, detailing your use-case.
+         *
+         * It may be deprecated and removed in the future.
+         *
+         * Gets a JSON version of a User-Agent and uses a cached version for a slight
+         * speed advantage.
+         */
+        getClientUserAgent(cb) {
+            return this.getClientUserAgentSeeded(Stripe.USER_AGENT, cb);
+        },
+        /**
+         * @private
+         * Please open or upvote an issue at github.com/stripe/stripe-node
+         * if you use this, detailing your use-case.
+         *
+         * It may be deprecated and removed in the future.
+         *
+         * Gets a JSON version of a User-Agent by encoding a seeded object and
+         * fetching a uname from the system.
+         */
+        getClientUserAgentSeeded(seed, cb) {
+            this._platformFunctions.getUname().then((uname) => {
+                var _a;
+                const userAgent = {};
+                for (const field in seed) {
+                    userAgent[field] = encodeURIComponent((_a = seed[field]) !== null && _a !== void 0 ? _a : 'null');
+                }
+                // URI-encode in case there are unusual characters in the system's uname.
+                userAgent.uname = encodeURIComponent(uname || 'UNKNOWN');
+                const client = this.getApiField('httpClient');
+                if (client) {
+                    userAgent.httplib = encodeURIComponent(client.getClientName());
+                }
+                if (this._appInfo) {
+                    userAgent.application = this._appInfo;
+                }
+                cb(JSON.stringify(userAgent));
+            });
+        },
+        /**
+         * @private
+         * Please open or upvote an issue at github.com/stripe/stripe-node
+         * if you use this, detailing your use-case.
+         *
+         * It may be deprecated and removed in the future.
+         */
+        getAppInfoAsString() {
+            if (!this._appInfo) {
+                return '';
+            }
+            let formatted = this._appInfo.name;
+            if (this._appInfo.version) {
+                formatted += `/${this._appInfo.version}`;
+            }
+            if (this._appInfo.url) {
+                formatted += ` (${this._appInfo.url})`;
+            }
+            return formatted;
+        },
+        getTelemetryEnabled() {
+            return this._enableTelemetry;
+        },
+        /**
+         * @private
+         * This may be removed in the future.
+         */
+        _prepResources() {
+            for (const name in resources) {
+                // @ts-ignore
+                this[(0, utils_1.pascalToCamelCase)(name)] = new resources[name](this);
+            }
+        },
+        /**
+         * @private
+         * This may be removed in the future.
+         */
+        _getPropsFromConfig(config) {
+            // If config is null or undefined, just bail early with no props
+            if (!config) {
+                return {};
+            }
+            // config can be an object or a string
+            const isString = typeof config === 'string';
+            const isObject = config === Object(config) && !Array.isArray(config);
+            if (!isObject && !isString) {
+                throw new Error('Config must either be an object or a string');
+            }
+            // If config is a string, we assume the old behavior of passing in a string representation of the api version
+            if (isString) {
+                return {
+                    apiVersion: config,
+                };
+            }
+            // If config is an object, we assume the new behavior and make sure it doesn't contain any unexpected values
+            const values = Object.keys(config).filter((value) => !ALLOWED_CONFIG_PROPERTIES.includes(value));
+            if (values.length > 0) {
+                throw new Error(`Config object may only contain the following: ${ALLOWED_CONFIG_PROPERTIES.join(', ')}`);
+            }
+            return config;
+        },
+    };
+    return Stripe;
+}
+exports.createStripe = createStripe;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/stripe.worker.js":
+/*!**************************************************!*\
+  !*** ./node_modules/stripe/lib/stripe.worker.js ***!
+  \**************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const WebPlatformFunctions_1 = __webpack_require__(/*! ./platform/WebPlatformFunctions */ "./node_modules/stripe/lib/platform/WebPlatformFunctions.js");
+const stripe_common_1 = __webpack_require__(/*! ./stripe.common */ "./node_modules/stripe/lib/stripe.common.js");
+const Stripe = (0, stripe_common_1.createStripe)(new WebPlatformFunctions_1.WebPlatformFunctions());
+module.exports = Stripe;
+// expose constructor as a named property to enable mocking with Sinon.JS
+module.exports.Stripe = Stripe;
+// Allow use with the TypeScript compiler without `esModuleInterop`.
+// We may also want to add `Object.defineProperty(exports, "__esModule", {value: true});` in the future, so that Babel users will use the `default` version.
+module.exports["default"] = Stripe;
+
+
+/***/ }),
+
+/***/ "./node_modules/stripe/lib/utils.js":
+/*!******************************************!*\
+  !*** ./node_modules/stripe/lib/utils.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.concat = exports.determineProcessUserAgentProperties = exports.validateInteger = exports.flattenAndStringify = exports.isObject = exports.emitWarning = exports.pascalToCamelCase = exports.callbackifyPromiseWithTimeout = exports.normalizeHeader = exports.normalizeHeaders = exports.removeNullish = exports.protoExtend = exports.getOptionsFromArgs = exports.getDataFromArgs = exports.extractUrlParams = exports.makeURLInterpolator = exports.stringifyRequestData = exports.isOptionsHash = void 0;
+const qs = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
+const OPTIONS_KEYS = [
+    'apiKey',
+    'idempotencyKey',
+    'stripeAccount',
+    'apiVersion',
+    'maxNetworkRetries',
+    'timeout',
+    'host',
+];
+// const utils = {
+function isOptionsHash(o) {
+    return (o &&
+        typeof o === 'object' &&
+        OPTIONS_KEYS.some((prop) => Object.prototype.hasOwnProperty.call(o, prop)));
+}
+exports.isOptionsHash = isOptionsHash;
+/**
+ * Stringifies an Object, accommodating nested objects
+ * (forming the conventional key 'parent[child]=value')
+ */
+function stringifyRequestData(data) {
+    return (qs
+        .stringify(data, {
+        serializeDate: (d) => Math.floor(d.getTime() / 1000),
+    })
+        // Don't use strict form encoding by changing the square bracket control
+        // characters back to their literals. This is fine by the server, and
+        // makes these parameter strings easier to read.
+        .replace(/%5B/g, '[')
+        .replace(/%5D/g, ']'));
+}
+exports.stringifyRequestData = stringifyRequestData;
+/**
+ * Outputs a new function with interpolated object property values.
+ * Use like so:
+ *   const fn = makeURLInterpolator('some/url/{param1}/{param2}');
+ *   fn({ param1: 123, param2: 456 }); // => 'some/url/123/456'
+ */
+exports.makeURLInterpolator = (() => {
+    const rc = {
+        '\n': '\\n',
+        '"': '\\"',
+        '\u2028': '\\u2028',
+        '\u2029': '\\u2029',
+    };
+    return (str) => {
+        const cleanString = str.replace(/["\n\r\u2028\u2029]/g, ($0) => rc[$0]);
+        return (outputs) => {
+            return cleanString.replace(/\{([\s\S]+?)\}/g, ($0, $1) => 
+            // @ts-ignore
+            encodeURIComponent(outputs[$1] || ''));
+        };
+    };
+})();
+function extractUrlParams(path) {
+    const params = path.match(/\{\w+\}/g);
+    if (!params) {
+        return [];
+    }
+    return params.map((param) => param.replace(/[{}]/g, ''));
+}
+exports.extractUrlParams = extractUrlParams;
+/**
+ * Return the data argument from a list of arguments
+ *
+ * @param {object[]} args
+ * @returns {object}
+ */
+function getDataFromArgs(args) {
+    if (!Array.isArray(args) || !args[0] || typeof args[0] !== 'object') {
+        return {};
+    }
+    if (!isOptionsHash(args[0])) {
+        return args.shift();
+    }
+    const argKeys = Object.keys(args[0]);
+    const optionKeysInArgs = argKeys.filter((key) => OPTIONS_KEYS.includes(key));
+    // In some cases options may be the provided as the first argument.
+    // Here we're detecting a case where there are two distinct arguments
+    // (the first being args and the second options) and with known
+    // option keys in the first so that we can warn the user about it.
+    if (optionKeysInArgs.length > 0 &&
+        optionKeysInArgs.length !== argKeys.length) {
+        emitWarning(`Options found in arguments (${optionKeysInArgs.join(', ')}). Did you mean to pass an options object? See https://github.com/stripe/stripe-node/wiki/Passing-Options.`);
+    }
+    return {};
+}
+exports.getDataFromArgs = getDataFromArgs;
+/**
+ * Return the options hash from a list of arguments
+ */
+function getOptionsFromArgs(args) {
+    const opts = {
+        auth: null,
+        host: null,
+        headers: {},
+        settings: {},
+    };
+    if (args.length > 0) {
+        const arg = args[args.length - 1];
+        if (typeof arg === 'string') {
+            opts.auth = args.pop();
+        }
+        else if (isOptionsHash(arg)) {
+            const params = Object.assign({}, args.pop());
+            const extraKeys = Object.keys(params).filter((key) => !OPTIONS_KEYS.includes(key));
+            if (extraKeys.length) {
+                emitWarning(`Invalid options found (${extraKeys.join(', ')}); ignoring.`);
+            }
+            if (params.apiKey) {
+                opts.auth = params.apiKey;
+            }
+            if (params.idempotencyKey) {
+                opts.headers['Idempotency-Key'] = params.idempotencyKey;
+            }
+            if (params.stripeAccount) {
+                opts.headers['Stripe-Account'] = params.stripeAccount;
+            }
+            if (params.apiVersion) {
+                opts.headers['Stripe-Version'] = params.apiVersion;
+            }
+            if (Number.isInteger(params.maxNetworkRetries)) {
+                opts.settings.maxNetworkRetries = params.maxNetworkRetries;
+            }
+            if (Number.isInteger(params.timeout)) {
+                opts.settings.timeout = params.timeout;
+            }
+            if (params.host) {
+                opts.host = params.host;
+            }
+        }
+    }
+    return opts;
+}
+exports.getOptionsFromArgs = getOptionsFromArgs;
+/**
+ * Provide simple "Class" extension mechanism.
+ * <!-- Public API accessible via Stripe.StripeResource.extend -->
+ */
+function protoExtend(sub) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const Super = this;
+    const Constructor = Object.prototype.hasOwnProperty.call(sub, 'constructor')
+        ? sub.constructor
+        : function (...args) {
+            Super.apply(this, args);
+        };
+    // This initialization logic is somewhat sensitive to be compatible with
+    // divergent JS implementations like the one found in Qt. See here for more
+    // context:
+    //
+    // https://github.com/stripe/stripe-node/pull/334
+    Object.assign(Constructor, Super);
+    Constructor.prototype = Object.create(Super.prototype);
+    Object.assign(Constructor.prototype, sub);
+    return Constructor;
+}
+exports.protoExtend = protoExtend;
+/**
+ * Remove empty values from an object
+ */
+function removeNullish(obj) {
+    if (typeof obj !== 'object') {
+        throw new Error('Argument must be an object');
+    }
+    return Object.keys(obj).reduce((result, key) => {
+        if (obj[key] != null) {
+            result[key] = obj[key];
+        }
+        return result;
+    }, {});
+}
+exports.removeNullish = removeNullish;
+/**
+ * Normalize standard HTTP Headers:
+ * {'foo-bar': 'hi'}
+ * becomes
+ * {'Foo-Bar': 'hi'}
+ */
+function normalizeHeaders(obj) {
+    if (!(obj && typeof obj === 'object')) {
+        return obj;
+    }
+    return Object.keys(obj).reduce((result, header) => {
+        result[normalizeHeader(header)] = obj[header];
+        return result;
+    }, {});
+}
+exports.normalizeHeaders = normalizeHeaders;
+/**
+ * Stolen from https://github.com/marten-de-vries/header-case-normalizer/blob/master/index.js#L36-L41
+ * without the exceptions which are irrelevant to us.
+ */
+function normalizeHeader(header) {
+    return header
+        .split('-')
+        .map((text) => text.charAt(0).toUpperCase() + text.substr(1).toLowerCase())
+        .join('-');
+}
+exports.normalizeHeader = normalizeHeader;
+function callbackifyPromiseWithTimeout(promise, callback) {
+    if (callback) {
+        // Ensure callback is called outside of promise stack.
+        return promise.then((res) => {
+            setTimeout(() => {
+                callback(null, res);
+            }, 0);
+        }, (err) => {
+            setTimeout(() => {
+                callback(err, null);
+            }, 0);
+        });
+    }
+    return promise;
+}
+exports.callbackifyPromiseWithTimeout = callbackifyPromiseWithTimeout;
+/**
+ * Allow for special capitalization cases (such as OAuth)
+ */
+function pascalToCamelCase(name) {
+    if (name === 'OAuth') {
+        return 'oauth';
+    }
+    else {
+        return name[0].toLowerCase() + name.substring(1);
+    }
+}
+exports.pascalToCamelCase = pascalToCamelCase;
+function emitWarning(warning) {
+    if (typeof process.emitWarning !== 'function') {
+        return console.warn(`Stripe: ${warning}`); /* eslint-disable-line no-console */
+    }
+    return process.emitWarning(warning, 'Stripe');
+}
+exports.emitWarning = emitWarning;
+function isObject(obj) {
+    const type = typeof obj;
+    return (type === 'function' || type === 'object') && !!obj;
+}
+exports.isObject = isObject;
+// For use in multipart requests
+function flattenAndStringify(data) {
+    const result = {};
+    const step = (obj, prevKey) => {
+        Object.keys(obj).forEach((key) => {
+            // @ts-ignore
+            const value = obj[key];
+            const newKey = prevKey ? `${prevKey}[${key}]` : key;
+            if (isObject(value)) {
+                if (!(value instanceof Uint8Array) &&
+                    !Object.prototype.hasOwnProperty.call(value, 'data')) {
+                    // Non-buffer non-file Objects are recursively flattened
+                    return step(value, newKey);
+                }
+                else {
+                    // Buffers and file objects are stored without modification
+                    result[newKey] = value;
+                }
+            }
+            else {
+                // Primitives are converted to strings
+                result[newKey] = String(value);
+            }
+        });
+    };
+    step(data, null);
+    return result;
+}
+exports.flattenAndStringify = flattenAndStringify;
+function validateInteger(name, n, defaultVal) {
+    if (!Number.isInteger(n)) {
+        if (defaultVal !== undefined) {
+            return defaultVal;
+        }
+        else {
+            throw new Error(`${name} must be an integer`);
+        }
+    }
+    return n;
+}
+exports.validateInteger = validateInteger;
+function determineProcessUserAgentProperties() {
+    return typeof process === 'undefined'
+        ? {}
+        : {
+            lang_version: process.version,
+            platform: process.platform,
+        };
+}
+exports.determineProcessUserAgentProperties = determineProcessUserAgentProperties;
+/**
+ * Joins an array of Uint8Arrays into a single Uint8Array
+ */
+function concat(arrays) {
+    const totalLength = arrays.reduce((len, array) => len + array.length, 0);
+    const merged = new Uint8Array(totalLength);
+    let offset = 0;
+    arrays.forEach((array) => {
+        merged.set(array, offset);
+        offset += array.length;
+    });
+    return merged;
+}
+exports.concat = concat;
 
 
 /***/ }),
@@ -38494,6 +46728,27 @@ var index_esm = {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (index_esm);
 
 
+/***/ }),
+
+/***/ "?2128":
+/*!********************************!*\
+  !*** ./util.inspect (ignored) ***!
+  \********************************/
+/***/ (() => {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ "./node_modules/stripe/package.json":
+/*!******************************************!*\
+  !*** ./node_modules/stripe/package.json ***!
+  \******************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"name":"stripe","version":"11.12.0","description":"Stripe API wrapper","keywords":["stripe","payment processing","credit cards","api"],"homepage":"https://github.com/stripe/stripe-node","author":"Stripe <support@stripe.com> (https://stripe.com/)","contributors":["Ask Bjørn Hansen <ask@develooper.com> (http://www.askask.com/)","Michelle Bu <michelle@stripe.com>","Alex Sexton <alex@stripe.com>","James Padolsey"],"repository":{"type":"git","url":"git://github.com/stripe/stripe-node.git"},"bugs":"https://github.com/stripe/stripe-node/issues","engines":{"node":">=12.*"},"main":"lib/stripe.node.js","types":"types/index.d.ts","devDependencies":{"@types/chai":"^4.3.4","@types/chai-as-promised":"^7.1.5","@types/mocha":"^10.0.1","@types/qs":"^6.9.7","@typescript-eslint/eslint-plugin":"^4.33.0","@typescript-eslint/parser":"^4.33.0","chai":"^4.3.6","chai-as-promised":"~7.1.1","coveralls":"^3.1.1","eslint":"^7.32.0","eslint-config-prettier":"^8.5.0","eslint-plugin-chai-friendly":"^0.7.2","eslint-plugin-prettier":"^3.4.1","mocha":"^8.4.0","mocha-junit-reporter":"^2.1.0","nock":"^13.2.9","node-fetch":"^2.6.7","nyc":"^15.1.0","prettier":"^1.16.4","ts-node":"^10.9.1","typescript":"^4.9.4"},"resolutions":{"minimist":"1.2.6","nanoid":"^3.2.0"},"dependencies":{"@types/node":">=8.1.0","qs":"^6.11.0"},"license":"MIT","scripts":{"build":"tsc -p tsconfig.json","clean":"rm -rf ./.nyc_output ./node_modules/.cache ./coverage ./lib","prepack":"yarn install && yarn build","mocha":"nyc mocha","mocha-only":"mocha","test":"yarn build && yarn test-typescript && yarn mocha","test-typescript":"tsc --build types/test","lint":"eslint --ext .js,.jsx,.ts .","fix":"yarn lint --fix && ./scripts/updateAPIVersion.js","report":"nyc -r text -r lcov report","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"},"exports":{"types":"./types/index.d.ts","browser":"./lib/stripe.worker.js","worker":"./lib/stripe.worker.js","default":"./lib/stripe.node.js"}}');
+
 /***/ })
 
 /******/ 	});
@@ -38589,16 +46844,18 @@ var __webpack_exports__ = {};
   !*** ./resources/js/front.js ***!
   \*******************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_PageHome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/PageHome */ "./resources/js/pages/PageHome.vue");
 /* harmony import */ var _pages_PageDishes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PageDishes */ "./resources/js/pages/PageDishes.vue");
 /* harmony import */ var _pages_PageCart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PageCart */ "./resources/js/pages/PageCart.vue");
 /* harmony import */ var _pages_OrderSuccess__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/OrderSuccess */ "./resources/js/pages/OrderSuccess.vue");
 /* harmony import */ var _pages_PagePayment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/PagePayment */ "./resources/js/pages/PagePayment.vue");
+/* harmony import */ var stripe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! stripe */ "./node_modules/stripe/lib/stripe.worker.js");
+/* harmony import */ var stripe__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(stripe__WEBPACK_IMPORTED_MODULE_8__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -38610,8 +46867,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_8__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_8__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+vue__WEBPACK_IMPORTED_MODULE_9__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_10__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_9__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var routes = [{
   path: '/',
   name: 'home',
@@ -38633,11 +46891,11 @@ var routes = [{
   name: 'payment',
   component: _pages_PagePayment__WEBPACK_IMPORTED_MODULE_7__["default"]
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_10__["default"]({
   mode: 'history',
   routes: routes
 });
-new vue__WEBPACK_IMPORTED_MODULE_8__["default"]({
+new vue__WEBPACK_IMPORTED_MODULE_9__["default"]({
   el: '#root',
   render: function render(h) {
     return h(_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);

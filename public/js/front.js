@@ -2350,21 +2350,10 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "container_nav"
-  }, [_c("nav", {
+  return _c("nav", {
     staticClass: "navbar navbar-expand-md"
   }, [_c("div", {
-    staticClass: "container-fluid"
-  }, [_c("div", {
-    staticClass: "collapse navbar-collapse",
-    attrs: {
-      id: "navbarSupportedContent"
-    }
-  }, [_c("ul", {
-    staticClass: "navbar-nav me-auto mb-2 mb-lg-0"
-  }, [_c("li", {
-    staticClass: "nav-item"
+    staticClass: "container"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
@@ -2372,25 +2361,52 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("DeliveBoo")])], 1)]), _vm._v(" "), _c("div", {
-    staticClass: "nav-item d-flex"
+  }, [_vm._v("DeliveBoo")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      id: "navbarSupportedContent"
+    }
+  }, [_c("ul", {
+    staticClass: "navbar-nav ml-auto"
+  }, [_c("li", {
+    staticClass: "nav-item"
   }, [_c("router-link", {
+    staticClass: "custom-link",
     attrs: {
       to: {
         name: "cart"
       }
     }
-  }, [_c("button", [_vm._v("Carrello "), _vm.cartQuantity !== 0 ? _c("strong", [_vm._v(_vm._s(_vm.cartQuantity))]) : _vm._e()])]), _vm._v(" "), _vm._m(0)], 1)])])])]);
+  }, [_vm._v("Carrello "), _vm.cartQuantity !== 0 ? _c("strong", [_vm._v(_vm._s(_vm.cartQuantity))]) : _vm._e()])], 1), _vm._v(" "), _vm._m(1)])])], 1)]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("a", {
-    staticClass: "mx-5",
+  return _c("button", {
+    staticClass: "navbar-toggler",
+    attrs: {
+      type: "button",
+      "data-toggle": "collapse",
+      "data-target": "#navbarSupportedContent",
+      "aria-controls": "navbarSupportedContent",
+      "aria-expanded": "false"
+    }
+  }, [_c("span", {
+    staticClass: "navbar-toggler-icon"
+  }, [_c("i", {
+    staticClass: "fas fa-bars"
+  })])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("li", {
+    staticClass: "nav-item"
+  }, [_c("a", {
+    staticClass: "custom-link ml-5",
     attrs: {
       href: "/admin"
     }
-  }, [_c("button", [_vm._v("Collabora con noi")])]);
+  }, [_vm._v("Collabora con noi")])]);
 }];
 render._withStripped = true;
 
@@ -7658,7 +7674,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container_nav[data-v-5dd24bca] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 2;\n  box-shadow: 10px 10px 5px #1f1f1f;\n}\n.navbar-collapse[data-v-5dd24bca] {\n  justify-content: space-between;\n}\n.nav-link[data-v-5dd24bca] {\n  color: white;\n  font-weight: bold;\n  font-size: 2rem;\n}\n.navbar[data-v-5dd24bca] {\n  background-color: rgb(92, 201, 188);\n}\nbutton[data-v-5dd24bca] {\n  border: none;\n  background-color: white;\n  padding: 0.5rem;\n  border-radius: 0.5rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "nav[data-v-5dd24bca] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 2;\n  box-shadow: 5px 5px 2px #1f1f1f;\n}\n.navbar-collapse[data-v-5dd24bca] {\n  display: flex;\n  justify-content: flex-end;\n}\n.navbar-nav[data-v-5dd24bca] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n}\n.nav-item[data-v-5dd24bca] {\n  margin: 1rem 0;\n}\n.nav-link[data-v-5dd24bca] {\n  color: white;\n  font-weight: bold;\n  font-size: 2rem;\n}\n.navbar[data-v-5dd24bca] {\n  background-color: rgb(92, 201, 188);\n}\n.custom-link[data-v-5dd24bca] {\n  border: none;\n  background-color: white;\n  padding: 0.5rem;\n  border-radius: 0.5rem;\n  color: #1f1f1f;\n  margin: 2rem 0;\n  text-decoration: none;\n}\n.navbar-toggler[data-v-5dd24bca] {\n  border: 1px solid white;\n  background-color: rgb(92, 201, 188);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.navbar-toggler-icon[data-v-5dd24bca] {\n  color: white;\n  width: 100%;\n  height: 100%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -28,3 +28,6 @@ Route::get('{any?}', function () {
     Route::get('/unauthorized', function () {
         return view('auth.unauthorized');
     })->name('unauthorized');
+
+
+

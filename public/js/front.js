@@ -2282,9 +2282,9 @@ var staticRenderFns = [function () {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row row-cols-3"
-  }, [_c("ul", {
+  }, [_c("div", {
     staticClass: "col"
-  }, [_c("li", [_c("h5", [_vm._v("Scopri Deliveroo")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Scopri Deliveroo")])]), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#!"
     }
@@ -2304,9 +2304,9 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("Diventa nostro partner")])])]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("Diventa nostro partner")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("li", [_c("h5", [_vm._v("Note")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Note")])]), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#!"
     }
@@ -2318,9 +2318,9 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("Cookies")])])]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("Cookies")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("li", [_c("h5", [_vm._v("Aiuto")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Aiuto")])]), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#!"
     }
@@ -2328,7 +2328,34 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("FAQ")])])])])])]);
+  }, [_vm._v("FAQ")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "row justify-content-between pb-3"
+  }, [_c("div", {
+    staticClass: "social"
+  }, [_c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/facebook.png */ "./public/img/facebook.png"),
+      alt: "Facebook"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/instagram.png */ "./public/img/instagram.png"),
+      alt: "instagram"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/twitter.png */ "./public/img/twitter.png"),
+      alt: "twitter"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "logo"
+  }, [_c("img", {
+    staticClass: "w-50",
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/deliveboo_full.svg */ "./public/img/deliveboo_full.svg"),
+      alt: ""
+    }
+  })])])])]);
 }];
 render._withStripped = true;
 
@@ -2660,11 +2687,11 @@ var render = function render() {
   }, [_vm._v("#aCasaTuaConDeliveBoo")])]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2"
+    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards"
   }, _vm._l(_vm.users, function (user) {
     return _c("router-link", {
       key: user.id,
-      staticClass: "p-3 w-75 m-auto",
+      staticClass: "p-3 w-75 m-auto d-flex",
       attrs: {
         to: {
           name: "dishes",
@@ -7650,7 +7677,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".bg[data-v-09ff8af5] {\n  background-color: #2e3333;\n}\nul[data-v-09ff8af5] {\n  color: white;\n  text-decoration: none;\n  list-style-type: none;\n}\nul a[data-v-09ff8af5] {\n  color: white;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".bg[data-v-09ff8af5] {\n  background-color: #2e3333;\n}\nul[data-v-09ff8af5] {\n  margin-top: 3rem;\n  margin-bottom: 1rem;\n  padding: 1rem;\n  color: white;\n  text-decoration: none;\n  list-style-type: none;\n  background-color: hsla(0, 0%, 100%, 0.1);\n  height: 18rem;\n}\nul li[data-v-09ff8af5] {\n  padding: 0.5rem 0;\n}\nul a[data-v-09ff8af5] {\n  color: white;\n}\n.social[data-v-09ff8af5] {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.logo[data-v-09ff8af5] {\n  display: flex;\n  flex-direction: row-reverse;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7770,7 +7797,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: rgb(213, 234, 162);\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem;\n  background-color: rgb(213, 234, 162);\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n.section_nav .filter[data-v-13e03f97] {\n  position: absolute;\n  top: 80%;\n  right: 50%;\n  transform: translate(50%, 50%);\n  z-index: 1;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: white;\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem 2rem 0 0;\n  background-color: white;\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n.section_nav .filter[data-v-13e03f97] {\n  position: absolute;\n  top: 80%;\n  right: 50%;\n  transform: translate(50%, 50%);\n  z-index: 1;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}\n@media (max-width: 768px) {\n.row_cards[data-v-13e03f97] {\n    justify-content: center;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7874,6 +7901,46 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./public/img/deliveboo_full.svg":
+/*!***************************************!*\
+  !*** ./public/img/deliveboo_full.svg ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = "/images/deliveboo_full.svg?0f628429f3fa6ffd032d4b4133c0c13c";
+
+/***/ }),
+
+/***/ "./public/img/facebook.png":
+/*!*********************************!*\
+  !*** ./public/img/facebook.png ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = "/images/facebook.png?0e063530bda16f6df5e331089c5ee137";
+
+/***/ }),
+
+/***/ "./public/img/instagram.png":
+/*!**********************************!*\
+  !*** ./public/img/instagram.png ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = "/images/instagram.png?d6264a2a133eccb10fe7cb8b54c65bf8";
+
+/***/ }),
+
+/***/ "./public/img/twitter.png":
+/*!********************************!*\
+  !*** ./public/img/twitter.png ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = "/images/twitter.png?8fecf241e32c3ec7104fdf2a1c888f2a";
 
 /***/ }),
 

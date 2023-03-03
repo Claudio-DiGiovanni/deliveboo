@@ -2667,8 +2667,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function render() {};
-var staticRenderFns = [];
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "container_section"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "container py-3"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "d-flex justify-content-center py-4"
+  }, [_vm.types ? _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.value,
+      expression: "value"
+    }],
+    staticClass: "form-select filter",
+    attrs: {
+      name: "type",
+      id: "type"
+    },
+    on: {
+      change: [function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.value = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }, function ($event) {
+        return _vm.filterRestaurant(_vm.value);
+      }]
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "all",
+      selected: ""
+    }
+  }, [_vm._v("Tutti")]), _vm._v(" "), _vm._l(_vm.types, function (typex) {
+    return _c("option", {
+      key: typex.id,
+      domProps: {
+        value: typex.id
+      }
+    }, [_vm._v(_vm._s(typex.name))]);
+  })], 2) : _vm._e()]), _vm._v(" "), _c("div", {
+    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards"
+  }, _vm._l(_vm.users, function (user) {
+    return _c("router-link", {
+      key: user.id,
+      staticClass: "p-3 w-75 m-auto d-flex",
+      attrs: {
+        to: {
+          name: "dishes",
+          params: {
+            id: user.id,
+            slug: user.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "card card-ristoranti bg-opacity-25 col"
+    }, [_c("div", {
+      staticClass: "w-100 h-75 m-auto"
+    }, [_c("img", {
+      staticClass: "card-img-top h-100 w-100",
+      attrs: {
+        src: user.image_logo,
+        alt: "..."
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card-body text-center"
+    }, [_c("h2", {
+      staticClass: "card-text text-dark"
+    }, [_vm._v(_vm._s(user.name))])])])]);
+  }), 1)])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("section", {
+    staticClass: "section_nav"
+  }, [_c("h2", [_vm._v("I piatti che ami, a domicilio")]), _vm._v(" "), _c("div", {
+    staticClass: "hash"
+  }, [_vm._v("#aCasaTuaConDeliveBoo")])]);
+}];
+render._withStripped = true;
 
 
 /***/ }),

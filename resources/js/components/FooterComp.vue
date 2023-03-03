@@ -60,6 +60,7 @@ ul {
     text-decoration: none;
     list-style-type: none;
     background-color: hsla(0, 0%, 100%, 0.1);
+    height: 18rem;
     li {
         padding: .5rem 0;
     }

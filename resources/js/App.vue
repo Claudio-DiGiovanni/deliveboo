@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar  />
-    <router-view class="margin-top"></router-view>
+    <router-view class="margin-top" pb-2></router-view>
     <FooterComp />
   </div>
 </template>

@@ -8,7 +8,7 @@
       <h2>I piatti che ami, a domicilio</h2>
       <div class="hash">#aCasaTuaConDeliveBoo</div>
     </section>
-        <div class="container ">
+        <div class="container py-3">
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards" >
             <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto d-flex" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">

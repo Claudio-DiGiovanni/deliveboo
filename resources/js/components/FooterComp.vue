@@ -28,14 +28,18 @@
             </ul>
         </div>
         <div class="col">
-            <ul class="card-logo">
+            <ul>
                 <li><h5>Scarica l'App</h5></li>
-                <li class="row my-3">
-                    <img class="img-logo col-6 m-auto w-100" src="../../../public/img/deliveboo_logo.svg" alt="">
+                <li class="row mt-3 mb-1">
+                    <img class="img-logo col-6 m-auto h-100" src="../../../public/img/deliveboo_logo.svg" alt="">
                 </li>
-                <li class="row pt-3">
-                    <img class="col-6" src="../../../public/img/google-play-badge.png" alt="">
-                    <img class="col-6" src="../../../public/img/App_Store_Badge.png" alt="">
+                <li class="row pt-3 banner">
+                    <div class="col-6">
+                        <img class="banner w-100" src="../../../public/img/google-play-badge.png" alt="">
+                    </div>
+                    <div class="col-6">
+                        <img class="banner w-100" src="../../../public/img/App_Store_Badge.png" alt="">
+                    </div>
                 </li>
             </ul>
         </div>
@@ -93,13 +97,15 @@ ul {
     flex-direction: row-reverse;
     margin: 0 15px;
 }
-// .img-logo {
-//     width: 40%;
-//     height: 40%;
-// }
+.img-logo {
+    max-height: 100px;
+}
 .card-logo {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.banner {
+    max-height: 60px;
 }
 </style>

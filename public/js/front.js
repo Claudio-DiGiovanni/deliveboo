@@ -2615,9 +2615,9 @@ var render = function render() {
       key: dish.id,
       staticClass: "p-3"
     }, [_c("div", {
-      staticClass: "card card-ristoranti-2 bg-opacity-25 p-0 col"
+      staticClass: "card card-ristoranti-2 bg-opacity-25 p-0 col h-100"
     }, [_c("div", {
-      staticClass: "container_img"
+      staticClass: "container_img h-100"
     }, [_c("img", {
       staticClass: "card-img-top h-100 w-100",
       attrs: {
@@ -2667,88 +2667,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function render() {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "container_section"
-  }, [_c("section", {
-    staticClass: "section_nav"
-  }, [_vm.types ? _c("select", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.value,
-      expression: "value"
-    }],
-    staticClass: "form-select filter",
-    attrs: {
-      name: "type",
-      id: "type"
-    },
-    on: {
-      change: [function ($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
-          return o.selected;
-        }).map(function (o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val;
-        });
-        _vm.value = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
-      }, function ($event) {
-        return _vm.filterRestaurant(_vm.value);
-      }]
-    }
-  }, [_c("option", {
-    attrs: {
-      value: "all",
-      selected: ""
-    }
-  }, [_vm._v("Tutti")]), _vm._v(" "), _vm._l(_vm.types, function (typex) {
-    return _c("option", {
-      key: typex.id,
-      domProps: {
-        value: typex.id
-      }
-    }, [_vm._v(_vm._s(typex.name))]);
-  })], 2) : _vm._e(), _vm._v(" "), _c("h2", [_vm._v("I piatti che ami, a domicilio")]), _vm._v(" "), _c("div", {
-    staticClass: "hash"
-  }, [_vm._v("#aCasaTuaConDeliveBoo")])]), _vm._v(" "), _c("div", {
-    staticClass: "container py-3"
-  }, [_c("div", {
-    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards"
-  }, _vm._l(_vm.users, function (user) {
-    return _c("router-link", {
-      key: user.id,
-      staticClass: "p-3 w-75 m-auto d-flex",
-      attrs: {
-        to: {
-          name: "dishes",
-          params: {
-            id: user.id,
-            slug: user.slug
-          }
-        }
-      }
-    }, [_c("div", {
-      staticClass: "card card-ristoranti bg-opacity-25 col"
-    }, [_c("div", {
-      staticClass: "w-100 h-75 m-auto"
-    }, [_c("img", {
-      staticClass: "card-img-top h-100 w-100",
-      attrs: {
-        src: user.image_logo,
-        alt: "..."
-      }
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "card-body text-center"
-    }, [_c("h2", {
-      staticClass: "card-text text-dark"
-    }, [_vm._v(_vm._s(user.name))])])])]);
-  }), 1)])]);
-};
+var render = function render() {};
 var staticRenderFns = [];
-render._withStripped = true;
 
 
 /***/ }),
@@ -7802,7 +7722,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  border-radius: 2rem;\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.3s linear;\n  box-shadow: 10px 10px 5px #141414;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n  border-radius: 2rem;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.3s linear;\n  overflow: visible;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 1s;\n  background-color: black;\n  border-radius: 2rem;\n}\n.bg_img[data-v-84cf3c00] {\n  background-image: url(https://blendofbites.com/wp-content/uploads/2021/01/varity-of-fast-food-on-black-table-2048x1365.jpg);\n  background-size: cover;\n}\n.card-ristoranti-2[data-v-84cf3c00] {\n  background: transparent;\n}\n.quantity[data-v-84cf3c00] {\n  color: white;\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  font-weight: 700;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card_body[data-v-84cf3c00] {\n  margin-bottom: 1rem;\n}\n.card[data-v-84cf3c00] {\n  position: relative;\n  perspective: 1000px;\n  border: none !important;\n}\n.card-ristoranti[data-v-84cf3c00] {\n  height: 100%;\n}\n.container_img[data-v-84cf3c00] {\n  border-radius: 2rem;\n  width: 100%;\n  transform: rotate(0deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.3s linear;\n  box-shadow: 10px 10px 5px #141414;\n}\n.container_img img[data-v-84cf3c00] {\n  width: 100%;\n  border-radius: 2rem;\n  background-color: white;\n}\n.card_body[data-v-84cf3c00] {\n  padding: 1rem;\n  color: white;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n  transition: transform 0.3s linear;\n  overflow: visible;\n}\n.card:hover .container_img[data-v-84cf3c00] {\n  transform: rotateY(-180deg);\n}\n.card:hover .card_body[data-v-84cf3c00] {\n  transform: rotateY(0deg);\n  transition: 1s;\n  background-color: black;\n  border-radius: 2rem;\n}\n.bg_img[data-v-84cf3c00] {\n  background-image: url(https://blendofbites.com/wp-content/uploads/2021/01/varity-of-fast-food-on-black-table-2048x1365.jpg);\n  background-size: cover;\n}\n.card-ristoranti-2[data-v-84cf3c00] {\n  background: transparent;\n}\n.quantity[data-v-84cf3c00] {\n  color: white;\n  margin-left: 2rem;\n  font-size: 1.5rem;\n  font-weight: 700;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7826,7 +7746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: white;\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem 2rem 0 0;\n  background-color: white;\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n.section_nav .filter[data-v-13e03f97] {\n  position: absolute;\n  top: 80%;\n  right: 50%;\n  transform: translate(50%, 50%);\n  z-index: 1;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}\n@media (max-width: 768px) {\n.row_cards[data-v-13e03f97] {\n    justify-content: center;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: white;\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem 2rem 0 0;\n  background-color: white;\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n@media (max-width: 660px) {\n.hash[data-v-13e03f97] {\n    font-size: 20px;\n}\n}\n.filter[data-v-13e03f97] {\n  z-index: 1;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

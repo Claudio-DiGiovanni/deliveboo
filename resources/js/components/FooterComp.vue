@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <div class="container">
-        <div class=" row row-cols-3">
+        <div class=" row row-cols-lg-4 row-cols-md-2 row-cols-1">
         <div class="col">
             <ul>
                 <li><h5>Scopri Deliveroo</h5></li>
@@ -25,6 +25,18 @@
                 <li><h5>Aiuto</h5></li>
                 <li><a href="#!">Contatti</a></li>
                 <li><a href="#!">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="card-logo">
+                <li><h5>Scarica l'App</h5></li>
+                <li class="row my-3">
+                    <img class="img-logo col-6 m-auto w-100" src="../../../public/img/deliveboo_logo.svg" alt="">
+                </li>
+                <li class="row pt-3">
+                    <img class="col-6" src="../../../public/img/google-play-badge.png" alt="">
+                    <img class="col-6" src="../../../public/img/App_Store_Badge.png" alt="">
+                </li>
             </ul>
         </div>
         </div>
@@ -51,6 +63,7 @@ export default {
 <style lang="scss" scoped>
 .bg {
     background-color: #2e3333;
+    margin-bottom: -10px;
 }
 ul {
     margin-top: 3rem;
@@ -61,6 +74,7 @@ ul {
     list-style-type: none;
     background-color: hsla(0, 0%, 100%, 0.1);
     height: 18rem;
+    border-radius: 5%;
     li {
         padding: .5rem 0;
     }
@@ -77,5 +91,15 @@ ul {
 .logo {
     display: flex;
     flex-direction: row-reverse;
+    margin: 0 15px;
+}
+// .img-logo {
+//     width: 40%;
+//     height: 40%;
+// }
+.card-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 </style>

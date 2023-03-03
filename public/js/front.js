@@ -2247,7 +2247,10 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("NavBar"), _vm._v(" "), _c("router-view", {
-    staticClass: "margin-top"
+    staticClass: "margin-top",
+    attrs: {
+      "pb-2": ""
+    }
   }), _vm._v(" "), _c("FooterComp")], 1);
 };
 var staticRenderFns = [];
@@ -2281,7 +2284,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row row-cols-3"
+    staticClass: "row row-cols-lg-4 row-cols-md-2 row-cols-1"
   }, [_c("div", {
     staticClass: "col"
   }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Scopri Deliveroo")])]), _vm._v(" "), _c("li", [_c("a", {
@@ -2328,7 +2331,33 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("FAQ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("FAQ")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("ul", {
+    staticClass: "card-logo"
+  }, [_c("li", [_c("h5", [_vm._v("Scarica l'App")])]), _vm._v(" "), _c("li", {
+    staticClass: "row my-3"
+  }, [_c("img", {
+    staticClass: "img-logo col-6 m-auto w-100",
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/deliveboo_logo.svg */ "./public/img/deliveboo_logo.svg"),
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("li", {
+    staticClass: "row pt-3"
+  }, [_c("img", {
+    staticClass: "col-6",
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/google-play-badge.png */ "./public/img/google-play-badge.png"),
+      alt: ""
+    }
+  }), _vm._v(" "), _c("img", {
+    staticClass: "col-6",
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/App_Store_Badge.png */ "./public/img/App_Store_Badge.png"),
+      alt: ""
+    }
+  })])])])]), _vm._v(" "), _c("div", {
     staticClass: "row justify-content-between pb-3"
   }, [_c("div", {
     staticClass: "social"
@@ -2644,6 +2673,8 @@ var render = function render() {
   return _c("div", {
     staticClass: "container_section"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "container py-3"
+  }, [_c("div", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "d-flex justify-content-center py-4"
@@ -2714,7 +2745,7 @@ var render = function render() {
     }, [_c("h2", {
       staticClass: "card-text text-dark"
     }, [_vm._v(_vm._s(user.name))])])])]);
-  }), 1)])]);
+  }), 1)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -7683,7 +7714,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".bg[data-v-09ff8af5] {\n  background-color: #2e3333;\n}\nul[data-v-09ff8af5] {\n  margin-top: 3rem;\n  margin-bottom: 1rem;\n  padding: 1rem;\n  color: white;\n  text-decoration: none;\n  list-style-type: none;\n  background-color: hsla(0, 0%, 100%, 0.1);\n  height: 18rem;\n}\nul li[data-v-09ff8af5] {\n  padding: 0.5rem 0;\n}\nul a[data-v-09ff8af5] {\n  color: white;\n}\n.social[data-v-09ff8af5] {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.logo[data-v-09ff8af5] {\n  display: flex;\n  flex-direction: row-reverse;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".bg[data-v-09ff8af5] {\n  background-color: #2e3333;\n  margin-bottom: -10px;\n}\nul[data-v-09ff8af5] {\n  margin-top: 3rem;\n  margin-bottom: 1rem;\n  padding: 1rem;\n  color: white;\n  text-decoration: none;\n  list-style-type: none;\n  background-color: hsla(0, 0%, 100%, 0.1);\n  height: 18rem;\n  border-radius: 5%;\n}\nul li[data-v-09ff8af5] {\n  padding: 0.5rem 0;\n}\nul a[data-v-09ff8af5] {\n  color: white;\n}\n.social[data-v-09ff8af5] {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.logo[data-v-09ff8af5] {\n  display: flex;\n  flex-direction: row-reverse;\n  margin: 0 15px;\n}\n.card-logo[data-v-09ff8af5] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7910,6 +7941,16 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./public/img/App_Store_Badge.png":
+/*!****************************************!*\
+  !*** ./public/img/App_Store_Badge.png ***!
+  \****************************************/
+/***/ ((module) => {
+
+module.exports = "/images/App_Store_Badge.png?e25727d719c25937634158bc280cb1ba";
+
+/***/ }),
+
 /***/ "./public/img/deliveboo_full.svg":
 /*!***************************************!*\
   !*** ./public/img/deliveboo_full.svg ***!
@@ -7920,6 +7961,16 @@ module.exports = "/images/deliveboo_full.svg?0f628429f3fa6ffd032d4b4133c0c13c";
 
 /***/ }),
 
+/***/ "./public/img/deliveboo_logo.svg":
+/*!***************************************!*\
+  !*** ./public/img/deliveboo_logo.svg ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = "/images/deliveboo_logo.svg?b85f545327b35ba76ca27b906547ef31";
+
+/***/ }),
+
 /***/ "./public/img/facebook.png":
 /*!*********************************!*\
   !*** ./public/img/facebook.png ***!
@@ -7927,6 +7978,16 @@ module.exports = "/images/deliveboo_full.svg?0f628429f3fa6ffd032d4b4133c0c13c";
 /***/ ((module) => {
 
 module.exports = "/images/facebook.png?0e063530bda16f6df5e331089c5ee137";
+
+/***/ }),
+
+/***/ "./public/img/google-play-badge.png":
+/*!******************************************!*\
+  !*** ./public/img/google-play-badge.png ***!
+  \******************************************/
+/***/ ((module) => {
+
+module.exports = "/images/google-play-badge.png?93e8d43df9b4c84e42f1ff9273c342ca";
 
 /***/ }),
 

@@ -5,6 +5,7 @@
       <h2>I piatti che ami, a domicilio</h2>
       <div class="hash">#aCasaTuaConDeliveBoo</div>
     </section>
+        <div class="container py-3">
         <div class="container ">
             <div class="d-flex justify-content-center py-4">
                 <select class="form-select filter" v-if="types" name="type" id="type" v-model="value" @change="filterRestaurant(value)">
@@ -24,6 +25,7 @@
             </div>
         </router-link>
         </div>
+    </div>
     </div>
     </div>
 

@@ -125,6 +125,7 @@ export default {
     font-size: xx-large;
     color: rgba(213, 234, 162, 1);
   }
+
   .hash {
     position: absolute;
     bottom: 0;
@@ -136,6 +137,11 @@ export default {
     font-size: 40px;
     border-top-left-radius: 80%;
   }
+  @media (max-width: 660px) {
+    .hash{
+        font-size: 20px;
+    }
+}
   .filter{
     position: absolute;
     top: 80%;
@@ -154,4 +160,5 @@ export default {
         justify-content: center;
     }
 }
+
 </style>

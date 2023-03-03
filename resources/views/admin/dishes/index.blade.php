@@ -17,10 +17,10 @@
     <table class="table caption-top table-striped table-bordered">
         <thead>
           <tr class="table-success">
-            <th scope="col">Nome Piatto</th>
-            <th scope="col">Prezzo</th>
-            <th scope="col">immagine</th>
-            <th scope="col">Azioni</th>
+            <th>Nome Piatto</th>
+            <th>Prezzo</th>
+            <th class="d-sm-none d-md-block">immagine</th>
+            <th>Azioni</th>
           </tr>
         </thead>
         <tbody>
@@ -28,9 +28,9 @@
           <tr>
             <td>{{$dish->name}}</td>
             <td>{{$dish->price/100}} €</td>
-            <td class="w-25">
-                <img class="img-fluid w-50" src="{{$dish->image}}" alt="">
-                <img class="img-fluid w-50" src="{{ asset("storage/$dish->image") }}" alt="">
+            <td class="w-100 p-3 d-sm-none d-md-block">
+                <img class="img-fluid" src="{{$dish->image}}" alt="">
+                <img class="img-fluid" src="{{ asset("storage/$dish->image") }}" alt="">
             </td>
             <th scope="row">
                 <div class=" d-flex align-items-center">

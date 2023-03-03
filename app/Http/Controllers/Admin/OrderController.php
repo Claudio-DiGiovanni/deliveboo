@@ -73,11 +73,9 @@ class OrderController extends Controller
                         $query->where('id', $user->id);
                     })->get();
         $total_cost = 0;
-
         foreach ($orders as $orderx) {
             foreach ($orderx->dishes as $dish) {
                 $total_cost += $dish->price;
-
             }
         }
         $this->authorize('view', $order);
@@ -86,6 +84,7 @@ class OrderController extends Controller
             'total_cost' => $total_cost,
             'dishes'=> $order->dishes,
         ]);
+
     }
 
     /**

@@ -9306,7 +9306,7 @@ label {
 
 .container_order {
   overflow: auto;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   padding: 2rem;
   color: white;
   border-radius: 1rem;
@@ -9316,9 +9316,37 @@ label {
   overflow: auto;
 }
 
+.content_show_orders {
+  border-radius: 1rem;
+  background-color: white;
+  padding: 1rem;
+  color: black;
+}
+
 .form_container {
   background: rgba(0, 0, 0, 0.3);
   padding: 2rem;
   color: white;
   border-radius: 1rem;
+}
+
+@media (max-width: 400px) {
+  .bottoni {
+    flex-direction: column;
+  }
+}
+.grassetto {
+  font-size: large;
+  font-weight: 900;
+}
+
+.badge {
+  padding: 0.5rem;
+  color: white;
+}
+
+.title-home {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
 }

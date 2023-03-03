@@ -6,8 +6,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <router-link :to="{ name: 'home' }" class="nav-link"
-                >DeliveBoo</router-link
-              >
+                >DeliveBoo</router-link>
             </li>
 
           </ul>

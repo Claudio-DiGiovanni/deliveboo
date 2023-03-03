@@ -2282,9 +2282,9 @@ var staticRenderFns = [function () {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row row-cols-3"
-  }, [_c("ul", {
+  }, [_c("div", {
     staticClass: "col"
-  }, [_c("li", [_c("h5", [_vm._v("Scopri Deliveroo")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Scopri Deliveroo")])]), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#!"
     }
@@ -2304,9 +2304,9 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("Diventa nostro partner")])])]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("Diventa nostro partner")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("li", [_c("h5", [_vm._v("Note")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Note")])]), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#!"
     }
@@ -2318,9 +2318,9 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("Cookies")])])]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("Cookies")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("li", [_c("h5", [_vm._v("Aiuto")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_c("ul", [_c("li", [_c("h5", [_vm._v("Aiuto")])]), _vm._v(" "), _c("li", [_c("a", {
     attrs: {
       href: "#!"
     }
@@ -2328,7 +2328,34 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#!"
     }
-  }, [_vm._v("FAQ")])])])])])]);
+  }, [_vm._v("FAQ")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "row justify-content-between pb-3"
+  }, [_c("div", {
+    staticClass: "social"
+  }, [_c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/facebook.png */ "./public/img/facebook.png"),
+      alt: "Facebook"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/instagram.png */ "./public/img/instagram.png"),
+      alt: "instagram"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/twitter.png */ "./public/img/twitter.png"),
+      alt: "twitter"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "logo"
+  }, [_c("img", {
+    staticClass: "w-50",
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/deliveboo_full.svg */ "./public/img/deliveboo_full.svg"),
+      alt: ""
+    }
+  })])])])]);
 }];
 render._withStripped = true;
 
@@ -7650,7 +7677,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".bg[data-v-09ff8af5] {\n  background-color: #2e3333;\n}\nul[data-v-09ff8af5] {\n  color: white;\n  text-decoration: none;\n  list-style-type: none;\n}\nul a[data-v-09ff8af5] {\n  color: white;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".bg[data-v-09ff8af5] {\n  background-color: #2e3333;\n}\nul[data-v-09ff8af5] {\n  margin-top: 3rem;\n  margin-bottom: 1rem;\n  padding: 1rem;\n  color: white;\n  text-decoration: none;\n  list-style-type: none;\n  background-color: hsla(0, 0%, 100%, 0.1);\n  height: 18rem;\n}\nul li[data-v-09ff8af5] {\n  padding: 0.5rem 0;\n}\nul a[data-v-09ff8af5] {\n  color: white;\n}\n.social[data-v-09ff8af5] {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.logo[data-v-09ff8af5] {\n  display: flex;\n  flex-direction: row-reverse;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7874,6 +7901,46 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./public/img/deliveboo_full.svg":
+/*!***************************************!*\
+  !*** ./public/img/deliveboo_full.svg ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = "/images/deliveboo_full.svg?0f628429f3fa6ffd032d4b4133c0c13c";
+
+/***/ }),
+
+/***/ "./public/img/facebook.png":
+/*!*********************************!*\
+  !*** ./public/img/facebook.png ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = "/images/facebook.png?0e063530bda16f6df5e331089c5ee137";
+
+/***/ }),
+
+/***/ "./public/img/instagram.png":
+/*!**********************************!*\
+  !*** ./public/img/instagram.png ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = "/images/instagram.png?d6264a2a133eccb10fe7cb8b54c65bf8";
+
+/***/ }),
+
+/***/ "./public/img/twitter.png":
+/*!********************************!*\
+  !*** ./public/img/twitter.png ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = "/images/twitter.png?8fecf241e32c3ec7104fdf2a1c888f2a";
 
 /***/ }),
 

@@ -29,8 +29,8 @@
             <td>{{$dish->name}}</td>
             <td>{{$dish->price/100}} €</td>
             <td class="w-25">
-                <img class="img-fluid w-50" src="{{$dish->image}}" alt="">
-                <img class="img-fluid w-50" src="{{ asset("storage/$dish->image") }}" alt="">
+                <img class="img-fluid w-100" src="{{$dish->image}}" alt="">
+                <img class="img-fluid w-100" src="{{ asset("storage/$dish->image") }}" alt="">
             </td>
             <th scope="row">
                 <div class=" d-flex align-items-center">

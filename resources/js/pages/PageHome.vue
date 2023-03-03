@@ -137,7 +137,7 @@ export default {
     right: 0;
     background-color: rgba(54, 124, 136, 1);
     padding: 4rem;
-    font-weight: bolder;
+    font-weight: bolder ;
     color: white;
     font-size: 40px;
     border-top-left-radius: 80%;

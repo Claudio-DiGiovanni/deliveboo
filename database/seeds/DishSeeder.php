@@ -67,7 +67,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'Whopper',
                 'price' => 699,
-                'image' => 'https://www.burgerking.it/site/assets/files/1046/whopper-1.jpg',
+                'image' => 'https://cdn.imgbin.com/16/8/25/imgbin-whopper-hamburger-cheeseburger-french-fries-big-king-burger-king-3HYbwhXckfxecPEf0UvVRnpZf.jpg',
                 'visibility' => 1,
                 'description' => 'A flame-grilled beef patty topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.',
                 'slug' => 'whopper',
@@ -76,7 +76,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'Chicken Fries',
                 'price' => 499,
-                'image' => 'https://www.bk.com/sites/default/files/2021-03/Chicken-Fries-500x540px.png',
+                'image' => 'https://images.chickadvisor.com/item/52554/375/i/burger-king-chicken-fries.jpg',
                 'visibility' => 1,
                 'description' => 'Made with white meat chicken, Chicken Fries are coated in a light crispy breading seasoned with savory spices and herbs.',
                 'slug' => 'chicken-fries',
@@ -103,7 +103,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'French Fries',
                 'price' => 299,
-                'image' => 'https://www.burgerking.it/site/assets/files/8979034/1440x640_copertina-pagina-prodotto.jpg',
+                'image' => 'https://burgerkingfrance.twic.pics/img/products/6/d9/6d92ab7c-e386-4499-a71e-65cf00acd8af_?twic=v1/contain=700x700',
                 'visibility' => 1,
                 'description' => 'Our classic fries are cut thin and cooked until crispy, then lightly salted to perfection.',
                 'slug' => 'french-fries',
@@ -202,7 +202,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'samba roll',
                 'price' => 1099,
-                'image' => 'https://ordinaonline.temakinho.com/web/image/product.template/2242/image_256/%5B339167%5D%20SAMBA%20ROLL%20-%20COMPONI%20IL%20TUO%20BIG%20PLATE%20-%20TUTTI%2A%20I%20ROLL%20A%209.50%E2%82%AC%20cad.?unique=3bc38d0',
+                'image' => 'http://cdn.shopify.com/s/files/1/0561/7251/1441/products/DSC07687-Modifica_1200x1200.jpg?v=1621431500',
                 'visibility' => 1,
                 'description' => 'componi il tuo big plate,goditi i tuoi roll',
                 'slug' => 'samba-roll',
@@ -211,7 +211,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'samba roll',
                 'price' => 1099,
-                'image' => 'https://ordinaonline.temakinho.com/web/image/product.template/2242/image_256/%5B339167%5D%20SAMBA%20ROLL%20-%20COMPONI%20IL%20TUO%20BIG%20PLATE%20-%20TUTTI%2A%20I%20ROLL%20A%209.50%E2%82%AC%20cad.?unique=3bc38d0',
+                'image' => 'https://www.sushitecazen.it/wp-content/uploads/2022/09/76-MISTO-COTTO-10pz.jpg',
                 'visibility' => 1,
                 'description' => 'componi il tuo big plate,goditi i tuoi roll',
                 'slug' => 'samba-roll',
@@ -220,7 +220,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'copacabana',
                 'price' => 1190,
-                'image' => 'https://ordinaonline.temakinho.com/web/image/product.template/1933/image_256/%5B301894%5D%20COPACABANA?unique=29b5ab2',
+                'image' => 'https://www.irorisushiathome.it/wp-content/uploads/2022/04/Temaki-Unaji-scaled.jpg',
                 'visibility' => 1,
                 'description' => 'camarao empanado più salmone e philadelphia',
                 'slug' => 'copacabana',
@@ -229,7 +229,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'ipanamea',
                 'price' => 380,
-                'image' => 'https://ordinaonline.temakinho.com/web/image/product.template/1935/image_256/%5B301895%5D%20IPANEMA?unique=43b6e0d',
+                'image' => 'https://hips.hearstapps.com/gioit.h-cdn.co/assets/17/03/1484838345-sushirolls-tutorial.jpg',
                 'visibility' => 1,
                 'description' => 'camarao empanado più salmone e philadelphia',
                 'slug' => 'ipanamea',
@@ -238,7 +238,7 @@ class DishSeeder extends Seeder
             [
                 'name' => 'santos roll mix',
                 'price' => 380,
-                'image' => 'https://ordinaonline.temakinho.com/web/image/product.template/2093/image_256/%5B339128%5D%20SANTOS%20ROLL%20MIX?unique=43ea7af',
+                'image' => 'https://www.tokyofusionsushi.it/wp-content/uploads/2020/06/sashi-jinyuan-top.jpg',
                 'visibility' => 1,
                 'description' => 'salmone roll,nighiri roll,philadelphia,e altra roba simil giapponese',
                 'slug' => 'santos-rool-mix',

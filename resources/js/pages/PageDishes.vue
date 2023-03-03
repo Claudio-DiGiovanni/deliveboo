@@ -5,8 +5,8 @@
             <div class="container ">
                 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
                     <div v-for="dish in dishes" :key="dish.id" v-show="dish.user_id === $route.params.id && dish.visibility === 1" class="p-3">
-                        <div class="card card-ristoranti-2 bg-opacity-25 p-0 col">
-                            <div class="container_img">
+                        <div class="card card-ristoranti-2 bg-opacity-25 p-0 col h-100">
+                            <div class="container_img h-100">
                                 <img :src="dish.image" class="card-img-top h-100 w-100" alt="" />
                             </div>
                             <div class="card_body d-flex flex-column justify-content-between">

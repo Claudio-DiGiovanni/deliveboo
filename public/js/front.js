@@ -2586,9 +2586,9 @@ var render = function render() {
       key: dish.id,
       staticClass: "p-3"
     }, [_c("div", {
-      staticClass: "card card-ristoranti-2 bg-opacity-25 p-0 col"
+      staticClass: "card card-ristoranti-2 bg-opacity-25 p-0 col h-100"
     }, [_c("div", {
-      staticClass: "container_img"
+      staticClass: "container_img h-100"
     }, [_c("img", {
       staticClass: "card-img-top h-100 w-100",
       attrs: {

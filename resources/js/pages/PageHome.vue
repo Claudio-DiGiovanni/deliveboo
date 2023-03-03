@@ -13,7 +13,7 @@
         <option v-for="typex in types" :key="typex.id" :value="typex.id" >{{ typex.name }}</option>
     </select>
             </div>
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards" >
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2  row_cards" >
             <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto d-flex" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
                 <div class="w-100 h-75 m-auto">
@@ -147,6 +147,7 @@ export default {
     .hash{
         font-size: 20px;
     }
+    
 }
   }
   .filter{
@@ -156,5 +157,10 @@ export default {
     border-radius: 10px;
     padding: .5rem;
     text-align: center;
+  }
+  @media (max-width: 575px) {
+    .row_cards{
+        justify-content: center;
+    }
   }
 </style>

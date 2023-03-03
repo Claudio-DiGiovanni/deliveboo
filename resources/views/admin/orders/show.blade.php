@@ -5,9 +5,9 @@
             <img class="img_background" src="https://media.discordapp.net/attachments/1031881470786154557/1079778610757521480/deliveboo-upscaling.png" alt="">
             <div class="container  container_home d-flex justify-content-center align-items-center flex-column h-100 container_show_order">
                 <div class="container_order">
-                    <table class="table table-striped">
+                    <table class="table table-striped table_orders table-bordered">
                         <thead>
-                            <tr class="table-success ">
+                            <tr class="table-success">
                                 <th>Numero ordine</th>
                                 <th>Prezzo totale</th>
                                 <th>Via</th>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
+<div class="container w-100">
     <div class="d-flex justify-content-center">
         <img class="img-fluid w-25 rounded " src="{{$user->image_logo}}" alt="">
     </div>
@@ -13,14 +13,14 @@
         <h1 class="p-3 fw-bold ">I nostri piatti</h1>
     </div>
     @if(count($dishes) > 0)
-
-    <table class="table caption-top table-striped table-bordered">
+<div>
+    <table class="table caption-top table-striped table-bordered justify-content-center w-100" >
         <thead>
           <tr class="table-success">
-            <th scope="col">Nome Piatto</th>
-            <th scope="col">Prezzo</th>
-            <th scope="col">immagine</th>
-            <th scope="col">Azioni</th>
+            <th>Nome Piatto</th>
+            <th>Prezzo</th>
+            <th class="d-none d-sm-block">immagine</th>
+            <th>Azioni</th>
           </tr>
         </thead>
         <tbody>
@@ -28,14 +28,14 @@
           <tr>
             <td>{{$dish->name}}</td>
             <td>{{$dish->price/100}} €</td>
-            <td class="w-25">
-                <img class="img-fluid w-100" src="{{$dish->image}}" alt="">
-                <img class="img-fluid w-100" src="{{ asset("storage/$dish->image") }}" alt="">
+            <td class="w-100 p-3 d-none d-sm-block">
+                <img class="img-fluid" src="{{$dish->image}}" alt="">
+                <img class="img-fluid" src="{{ asset("storage/$dish->image") }}" alt="">
             </td>
             <th scope="row">
-                <div class=" d-flex align-items-center">
-                    <a href="{{ route('admin.dishes.show', ['dish' => $dish]) }}" class="btn btn-outline-info m-3  ">Info</a>
-                    <a href="{{ route('admin.dishes.edit', ['dish' => $dish]) }}" class="btn btn-outline-success m-3  ">Modifica</a>
+                <div class=" d-flex align-items-center bottoni">
+                    <a href="{{ route('admin.dishes.show', ['dish' => $dish]) }}" class="btn btn-outline-info m-1  ">Info</a>
+                    <a href="{{ route('admin.dishes.edit', ['dish' => $dish]) }}" class="btn btn-outline-success m-1  ">Modifica</a>
                     <button id="delete" class="btn btn-outline-danger" onclick="showPopup(event)" data-id="{{$dish->id}}">Elimina</button>
                         <div class="background">
                             <div class="popup">
@@ -54,6 +54,7 @@
           @endforeach
         </tbody>
       </table>
+</div>
 @else
     <p>No dishes found.</p>
 @endif

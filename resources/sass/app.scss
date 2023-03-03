@@ -80,4 +80,9 @@ label{
     border-radius: 1rem;
 }
 
+@media (max-width: 400px) {
+    .bottoni {
+      flex-direction: column;
+    }
+  }
 

@@ -9,8 +9,8 @@
       <div class="hash">#aCasaTuaConDeliveBoo</div>
     </section>
         <div class="container ">
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2" >
-            <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto" v-for="user in users" :key="user.id">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards" >
+            <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto d-flex" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
                 <div class="w-100 h-75 m-auto">
                     <img :src="user.image_logo" class="card-img-top  h-100 w-100" alt="...">
@@ -149,5 +149,10 @@ export default {
     padding: .5rem;
     text-align: center;
   }
+}
+@media (max-width: 768px) {
+    .row_cards{
+        justify-content: center;
+    }
 }
 </style>

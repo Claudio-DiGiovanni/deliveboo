@@ -9330,14 +9330,12 @@ label {
   border-radius: 1rem;
 }
 
-<<<<<<< HEAD
 @media (max-width: 400px) {
   .bottoni {
     flex-direction: column;
   }
-=======
+}
 .grassetto {
   font-size: large;
   font-weight: 900;
->>>>>>> 9179478 (count)
 }

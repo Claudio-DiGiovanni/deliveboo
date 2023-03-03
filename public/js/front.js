@@ -2032,25 +2032,25 @@ __webpack_require__.r(__webpack_exports__);
     return {
       users: null,
       types: null,
-      value: ''
+      value: ""
     };
   },
   methods: {
     filterRestaurant: function filterRestaurant(typeId) {
       var _this = this;
-      if (typeId !== 'all') {
+      if (typeId !== "all") {
         axios.get("/api/filter/".concat(typeId)).then(function (response) {
           if (response.data.success) {
             _this.users = response.data.results;
           }
         });
       } else {
-        axios.get('/api/').then(function (response) {
+        axios.get("/api/").then(function (response) {
           if (response.data.success) {
             _this.users = response.data.results;
             _this.types = response.data.types;
           } else {
-            _this.users = 'non va un cazzo';
+            _this.users = "non va un cazzo";
           }
         });
       }
@@ -2058,12 +2058,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this2 = this;
-    axios.get('/api/').then(function (response) {
+    axios.get("/api/").then(function (response) {
       if (response.data.success) {
         _this2.users = response.data.results;
         _this2.types = response.data.types;
       } else {
-        _this2.users = 'non va un cazzo';
+        _this2.users = "non va un cazzo";
       }
     });
   }
@@ -2716,9 +2716,9 @@ var render = function render() {
       domProps: {
         value: typex.id
       }
-    }, [_vm._v(_vm._s(typex.name))]);
+    }, [_vm._v("\n            " + _vm._s(typex.name) + "\n          ")]);
   })], 2) : _vm._e()]), _vm._v(" "), _c("div", {
-    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards"
+    staticClass: "row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row_cards"
   }, _vm._l(_vm.users, function (user) {
     return _c("router-link", {
       key: user.id,
@@ -2752,7 +2752,7 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("section", {
+  return _c("div", {
     staticClass: "section_nav"
   }, [_c("h2", [_vm._v("I piatti che ami, a domicilio")]), _vm._v(" "), _c("div", {
     staticClass: "hash"
@@ -7836,7 +7836,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.card[data-v-13e03f97], .col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: white;\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem 2rem 0 0;\n  background-color: white;\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n@media (max-width: 660px) {\n.section_nav .hash[data-v-13e03f97] {\n    font-size: 20px;\n}\n}\n.filter[data-v-13e03f97] {\n  z-index: 1;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container_section[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.container[data-v-13e03f97] {\n  background-color: rgb(92, 201, 188);\n}\n.card[data-v-13e03f97],\n.col[data-v-13e03f97] {\n  padding-left: 0 !important;\n  padding-right: 0 !important;\n}\na[data-v-13e03f97] {\n  text-decoration: none;\n  margin: 0 !important;\n}\n.card-ristoranti[data-v-13e03f97] {\n  height: 20rem;\n  border-radius: 2rem;\n  box-shadow: 10px 10px 5px #424242;\n  transition: 1s;\n}\n.card-ristoranti[data-v-13e03f97]:hover {\n  transform: scale(1.1);\n}\n.card[data-v-13e03f97] {\n  border: none;\n  width: 300px;\n  justify-content: space-between;\n  background-color: white;\n}\n.card-img-top[data-v-13e03f97] {\n  border-radius: 2rem 2rem 0 0;\n  background-color: white;\n}\n.section_nav[data-v-13e03f97] {\n  position: relative;\n  height: 35rem;\n  background-color: rgb(54, 124, 136);\n  display: flex;\n  align-items: center;\n  background-image: url(https://www.informacibo.it/wp-content/uploads/2020/04/delivery.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.section_nav h2[data-v-13e03f97] {\n  padding: 2rem;\n  font-style: oblique;\n  font-size: xx-large;\n  color: rgb(213, 234, 162);\n}\n.section_nav .hash[data-v-13e03f97] {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  background-color: rgb(54, 124, 136);\n  padding: 4rem;\n  font-weight: bolder;\n  color: white;\n  font-size: 40px;\n  border-top-left-radius: 80%;\n}\n@media (max-width: 660px) {\n.section_nav .hash[data-v-13e03f97] {\n    font-size: 20px;\n}\n}\n.filter[data-v-13e03f97] {\n  z-index: 1;\n  width: 10%;\n  border: 2px solid #5cc9bc;\n  border-radius: 10px;\n  padding: 0.5rem;\n  text-align: center;\n}\n@media (max-width: 575px) {\n.row_cards[data-v-13e03f97] {\n    justify-content: center;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

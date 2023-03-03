@@ -65,13 +65,20 @@ label{
 }
 .container_order{
     overflow: auto;
-    background:rgba(0, 0, 0, 0.3);
+    background:rgba(0, 0, 0, 0.4);
     padding: 2rem;
     color: white;
     border-radius: 1rem;
 }
 .container_show_order{
     overflow: auto;
+    
+}
+.content_show_orders{
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1rem;
+    color: black;
 }
 .form_container{
     background:rgba(0, 0, 0, 0.3);
@@ -79,10 +86,22 @@ label{
     color: white;
     border-radius: 1rem;
 }
+<<<<<<< HEAD
 
 @media (max-width: 400px) {
     .bottoni {
       flex-direction: column;
     }
   }
+=======
+.grassetto{
+    font-size: large;
+   font-weight: 900;
+}
+// @media only screen and (max-width: 768px) {
+//     .img-ridotta {
+//         display: none;
+//     }
+// }
+>>>>>>> 9179478 (count)
 

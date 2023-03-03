@@ -128,6 +128,7 @@ export default {
     font-size: xx-large;
     color: rgba(213, 234, 162, 1);
   }
+
   .hash {
     position: absolute;
     bottom: 0;
@@ -139,14 +140,13 @@ export default {
     font-size: 40px;
     border-top-left-radius: 80%;
   }
-
-}
-@media (max-width: 768px) {
-    .row_cards{
-        justify-content: center;
+  }
+  @media (max-width: 660px) {
+    .hash{
+        font-size: 20px;
     }
 }
-.filter{
+  .filter{
     z-index: 1;
     width: 10%;
     border: 2px solid #5cc9bc;

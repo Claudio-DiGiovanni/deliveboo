@@ -102,13 +102,12 @@ export default {
     border: none;
     width: 300px;
     justify-content: space-between;
-    background-color:rgba(213, 234, 162, 1) ;
+    background-color:white ;
 
   }
   .card-img-top{
-   border-radius: 2rem;
-
-    background-color: rgba(213, 234, 162, 1);
+    border-radius: 2rem 2rem 0 0;
+    background-color: white;
   }
   .section_nav {
   position: relative;

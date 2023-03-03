@@ -1,14 +1,17 @@
 <template>
     <div class="container_section">
         <section class="section_nav">
-            <select class="form-select filter" v-if="types" name="type" id="type" v-model="value" @change="filterRestaurant(value)">
-        <option value="all" selected>Tutti</option>
-        <option v-for="typex in types" :key="typex.id" :value="typex.id" >{{ typex.name }}</option>
-    </select>
+
       <h2>I piatti che ami, a domicilio</h2>
       <div class="hash">#aCasaTuaConDeliveBoo</div>
     </section>
         <div class="container ">
+            <div class="d-flex justify-content-center py-4">
+                <select class="form-select filter" v-if="types" name="type" id="type" v-model="value" @change="filterRestaurant(value)">
+        <option value="all" selected>Tutti</option>
+        <option v-for="typex in types" :key="typex.id" :value="typex.id" >{{ typex.name }}</option>
+    </select>
+            </div>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 justify-content-xs-center row_cards" >
             <router-link :to="{name: 'dishes', params: { id: user.id, slug: user.slug }}" class="p-3 w-75 m-auto d-flex" v-for="user in users" :key="user.id">
             <div class="card card-ristoranti bg-opacity-25 col ">
@@ -137,16 +140,13 @@ export default {
     font-size: 40px;
     border-top-left-radius: 80%;
   }
+  }
   @media (max-width: 660px) {
     .hash{
         font-size: 20px;
     }
 }
   .filter{
-    position: absolute;
-    top: 80%;
-    right: 50%;
-    transform: translate(50%, 50%);
     z-index: 1;
     width: 10%;
     border: 2px solid #5cc9bc;
@@ -154,11 +154,4 @@ export default {
     padding: .5rem;
     text-align: center;
   }
-}
-@media (max-width: 768px) {
-    .row_cards{
-        justify-content: center;
-    }
-}
-
 </style>

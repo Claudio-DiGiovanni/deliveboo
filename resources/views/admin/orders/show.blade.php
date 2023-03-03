@@ -11,24 +11,64 @@
                     <div class="content_show_orders">
                         <div>
 
-                            <div> <span class="grassetto">Numero ordine :</span> {{ $order->id }}</div>
-                            <div> <span class="grassetto">Prezzo totale :</span> {{ $total_cost / 100 }} €</div>
-                            <div> <span class="grassetto">Via :</span> {{ $order->address }}</div>
-                            <div> <span class="grassetto">Nome :</span> {{ $order->customer_name }}</div>
-                            <div> <span class="grassetto">Email :</span> {{ $order->email }}</div>
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" class="font-weight-bold">Numero ordine:</th>
+                                    <td>{{ $order->id }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="font-weight-bold">Prezzo totale:</th>
+                                    <td>{{ $total_cost / 100 }} €</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="font-weight-bold">Via:</th>
+                                    <td>{{ $order->address }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="font-weight-bold">Nome:</th>
+                                    <td>{{ $order->customer_name }}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="font-weight-bold">Email:</th>
+                                    <td>{{ $order->email }}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
                             <div><span class="grassetto">Piatti :</span>
-                                <ul>
+                                <ol class="list-group list-group-numbered mt-3">
+                                    @php
+                                        $dishCount = [];
+                                    @endphp
                                     @foreach ($dishes as $dish)
-                                        <li> {{ $dish->name }}</li>
+                                        @if (isset($dishCount[$dish->name]))
+                                            @php
+                                                $dishCount[$dish->name]++;
+                                            @endphp
+                                        @else
+                                            @php
+                                                $dishCount[$dish->name] = 1;
+                                            @endphp
+                                        @endif
                                     @endforeach
-                                </ul>
+                                    @foreach ($dishCount as $name => $count)
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                {{ $name }}
+                                            </div>
+                                            <span class="badge bg-primary rounded-pill">
+                                                {{ $count }}
+                                            </span>
+                                        </li>
+                                    @endforeach
+                                </ol>
                             </div>
 
 
                         </div>
 
                         <div class="white">
-                            <button id="delete" class="btn btn-outline-danger" onclick="showPopup(event)"
+                            <button id="delete" class="btn btn-outline-danger mt-3" onclick="showPopup(event)"
                                 data-id="{{ $order->id }}">Elimina</button>
                             <div class="background">
                                 <div class="popup">
@@ -54,26 +94,5 @@
         </div>
 
     </div>
-    <ol class="list-group list-group-numbered">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            @foreach ($dishes as $dish)
-                <div class="ms-2 me-auto">
 
-                    {{ $dish->name }}
-                   
-                      
-                      
-                            
-                           
-                    
-                   
-                        
-                </div>
-                <span class="badge bg-primary rounded-pill">
-                    {{$count}}
-                   </span>
-            @endforeach
-            
-        </li>
-    </ol>
 @endsection

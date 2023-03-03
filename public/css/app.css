@@ -9339,3 +9339,8 @@ label {
   font-size: large;
   font-weight: 900;
 }
+
+.badge {
+  padding: 0.5rem;
+  color: white;
+}

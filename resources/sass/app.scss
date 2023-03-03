@@ -72,7 +72,7 @@ label{
 }
 .container_show_order{
     overflow: auto;
-    
+
 }
 .content_show_orders{
     border-radius: 1rem;
@@ -95,6 +95,11 @@ label{
 .grassetto{
     font-size: large;
    font-weight: 900;
+}
+
+.badge{
+    padding: .5rem;
+    color: white;
 }
 // @media only screen and (max-width: 768px) {
 //     .img-ridotta {

@@ -10,9 +10,10 @@
                                 <img :src="dish.image" class="card-img-top h-100 w-100" alt="" />
                             </div>
                             <div class="card_body d-flex flex-column justify-content-between">
-                                Descrizione: {{ dish.description }}
+                                <h3>{{ dish.name }}</h3>
+                                 {{ dish.description }}
                                 <div>
-                                    Prezzo: {{ dish.price / 100 }} €
+                                    A soli: {{ dish.price / 100 }} €
                                 </div>
                                     <div class="number-input d-flex justify-center alight-center">
                                         <button class="btn btn-secondary" @click="addToCart(dish)">Aggiungi al carrello</button>

@@ -140,12 +140,13 @@ export default {
     font-size: 40px;
     border-top-left-radius: 80%;
   }
-  }
+
   @media (max-width: 660px) {
     .hash{
         font-size: 20px;
     }
 }
+  }
   .filter{
     z-index: 1;
     width: 10%;

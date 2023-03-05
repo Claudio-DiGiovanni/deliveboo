@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center my-5">
+    <div class="text-center my-5 altezza">
         <h2>Carrello</h2>
         <div class="container-shop d-flex text-center row row-cols-3 justify-content-center">
             <div class="card card-carrello m-3" v-for="dish in cart" :key="dish.id">
@@ -71,6 +71,9 @@ export default {
 <style lang="scss" scoped>
 .card-carrello {
     width: 30%;
+}
+.altezza {
+    min-height: 48vh;
 }
 
 </style>

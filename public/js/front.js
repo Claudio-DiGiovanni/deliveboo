@@ -2419,7 +2419,13 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("DeliveBoo")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("img", {
+    staticClass: "logo",
+    attrs: {
+      src: __webpack_require__(/*! ../../../public/img/deliveboo_full.svg */ "./public/img/deliveboo_full.svg"),
+      alt: ""
+    }
+  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse",
     attrs: {
       id: "navbarSupportedContent"
@@ -7740,7 +7746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "nav[data-v-5dd24bca] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 2;\n  box-shadow: 5px 5px 2px #1f1f1f;\n}\n.navbar-collapse[data-v-5dd24bca] {\n  display: flex;\n  justify-content: flex-end;\n}\n.navbar-nav[data-v-5dd24bca] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n}\n.nav-item[data-v-5dd24bca] {\n  margin: 1rem 0;\n}\n.nav-link[data-v-5dd24bca] {\n  color: white;\n  font-weight: bold;\n  font-size: 2rem;\n}\n.navbar[data-v-5dd24bca] {\n  background-color: rgb(92, 201, 188);\n}\n.custom-link[data-v-5dd24bca] {\n  border: none;\n  background-color: white;\n  padding: 0.5rem;\n  border-radius: 0.5rem;\n  color: #1f1f1f;\n  margin: 2rem 0;\n  text-decoration: none;\n}\n.navbar-toggler[data-v-5dd24bca] {\n  border: 1px solid white;\n  background-color: rgb(92, 201, 188);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.navbar-toggler-icon[data-v-5dd24bca] {\n  color: white;\n  width: 100%;\n  height: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "nav[data-v-5dd24bca] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 2;\n  box-shadow: 5px 5px 2px #1f1f1f;\n}\n.navbar-collapse[data-v-5dd24bca] {\n  display: flex;\n  justify-content: flex-end;\n}\n.navbar-nav[data-v-5dd24bca] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n}\n.nav-item[data-v-5dd24bca] {\n  margin: 1rem 0;\n}\n.nav-link[data-v-5dd24bca] {\n  color: white;\n  font-weight: bold;\n  font-size: 2rem;\n}\n.navbar[data-v-5dd24bca] {\n  background-color: rgb(92, 201, 188);\n}\n.custom-link[data-v-5dd24bca] {\n  border: none;\n  background-color: white;\n  padding: 0.5rem;\n  border-radius: 0.5rem;\n  color: #1f1f1f;\n  margin: 2rem 0;\n  text-decoration: none;\n}\n.navbar-toggler[data-v-5dd24bca] {\n  border: 1px solid white;\n  background-color: rgb(92, 201, 188);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.navbar-toggler-icon[data-v-5dd24bca] {\n  color: white;\n  width: 100%;\n  height: 100%;\n}\n.logo[data-v-5dd24bca] {\n  height: 4rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

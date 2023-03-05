@@ -1,7 +1,7 @@
 <template>
      <nav class="navbar navbar-expand-md">
             <div class="container">
-                <router-link :to="{ name: 'home' }" class="nav-link">DeliveBoo</router-link>
+                <router-link :to="{ name: 'home' }" class="nav-link"><img class="logo" src="../../../public/img/deliveboo_full.svg" alt=""></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
                     <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                 </button>
@@ -84,6 +84,10 @@ nav{
     color: white;
     width: 100%;
     height: 100%;
+}
+
+.logo {
+    height: 4rem;
 }
 
 </style>
